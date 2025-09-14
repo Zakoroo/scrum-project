@@ -1,0 +1,12 @@
+# CODEOWNERS — automatically requests reviews from owners of matching paths.
+# Format: pattern  owners
+# Use team slugs like @your-org/backend-team if in an org.
+
+# Critical paths
+/.github/             @your-org/maintainers
+/docs/                 @your-org/maintainers
+/src/security/         @your-org/security-team
+/migrations/           @your-org/db-team
+
+# Default (catch-all)
+*                      @your-org/maintainers

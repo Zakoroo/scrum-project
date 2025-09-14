@@ -1,0 +1,15 @@
+name: "Task"
+description: "Technical task that supports a story or maintenance"
+title: "task: <concise title>"
+labels: ["type: task", "status: backlog"]
+body:
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: What/why of the task
+  - type: textarea
+    id: done
+    attributes:
+      label: Done criteria
+      description: What evidence shows this task is complete?
