@@ -1,0 +1,36 @@
+# Default: normalize text; let Git handle platform checkouts
+* text=auto
+
+# POSIX shells and scripts (must be LF to avoid ^M issues)
+*.sh text eol=lf
+*.bash text eol=lf
+*.zsh text eol=lf
+
+# Other files typically consumed in Linux/CI (keep LF)
+*.py text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.json text eol=lf
+*.toml text eol=lf
+Dockerfile text eol=lf
+*.md text eol=lf
+
+# Windows-native scripts (keep CRLF)
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# Binary files (no EOL conversion)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.gz binary
+*.jar binary
+
+# Keep generic folders if you want LF for scripts
+scripts/** text eol=lf
+bin/** text eol=lf
