@@ -1,0 +1,39 @@
+name: Commit Message – Conventional Commits
+on:
+pull_request:
+types: [opened, synchronize, edited, reopened]
+permissions:
+contents: read
+pull-requests: read
+jobs:
+lint-commits:
+runs-on: ubuntu-latest
+steps:
+- uses: actions/checkout@v4
+with:
+fetch-depth: 0
+- name: Validate commit messages
+run: |
+TYPES='build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test'
+REGEX="^(${TYPES})(\([^)
+]+\))?(!)?: [^
+]+$"
+echo "Checking commits in this PR..."
+# List commit SHAs in the PR range
+COMMITS=$(git log --pretty=format:%H origin/${{ github.base_ref }}..HEAD)
+FAIL=0
+for C in $COMMITS; do
+MSG=$(git log -1 --pretty=%s "$C")
+if echo "$MSG" | grep -Pq "$REGEX"; then
+echo "✅ $C: $MSG"
+else
+echo "❌ $C: $MSG"
+FAIL=1
+fi
+done
+if [ "$FAIL" -ne 0 ]; then
+echo "
+One or more commit messages are not Conventional Commits."
+echo "Format: <type>(<scope>)!: <subject>"
+exit 1
+fi
