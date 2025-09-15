@@ -31,14 +31,6 @@ Dockerfile text eol=lf
 *.gz binary
 *.jar binary
 
-# Gradle wrapper and build scripts
-gradlew text eol=lf
-gradlew.bat text eol=crlf
-*.gradle text eol=lf
-gradle.properties text eol=lf
-
-# Hooks and common script folders (LF for POSIX shells)
-.husky/* text eol=lf
-.githooks/* text eol=lf
+# Keep generic folders if you want LF for scripts
 scripts/** text eol=lf
 bin/** text eol=lf
