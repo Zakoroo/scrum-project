@@ -37,6 +37,11 @@ cd scrum-project
 - Use any build system or runtime you prefer (e.g., Gradle/Maven, npm/pnpm/yarn, Poetry/pip, etc.).
 - Add config files when ready (e.g., build.gradle, package.json, pyproject.toml).
 
+## Commands
+- List commands: `dev/do.sh help` (macOS/Linux) or `dev\do.ps1 help` (Windows)
+- Build: `dev/do.sh build`
+- Run:   `dev/do.sh run`
+
 ## CI
 - Runs on pushes/PRs to main branches.
 - Jobs auto-activate based on files present:

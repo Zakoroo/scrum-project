@@ -10,6 +10,11 @@ CONTAINER_WORKDIR="/workspace"
 
 host_pwd="$PWD"
 
+MVN_FLAGS="${MVN_FLAGS:--ntp -B}"
+if [ "${QUIET:-0}" = "1" ]; then
+  MVN_FLAGS="$MVN_FLAGS -q"
+fi
+
 case "${OSTYPE:-}" in
   msys*|cygwin*|win32*)
     # 1) Get a Windows-style absolute path for the volume mount
@@ -38,4 +43,4 @@ fi
 docker run --rm -it \
   -v "$host_pwd:/workspace" \
   $workdir_arg \
-  "$IMAGE" ./mvnw "$@"
+  "$IMAGE" mvn $MVN_FLAGS "$@"
