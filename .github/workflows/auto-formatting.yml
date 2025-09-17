@@ -1,0 +1,38 @@
+name: Auto formatting
+
+on:
+  pull_request:
+  push:
+    branches: [ master ]
+
+permissions:
+  contents: write
+
+jobs:
+  prettier:
+    runs-on: ubuntu-latest
+    steps:
+      # For PRs: checkout the contributor's branch
+      - name: Checkout (PR)
+        if: github.event_name == 'pull_request'
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}     # branch name
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          fetch-depth: 0
+          persist-credentials: true
+
+      # For pushes (e.g., to master): attach to the branch
+      - name: Checkout (push)
+        if: github.event_name == 'push'
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}                        # e.g. "master"
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Prettify code
+        uses: creyD/prettier_action@v4.6
+        with:
+          prettier_options: --write .
+          commit_message: "chore: Prettified code!"
