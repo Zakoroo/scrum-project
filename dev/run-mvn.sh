@@ -43,4 +43,7 @@ fi
 docker run --rm -it \
   -v "$host_pwd:/workspace" \
   $workdir_arg \
+  -v m2-cache:/root/.m2 \
+  -v npm-cache:/root/.npm \
+  -v node_modules:/workspace/node_modules \
   "$IMAGE" mvn $MVN_FLAGS "$@"
