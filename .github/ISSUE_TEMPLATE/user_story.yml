@@ -1,39 +1,39 @@
-name: "User Story"
-description: "Capture user value with acceptance criteria"
-title: "story: <concise title>"
-labels: ["type: user story", "status: backlog"]
+name: 'User Story'
+description: 'Capture user value with acceptance criteria'
+title: 'story: <concise title>'
+labels: ['type: user story', 'status: backlog']
 body:
-  - type: textarea
-    id: story
-    attributes:
-      label: Story
-      description: As a [role], I want [capability], so that [benefit].
-      placeholder: As a shopper, I want to pay with Apple Pay, so that checkout is faster.
-    validations:
-      required: true
-  - type: textarea
-    id: acceptance
-    attributes:
-      label: Acceptance Criteria (Given/When/Then)
-      placeholder: |
-        Given I have items in my cart
-        When I choose Apple Pay and complete payment
-        Then the order is created and I see a receipt
-    validations:
-      required: true
-  - type: input
-    id: points
-    attributes:
-      label: Story Points
-      description: Relative complexity/effort (e.g., 1,2,3,5,8,13)
-      placeholder: 3
-  - type: checkboxes
-    id: dor
-    attributes:
-      label: Definition of Ready (DoR)
-      options:
-        - label: Value is clear (end-user benefit)
-        - label: Acceptance criteria defined
-        - label: Dependencies known
-        - label: Test approach considered
-        - label: UX/Design attached (if applicable)
+   - type: textarea
+     id: story
+     attributes:
+        label: Story
+        description: As a [role], I want [capability], so that [benefit].
+        placeholder: As a shopper, I want to pay with Apple Pay, so that checkout is faster.
+     validations:
+        required: true
+   - type: textarea
+     id: acceptance
+     attributes:
+        label: Acceptance Criteria (Given/When/Then)
+        placeholder: |
+           Given I have items in my cart
+           When I choose Apple Pay and complete payment
+           Then the order is created and I see a receipt
+     validations:
+        required: true
+   - type: input
+     id: points
+     attributes:
+        label: Story Points
+        description: Relative complexity/effort (e.g., 1,2,3,5,8,13)
+        placeholder: 3
+   - type: checkboxes
+     id: dor
+     attributes:
+        label: Definition of Ready (DoR)
+        options:
+           - label: Value is clear (end-user benefit)
+           - label: Acceptance criteria defined
+           - label: Dependencies known
+           - label: Test approach considered
+           - label: UX/Design attached (if applicable)

@@ -1,18 +1,18 @@
-name: "Spike"
-description: "Time-boxed research to reduce uncertainty"
-title: "spike: <concise title>"
-labels: ["type: spike", "status: backlog"]
+name: 'Spike'
+description: 'Time-boxed research to reduce uncertainty'
+title: 'spike: <concise title>'
+labels: ['type: spike', 'status: backlog']
 body:
-  - type: textarea
-    id: question
-    attributes:
-      label: Question(s)
-  - type: input
-    id: timebox
-    attributes:
-      label: Timebox (hours)
-      placeholder: 4
-  - type: textarea
-    id: findings
-    attributes:
-      label: Findings/Recommendation
+   - type: textarea
+     id: question
+     attributes:
+        label: Question(s)
+   - type: input
+     id: timebox
+     attributes:
+        label: Timebox (hours)
+        placeholder: 4
+   - type: textarea
+     id: findings
+     attributes:
+        label: Findings/Recommendation

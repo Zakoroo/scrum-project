@@ -35,5 +35,107 @@
         </plugin>
       </plugins>
     </pluginManagement>
+
+    <plugins>
+      <plugin>
+        <groupId>com.diffplug.spotless</groupId>
+        <artifactId>spotless-maven-plugin</artifactId>
+        <version>2.43.0</version>
+        <configuration>
+          <!-- Java formatting -->
+          <java>
+            <googleJavaFormat>
+              <version>1.17.0</version>
+            </googleJavaFormat>
+          </java>
+
+          <!-- Non-Java formatting with Prettier -->
+          <formats>
+            <format>
+              <includes>
+                <include>**/*.md</include>
+                <include>**/*.json</include>
+                <include>**/*.yml</include>
+                <include>**/*.yaml</include>
+                <include>**/*.html</include>
+                <include>**/*.css</include>
+                <include>**/*.scss</include>
+                <include>**/*.js</include>
+                <include>**/*.ts</include>
+                <include>**/*.tsx</include>
+              </includes>
+              <excludes>
+                <exclude>node_modules/**</exclude>
+                <exclude>dist/**</exclude>
+                <exclude>build/**</exclude>
+                <exclude>target/**</exclude>
+              </excludes>
+              <prettier>
+                <!-- Pin the Prettier engine version used by Spotless -->
+                <prettierVersion>3.3.3</prettierVersion>
+                <!-- Point to your Prettier config file -->
+                <configFile>${project.basedir}/.prettierrc</configFile>
+                <!-- If needed, you can also set explicit paths:
+                <nodeExecutable>/usr/bin/node</nodeExecutable>
+                <npmExecutable>/usr/bin/npm</npmExecutable>
+                -->
+              </prettier>
+            </format>
+          </formats>
+        </configuration>
+
+        <executions>
+          <execution>
+            <goals>
+              <goal>apply</goal>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>3.3.1</version>
+
+        <!-- Pin a modern Checkstyle engine that supports Java 21 -->
+        <dependencies>
+          <dependency>
+            <groupId>com.puppycrawl.tools</groupId>
+            <artifactId>checkstyle</artifactId>
+            <version>10.17.0</version>
+          </dependency>
+        </dependencies>
+
+        <configuration>
+          <!-- Use built-in Google style for a quick start.
+         Replace with your own config path if you have one. -->
+          <configLocation>google_checks.xml</configLocation>
+
+          <encoding>${project.build.sourceEncoding}</encoding>
+          <consoleOutput>true</consoleOutput>
+          <failsOnError>true</failsOnError>
+          <failOnViolation>true</failOnViolation>
+          <includeTestSourceDirectory>true</includeTestSourceDirectory>
+
+          <!-- Optional: don’t analyze generated sources -->
+          <excludes>**/target/**,**/generated-sources/**</excludes>
+        </configuration>
+
+        <executions>
+          <!-- Runs automatically in `verify`, and you can still call it directly -->
+          <execution>
+            <id>checkstyle-verify</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+    </plugins>
   </build>
 </project>
