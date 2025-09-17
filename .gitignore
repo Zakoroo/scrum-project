@@ -26,3 +26,27 @@ __pycache__/
 coverage/
 .vagrant/
 .tmp/
+
+# Maven build output
+/target/
+
+# Maven Wrapper cache
+.mvn/wrapper/maven-wrapper.jar
+
+# Eclipse/IDEA/NetBeans project files
+.classpath
+.project
+.settings/
+.idea/
+*.iml
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Docker
+*.pid
+*.seed
