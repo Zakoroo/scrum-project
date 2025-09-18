@@ -1,105 +1,68 @@
-# Climate Game — Agile Scrum Project
+# Climate Game
 
-A Scrum-driven climate strategy/simulation game. This repo support CI pipelines to support iterative delivery.
+A Java-based strategy/simulation game focused on climate action and education. Developed using Agile Scrum practices to enable iterative development and collaboration.
 
-## What’s included
 
-- Issue templates for User Stories, Bugs, Tasks, Spikes
-- PR template
-- CI workflows that auto-activate when language-specific configs exist (Java/Node/Python, etc.)
-- Script to bootstrap repository labels
+## Project Overview
 
-## Project layout
+Climate Game engages players in decision-making to address climate change. This repository contains the Java backend, a sample UI (JavaFX), tests, and assets for Scrum workflow management.
 
-[project layout](/PROJECT_INFO/source-tree.txt)
 
-Note: For Java projects, prefer Maven/Gradle layout: src/main/java and src/test/java.
+## Features
 
-## Quick start
+- Core Java codebase (JavaFX demo app and unit tests)
+- Issue/PR templates for Scrum workflows (stories, bugs, tasks, spikes)
+- Automated CI/CD workflows (Java build/test out of the box)
+- Label bootstrap scripts and CODEOWNERS setup
+- Contributor, coding, and security policies
 
-1. Clone
 
-```bash
-git clone <your-repo-url>
-cd scrum-project
-```
+## Directory Structure
 
-2. Add your language and tooling
+For details, see [`PROJECT_INFO/source-tree.txt`](PROJECT_INFO/source-tree.txt).
 
-- Use any build system or runtime you prefer (e.g., Gradle/Maven, npm/pnpm/yarn, Poetry/pip, etc.).
-- Add config files when ready (e.g., build.gradle, package.json, pyproject.toml).
 
-## Commands
+## Getting Started
 
-- List commands: `dev/do.sh help` (macOS/Linux) or `dev\do.ps1 help` (Windows)
-- Build: `dev/do.sh build`
-- Run: `dev/do.sh run`
+1. **Clone the repo:**
+   ```bash
+   git clone https://github.com/Zakoroo/scrum-project.git
+   cd scrum-project
+   ```
 
-## Java quick start (optional)
+2. **Java quick start (Maven):**
+   ```bash
+   mvn clean verify
+   mvn -q javafx:run
+   ```
 
-- Run tests
-   - Maven: mvn test
-   - Gradle: ./gradlew test (or gradlew.bat test on Windows)
-- Run a specific test
-   - Maven: mvn -Dtest=AppTest test
-   - Gradle: ./gradlew test --tests com.ecologicstudios.AppTest
+## Scrum & CI Workflow
 
-## VS Code tips (Java auto-import)
+- Sprints: 1 weeks, regular planning, reviews, retrospectives
+- Board: Backlog → Selected for Sprint → In Progress → In Review → Done
+- CI: Automated build/test on every push/PR (Java workflows enabled)
+- Definition of Done: Code, tests, review, CI green, docs updated
 
-If imports are added automatically and you want to stop that, update your user settings (File > Preferences > Settings or settings.json):
 
-```jsonc
-{
-   // Turn off auto-import suggestions
-   "java.completion.imports.enabled": false,
-   // Do not organize imports on save
-   "java.saveActions.organizeImports": false,
-   // Also disable organize imports on save for Java
-   "[java]": {
-      "editor.codeActionsOnSave": {
-         "source.organizeImports": false,
-      },
-   },
-}
-```
+## Contribution Guidelines
 
-Tip: Run “Developer: Reload Window” after changing settings.
+- See [CONTRIBUTING.md](CONTRIBUTING.md) for branching, commits, and PR etiquette
+- Coding conventions and review process in [docs/policies/coding-policy.md](docs/policies/coding-policy.md)
+- Security policy in [SECURITY.md](SECURITY.md)
 
-## CI
 
-- Runs on pushes/PRs to main branches.
-- Jobs auto-activate based on files present:
-   - Java: when a Gradle/Maven build file exists
-   - Node: when package.json exists
-   - Python: when pyproject.toml or requirements\*.txt exists
-- See workflows under: .github/workflows/
+## Labels & Reviews
 
-## Scrum workflow
+- Labels: story, bug, task, spike, P1–P3, gameplay, ui, infra, docs, good-first-issue
+- Review: At least 1 reviewer (2 for risky changes), CODEOWNERS enforced for critical paths
 
-- Cadence: 1–2 week sprints with Sprint Planning, Daily Scrum, Review, Retrospective.
-- Board flow: Backlog → Selected for Sprint → In Progress → In Review → Done.
-- Definition of Ready (DoR): clear acceptance criteria, dependencies identified, sized.
-- Definition of Done (DoD): code + tests + review + CI green + docs updated.
-
-## Labels and reviews
-
-- Bootstrap default labels via: [scripts/bootstrap-labels.sh](scripts/bootstrap-labels.sh)
-- CODEOWNERS: [.github/CODEOWNERS](.github/CODEOWNERS)
-- Label conventions:
-   - Type: story, bug, task, spike
-   - Priority: P1, P2, P3
-   - Area: gameplay, ui, infra, docs
-   - Good first issue: good-first-issue
-
-## Policies and docs
-
-- Coding policy: [docs/policies/coding-policy.md](docs/policies/coding-policy.md)
-- Contributing: [CONTRIBUTING.md](CONTRIBUTING.md)
-- Code of Conduct: [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
-- Security: [SECURITY.md](SECURITY.md)
-- License: [LICENSE](LICENSE)
 
 ## Notes
 
-- Shell scripts use LF endings and are intended for POSIX shells (Git Bash on Windows works). See [.gitattributes](.gitattributes).
-- Commit message style is not enforced; follow any convention your team prefers (Conventional Commits recommended but optional).
+- Shell scripts use LF endings and POSIX shells (Git Bash works on Windows)
+- Commit style: Conventional Commits recommended
+
+
+## License
+
+MIT License — see [LICENSE](LICENSE)
