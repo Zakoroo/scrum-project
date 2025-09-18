@@ -1,21 +1,18 @@
-name: Update PROJECT_INFO
+name: Project tree (PR preview)
 
 on:
-  push:
-    branches: [ master ]
-
-permissions:
-  contents: write
-  pull-requests: write
+  pull_request:
+    branches: [ master ]     # runs on PRs targeting master
 
 jobs:
   snapshot-tree:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
-          ref: ${{ github.ref_name }}
-          fetch-depth: 0
+          # Use the PR head branch name on PRs; falls back to branch name on pushes (if you add them later)
+          ref: ${{ github.head_ref || github.ref_name }}
 
       - name: Install tree
         run: |
@@ -23,17 +20,14 @@ jobs:
           sudo apt-get install -y tree
 
       - name: Generate tree
-        env: { SOURCE_DIR: src }
         run: |
           mkdir -p PROJECT_INFO
-          tree -a -I ".git|target|node_modules|PROJECT_INFO|.github" "$SOURCE_DIR" > PROJECT_INFO/source-tree.txt
+          tree -a -I ".git|target|node_modules|PROJECT_INFO|.github" src > PROJECT_INFO/source-tree.txt
 
-      - name: Create/update PR
-        uses: peter-evans/create-pull-request@v7
+      - name: Upload artifact (PRs only)
+        if: ${{ github.event_name == 'pull_request' }}
+        uses: actions/upload-artifact@v4
         with:
-          branch: chore/update-project-info
-          title: "chore: update PROJECT_INFO tree snapshot"
-          commit-message: "chore: update PROJECT_INFO tree snapshot"
-          body: "Automated update of PROJECT_INFO/source-tree.txt"
-          add-paths: |
-            PROJECT_INFO/**
+          name: project-tree
+          path: PROJECT_INFO/
+          retention-days: 14
