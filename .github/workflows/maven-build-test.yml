@@ -1,0 +1,40 @@
+name: Maven CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        # For CI-only (no pushing), the default checkout is fine. If you prefer explicitness:
+        # with:
+        #   ref: ${{ github.head_ref || github.ref_name }}
+        #   fetch-depth: 0
+
+      - name: Set up JDK 21 (Temurin) with Maven cache
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven  # built-in Maven dependency cache
+
+      - name: Build & test
+        run: mvn -B -ntp verify
+
+      # Optional but handy: always upload surefire/failsafe reports
+      - name: Upload test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: maven-test-reports
+          path: |
+            **/target/surefire-reports/**
+            **/target/failsafe-reports/**
+          retention-days: 14
