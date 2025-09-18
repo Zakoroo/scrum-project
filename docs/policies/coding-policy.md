@@ -1,64 +1,62 @@
-# Coding Policy & Code Reviews (GitHub)
+# Climate Game
 
-## Branching & PRs
+A Java-based strategy/simulation game focused on climate action and education. Developed using Agile Scrum practices to enable iterative development and collaboration.
 
-- Use **short-lived feature branches**; merge via **Pull Requests (PRs)** into `main`/`trunk`.
-- Pair programming is encouraged; still open a PR so the work is visible and documented.
+---
 
-## Review Turnaround – SLA
+## Project Overview
 
-- Aim to **review within 24 hours (weekdays)**. If you need more time, acknowledge with an **ETA**.
-- Use a `#reviews` channel: author posts the PR link + quick context and tags a reviewer.
+Climate Game engages players in decision-making to address climate change. This repository contains the Java backend, a sample UI (JavaFX), tests, and assets for Scrum workflow management.
 
-## Approvals
+## Features
 
-- **1 reviewer** for routine code; **2 reviewers** for risky areas (security, DB schema, public APIs).
-- The author **cannot self-approve**. Use **CODEOWNERS** to enforce extra reviewers for critical paths.
+- Core Java codebase (JavaFX demo app and unit tests)
+- Issue/PR templates for Scrum workflows (stories, bugs, tasks, spikes)
+- Automated CI/CD workflows (Java build/test out of the box)
+- Label bootstrap scripts and CODEOWNERS setup
+- Contributor, coding, and security policies
 
-## Automated Gates (before humans look)
+## Directory Structure
 
-- CI must run **formatter, linter, unit tests, and static analysis**. Fail fast.
+For details, see [`PROJECT_INFO/source-tree.txt`](PROJECT_INFO/source-tree.txt).
 
-## Tests & Docs
+## Getting Started
 
-- New/changed code includes **unit tests**; maintain/adjust existing tests.
-- Update **inline docs** and **README** as needed; include **migration notes** when relevant.
+1. **Clone the repo:**
+   ```bash
+   git clone https://github.com/Zakoroo/scrum-project.git
+   cd scrum-project
+   ```
 
-## Commit Message Style
+2. **Java quick start (Maven):**
+   ```bash
+   mvn clean verify
+   mvn -q javafx:run
+   ```
 
-- Prefer **conventional commits** (`feat:`, `fix:`, `docs:`, `refactor:`, `test:`, `chore:`). Keep messages crisp and explain the **why**.
+## Scrum & CI Workflow
 
-## Reviewer Rotation & Load
+- Sprints: 1 weeks, regular planning, reviews, retrospectives
+- Board: Backlog → Selected for Sprint → In Progress → In Review → Done
+- CI: Automated build/test on every push/PR (Java workflows enabled)
+- Definition of Done: Code, tests, review, CI green, docs updated
 
-- Rotate a **primary reviewer weekly**; anyone may jump in.
-- If a reviewer already has **≥ 2 pending** PRs, choose someone else to avoid bottlenecks.
+## Contribution Guidelines
 
-## Review Etiquette
+- See [CONTRIBUTING.md](CONTRIBUTING.md) for branching, commits, and PR etiquette
+- Coding conventions and review process in [docs/policies/coding-policy.md](docs/policies/coding-policy.md)
+- Security policy in [SECURITY.md](SECURITY.md)
 
-- Be kind, specific, and actionable. Ask questions, don’t demand.
-- Authors respond to all comments; resolve threads or explain follow-ups.
+## Labels & Reviews
 
-## Definition of Done (DoD)
+- Labels: story, bug, task, spike, P1–P3, gameplay, ui, infra, docs, good-first-issue
+- Review: At least 1 reviewer (2 for risky changes), CODEOWNERS enforced for critical paths
 
-- ✅ CI green (formatter + linter + tests + static analysis)
-- ✅ **Approved PR** (per rules above)
-- ✅ **Docs updated** (class/method purpose, README/wiki if needed)
-- ✅ **Issue/task linked** to the PR (use “Closes #123” in description)
-- ✅ **No secrets/keys** in the repo; environment handled correctly
+## Notes
 
-## Weekly Tech Huddle (15–30 min)
+- Shell scripts use LF endings and POSIX shells (Git Bash works on Windows)
+- Commit style: Conventional Commits recommended
 
-- Discuss **patterns, conventions, refactoring opportunities**—not line-by-line reviews.
+## License
 
-## Hotfixes
-
-- Urgent fixes may fast-track with **pair review** and a **retro PR** documenting follow-ups.
-
-## Security & Data Hygiene
-
-- Never commit secrets or credentials; use env vars and secret managers.
-- Keep `.gitignore` current; scan dependencies regularly.
-
-## Style & Tooling
-
-- Enforce **auto-formatter**, **linter**, and minimal **editorconfig** via CI in GitHub Actions.
+MIT License — see [LICENSE](LICENSE)
