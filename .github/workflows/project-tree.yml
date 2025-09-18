@@ -2,38 +2,38 @@ name: Update PROJECT_INFO
 
 on:
   push:
-    branches: [ master ]   # runs on direct pushes and PR merges into master
+    branches: [ master ]
 
 permissions:
-  contents: write          # needed to push the generated files
+  contents: write
+  pull-requests: write
 
 jobs:
   snapshot-tree:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout branch (attach to the branch, not a SHA)
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
-          ref: ${{ github.ref_name }}   # e.g., "master"
-          fetch-depth: 0                # safer for commit/push operations
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
 
       - name: Install tree
         run: |
           sudo apt-get update
           sudo apt-get install -y tree
 
-      - name: Generate source tree snapshot
-        env:
-          SOURCE_DIR: src
+      - name: Generate tree
+        env: { SOURCE_DIR: src }
         run: |
           mkdir -p PROJECT_INFO
-          # Exclude common noise; tweak as you wish
           tree -a -I ".git|target|node_modules|PROJECT_INFO|.github" "$SOURCE_DIR" > PROJECT_INFO/source-tree.txt
-          echo "Commit: $GITHUB_SHA" > PROJECT_INFO/_meta.txt
-          date -u +"Generated: %Y-%m-%dT%H:%M:%SZ" >> PROJECT_INFO/_meta.txt
 
-      - name: Commit PROJECT_INFO
-        uses: stefanzweifel/git-auto-commit-action@v6
+      - name: Create/update PR
+        uses: peter-evans/create-pull-request@v7
         with:
-          commit_message: "chore: update PROJECT_INFO tree snapshot"
-          file_pattern: PROJECT_INFO/**
+          branch: chore/update-project-info
+          title: "chore: update PROJECT_INFO tree snapshot"
+          commit-message: "chore: update PROJECT_INFO tree snapshot"
+          body: "Automated update of PROJECT_INFO/source-tree.txt"
+          add-paths: |
+            PROJECT_INFO/**
