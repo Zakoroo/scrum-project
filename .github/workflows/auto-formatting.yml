@@ -1,39 +1,33 @@
-name: Auto formatting
+name: Project tree (PR preview)
 
 on:
   pull_request:
-  push:
-    branches: [ master ]
-
-permissions:
-  contents: write
+    branches: [ master ]     # runs on PRs targeting master
 
 jobs:
-  prettier:
+  snapshot-tree:
     runs-on: ubuntu-latest
     steps:
-      # For PRs: checkout the contributor's branch
-      - name: Checkout (PR)
-        if: github.event_name == 'pull_request'
+      - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.ref }}     # branch name
-          repository: ${{ github.event.pull_request.head.repo.full_name }}
-          fetch-depth: 0
-          persist-credentials: true
+          # Use the PR head branch name on PRs; falls back to branch name on pushes (if you add them later)
+          ref: ${{ github.head_ref || github.ref_name }}
 
-      # For pushes (e.g., to master): attach to the branch
-      - name: Checkout (push)
-        if: github.event_name == 'push'
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.ref_name }}                        # e.g. "master"
-          fetch-depth: 0
-          persist-credentials: true
+      - name: Install tree
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tree
 
-      - name: Prettify code
-        uses: creyD/prettier_action@v4.6
+      - name: Generate tree
+        run: |
+          mkdir -p PROJECT_INFO
+          tree -a -I ".git|target|node_modules|PROJECT_INFO|.github" src > PROJECT_INFO/source-tree.txt
+
+      - name: Upload artifact (PRs only)
+        if: ${{ github.event_name == 'pull_request' }}
+        uses: actions/upload-artifact@v4
         with:
-          prettier_options: --write .
-          only_changed: true
-          commit_message: "chore: Prettified code!"
+          name: project-tree
+          path: PROJECT_INFO/
+          retention-days: 14

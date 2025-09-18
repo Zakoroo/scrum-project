@@ -1,1 +1,33 @@
+name: Project tree (PR preview)
 
+on:
+  pull_request:
+    branches: [ master ]     # runs on PRs targeting master
+
+jobs:
+  snapshot-tree:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # Use the PR head branch name on PRs; falls back to branch name on pushes (if you add them later)
+          ref: ${{ github.head_ref || github.ref_name }}
+
+      - name: Install tree
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tree
+
+      - name: Generate tree
+        run: |
+          mkdir -p PROJECT_INFO
+          tree -a -I ".git|target|node_modules|PROJECT_INFO|.github" src > PROJECT_INFO/source-tree.txt
+
+      - name: Upload artifact (PRs only)
+        if: ${{ github.event_name == 'pull_request' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: project-tree
+          path: PROJECT_INFO/
+          retention-days: 14
