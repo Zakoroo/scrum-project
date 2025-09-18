@@ -9,24 +9,9 @@ A Scrum-driven climate strategy/simulation game. This repo support CI pipelines 
 - CI workflows that auto-activate when language-specific configs exist (Java/Node/Python, etc.)
 - Script to bootstrap repository labels
 
-## Repository layout
+## Project layout
 
-```
-.editorconfig
-.gitattributes
-.github/
-  CODEOWNERS
-  dependabot.yml
-  PULL_REQUEST_TEMPLATE.md
-  ISSUE_TEMPLATE/
-  workflows/
-docs/
-  policies/
-scripts/
-  bootstrap-labels.sh
-src/
-tests/
-```
+[project layout](/PROJECT_INFO/source-tree.txt)
 
 Note: For Java projects, prefer Maven/Gradle layout: src/main/java and src/test/java.
 
