@@ -1,0 +1,56 @@
+name: Java CI with Maven
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+permissions:
+  contents: write   # needed to push commits back
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Attach to the branch (not just a SHA) so we can push on 'push' runs
+          ref: ${{ github.ref_name }}           # e.g. "master" on push
+          fetch-depth: 0                        # good practice for diff/commit ops
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: maven
+      - name: Build with Maven
+        run: mvn -B package --file pom.xml
+
+      # Only create/commit PROJECT_INFO on pushes to master (not on PRs)
+      - name: Install tree
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tree
+        # 'tree' is a standard package on Ubuntu; installing ensures it's present. :contentReference[oaicite:1]{index=1}
+
+      - name: Generate project tree snapshot
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+        env:
+          SOURCE_DIR: src
+        run: |
+          mkdir -p PROJECT_INFO
+          # exclude some common noise: .git, target, node_modules, PROJECT_INFO itself, .github
+          tree -a -I ".git|target|node_modules|PROJECT_INFO|.github" "$SOURCE_DIR" > PROJECT_INFO/source-tree.txt
+          # optionally add a timestamp + commit info
+          echo "Commit: $GITHUB_SHA" > PROJECT_INFO/_meta.txt
+          date -u +"Generated: %Y-%m-%dT%H:%M:%SZ" >> PROJECT_INFO/_meta.txt
+
+      - name: Commit PROJECT_INFO
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+        uses: stefanzweifel/git-auto-commit-action@v6
+        with:
+          commit_message: "chore: update PROJECT_INFO tree snapshot"
+          file_pattern: PROJECT_INFO/**
