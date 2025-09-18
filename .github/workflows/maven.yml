@@ -14,11 +14,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout PR branch (pushable)
+        if: github.event_name == 'pull_request'
+        uses: actions/checkout@v4
         with:
-          # Attach to the branch (not just a SHA) so we can push on 'push' runs
-          ref: ${{ github.ref_name }}           # e.g. "master" on push
-          fetch-depth: 0                        # good practice for diff/commit ops
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.ref }}   # <-- branch name on the fork
+          fetch-depth: 0
+          persist-credentials: true
       - name: Set up JDK 21
         uses: actions/setup-java@v4
         with:
