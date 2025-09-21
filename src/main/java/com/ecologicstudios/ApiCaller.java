@@ -1,10 +1,12 @@
+package com.ecologicstudios;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-public class ApiClient {
+public class ApiCaller {
 
     public static String callSignupApi(String id, String username, String password) throws IOException, InterruptedException {
         // Build the URL with query params
@@ -31,7 +33,7 @@ public class ApiClient {
 
     public static void main(String[] args) {
         try {
-            String json = callSignupApi("8", "jan", "secret");
+            String json = callSignupApi("213", "zaki", "secret");
             System.out.println("Response: " + json);
         } catch (Exception e) {
             e.printStackTrace();

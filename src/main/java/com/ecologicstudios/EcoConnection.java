@@ -1,3 +1,5 @@
+package com.ecologicstudios;
+
 import java.sql.*;
 import java.util.Properties;
 

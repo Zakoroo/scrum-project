@@ -1,3 +1,5 @@
+package com.ecologicstudios;
+
 import java.io.*;
 import java.net.InetSocketAddress;
 import java.util.*;
