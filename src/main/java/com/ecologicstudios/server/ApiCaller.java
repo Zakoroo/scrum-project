@@ -1,4 +1,4 @@
-package com.ecologicstudios;
+package com.ecologicstudios.server;
 
 import java.io.IOException;
 import java.net.URI;
