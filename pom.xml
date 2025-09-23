@@ -24,6 +24,14 @@
       <scope>test</scope>
     </dependency>
 
+    <!-- JavaFX FXML (needed for FXMLLoader) -->
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-fxml</artifactId>
+      <version>21</version>
+    </dependency>
+    
+
     <!-- JavaFX for compile/run -->
     <dependency>
       <groupId>org.openjfx</groupId>

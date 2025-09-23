@@ -1,9 +1,9 @@
 package com.ecologicstudios;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 public class App extends Application {
@@ -12,17 +12,20 @@ public class App extends Application {
   }
 
   @Override
-  public void start(Stage primaryStage) {
-    Label label = new Label("Hello, JavaFX!");
-    StackPane root = new StackPane(label);
-    Scene scene = new Scene(root, 400, 200);
+  public void start(Stage primaryStage) throws Exception{
 
-    primaryStage.setTitle("JavaFX Hello World");
+    //Load fxml file
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/main.fxml"));
+    Parent root = loader.load();
+
+
+    //Create the scene using the FXML root
+    Scene scene = new Scene(root);
+
+    primaryStage.setTitle("My javaFX App");
     primaryStage.setScene(scene);
     primaryStage.show();
+
   }
 
-  public int add(int a, int b) {
-    return a + b;
-  }
 }
