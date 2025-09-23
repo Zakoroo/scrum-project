@@ -1,17 +1,29 @@
 src
 ├── main
-│   └── java
-│       └── com
-│           └── ecologicstudios
-│               ├── ApiCaller.java
-│               ├── App.java
-│               ├── EcoConnection.java
-│               ├── EcoServer.java
-│               └── postgresql-42.7.4.jar
+│   ├── java
+│   │   └── com
+│   │       └── ecologicstudios
+│   │           ├── client
+│   │           │   ├── App.java
+│   │           │   ├── controllers
+│   │           │   │   ├── BaseController.java
+│   │           │   │   └── StartController.java
+│   │           │   └── utils
+│   │           │       └── SceneManager.java
+│   │           └── server
+│   │               ├── ApiCaller.java
+│   │               ├── EcoConnection.java
+│   │               ├── EcoServer.java
+│   │               └── postgresql-42.7.4.jar
+│   └── resources
+│       └── fxml
+│           ├── gameloop.fxml
+│           ├── main.fxml
+│           └── results.fxml
 └── test
     └── java
         └── com
             └── ecologicstudios
                 └── AppTest.java
 
-9 directories, 6 files
+15 directories, 12 files
