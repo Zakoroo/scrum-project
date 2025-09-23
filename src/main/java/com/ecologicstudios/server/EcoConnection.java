@@ -1,4 +1,4 @@
-package com.ecologicstudios;
+package com.ecologicstudios.server;
 
 import java.sql.*;
 import java.util.Properties;
