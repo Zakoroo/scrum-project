@@ -9,4 +9,6 @@ public abstract class BaseController {
     public void setSceneManager(SceneManager sceneManager) {
         this.sceneManager = sceneManager;
     }
+
+    public abstract void initialize();
 }

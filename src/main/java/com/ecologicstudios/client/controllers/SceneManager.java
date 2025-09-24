@@ -41,6 +41,7 @@ public class SceneManager {
             if (controller instanceof BaseController && controller != null) {
                 BaseController baseController = (BaseController) controller;
                 baseController.setSceneManager(this);
+                baseController.initialize();
                 currentController = baseController;
             }
 

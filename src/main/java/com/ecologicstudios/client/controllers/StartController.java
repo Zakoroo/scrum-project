@@ -10,6 +10,10 @@ public class StartController extends BaseController {
     @FXML
     private Button startBtn;
 
+    public void initialize() {
+
+    }
+
     @FXML
     void HandleStart(ActionEvent event) {
         sceneManager.switchScene("/fxml/gameloop.fxml");
