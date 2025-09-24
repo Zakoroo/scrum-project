@@ -5,8 +5,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
 
-import com.ecologicstudios.client.controllers.*;
-
 public class SceneManager {
     private static SceneManager instance;
     private BaseController currentController;
