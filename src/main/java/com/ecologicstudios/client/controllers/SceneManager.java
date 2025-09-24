@@ -1,4 +1,4 @@
-package com.ecologicstudios.client.utils;
+package com.ecologicstudios.client.controllers;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;

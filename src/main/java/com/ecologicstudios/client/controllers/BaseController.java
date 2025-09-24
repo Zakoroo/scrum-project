@@ -1,6 +1,6 @@
 package com.ecologicstudios.client.controllers;
 
-import com.ecologicstudios.client.utils.SceneManager;
+import com.ecologicstudios.client.controllers.SceneManager;
 
 
 public abstract class BaseController {
