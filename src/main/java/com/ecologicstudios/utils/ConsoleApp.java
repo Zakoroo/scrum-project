@@ -1,12 +1,17 @@
 package com.ecologicstudios.utils;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class ConsoleApp {
+
+
     public static void main (String[] args) {
         System.out.println("Welcome to the EcoLogic Studios Console Application!");
-        DeckFactory factory = new EasyCardFactory();
-        Deck deck = factory.createDeck();
+        CardFetcher cardfetcher = new JsonCardFetcher();
+        List<Card> cards = cardfetcher.getCards("Hard");
+        Cards testCards = new Cards(cards);
+        Deck deck = new Deck(cards);
         GameEngine engine = new GameEngine();
         GameState state = new GameState();
         
@@ -18,7 +23,7 @@ public class ConsoleApp {
                 System.out.println("\n== " + card.difficulty + " ==");
                 System.out.println(card.scenario);
                 for (int i = 0; i < card.alternatives.size(); i++) {
-                    System.out.printf("  [%d] %s%n", i + 1, card.alternatives.get(i).text);
+                    System.out.printf("  [%d] %s%n", i + 1, card.alternatives.get(i).choice);
                 }
                 System.out.print("> ");
                 int pick = Integer.parseInt(sc.nextLine()) - 1;
@@ -29,4 +34,5 @@ public class ConsoleApp {
             System.out.println("\nGame over! Total CO2: " + state.getTotalCO2());
         }
     }
+
 }

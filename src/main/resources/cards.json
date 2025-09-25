@@ -1,12 +1,12 @@
 {
-  "card": [
+"cards":[
     {
       "scenario": "You're at home feeling thirsty. You head to the kitchen. Where do you get water from?",
       "alternatives": [
         {"choice": "Bottled Water", "co2": 20},
         {"choice": "Tap Water", "co2": 10}
       ],
-      "difficulty": "Easy"
+      "difficulty": "Medium"
     },
     {
       "scenario": "You need a coffee before work. Which cup do you use?",
@@ -14,7 +14,7 @@
         {"choice": "Disposable cup", "co2": 30},
         {"choice": "Thermos", "co2": 15}
       ],
-      "difficulty": "Easy"
+      "difficulty": "Hard"
     },
     {
       "scenario": "Feeling a little hungry, you grab a snack pack. Which size do you pick?",
@@ -22,7 +22,7 @@
         {"choice": "Small pack", "co2": 10},
         {"choice": "Family-size", "co2": 4}
       ],
-      "difficulty": "Easy"
+      "difficulty": "Medium"
     },
     {
       "scenario": "Packing your lunch for school or work. How do you wrap your sandwich?",
@@ -170,5 +170,5 @@
       ],
       "difficulty": "Easy"
     }
-  ]
+]
 }

@@ -1,11 +1,10 @@
 package com.ecologicstudios.utils;
 
-import java.util.Collection;
 import java.util.*;
 
 public class Deck {
     private final Deque<Card> cards;
-
+    
     public Deck(List<Card> cards) {
         List<Card> shuffled = new ArrayList<>(cards);
         Collections.shuffle(shuffled, new Random());
@@ -43,7 +42,7 @@ public class Deck {
             System.out.println("Difficulty: " + card.difficulty);
             System.out.println("Choices:");
             for (Choice choice : card.alternatives) {
-                System.out.println("   - " + choice.getChoice() + " (CO₂: " + choice.getco2() + ")");
+                System.out.println("   - " + choice.getChoice() + " (CO2: " + choice.getco2() + ")");
             }
             System.out.println("------------------------------------");
             index++;
