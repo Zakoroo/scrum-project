@@ -9,9 +9,8 @@ public class ConsoleApp {
     public static void main (String[] args) {
         System.out.println("Welcome to the EcoLogic Studios Console Application!");
         CardFetcher cardfetcher = new JsonCardFetcher();
-        List<Card> cards = cardfetcher.getCards("Hard");
-        Cards testCards = new Cards(cards);
-        Deck deck = new Deck(cards);
+        Cards testCards = new Cards(cardfetcher.getAllCards());
+        Deck deck = new Deck(testCards.getCardList());
         GameEngine engine = new GameEngine();
         GameState state = new GameState();
         

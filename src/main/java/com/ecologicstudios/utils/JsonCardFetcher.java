@@ -48,4 +48,8 @@ public class JsonCardFetcher implements CardFetcher{
                 }
                 return CardList;
         }
+
+        public List<Card> getAllCards(){
+           return allCards.getCardList();
+        }
 }
