@@ -7,14 +7,18 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.scene.control.Button;
 import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.LinkedList;
 import java.io.IOException;
+
 
 import com.ecologicstudios.client.models.GameLoopModel;
 
 public class GameLoopController {
     final private String buttonFxml = "/fxml/altButton.fxml"; // path to the button fxml file
     final private GameLoopModel model;
+    final private Map<String, String> altMap;
  
     @FXML
     private Label descriptionLabel;
@@ -25,24 +29,34 @@ public class GameLoopController {
     private List<Button> buttonList;
 
     public GameLoopController() {
-        model = new GameLoopModel();
+        model = GameLoopModel.getInstance();
+        altMap = new HashMap<>();
+        buttonList = new LinkedList<>();
     }
 
     public void initialize() {
-        buttonList = new LinkedList<>();
+        update();
+    }
 
+    public void update() {
         try {
-            // add buttons to the list
+            // update description
+            //updateDescription();
+            
+            // clear alternatives
+            altBox.getChildren().clear();
+
+            // fetch alternatives from model
             buttonList.add(createButton("alternative 1"));
             buttonList.add(createButton("alternative 2"));
-
+            
             // set action for each button in the list
             buttonList.forEach(b -> b.setOnAction((e)->handle_answer(e)));
 
             // assign different IDs to all the buttons
             int i = 0;
             for (Button b : buttonList) {
-                b.setId(String.format("altBtn%d", i));
+                b.setId(String.format("%d", i));
                 i++;
             }
         } catch (Exception e) {
@@ -54,12 +68,7 @@ public class GameLoopController {
     }
 
     private void handle_answer(ActionEvent e) {
-        if (!model.gameEnded()) {
-            System.out.printf("value: %d\n", model.increment());;
-        }
-        else {
-            System.out.println("game ended!");
-        }
+        System.out.printf("%s\n", ((Button) e.getSource()).getId());
     }
 
     public Button createButton(String text) throws IOException {
@@ -68,4 +77,9 @@ public class GameLoopController {
         button.setText(text);
         return button;
     }
+
+    public void updateDescription(String desc) {
+        descriptionLabel.setText(String.format("Description: %s", desc));
+    }
+    
 }

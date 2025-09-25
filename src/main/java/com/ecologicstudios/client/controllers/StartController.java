@@ -11,11 +11,11 @@ public class StartController extends BaseController {
     private Button startBtn;
 
     public void initialize() {
-
+        
     }
 
     @FXML
-    void HandleStart(ActionEvent event) {
+    void handleStart(ActionEvent event) {
         sceneManager.switchScene("/fxml/gameloop.fxml");
     }
 }
