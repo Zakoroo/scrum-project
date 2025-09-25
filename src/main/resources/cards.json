@@ -1,6 +1,7 @@
 {
-"cards":[
+  "cards": [
     {
+      "id": 1,
       "scenario": "You're at home feeling thirsty. You head to the kitchen. Where do you get water from?",
       "alternatives": [
         {"choice": "Bottled Water", "co2": 20},
@@ -9,6 +10,7 @@
       "difficulty": "Medium"
     },
     {
+      "id": 2,
       "scenario": "You need a coffee before work. Which cup do you use?",
       "alternatives": [
         {"choice": "Disposable cup", "co2": 30},
@@ -17,6 +19,7 @@
       "difficulty": "Hard"
     },
     {
+      "id": 3,
       "scenario": "Feeling a little hungry, you grab a snack pack. Which size do you pick?",
       "alternatives": [
         {"choice": "Small pack", "co2": 10},
@@ -25,6 +28,7 @@
       "difficulty": "Medium"
     },
     {
+      "id": 4,
       "scenario": "Packing your lunch for school or work. How do you wrap your sandwich?",
       "alternatives": [
         {"choice": "Foil", "co2": 8},
@@ -33,6 +37,7 @@
       "difficulty": "Easy"
     },
     {
+      "id": 5,
       "scenario": "It's time to brush your teeth. Which toothbrush do you pick?",
       "alternatives": [
         {"choice": "Plastic", "co2": 5},
@@ -41,6 +46,7 @@
       "difficulty": "Easy"
     },
     {
+      "id": 6,
       "scenario": "You need to get to work or school. How do you make a short trip?",
       "alternatives": [
         {"choice": "Drive short trip", "co2": 25},
@@ -49,6 +55,7 @@
       "difficulty": "Easy"
     },
     {
+      "id": 7,
       "scenario": "Listening to music on your way. Do you stream it or play offline?",
       "alternatives": [
         {"choice": "Streaming", "co2": 6},
@@ -57,6 +64,7 @@
       "difficulty": "Easy"
     },
     {
+      "id": 8,
       "scenario": "Studying for exams. Do you print your notes or use them digitally?",
       "alternatives": [
         {"choice": "Print", "co2": 15},
@@ -65,6 +73,7 @@
       "difficulty": "Easy"
     },
     {
+      "id": 9,
       "scenario": "Charging your phone. Do you leave it overnight or unplug at 100%?",
       "alternatives": [
         {"choice": "Overnight", "co2": 4},
@@ -73,6 +82,7 @@
       "difficulty": "Easy"
     },
     {
+      "id": 10,
       "scenario": "Packing your lunch. Which lunch box do you bring?",
       "alternatives": [
         {"choice": "Disposable", "co2": 10},
@@ -81,6 +91,7 @@
       "difficulty": "Easy"
     },
     {
+      "id": 11,
       "scenario": "You're looking for a snack. Red Bull, Snickers, or tap water?",
       "alternatives": [
         {"choice": "Red Bull", "co2": 12},
@@ -90,6 +101,7 @@
       "difficulty": "Easy"
     },
     {
+      "id": 12,
       "scenario": "Coffee break! Which coffee style do you choose?",
       "alternatives": [
         {"choice": "Paper cup w/ lid", "co2": 15},
@@ -99,6 +111,7 @@
       "difficulty": "Easy"
     },
     {
+      "id": 13,
       "scenario": "Fruits for snacks! Do you pick out-of-season strawberries, a banana, or a local apple?",
       "alternatives": [
         {"choice": "Strawberries", "co2": 14},
@@ -108,6 +121,7 @@
       "difficulty": "Easy"
     },
     {
+      "id": 14,
       "scenario": "Washing hands. How do you dry them?",
       "alternatives": [
         {"choice": "Paper towels", "co2": 6},
@@ -117,6 +131,7 @@
       "difficulty": "Easy"
     },
     {
+      "id": 15,
       "scenario": "Buying beer. Which packaging do you choose?",
       "alternatives": [
         {"choice": "Glass bottle (no recycle)", "co2": 12},
@@ -126,6 +141,7 @@
       "difficulty": "Easy"
     },
     {
+      "id": 16,
       "scenario": "Leaving the room. How do you handle the lights?",
       "alternatives": [
         {"choice": "Leave on all night", "co2": 10},
@@ -135,6 +151,7 @@
       "difficulty": "Easy"
     },
     {
+      "id": 17,
       "scenario": "Chewing gum. Which type, if any, do you pick?",
       "alternatives": [
         {"choice": "Synthetic", "co2": 5},
@@ -144,6 +161,7 @@
       "difficulty": "Easy"
     },
     {
+      "id": 18,
       "scenario": "Snack time. Which packaging option do you pick?",
       "alternatives": [
         {"choice": "Mini packs", "co2": 10},
@@ -153,6 +171,7 @@
       "difficulty": "Easy"
     },
     {
+      "id": 19,
       "scenario": "Pouring milk for breakfast. Which type do you use?",
       "alternatives": [
         {"choice": "Dairy", "co2": 20},
@@ -162,6 +181,7 @@
       "difficulty": "Easy"
     },
     {
+      "id": 20,
       "scenario": "Watching videos online. How do you stream TikTok?",
       "alternatives": [
         {"choice": "TikTok on mobile data", "co2": 8},
@@ -170,5 +190,5 @@
       ],
       "difficulty": "Easy"
     }
-]
+  ]
 }
