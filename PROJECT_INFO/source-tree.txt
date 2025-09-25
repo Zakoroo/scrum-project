@@ -7,16 +7,34 @@ src
 │   │           │   ├── App.java
 │   │           │   ├── controllers
 │   │           │   │   ├── BaseController.java
+│   │           │   │   ├── GameLoopController.java
+│   │           │   │   ├── ResultController.java
+│   │           │   │   ├── SceneManager.java
 │   │           │   │   └── StartController.java
-│   │           │   └── utils
-│   │           │       └── SceneManager.java
-│   │           └── server
-│   │               ├── ApiCaller.java
-│   │               ├── EcoConnection.java
-│   │               ├── EcoServer.java
-│   │               └── postgresql-42.7.4.jar
+│   │           │   └── models
+│   │           │       └── GameLoopModel.java
+│   │           ├── server
+│   │           │   ├── ApiCaller.java
+│   │           │   ├── EcoConnection.java
+│   │           │   ├── EcoServer.java
+│   │           │   └── postgresql-42.7.4.jar
+│   │           └── utils
+│   │               ├── AddCardTool.java
+│   │               ├── Card.java
+│   │               ├── CardFetcher.java
+│   │               ├── CardJsonIO.java
+│   │               ├── Cards.java
+│   │               ├── Choice.java
+│   │               ├── ConsoleApp.java
+│   │               ├── Deck.java
+│   │               ├── GameEngine.java
+│   │               ├── GameState.java
+│   │               ├── JsonCardFetcher.java
+│   │               └── test.java
 │   └── resources
+│       ├── cards.json
 │       └── fxml
+│           ├── altButton.fxml
 │           ├── gameloop.fxml
 │           ├── main.fxml
 │           └── results.fxml
@@ -26,4 +44,4 @@ src
             └── ecologicstudios
                 └── AppTest.java
 
-15 directories, 12 files
+16 directories, 29 files
