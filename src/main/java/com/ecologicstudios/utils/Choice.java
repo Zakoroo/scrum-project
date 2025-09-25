@@ -2,8 +2,9 @@ package com.ecologicstudios.utils;
 
 public class Choice{
     String text;
-    private int co2;
+    public int co2;
 
+    public Choice() {}
     public Choice(String text, int co2) {
         this.text = text;
         this.co2 = co2;

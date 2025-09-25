@@ -1,0 +1,21 @@
+[
+  {
+    "id": 8,
+    "scenario": "Morning routine",
+    "difficulty": "Easy",
+    "alternatives": [
+      {
+        "text": "Tap water",
+        "co2": 1
+      },
+      {
+        "text": "Reusable bottle (stainless)",
+        "co2": -3
+      },
+      {
+        "text": "Bottled water",
+        "co2": 12
+      }
+    ]
+  }
+]

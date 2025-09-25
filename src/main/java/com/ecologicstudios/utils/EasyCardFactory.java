@@ -61,7 +61,7 @@ public class EasyCardFactory implements DeckFactory{
     public Deck createDeck() {
         List<Card> filtered = new ArrayList<>();
         for (Card c : getAllCards()) {
-            if (c.difficulty.equalsIgnoreCase("Easy")) {
+            if (c.difficulty.equalsIgnoreCase("Hard")) {
                 filtered.add(c);
             }
         }
