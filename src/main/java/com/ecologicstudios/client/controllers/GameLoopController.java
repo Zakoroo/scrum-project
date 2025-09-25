@@ -10,8 +10,11 @@ import java.util.List;
 import java.util.LinkedList;
 import java.io.IOException;
 
+import com.ecologicstudios.client.models.GameLoopModel;
+
 public class GameLoopController {
     final private String buttonFxml = "/fxml/altButton.fxml"; // path to the button fxml file
+    final private GameLoopModel model;
  
     @FXML
     private Label descriptionLabel;
@@ -20,6 +23,10 @@ public class GameLoopController {
     private VBox altBox;
 
     private List<Button> buttonList;
+
+    public GameLoopController() {
+        model = new GameLoopModel();
+    }
 
     public void initialize() {
         buttonList = new LinkedList<>();
@@ -47,7 +54,12 @@ public class GameLoopController {
     }
 
     private void handle_answer(ActionEvent e) {
-        System.out.println(e.toString());
+        if (!model.gameEnded()) {
+            System.out.printf("value: %d\n", model.increment());;
+        }
+        else {
+            System.out.println("game ended!");
+        }
     }
 
     public Button createButton(String text) throws IOException {
