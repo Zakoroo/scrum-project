@@ -1,11 +1,9 @@
-package com.ecologicstudios.client.utils;
+package com.ecologicstudios.client.controllers;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
-
-import com.ecologicstudios.client.controllers.*;
 
 public class SceneManager {
     private static SceneManager instance;
@@ -41,6 +39,7 @@ public class SceneManager {
             if (controller instanceof BaseController && controller != null) {
                 BaseController baseController = (BaseController) controller;
                 baseController.setSceneManager(this);
+                baseController.initialize();
                 currentController = baseController;
             }
 
