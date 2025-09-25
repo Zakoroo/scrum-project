@@ -12,13 +12,13 @@ public class JsonCardFetcher implements CardFetcher{
 
         public Cards allCards;
 
-        public JsonCardFetcher(){
-                loadCards();
+        public JsonCardFetcher(String path){
+                loadCards(path);
         }
 
-        public String JsonToString(){
+        public String JsonToString(String path){
                 StringBuilder stringbuilder = new StringBuilder();
-                try (FileReader filereader = new FileReader("src/main/resources/cards.json")) {
+                try (FileReader filereader = new FileReader(path)) {
                         int i;
                         while((i = filereader.read()) != -1) {
                         stringbuilder.append((char) i);
@@ -32,12 +32,11 @@ public class JsonCardFetcher implements CardFetcher{
                 }
         }
 
-        public void loadCards(){
+        public void loadCards(String path){
                 Gson gson = new Gson();
-                allCards = gson.fromJson(JsonToString(), Cards.class);
+                allCards = gson.fromJson(JsonToString(path), Cards.class);
         }
-        
-        
+
         public List<Card> getCards(String difficulty){
 
                 List<Card> CardList = new ArrayList<>();
