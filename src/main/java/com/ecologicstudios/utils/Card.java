@@ -8,14 +8,15 @@ public class Card {
     public String scenario;
     public String difficulty;
     public List<Choice> alternatives;
-    
+
+    public Card() {}
+  
     public Card(int id, String scenario, String difficulty, List<Choice> alternatives) {
         this.id = id;
         this.scenario = scenario;
         this.difficulty = difficulty;
         this.alternatives = alternatives;
     }
-
 
 public int getId(){
   return this.id;

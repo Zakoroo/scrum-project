@@ -6,6 +6,7 @@ public class Choice{
 
     public Choice(String text, int co2) {
         this.choice = text;
+
         this.co2 = co2;
     }
 
