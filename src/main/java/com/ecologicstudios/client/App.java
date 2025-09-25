@@ -2,10 +2,10 @@ package com.ecologicstudios.client;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
-
 import com.ecologicstudios.client.controllers.GameLoopController;
 import com.ecologicstudios.client.controllers.SceneManager;
 import com.ecologicstudios.client.models.GameLoopModel;
+import com.ecologicstudios.client.utils.*;
 
 
 public class App extends Application {
@@ -13,7 +13,7 @@ public class App extends Application {
     public void start(Stage primaryStage) {
         try {
             primaryStage.setTitle("Climate game");
-
+          
             //Initilize models
             GameLoopModel gameloopmodel = GameLoopModel.getInstance();
 
