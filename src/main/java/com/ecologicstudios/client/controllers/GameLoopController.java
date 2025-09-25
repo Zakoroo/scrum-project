@@ -12,13 +12,16 @@ import java.util.Map;
 import java.util.LinkedList;
 import java.io.IOException;
 
-
 import com.ecologicstudios.client.models.GameLoopModel;
+import com.ecologicstudios.utils.Card;
+import com.ecologicstudios.utils.Choice;
 
-public class GameLoopController {
+public class GameLoopController extends BaseController {
     final private String buttonFxml = "/fxml/altButton.fxml"; // path to the button fxml file
     final private GameLoopModel model;
-    final private Map<String, String> altMap;
+    final private Map<Button, Choice> altMap;
+    private Card currentCard;
+    private int totalCo2;
  
     @FXML
     private Label descriptionLabel;
@@ -26,49 +29,58 @@ public class GameLoopController {
     @FXML
     private VBox altBox;
 
-    private List<Button> buttonList;
-
     public GameLoopController() {
         model = GameLoopModel.getInstance();
         altMap = new HashMap<>();
-        buttonList = new LinkedList<>();
+        totalCo2 = 0;
     }
 
     public void initialize() {
+        model.newGame(); // most come first to initialize cards/game
         update();
     }
 
     public void update() {
         try {
+            // update current card
+            currentCard = model.nextCard();
+
             // update description
-            //updateDescription();
+            updateDescription();
             
-            // clear alternatives
+            // clear alternatives and altMap
             altBox.getChildren().clear();
+            altMap.clear();
 
             // fetch alternatives from model
-            buttonList.add(createButton("alternative 1"));
-            buttonList.add(createButton("alternative 2"));
-            
-            // set action for each button in the list
-            buttonList.forEach(b -> b.setOnAction((e)->handle_answer(e)));
-
-            // assign different IDs to all the buttons
             int i = 0;
-            for (Button b : buttonList) {
-                b.setId(String.format("%d", i));
+            for (Choice choice : currentCard.getAlternatives()) {
+                Button btn = createButton(choice.getChoice());
+                btn.setId(String.format("%d", i));
+                altMap.put(btn, choice);
                 i++;
             }
+
+            // set action for each button in the list
+            altMap.keySet().forEach(b -> b.setOnAction((e)->handle_answer(e)));
         } catch (Exception e) {
             e.printStackTrace();
         }
 
         // add all buttons to the alternatives area
-        altBox.getChildren().addAll(buttonList);
+        altBox.getChildren().addAll(altMap.keySet());
     }
 
     private void handle_answer(ActionEvent e) {
-        System.out.printf("%s\n", ((Button) e.getSource()).getId());
+        System.out.printf("%d\n", altMap.get((Button) e.getSource()).getco2());
+        totalCo2 += altMap.get((Button) e.getSource()).getco2();
+        
+        if (!model.gameEnded()) {
+            update();
+        } else {
+            model.setTotalResult(totalCo2);
+            sceneManager.switchScene("/fxml/results.fxml");
+        }
     }
 
     public Button createButton(String text) throws IOException {
@@ -78,8 +90,8 @@ public class GameLoopController {
         return button;
     }
 
-    public void updateDescription(String desc) {
-        descriptionLabel.setText(String.format("Description: %s", desc));
+    public void updateDescription() {
+        descriptionLabel.setText(String.format("Description: %s", currentCard.getScenario()));
     }
     
 }

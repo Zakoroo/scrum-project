@@ -25,7 +25,7 @@ public class ResultController extends BaseController {
     public void initialize() {
         
         // Add results to result screen.
-
+        updateCO2(String.format("%d", model.getTotalResult()));
     }
 
     @FXML
