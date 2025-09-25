@@ -24,6 +24,14 @@
       <scope>test</scope>
     </dependency>
 
+    <!-- JavaFX FXML (needed for FXMLLoader) -->
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-fxml</artifactId>
+      <version>21</version>
+    </dependency>
+    
+
     <!-- JavaFX for compile/run -->
     <dependency>
       <groupId>org.openjfx</groupId>
@@ -34,7 +42,7 @@
     <dependency>
     <groupId>org.postgresql</groupId>
     <artifactId>postgresql</artifactId>
-    <version>42.7.4</version>
+    <version>42.7.7</version>
     </dependency>
 
     <dependency>
@@ -104,11 +112,37 @@
         <artifactId>javafx-maven-plugin</artifactId>
         <version>0.0.8</version>
         <configuration>
-          <mainClass>com.ecologicstudios.App</mainClass>
+          <mainClass>com.ecologicstudios.client.App</mainClass>
           <addModules>javafx.controls</addModules>
         </configuration>
       </plugin>
-
     </plugins>
+
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <includes>
+          <include>**/*</include>
+        </includes>
+      </resource>
+    </resources>
   </build>
+
+  <profiles>
+    <profile>
+      <id>client</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>3.5.0</version>
+            <configuration>
+              <mainClass>com.ecologicstudios.client.App</mainClass>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 </project>
