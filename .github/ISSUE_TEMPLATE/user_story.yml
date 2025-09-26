@@ -21,7 +21,7 @@ body:
      attributes:
         label: Story Points
         description: Relative complexity/effort (e.g., 1,2,3,5,8,13)
-        placeholder: 3
+        placeholder: '3'
    - type: checkboxes
      id: dor
      attributes:
