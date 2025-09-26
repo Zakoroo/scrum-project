@@ -8,17 +8,12 @@ body:
      attributes:
         label: Story
         description: As a [role], I want [capability], so that [benefit].
-        placeholder: As a shopper, I want to pay with Apple Pay, so that checkout is faster.
      validations:
         required: true
    - type: textarea
      id: acceptance
      attributes:
         label: Acceptance Criteria (Given/When/Then)
-        placeholder: |
-           Given I have items in my cart
-           When I choose Apple Pay and complete payment
-           Then the order is created and I see a receipt
      validations:
         required: true
    - type: input
