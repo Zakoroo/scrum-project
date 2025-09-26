@@ -11,7 +11,7 @@ body:
      id: timebox
      attributes:
         label: Timebox (hours)
-        placeholder: 4
+        placeholder: '4'
    - type: textarea
      id: findings
      attributes:
