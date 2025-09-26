@@ -1,0 +1,20 @@
+name: 'User story'
+description: "Describes stakeholders' need and reason."
+title: 'user story: <concise title>'
+labels: ['type: user story', 'status: backlog']
+body:
+   - type: textarea
+     id: user role
+     attributes:
+        label: User role
+        description: Who are the stakeholders?
+   - type: textarea
+     id: goal
+     attributes:
+        label: Goal
+        description: What is needed?
+   - type: textarea
+     id: reason
+     attributes:
+        label: Reason
+        description: Motivate/reason?
