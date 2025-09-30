@@ -36,11 +36,6 @@
    <center>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <Label fx:id="pointsID" text="Points:">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
             <Label fx:id="co2ID" text="Co2:">
                <font>
                   <Font size="24.0" />

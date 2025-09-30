@@ -13,9 +13,6 @@ public class ResultController extends BaseController {
     private Button exitID;
 
     @FXML
-    private Label pointsID;
-
-    @FXML
     private Label co2ID;
 
     public ResultController() {
@@ -38,8 +35,5 @@ public class ResultController extends BaseController {
         co2ID.setText(String.format("Co2: %s", co2));
     }
 
-    public void updatePoints(String points) {
-        pointsID.setText(String.format("Points: %s", points));
-    }
 
 }
