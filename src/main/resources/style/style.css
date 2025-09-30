@@ -60,6 +60,18 @@
     -fx-text-fill: white;
 }
 
+.button.alternatives {
+    -fx-background-color: rgb(40, 59, 231);
+    -fx-border-color: rgb(38, 47, 173);
+    -fx-text-fill: white;
+}
+
+.button.return {
+    -fx-background-color: rgb(159, 199, 65);
+    -fx-border-color: rgb(69, 161, 32);
+    -fx-text-fill: white;
+}
+
 /* Layout niceties for your rows */
 .hbox {
     -fx-alignment: center;

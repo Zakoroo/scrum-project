@@ -10,7 +10,7 @@ public class ResultController extends BaseController {
     private GameLoopModel model;
 
     @FXML
-    private Button exitID;
+    private Button returnID;
 
     @FXML
     private Label co2ID;
@@ -26,7 +26,7 @@ public class ResultController extends BaseController {
     }
 
     @FXML
-    void handleExit(ActionEvent event) {
+    void handleReturn(ActionEvent event) {
         sceneManager.switchScene("/fxml/main.fxml");
     }
 
