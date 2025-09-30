@@ -5,7 +5,7 @@
 
 .root {
     /* background */
-    -fx-background-image: url(../nedladdning.jpg);
+    -fx-background-image: url(../background.png);
     -fx-background-repeat: no-repeat;
     -fx-background-position: center center;
     -fx-background-size: cover;
