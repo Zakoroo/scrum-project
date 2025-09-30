@@ -53,3 +53,4 @@ Thumbs.db
 
 # Java
 *.class
+**java-formatter.xml
