@@ -10,6 +10,7 @@ public class App extends Application {
     public void start(Stage primaryStage) {
         try {
             primaryStage.setTitle("Climate game");
+            primaryStage.setResizable(false);
           
             //Initilize models
             GameLoopModel gameloopmodel = GameLoopModel.getInstance();

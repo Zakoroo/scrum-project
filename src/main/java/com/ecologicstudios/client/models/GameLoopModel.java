@@ -14,6 +14,8 @@ public class GameLoopModel {
     private List<Card> cards;
     private Card currentCard;
     private int totalResult;
+    private int roundCount = 10;
+    private String difficulty = "Easy";
 
     public static GameLoopModel getInstance() {
         if (instance == null) {
@@ -30,7 +32,7 @@ public class GameLoopModel {
         
         // fetch cards from given path (in resources)
         CardFetcher fetcher = new JsonCardFetcher(path);
-        cards = fetcher.getAllCards();
+        cards = fetcher.getCards(difficulty);
 
         // shuffel cards
         Collections.shuffle(cards);
@@ -42,7 +44,7 @@ public class GameLoopModel {
     }
 
     public boolean gameEnded() {
-        return count == 10;
+        return this.count == roundCount;
     }
 
     public Card nextCard() { 
@@ -61,4 +63,18 @@ public class GameLoopModel {
     public void setTotalResult(int co2) {
         totalResult = co2;
     }
+
+    public void setRoundCount(int round) {
+        this.roundCount = round;
+    }
+
+
+    public void setDifficulty(String difficulty) {
+        this.difficulty = difficulty;
+    }
+
+    public String getDifficulty() {
+        return this.difficulty;
+    }
+
 }
