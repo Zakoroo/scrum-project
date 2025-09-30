@@ -1,0 +1,143 @@
+/**
+ * The {@code FeedbackCalculator} class provides methods to calculate feedback based on
+ * the player's choices in a card-based game. It can compute the minimum, maximum, and average
+ * possible CO2 results for a given set of cards and round length, and generate feedback messages
+ * according to the player's performance.
+ *
+ * @author EcoLogic Studios
+ */
+
+package com.ecologicstudios.utils;
+import java.util.List;
+
+public class FeedbackCalculator{
+
+    /**
+     * The list of cards to be evaluated for feedback and CO2 calculations.
+     */
+    List<Card> cards;
+    
+    /**
+     * The number of rounds (cards) to consider in the calculations.
+     */
+    int roundLength;
+
+    /**
+    * Constructs a FeedbackCalculator with the specified list of cards and round length.
+    *
+    * @param cards the list of cards to evaluate
+    * @param roundLength the number of rounds to consider
+    */ 
+    public FeedbackCalculator(List<Card> cards, int roundLength){
+        this.cards = cards;
+        this.roundLength = roundLength;
+    }
+
+    /**
+    * Calculates the minimum possible total CO2 result by selecting the lowest CO2 choice for each card.
+    *
+    * @param cards the list of cards to evaluate
+    * @param count the number of cards to consider (e.g., round length)
+    * @return the sum of the minimum CO2 values for each card
+    */    
+    public int getMinResult(List<Card> cards, int roundLength){
+        int minTotal = 0;
+        for(int i = 0; i < roundLength && i < cards.size(); i++){
+            List<Choice> choices = cards.get(i).getAlternatives();
+            int minCo2 = Integer.MAX_VALUE;
+            for(Choice choice : choices){
+                if(choice.getco2() < minCo2){
+                    minCo2 = choice.getco2();
+                }
+            }
+            minTotal += minCo2;
+        }
+        
+        return minTotal;
+    }
+
+    /**
+    * Calculates the maximum possible total CO2 result by selecting the highest CO2 choice for each card.
+    *
+    * @param cards the list of cards to evaluate
+    * @param count the number of cards to consider (e.g., round length)
+    * @return the sum of the maximum CO2 values for each card
+    */
+    public int getMaxResult(List<Card> cards, int roundLength){
+            int maxTotal = 0;
+        for(int i = 0; i < roundLength && i < cards.size(); i++){
+            List<Choice> choices = cards.get(i).getAlternatives();
+            int maxCo2 = Integer.MIN_VALUE;
+            for(Choice choice : choices){
+                if(choice.getco2() > maxCo2){
+                    maxCo2 = choice.getco2();
+                }
+            }
+            maxTotal += maxCo2;
+        }
+    
+        return maxTotal;
+    }
+
+    /**
+    * Calculates the average result between two values.
+    *
+    * @param a the first value
+    * @param b the second value
+    * @return the average of a and b
+    */
+    public int getAverageResult(int a, int b){
+        return (a+b)/2;
+    }
+
+    /**
+     * Evaluates feedback based on the player's score compared to the minimum, maximum, and average results.
+     *
+     * @param min the minimum possible result
+     * @param max the maximum possible result
+     * @param avg the average result
+     * @param point the player's score
+     * @return a feedback message as a String
+     */
+    public String feedbackEvaluator(int min, int max, int avg, int point){
+        System.out.println(min);
+        System.out.println(max);
+        System.out.println(avg);
+
+        if (point == min){
+            return "You're a climate hero! Your choices show deep environmental care";
+        }
+
+        else if(point > min && point < avg){
+            return "You're making mindful decisions! Your eco-awareness is inspiring";
+        }
+        else if(point == avg){
+            return "You're becoming more aware! Each decision is a chance to improve";
+        }
+
+        else if(point < max && point > avg){
+            return "Your lifestyle is unsustainable. You're actively making the climate crisis worse!";
+        }
+        
+        else if (point == max){
+            return "This is climate negligence. Your choices show complete disregard for the planet's future!";
+        }
+
+        return "error";
+    }
+    
+    /**
+     * Generates feedback for the player's score based on the cards and round length.
+     *
+     * @param point the player's score
+     * @return a feedback message as a String
+     */
+    public String getFeedback(int point){
+        int min = getMinResult(cards, roundLength);
+        int max = getMaxResult(cards, roundLength);
+        int avg = getAverageResult(min, max);
+        return feedbackEvaluator(min, max, avg, point);
+    }
+
+    
+}
