@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ecologicstudios.client.controllers.StartController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ecologicstudios.client.controllers.StartController">
    <center>
       <Button fx:id="startBtn" mnemonicParsing="false" onAction="#handleStart" prefHeight="53.0" prefWidth="78.0" styleClass="start" text="Start" BorderPane.alignment="CENTER" />
    </center>
@@ -85,7 +85,7 @@
                <children>
                   <HBox alignment="CENTER" minHeight="70.0" prefHeight="78.0" prefWidth="495.0" styleClass="button-container" HBox.hgrow="ALWAYS">
                      <children>
-                        <Button fx:id="roundsBtn1" mnemonicParsing="false" onAction="#handleRoundsBtn1" prefHeight="40.0" prefWidth="80.0" text="10">
+                        <Button fx:id="roundsBtn1" mnemonicParsing="false" onAction="#handleRounds" prefHeight="40.0" prefWidth="80.0" text="10">
                            <HBox.margin>
                               <Insets />
                            </HBox.margin>
@@ -94,7 +94,7 @@
                               <String fx:value="rounds" />
                            </styleClass>
                         </Button>
-                        <Button fx:id="roundsBtn2" mnemonicParsing="false" onAction="#handleRoundsBtn2" prefHeight="40.0" prefWidth="80.0" text="15">
+                        <Button fx:id="roundsBtn2" mnemonicParsing="false" onAction="#handleRounds" prefHeight="40.0" prefWidth="80.0" text="15">
                            <HBox.margin>
                               <Insets />
                            </HBox.margin>
@@ -103,7 +103,7 @@
                               <String fx:value="rounds" />
                            </styleClass>
                         </Button>
-                        <Button fx:id="roundsBtn3" mnemonicParsing="false" onAction="#handleRoundsBtn3" prefHeight="40.0" prefWidth="80.0" text="20">
+                        <Button fx:id="roundsBtn3" mnemonicParsing="false" onAction="#handleRounds" prefHeight="40.0" prefWidth="80.0" text="20">
                            <HBox.margin>
                               <Insets />
                            </HBox.margin>

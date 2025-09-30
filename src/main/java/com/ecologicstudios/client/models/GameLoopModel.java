@@ -77,4 +77,8 @@ public class GameLoopModel {
         return this.difficulty;
     }
 
+    public int getRound() {
+        return this.roundCount;
+    }
+
 }

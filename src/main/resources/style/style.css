@@ -5,7 +5,7 @@
 
 .root {
     /* background */
-    -fx-background-image: url(../nedladdning.jpg);
+    -fx-background-image: url(../background.png);
     -fx-background-repeat: no-repeat;
     -fx-background-position: center center;
     -fx-background-size: cover;
@@ -57,6 +57,18 @@
 .button.rounds {
     -fx-background-color: rgb(192, 124, 192);
     -fx-border-color: rgb(154, 108, 154);
+    -fx-text-fill: white;
+}
+
+.button.alternatives {
+    -fx-background-color: rgb(40, 59, 231);
+    -fx-border-color: rgb(38, 47, 173);
+    -fx-text-fill: white;
+}
+
+.button.return {
+    -fx-background-color: rgb(159, 199, 65);
+    -fx-border-color: rgb(69, 161, 32);
     -fx-text-fill: white;
 }
 

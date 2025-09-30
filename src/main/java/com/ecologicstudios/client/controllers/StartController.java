@@ -14,6 +14,9 @@ public class StartController extends BaseController {
     private Button handleDifficulty;
 
     @FXML
+    private Button handleRounds;
+
+    @FXML
     private Button easyBtn;
 
     @FXML
@@ -41,6 +44,7 @@ public class StartController extends BaseController {
 
     public void initialize() {
         easyBtn.setDisable(true);
+        roundsBtn1.setDisable(true);
     }
 
     @FXML
@@ -56,6 +60,21 @@ public class StartController extends BaseController {
         model.setDifficulty(buttonText);
     }
 
+    @FXML
+    void handleRounds(ActionEvent e) {
+        // enable previous rounds button
+        setRoundsDisable(model.getRound(), false);
+
+        // disable current round button
+        int round = Integer.parseInt(((Button) e.getSource()).getText());
+
+        setRoundsDisable(round, true);
+
+        model.setRoundCount(round);
+
+    }
+
+
     private void setDifficultyDisable(String text, Boolean disabled) {
         switch (text.toLowerCase()) {
             case "easy":
@@ -69,19 +88,17 @@ public class StartController extends BaseController {
         }
     }
 
-    @FXML
-    void handleRoundsBtn1(ActionEvent e) {
-        model.setRoundCount(10);
-    }
-
-    @FXML
-    void handleRoundsBtn2(ActionEvent e) {
-        model.setRoundCount(20);
-    }
-
-    @FXML
-    void handleRoundsBtn3(ActionEvent e) {
-        model.setRoundCount(30);
+    private void setRoundsDisable(int round, Boolean disabled) {
+        switch (round) {
+            case 10:
+                roundsBtn1.setDisable(disabled);
+                break;
+            case 15:
+                roundsBtn2.setDisable(disabled);
+                break;
+            case 20:
+                roundsBtn3.setDisable(disabled);
+        }
     }
 
     @FXML
