@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ecologicstudios.client.controllers.ResultController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ecologicstudios.client.controllers.ResultController">
    <top>
       <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: lightGray;" BorderPane.alignment="CENTER">
          <children>
@@ -27,10 +27,10 @@
    <bottom>
       <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="returnID" mnemonicParsing="false" onAction="#handleReturn" prefHeight="36.0" prefWidth="74.0" text="Return">
+            <Button fx:id="returnID" mnemonicParsing="false" onAction="#handleReturn" prefHeight="43.0" prefWidth="87.0" text="Return">
                <styleClass>
-                  <String fx:value="setting" />
-                  <String fx:value="return" />
+                  <String fx:value="btn" />
+                  <String fx:value="btn--return" />
                </styleClass></Button>
          </children>
          <padding>
