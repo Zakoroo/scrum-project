@@ -122,43 +122,35 @@
 
 .button.btn--easy {
     -fx-background-color: -easy-bg;
-    -fx-border-color:     -easy-border;
-    -fx-text-fill:        -on-strong;
+    -fx-border-color: -easy-border;
+    -fx-text-fill: white;
 }
-
 .button.btn--medium {
     -fx-background-color: -med-bg;
-    -fx-border-color:     -med-border;
-    -fx-text-fill:        -on-strong;
+    -fx-border-color: -med-border;
+    -fx-text-fill: white;
 }
-
-.button.btn--hard {
+.button.btn--hard   {
     -fx-background-color: -hard-bg;
-    -fx-border-color:     -hard-border;
-    -fx-text-fill:        -on-strong;
+    -fx-border-color: -hard-border;
+    -fx-text-fill: white;
 }
-
 .button.btn--rounds {
     -fx-background-color: -rounds-bg;
-    -fx-border-color:     -rounds-border;
-    -fx-text-fill:        -on-strong;
+    -fx-border-color: -rounds-border;
+    -fx-text-fill: white;
 }
 
 .button.btn--alternatives {
     -fx-background-color: -alt-bg;
-    -fx-border-color:     -alt-border;
-    -fx-text-fill:        -on-strong;
+    -fx-border-color: -alt-border;
+    -fx-text-fill: white;
 }
 
 .button.btn--return {
     -fx-background-color: -return-bg;
-    -fx-border-color:     -return-border;
-    -fx-text-fill:        -on-strong;
-}
-/* Layout niceties for your rows */
-.hbox {
-    -fx-alignment: center;
-    -fx-spacing: 28;
+    -fx-border-color: -return-border;
+    -fx-text-fill: white;
 }
 
 /* -----------------------------
