@@ -10,6 +10,16 @@
    Theme color tokens (OK)
    ----------------------------- */
 .root {
+
+    /* Background */
+    -fx-background-image: url(../background.png);
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center center;
+    -fx-background-size: cover;
+
+
+    -fx-background-insets: 0;
+
     /* Base palette */
     -sky:    #e8f5ff;
     -leaf:   #3da35d;
@@ -33,8 +43,8 @@
     -alt-bg:        #9ea7f5;   /* alternatives */
     -alt-border:    #6c6e96;
 
-    -rounds-bg:     #dfdcdc;
-    -rounds-border: #bebebe;
+    -rounds-bg:     #a06be7;
+    -rounds-border: #8b4ed6;
 
     -return-bg:     #9fc741;
     -return-border: #45a120;
@@ -83,6 +93,16 @@
     -fx-border-radius:     18px;
 }
 
+
+.rounded {
+    -fx-background-color: -sand;
+    -fx-border-color:     -accent-border;
+    -fx-background-radius: 16;
+    -fx-border-radius:     16;
+    -fx-padding: 12;
+}
+
+
 .button.btn:armed,
 .button.btn:pressed { -fx-translate-y: 2px; }
 .button.btn:hover { -fx-opacity: 0.92; }
@@ -91,6 +111,7 @@
 /* -----------------------------
    Color variants (use looked-up *colors*)
    ----------------------------- */
+
 .button.btn--primary {
     -fx-background-color: -accent;
     -fx-border-color:     -accent-border;
@@ -99,34 +120,41 @@
     -fx-min-width:        100px;
 }
 
-.button.medium {
-    -fx-background-color: rgb(242, 200, 74);
-    -fx-border-color: rgb(207, 173, 69);
-    -fx-text-fill: white;
-}
-.button.hard   {
-    -fx-background-color: rgb(236, 145, 103);
-    -fx-border-color: rgb(195, 117, 80);
-    -fx-text-fill: white;
-}
-.button.rounds {
-    -fx-background-color: rgb(192, 124, 192);
-    -fx-border-color: rgb(154, 108, 154);
-    -fx-text-fill: white;
+.button.btn--easy {
+    -fx-background-color: -easy-bg;
+    -fx-border-color:     -easy-border;
+    -fx-text-fill:        -on-strong;
 }
 
-.button.alternatives {
-    -fx-background-color: rgb(54, 68, 194);
-    -fx-border-color: rgb(38, 47, 173);
-    -fx-text-fill: white;
+.button.btn--medium {
+    -fx-background-color: -med-bg;
+    -fx-border-color:     -med-border;
+    -fx-text-fill:        -on-strong;
 }
 
-.button.return {
-    -fx-background-color: rgb(159, 199, 65);
-    -fx-border-color: rgb(69, 161, 32);
-    -fx-text-fill: white;
+.button.btn--hard {
+    -fx-background-color: -hard-bg;
+    -fx-border-color:     -hard-border;
+    -fx-text-fill:        -on-strong;
 }
 
+.button.btn--rounds {
+    -fx-background-color: -rounds-bg;
+    -fx-border-color:     -rounds-border;
+    -fx-text-fill:        -on-strong;
+}
+
+.button.btn--alternatives {
+    -fx-background-color: -alt-bg;
+    -fx-border-color:     -alt-border;
+    -fx-text-fill:        -on-strong;
+}
+
+.button.btn--return {
+    -fx-background-color: -return-bg;
+    -fx-border-color:     -return-border;
+    -fx-text-fill:        -on-strong;
+}
 /* Layout niceties for your rows */
 .hbox {
     -fx-alignment: center;

@@ -27,10 +27,10 @@
    <bottom>
       <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="returnID" mnemonicParsing="false" onAction="#handleReturn" prefHeight="36.0" prefWidth="74.0" text="Return">
+            <Button fx:id="returnID" mnemonicParsing="false" onAction="#handleReturn" prefHeight="42.0" prefWidth="80.0" text="Return">
                <styleClass>
-                  <String fx:value="setting" />
-                  <String fx:value="return" />
+                  <String fx:value="btn" />
+                  <String fx:value="btn--return" />
                </styleClass></Button>
          </children>
          <padding>
