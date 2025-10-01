@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ecologicstudios.client.controllers.GameLoopController">
+<BorderPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ecologicstudios.client.controllers.GameLoopController">
    <top>
-      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: lightBlue;" BorderPane.alignment="CENTER">
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #9ea7f5;" BorderPane.alignment="CENTER">
          <children>
             <Label fx:id="descriptionLabel" text="Description: Lorem ipsum dolor sit amet consectetur adipiscing elit quisque faucibus ex sapien vitae pellentesque sem placerat in id cursus mi." wrapText="true">
                <HBox.margin>
@@ -23,10 +22,6 @@
       </HBox>
    </top>
    <center>
-      <VBox fx:id="altBox" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" stylesheets="@../style/style.css" BorderPane.alignment="CENTER">
-         <styleClass>
-            <String fx:value="button-container" />
-            <String fx:value="setting" />
-         </styleClass></VBox>
+      <VBox fx:id="altBox" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="button-container" stylesheets="@../style/style.css" BorderPane.alignment="CENTER" />
    </center>
 </BorderPane>

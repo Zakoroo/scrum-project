@@ -9,14 +9,18 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ecologicstudios.client.controllers.StartController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ecologicstudios.client.controllers.StartController">
    <center>
-      <Button fx:id="startBtn" mnemonicParsing="false" onAction="#handleStart" prefHeight="53.0" prefWidth="78.0" styleClass="start" text="Start" BorderPane.alignment="CENTER" />
+      <Button fx:id="startBtn" mnemonicParsing="false" onAction="#handleStart" prefHeight="60.0" prefWidth="100.0" text="Start" BorderPane.alignment="CENTER">
+         <styleClass>
+            <String fx:value="btn" />
+            <String fx:value="btn--primary" />
+         </styleClass></Button>
    </center>
    <bottom>
       <VBox minHeight="162.0" prefHeight="206.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <HBox alignment="CENTER" fillHeight="false" minWidth="120.0" prefHeight="126.0" prefWidth="100.0">
+            <HBox alignment="CENTER" fillHeight="false" minHeight="30.0" minWidth="120.0" style="-fx-background-color: e3e3e3;">
                <children>
                   <Label text="Difficulty">
                      <font>
@@ -29,7 +33,7 @@
                <children>
                   <HBox alignment="CENTER" fillHeight="false" minHeight="70.0" prefHeight="70.0" prefWidth="484.0" styleClass="button-container" HBox.hgrow="ALWAYS">
                      <children>
-                        <Button fx:id="easyBtn" mnemonicParsing="false" onAction="#handleDifficulty" prefHeight="40.0" prefWidth="80.0" stylesheets="@../style/style.css" text="Easy">
+                        <Button fx:id="easyBtn" mnemonicParsing="false" onAction="#handleDifficulty" prefHeight="40.0" prefWidth="90.0" stylesheets="@../style/style.css" text="Easy">
                            <HBox.margin>
                               <Insets />
                            </HBox.margin>
@@ -37,11 +41,11 @@
                               <Font name="SansSerif Regular" size="12.0" />
                            </font>
                            <styleClass>
-                              <String fx:value="easy" />
-                              <String fx:value="setting" />
+                              <String fx:value="btn" />
+                              <String fx:value="btn--easy" />
                            </styleClass>
                         </Button>
-                        <Button fx:id="mediumBtn" mnemonicParsing="false" onAction="#handleDifficulty" prefHeight="40.0" prefWidth="80.0" stylesheets="@../style/style.css" text="Medium">
+                        <Button fx:id="mediumBtn" mnemonicParsing="false" onAction="#handleDifficulty" prefHeight="40.0" prefWidth="90.0" stylesheets="@../style/style.css" text="Medium">
                            <HBox.margin>
                               <Insets />
                            </HBox.margin>
@@ -49,11 +53,11 @@
                               <Font name="SansSerif Regular" size="12.0" />
                            </font>
                            <styleClass>
-                              <String fx:value="medium" />
-                              <String fx:value="setting" />
+                              <String fx:value="btn" />
+                              <String fx:value="btn--medium" />
                            </styleClass>
                         </Button>
-                        <Button fx:id="hardBtn" mnemonicParsing="false" onAction="#handleDifficulty" prefHeight="40.0" prefWidth="80.0" stylesheets="@../style/style.css" text="Hard">
+                        <Button fx:id="hardBtn" mnemonicParsing="false" onAction="#handleDifficulty" prefHeight="40.0" prefWidth="90.0" stylesheets="@../style/style.css" text="Hard">
                            <HBox.margin>
                               <Insets />
                            </HBox.margin>
@@ -61,8 +65,8 @@
                               <Font name="SansSerif Regular" size="12.0" />
                            </font>
                            <styleClass>
-                              <String fx:value="hard" />
-                              <String fx:value="setting" />
+                              <String fx:value="btn" />
+                              <String fx:value="btn--hard" />
                            </styleClass>
                         </Button>
                      </children>
@@ -72,7 +76,7 @@
                   </HBox>
                </children>
             </HBox>
-            <HBox alignment="CENTER" minWidth="120.0" prefHeight="164.0" prefWidth="105.0">
+            <HBox alignment="CENTER" minHeight="30.0" minWidth="120.0" style="-fx-background-color: e3e3e3;">
                <children>
                   <Label text="Rounds">
                      <font>
@@ -85,25 +89,25 @@
                <children>
                   <HBox alignment="CENTER" minHeight="70.0" prefHeight="78.0" prefWidth="495.0" styleClass="button-container" HBox.hgrow="ALWAYS">
                      <children>
-                        <Button fx:id="roundsBtn1" mnemonicParsing="false" onAction="#handleRounds" prefHeight="40.0" prefWidth="80.0" text="10">
+                        <Button fx:id="roundsBtn1" mnemonicParsing="false" onAction="#handleRounds" prefHeight="40.0" prefWidth="90.0" text="10">
                            <HBox.margin>
                               <Insets />
                            </HBox.margin>
                            <styleClass>
-                              <String fx:value="setting" />
-                              <String fx:value="rounds" />
+                              <String fx:value="btn" />
+                              <String fx:value="btn--rounds" />
                            </styleClass>
                         </Button>
-                        <Button fx:id="roundsBtn2" mnemonicParsing="false" onAction="#handleRounds" prefHeight="40.0" prefWidth="80.0" text="15">
+                        <Button fx:id="roundsBtn2" mnemonicParsing="false" onAction="#handleRounds" prefHeight="40.0" prefWidth="90.0" text="15">
                            <HBox.margin>
                               <Insets />
                            </HBox.margin>
                            <styleClass>
-                              <String fx:value="setting" />
-                              <String fx:value="rounds" />
+                              <String fx:value="btn" />
+                              <String fx:value="btn--rounds" />
                            </styleClass>
                         </Button>
-                        <Button fx:id="roundsBtn3" mnemonicParsing="false" onAction="#handleRounds" prefHeight="40.0" prefWidth="80.0" text="20">
+                        <Button fx:id="roundsBtn3" mnemonicParsing="false" onAction="#handleRounds" prefHeight="40.0" prefWidth="90.0" text="20">
                            <HBox.margin>
                               <Insets />
                            </HBox.margin>
@@ -111,8 +115,8 @@
                               <Font name="SansSerif Regular" size="12.0" />
                            </font>
                            <styleClass>
-                              <String fx:value="setting" />
-                              <String fx:value="rounds" />
+                              <String fx:value="btn" />
+                              <String fx:value="btn--rounds" />
                            </styleClass>
                         </Button>
                      </children>

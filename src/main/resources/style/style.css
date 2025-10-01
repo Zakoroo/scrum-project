@@ -1,115 +1,121 @@
-/* ===== Climate Game Theme =====
-   Palette: sky #e8f5ff, leaf #3da35d, forest #2a7a4b, sand #f2efe6, slate #2e3b3f
-   Suggested fonts: "Nunito", "Rubik", "Poppins" (or system sans fallbacks)
-*/
+/* ============================================================================
+   Climate Game — JavaFX CSS (practical fix)
+   Why this version works: JavaFX only supports *looked-up colors* (paints) as
+   variables. Sizes (px), radii, insets, etc. cannot be looked up. So we keep
+   color tokens in .root and use concrete values or small utility classes for
+   geometry.
+   ============================================================================ */
 
+/* -----------------------------
+   Theme color tokens (OK)
+   ----------------------------- */
 .root {
-    /* background */
-    -fx-background-image: url(../background.png);
-    -fx-background-repeat: no-repeat;
-    -fx-background-position: center center;
-    -fx-background-size: cover;
+    /* Base palette */
+    -sky:    #e8f5ff;
+    -leaf:   #3da35d;
+    -forest: #2a7a4b;
+    -sand:   #f2efe6;
+    -slate:  #2e3b3f;
 
+    /* Semantic action colors */
+    -accent:        #557fcb;   /* primary Start */
+    -accent-border: #406dbc;
+
+    -easy-bg:       #4dd192;
+    -easy-border:   #3fb57c;
+
+    -med-bg:        #f2c84a;
+    -med-border:    #cfad45;
+
+    -hard-bg:       #ec9167;
+    -hard-border:   #c37550;
+
+    -alt-bg:        #9ea7f5;   /* alternatives */
+    -alt-border:    #6c6e96;
+
+    -rounds-bg:     #dfdcdc;
+    -rounds-border: #bebebe;
+
+    -return-bg:     #9fc741;
+    -return-border: #45a120;
+
+    -on-strong:     white;      /* text on strong colored buttons */
+    -on-muted:      black;      /* text on neutral buttons */
 
     -fx-background-insets: 0;
 }
 
-/* Global type */
+/* -----------------------------
+   Global type
+   ----------------------------- */
 * {
     -fx-font-family: "Nunito", "Rubik", "Poppins", "Segoe UI", "Verdana", sans-serif;
-    -fx-text-fill: #2e3b3f;
+    -fx-text-fill:   -slate;
 }
 
+/* -----------------------------
+   Layout niceties & containers
+   ----------------------------- */
+.hbox { -fx-alignment: center; -fx-spacing: 28; }
+.button-container { -fx-padding: 12px; -fx-spacing: 16px; }
+
+/* -----------------------------
+   Buttons: base & states
+   ----------------------------- */
 .button:focused {
-    -fx-focus-color: transparent;
+    -fx-focus-color:       transparent;
     -fx-faint-focus-color: transparent;
-    /* optional if you see a glow: */
-    -fx-effect: null; }
-
-/* Optional: color-code difficulty buttons with gentle hues */
-.button.setting {
-    -fx-background-radius: 15px;
-    -fx-border-radius: 15px;
-    -fx-border-width: 3px;
-    -fx-font-size: 14px;
+    -fx-effect:            null;
 }
 
-.button.setting:pressed {
-    -fx-translate-y: 2px;
+.button.btn {
+    -fx-padding:           8px 14px 8px 14px;   /* concrete value (cannot look up) */
+    -fx-background-radius: 14px;                /* concrete value */
+    -fx-border-radius:     14px;                /* concrete value */
+    -fx-border-width:      3px;                 /* concrete value */
+    -fx-font-size:         14px;
+    -fx-cursor:            hand;
+    -fx-background-insets: 0;
 }
 
-.button.easy {
-    -fx-background-color: rgb(77, 209, 146);
-    -fx-border-color: rgb(63, 181, 124);
-    -fx-text-fill: white;
+.button.btn--rounded {
+    -fx-background-radius: 18px;
+    -fx-border-radius:     18px;
 }
 
-.button.medium {
-    -fx-background-color: rgb(242, 200, 74);
-    -fx-border-color: rgb(207, 173, 69);
-    -fx-text-fill: white;
-}
-.button.hard   {
-    -fx-background-color: rgb(236, 145, 103);
-    -fx-border-color: rgb(195, 117, 80);
-    -fx-text-fill: white;
-}
-.button.rounds {
-    -fx-background-color: rgb(192, 124, 192);
-    -fx-border-color: rgb(154, 108, 154);
-    -fx-text-fill: white;
-}
+.button.btn:armed,
+.button.btn:pressed { -fx-translate-y: 2px; }
+.button.btn:hover { -fx-opacity: 0.92; }
+.button.btn:disabled { -fx-opacity: 0.55; -fx-cursor: default; }
 
-.button.alternatives {
-    -fx-background-color: rgb(40, 59, 231);
-    -fx-border-color: rgb(38, 47, 173);
-    -fx-text-fill: white;
+/* -----------------------------
+   Color variants (use looked-up *colors*)
+   ----------------------------- */
+.button.btn--primary {
+    -fx-background-color: -accent;
+    -fx-border-color:     -accent-border;
+    -fx-text-fill:        -on-strong;
+    -fx-font-size:        18px;
+    -fx-min-width:        100px;
 }
 
-.button.return {
-    -fx-background-color: rgb(159, 199, 65);
-    -fx-border-color: rgb(69, 161, 32);
-    -fx-text-fill: white;
-}
+.button.btn--easy    { -fx-background-color: -easy-bg;   -fx-border-color: -easy-border;   -fx-text-fill: -on-strong; }
+.button.btn--medium  { -fx-background-color: -med-bg;    -fx-border-color: -med-border;    -fx-text-fill: -on-strong; }
+.button.btn--hard    { -fx-background-color: -hard-bg;   -fx-border-color: -hard-border;   -fx-text-fill: -on-strong; }
+.button.btn--rounds  { -fx-background-color: -rounds-bg; -fx-border-color: -rounds-border; -fx-text-fill: -on-muted;  }
+.button.btn--alternatives { -fx-background-color: -alt-bg; -fx-border-color: -alt-border; -fx-text-fill: -on-strong; }
+.button.btn--return  { -fx-background-color: -return-bg; -fx-border-color: -return-border; -fx-text-fill: -on-strong; }
 
-/* Layout niceties for your rows */
-.hbox {
-    -fx-alignment: center;
-    -fx-spacing: 28;
-}
+/* -----------------------------
+   Optional elevation
+   ----------------------------- */
+.button.btn--elevated { -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.18), 10, 0.2, 0, 2); }
 
-/* container */
-.button-container {
-    -fx-padding: 12px;
-    -fx-spacing: 16px;
-
-}
-
-/* start button */
-.start.button {
-    /* dimensions */
-    -fx-min-width: 100px;
-
-    /* background */
-    -fx-background-color: rgb(85, 128, 203);
-    -fx-background-radius: 15px;
-    
-    /* border */
-    -fx-border-color: rgb(64, 109, 188);
-    -fx-border-radius: 15px;
-    -fx-border-width: 3px;
-
-    -fx-text-fill: white;
-    -fx-font-size: 18px;
-}
-
-.start.button:pressed {
-    -fx-translate-y: 2px;
-}
-
-.start.button:hover {
-    -fx-opacity: 90%;
-}
-
-
-
+/* -----------------------------
+   Utility classes (if you want to mix & match)
+   Apply alongside other classes in code, e.g. btn + u-radius-lg
+   ----------------------------- */
+.u-radius    { -fx-background-radius: 14px; -fx-border-radius: 14px; }
+.u-radius-lg { -fx-background-radius: 18px; -fx-border-radius: 18px; }
+.u-bw-3      { -fx-border-width: 3px; }
+.u-btn-pad   { -fx-padding: 8px 14px 8px 14px; }
