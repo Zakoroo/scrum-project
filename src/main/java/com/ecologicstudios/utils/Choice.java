@@ -17,7 +17,7 @@ public class Choice{
     /**
      * The CO2 value associated with this choice.
      */    
-    private int co2;
+    private double co2;
 
     /**
      * Constructs a Choice with the specified description and CO2 value.
@@ -25,7 +25,7 @@ public class Choice{
      * @param text the description of the choice
      * @param co2 the CO2 value associated with the choice
      */
-    public Choice(String text, int co2) {
+    public Choice(String text, double co2) {
         this.choice = text;
 
         this.co2 = co2;
@@ -45,7 +45,7 @@ public class Choice{
     *
     * @return the CO2 value
     */
-    public int getco2(){
+    public double getco2(){
         return co2;
     }
 }

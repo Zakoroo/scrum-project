@@ -40,11 +40,11 @@ public class FeedbackCalculator{
     * @param count the number of cards to consider (e.g., round length)
     * @return the sum of the minimum CO2 values for each card
     */    
-    public int getMinResult(List<Card> cards, int roundLength){
-        int minTotal = 0;
+    public double getMinResult(List<Card> cards, int roundLength){
+        double minTotal = 0;
         for(int i = 0; i < roundLength && i < cards.size(); i++){
             List<Choice> choices = cards.get(i).getAlternatives();
-            int minCo2 = Integer.MAX_VALUE;
+            double minCo2 = Double.MAX_VALUE;
             for(Choice choice : choices){
                 if(choice.getco2() < minCo2){
                     minCo2 = choice.getco2();
@@ -63,11 +63,11 @@ public class FeedbackCalculator{
     * @param count the number of cards to consider (e.g., round length)
     * @return the sum of the maximum CO2 values for each card
     */
-    public int getMaxResult(List<Card> cards, int roundLength){
-            int maxTotal = 0;
+    public double getMaxResult(List<Card> cards, int roundLength){
+            double maxTotal = 0;
         for(int i = 0; i < roundLength && i < cards.size(); i++){
             List<Choice> choices = cards.get(i).getAlternatives();
-            int maxCo2 = Integer.MIN_VALUE;
+            double maxCo2 = Double.MIN_VALUE;
             for(Choice choice : choices){
                 if(choice.getco2() > maxCo2){
                     maxCo2 = choice.getco2();
@@ -86,7 +86,7 @@ public class FeedbackCalculator{
     * @param b the second value
     * @return the average of a and b
     */
-    public int getAverageResult(int a, int b){
+    public double getAverageResult(double a, double b){
         return (a+b)/2;
     }
 
@@ -99,7 +99,7 @@ public class FeedbackCalculator{
      * @param point the player's score
      * @return a feedback message as a String
      */
-    public String feedbackEvaluator(int min, int max, int avg, int point){
+    public String feedbackEvaluator(double min, double max, double avg, double point){
         System.out.println(min);
         System.out.println(max);
         System.out.println(avg);
@@ -127,10 +127,10 @@ public class FeedbackCalculator{
      * @param point the player's score
      * @return a feedback message as a String
      */
-    public String getFeedback(int point){
-        int min = getMinResult(cards, roundLength);
-        int max = getMaxResult(cards, roundLength);
-        int avg = getAverageResult(min, max);
+    public String getFeedback(double point){
+        double min = getMinResult(cards, roundLength);
+        double max = getMaxResult(cards, roundLength);
+        double avg = getAverageResult(min, max);
         return feedbackEvaluator(min, max, avg, point);
     }
 
