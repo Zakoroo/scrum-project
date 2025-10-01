@@ -104,26 +104,21 @@ public class FeedbackCalculator{
         System.out.println(max);
         System.out.println(avg);
 
-        if (point == min){
-            return "You're a climate hero! Your choices show deep environmental care";
-        }
-
-        else if(point > min && point < avg){
-            return "You're making mindful decisions! Your eco-awareness is inspiring";
-        }
-        else if(point == avg){
-            return "You're becoming more aware! Each decision is a chance to improve";
-        }
-
-        else if(point < max && point > avg){
-            return "Your lifestyle is unsustainable. You're actively making the climate crisis worse!";
-        }
-        
-        else if (point == max){
-            return "This is climate negligence. Your choices show complete disregard for the planet's future!";
-        }
-
+    if (point >= min && point < avg / 2) {
+        return "You're a climate hero! Your choices show deep environmental care.";
+    } 
+    else if (point >= avg / 2 && point < avg) {
+        return "You're making mindful decisions! Your eco-awareness is inspiring.";
+    } 
+    else if (point >= avg && point < (3 * avg) / 2) {
+        return "Your lifestyle is unsustainable. You're actively making the climate crisis worse!";
+    } 
+    else if (point >= (3 * avg) / 2 && point <= max) {
+        return "This is climate negligence. Your choices show complete disregard for the planet's future!";
+    } 
+    else {
         return "error";
+    }
     }
     
     /**
