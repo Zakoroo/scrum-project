@@ -99,12 +99,39 @@
     -fx-min-width:        100px;
 }
 
-.button.btn--easy    { -fx-background-color: -easy-bg;   -fx-border-color: -easy-border;   -fx-text-fill: -on-strong; }
-.button.btn--medium  { -fx-background-color: -med-bg;    -fx-border-color: -med-border;    -fx-text-fill: -on-strong; }
-.button.btn--hard    { -fx-background-color: -hard-bg;   -fx-border-color: -hard-border;   -fx-text-fill: -on-strong; }
-.button.btn--rounds  { -fx-background-color: -rounds-bg; -fx-border-color: -rounds-border; -fx-text-fill: -on-muted;  }
-.button.btn--alternatives { -fx-background-color: -alt-bg; -fx-border-color: -alt-border; -fx-text-fill: -on-strong; }
-.button.btn--return  { -fx-background-color: -return-bg; -fx-border-color: -return-border; -fx-text-fill: -on-strong; }
+.button.medium {
+    -fx-background-color: rgb(242, 200, 74);
+    -fx-border-color: rgb(207, 173, 69);
+    -fx-text-fill: white;
+}
+.button.hard   {
+    -fx-background-color: rgb(236, 145, 103);
+    -fx-border-color: rgb(195, 117, 80);
+    -fx-text-fill: white;
+}
+.button.rounds {
+    -fx-background-color: rgb(192, 124, 192);
+    -fx-border-color: rgb(154, 108, 154);
+    -fx-text-fill: white;
+}
+
+.button.alternatives {
+    -fx-background-color: rgb(54, 68, 194);
+    -fx-border-color: rgb(38, 47, 173);
+    -fx-text-fill: white;
+}
+
+.button.return {
+    -fx-background-color: rgb(159, 199, 65);
+    -fx-border-color: rgb(69, 161, 32);
+    -fx-text-fill: white;
+}
+
+/* Layout niceties for your rows */
+.hbox {
+    -fx-alignment: center;
+    -fx-spacing: 28;
+}
 
 /* -----------------------------
    Optional elevation
