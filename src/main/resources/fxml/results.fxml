@@ -31,6 +31,8 @@
                <styleClass>
                   <String fx:value="btn" />
                   <String fx:value="btn--return" />
+                  <String fx:value="btn" />
+                  <String fx:value="btn--return" />
                </styleClass></Button>
          </children>
          <padding>

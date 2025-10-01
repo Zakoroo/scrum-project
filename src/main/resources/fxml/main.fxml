@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ecologicstudios.client.controllers.StartController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ecologicstudios.client.controllers.StartController">
    <center>
       <Button fx:id="startBtn" mnemonicParsing="false" onAction="#handleStart" prefHeight="60.0" prefWidth="100.0" text="Start" BorderPane.alignment="CENTER">
          <styleClass>
@@ -18,9 +18,9 @@
          </styleClass></Button>
    </center>
    <bottom>
-      <VBox minHeight="162.0" prefHeight="206.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" minHeight="162.0" prefHeight="206.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <HBox alignment="CENTER" fillHeight="false" minHeight="30.0" minWidth="120.0" style="-fx-background-color: e3e3e3;">
+            <HBox alignment="CENTER" fillHeight="false" maxWidth="320.0" minHeight="30.0" minWidth="120.0" prefHeight="30.0" prefWidth="350.0" styleClass="rounded" stylesheets="@../style/style.css">
                <children>
                   <Label text="Difficulty">
                      <font>
@@ -29,7 +29,7 @@
                   </Label>
                </children>
             </HBox>
-            <HBox fillHeight="false" prefHeight="22.0" prefWidth="600.0">
+            <HBox fillHeight="false" prefHeight="22.0" prefWidth="600.0" stylesheets="@../style/style.css">
                <children>
                   <HBox alignment="CENTER" fillHeight="false" minHeight="70.0" prefHeight="70.0" prefWidth="484.0" styleClass="button-container" HBox.hgrow="ALWAYS">
                      <children>
@@ -76,7 +76,7 @@
                   </HBox>
                </children>
             </HBox>
-            <HBox alignment="CENTER" minHeight="30.0" minWidth="120.0" style="-fx-background-color: e3e3e3;">
+            <HBox alignment="CENTER" maxWidth="320.0" minHeight="30.0" minWidth="120.0" prefHeight="30.0" prefWidth="600.0" styleClass="rounded">
                <children>
                   <Label text="Rounds">
                      <font>

@@ -10,6 +10,16 @@
    Theme color tokens (OK)
    ----------------------------- */
 .root {
+
+    /* Background */
+    -fx-background-image: url(../background.png);
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center center;
+    -fx-background-size: cover;
+
+
+    -fx-background-insets: 0;
+
     /* Base palette */
     -sky:    #e8f5ff;
     -leaf:   #3da35d;
@@ -33,8 +43,8 @@
     -alt-bg:        #9ea7f5;   /* alternatives */
     -alt-border:    #6c6e96;
 
-    -rounds-bg:     #dfdcdc;
-    -rounds-border: #bebebe;
+    -rounds-bg:     #a06be7;
+    -rounds-border: #8b4ed6;
 
     -return-bg:     #9fc741;
     -return-border: #45a120;
@@ -83,6 +93,16 @@
     -fx-border-radius:     18px;
 }
 
+
+.rounded {
+    -fx-background-color: -sand;
+    -fx-border-color:     -accent-border;
+    -fx-background-radius: 16;
+    -fx-border-radius:     16;
+    -fx-padding: 12;
+}
+
+
 .button.btn:armed,
 .button.btn:pressed { -fx-translate-y: 2px; }
 .button.btn:hover { -fx-opacity: 0.92; }
@@ -91,6 +111,7 @@
 /* -----------------------------
    Color variants (use looked-up *colors*)
    ----------------------------- */
+
 .button.btn--primary {
     -fx-background-color: -accent;
     -fx-border-color:     -accent-border;
