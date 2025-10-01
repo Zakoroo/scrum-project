@@ -18,6 +18,8 @@ import com.ecologicstudios.utils.Alternative;
  * The game consists of presenting cards with environmental scenarios and alternatives
  * to the player, tracking their choices and calculating the total CO2 emissions
  * based on their decisions.
+ * 
+ * @author EcoLogic Studios
  */
 public class GameLoopModel {
     /**

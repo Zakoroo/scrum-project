@@ -17,6 +17,8 @@ import com.ecologicstudios.utils.Alternative;
 /**
  * Controller class for managing the main game loop interface.
  * Handles the display of cards, alternatives, and user interactions during gameplay.
+ * 
+ * @author EcoLogic Studios
  */
 public class GameLoopController extends BaseController {
     /**

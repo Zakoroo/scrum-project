@@ -13,6 +13,8 @@ import com.google.gson.Gson;
  * This class uses Gson to parse JSON data containing card information
  * and provides methods to retrieve cards based on difficulty level
  * or get all available cards.
+ * 
+ * @author EcoLogic Studios
  */
 public class JsonCardFetcher implements CardFetcher {
     /**
