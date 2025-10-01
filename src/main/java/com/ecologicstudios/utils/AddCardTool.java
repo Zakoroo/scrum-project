@@ -20,7 +20,7 @@ public class AddCardTool {
         String scenario = args[2];         // pass with quotes if it has spaces
         String difficulty = args[3];
 
-        List<Choice> choices = new ArrayList<>();
+        List<Alternative> choices = new ArrayList<>();
         for (int i = 4; i < args.length; i++) {
             String token = args[i].trim();
             int sep = token.lastIndexOf(':');            // safer if text contains ':'
@@ -30,7 +30,7 @@ public class AddCardTool {
             }
             String text = token.substring(0, sep).trim();
             int co2 = Integer.parseInt(token.substring(sep + 1).trim());
-            choices.add(new Choice(text, co2));
+            choices.add(new Alternative(text, co2));
         }
 
         Card card = new Card(id, scenario, difficulty, choices);

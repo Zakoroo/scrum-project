@@ -1,10 +1,10 @@
 package com.ecologicstudios.utils;
 
-public class Choice{
+public class Alternative{
     String choice;
     private int co2;
 
-    public Choice(String text, int co2) {
+    public Alternative(String text, int co2) {
         this.choice = text;
 
         this.co2 = co2;

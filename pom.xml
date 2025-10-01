@@ -12,7 +12,7 @@
     <maven.compiler.source>21</maven.compiler.source>
     <maven.compiler.target>21</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <javafx.version>21.0.4</javafx.version>
+    <javafx.version>23.0.1</javafx.version>
   </properties>
 
   <dependencies>
@@ -28,7 +28,7 @@
     <dependency>
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-fxml</artifactId>
-      <version>21</version>
+      <version>${javafx.version}</version>
     </dependency>
 
     <!-- JavaFX for compile/run -->
