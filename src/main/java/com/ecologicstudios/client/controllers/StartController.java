@@ -61,8 +61,8 @@ public class StartController extends BaseController {
      * difficulty (Easy) and rounds (10).
      */
     public void initialize() {
-        easyBtn.setDisable(true);
-        roundsBtn1.setDisable(true);
+        setDifficultyDisable(model.getDifficulty(), true);
+        setRoundsDisable(model.getMaxNumCards(), true);
     }
 
     /**

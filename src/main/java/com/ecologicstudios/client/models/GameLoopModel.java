@@ -66,7 +66,7 @@ public class GameLoopModel {
      * The total CO2 emission result for the current game session representing 
      * the cumulative environmental impact of the player's choices.
      */
-    private int totalResult = 0;
+    private double totalResult = 0;
 
     /**
      * This method replaces the functionality of the constructor effectively
@@ -111,7 +111,7 @@ public class GameLoopModel {
      * @return true if at least one card has been presented, false otherwise
      */
     public boolean gameStarted() {
-        return cardsCount > 0;
+        return cardsCount > 0 && answersCount != maxNumCards;
     }
 
     /**
@@ -175,7 +175,7 @@ public class GameLoopModel {
      * @return the total CO2 result accumulated during the current game
      * @throws IllegalStateException if the game hasn't ended yet
      */
-    public int getTotalResult() throws IllegalStateException {
+    public double getTotalResult() throws IllegalStateException {
         if (!gameEnded()) {
             throw new IllegalStateException("cannot access results before game ends");
         }
@@ -192,7 +192,7 @@ public class GameLoopModel {
      * @throws IllegalStateException if called after the game has started or ended
      */
     public void setMaxNumCards(int numRounds) throws IllegalStateException {
-        if (gameStarted() || gameEnded()) {
+        if (gameStarted()) {
             throw new IllegalStateException("cannot change game configurations after game started");
         }
         this.maxNumCards = numRounds;
@@ -208,7 +208,7 @@ public class GameLoopModel {
      * @throws IllegalStateException if called after the game has started or ended
      */
     public void setDifficulty(String difficulty) throws IllegalStateException {
-        if (gameStarted() || gameEnded()) {
+        if (gameStarted()) {
             throw new IllegalStateException("cannot change game configurations after game started");
         }
         this.difficulty = difficulty;
