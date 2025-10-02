@@ -8,22 +8,28 @@ import java.util.List;
 import com.google.gson.Gson;
 
 /**
- * Implementation of CardFetcher that loads cards from a JSON file.
+ * The {@code JsonCardFetcher} class is responsible for loading card data from a
+ * JSON file. It implements the {@link CardFetcher} interface and provides
+ * methods to retrieve cards based on difficulty level.
+ *
  * <p>
- * This class uses Gson to parse JSON data containing card information
- * and provides methods to retrieve cards based on difficulty level
- * or get all available cards.
- * 
+ * This class reads a JSON file containing card information, parses the data
+ * using Gson, and constructs {@link Card} objects with their associated
+ * choices. It can filter cards by difficulty and provide access to all loaded
+ * cards.
+ * </p>
+ *
  * @author EcoLogic Studios
  */
 public class JsonCardFetcher implements CardFetcher {
     /**
-     * Container object that holds all cards loaded from the JSON file.
+     * Wrapper for all loaded cards.
      */
-    public Cards allCards;
+    public CardWrapper allCards;
 
     /**
-     * Constructs a new JsonCardFetcher and loads cards from the specified file path.
+     * Constructs a new JsonCardFetcher and loads cards from the specified file
+     * path.
      * 
      * @param path the file path to the JSON file containing card data
      */
@@ -35,7 +41,8 @@ public class JsonCardFetcher implements CardFetcher {
      * Reads a JSON file and converts its contents to a string.
      * 
      * @param path the file path to the JSON file to read
-     * @return the contents of the JSON file as a string, or empty string if an error occurs
+     * @return the contents of the JSON file as a string, or empty string if an
+     *         error occurs
      */
     public String JsonToString(String path) {
         StringBuilder stringBuilder = new StringBuilder();
@@ -51,41 +58,37 @@ public class JsonCardFetcher implements CardFetcher {
     }
 
     /**
-     * Loads cards from a JSON file using Gson deserialization.
-     * <p>
-     * This method reads the JSON file, converts it to a string, and then
-     * deserializes it into a Cards object using Gson.
-     * 
-     * @param path the file path to the JSON file containing card data
+     * Loads cards from the specified JSON file and initializes the {@code allCards}
+     * field.
+     *
+     * @param path the path to the JSON file containing card data
      */
     public void loadCards(String path) {
         Gson gson = new Gson();
-        allCards = gson.fromJson(JsonToString(path), Cards.class);
+        allCards = gson.fromJson(JsonToString(path), CardWrapper.class);
     }
 
     /**
-     * Retrieves a list of cards filtered by the specified difficulty level.
-     * <p>
-     * The comparison is case-insensitive, so "easy", "Easy", and "EASY" 
-     * will all match cards with difficulty "Easy".
-     * 
-     * @param difficulty the difficulty level to filter by (case-insensitive)
-     * @return a list of cards matching the specified difficulty level
+     * Retrieves a list of cards filtered by the specified difficulty.
+     *
+     * @param difficulty the difficulty level to filter cards by (e.g., "Easy",
+     *                   "Medium", "Hard")
+     * @return a list of {@link Card} objects matching the difficulty
      */
-    public List<Card> getCards(String difficulty) {
-        List<Card> cardList = new ArrayList<>();
+    public List<Card> getCardsByDifficulty(String difficulty) {
+        List<Card> CardList = new ArrayList<>();
         for (Card c : allCards.getCardList()) {
             if (c.difficulty.equalsIgnoreCase(difficulty)) {
-                cardList.add(c);
+                CardList.add(c);
             }
         }
-        return cardList;
+        return CardList;
     }
 
     /**
-     * Retrieves all cards regardless of difficulty level.
-     * 
-     * @return a list containing all loaded cards
+     * Returns all loaded cards.
+     *
+     * @return a list of all {@link Card} objects
      */
     public List<Card> getAllCards() {
         return allCards.getCardList();

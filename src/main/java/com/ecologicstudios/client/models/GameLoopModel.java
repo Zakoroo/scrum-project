@@ -99,7 +99,7 @@ public class GameLoopModel {
         answersCount = 0;
         totalResult = 0;
         CardFetcher fetcher = new JsonCardFetcher(path); // fetch cards from given path (in resources)
-        cards = fetcher.getCards(difficulty); // fetch out only cards of the given difficulty
+        cards = fetcher.getCardsByDifficulty(difficulty); // fetch out only cards of the given difficulty
         Collections.shuffle(cards); // shuffle cards
     }
 
