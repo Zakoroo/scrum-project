@@ -1,3 +1,7 @@
+package com.ecologicstudios.utils;
+
+import java.util.List;
+
 /**
  * Simple wrapper for a list of {@link Card} objects as deserialized from JSON.
  * <p>
@@ -7,10 +11,6 @@
  *
  * @author EcoLogic Studios
  */
-
-package com.ecologicstudios.utils;
-import java.util.List;
-
 public class CardWrapper{
     private List<Card> cards;
 

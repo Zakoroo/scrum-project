@@ -4,94 +4,143 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
-import javafx.scene.layout.VBox;
 import javafx.scene.control.Button;
-import java.util.List;
-import java.util.HashMap;
+import javafx.scene.layout.VBox;
 import java.util.Map;
-import java.util.LinkedList;
+import java.util.HashMap;
 import java.io.IOException;
 
 import com.ecologicstudios.client.models.GameLoopModel;
 import com.ecologicstudios.utils.Card;
-import com.ecologicstudios.utils.Choice;
+import com.ecologicstudios.utils.Alternative;
 
+/**
+ * Controller class for managing the main game loop interface.
+ * Handles the display of cards, alternatives, and user interactions during gameplay.
+ * 
+ * @author EcoLogic Studios
+ */
 public class GameLoopController extends BaseController {
-    final private String buttonFxml = "/fxml/altButton.fxml"; // path to the button fxml file
+    /**
+     * Path to the FXML file for alternative buttons.
+     */
+    final private String buttonFxml = "/fxml/altButton.fxml";
+    
+    /**
+     * The game model instance that manages game state and logic.
+     */
     final private GameLoopModel model;
-    final private Map<Button, Choice> altMap;
+    
+    /**
+     * Map that associates each alternative button with its corresponding Alternative object.
+     */
+    final private Map<Button, Alternative> altMap;
+    
+    /**
+     * The current card being displayed to the user.
+     */
     private Card currentCard;
-    private int totalCo2;
- 
+
     @FXML
     private Label descriptionLabel;
 
     @FXML
     private VBox altBox;
 
+    /**
+     * Constructs a new GameLoopController and initializes the model and alternative map.
+     */
     public GameLoopController() {
         model = GameLoopModel.getInstance();
         altMap = new HashMap<>();
-        totalCo2 = 0;
     }
 
+    /**
+     * Initializes the controller after FXML loading.
+     * Sets up a new game and updates the UI with the first card.
+     */
     public void initialize() {
         model.newGame(); // most come first to initialize cards/game
         update();
     }
 
-    public void update() {
+    /**
+     * Updates the game interface with the next card and its alternatives.
+     * Clears previous alternatives, fetches the next card, and creates new alternative buttons.
+     * If no more cards are available, transitions to the results screen.
+     */
+    private void update() {
         try {
-            // update current card
+            // Update current card
             currentCard = model.nextCard();
 
-            // update description
+            // Update description
             updateDescription();
-            
-            // clear alternatives and altMap
+
+            // Clear alternatives and altMap
             altBox.getChildren().clear();
             altMap.clear();
 
-            // fetch alternatives from model
+            // Fetch alternatives from model
             int i = 0;
-            for (Choice choice : currentCard.getAlternatives()) {
+            for (Alternative choice : currentCard.getAlternatives()) {
                 Button btn = createButton(choice.getChoice());
                 btn.setId(String.format("%d", i));
                 altMap.put(btn, choice);
                 i++;
             }
 
-            // set action for each button in the list
-            altMap.keySet().forEach(b -> b.setOnAction((e)->handle_answer(e)));
-        } catch (Exception e) {
-            e.printStackTrace();
+            // Set action for each button in the list
+            altMap.keySet().forEach(b -> b.setOnAction((e) -> handleAnswer(e)));
+        } catch (IllegalStateException e) {
+            System.err.println(e.getMessage());
+            return;
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+            return;
         }
 
-        // add all buttons to the alternatives area
+        // Add all buttons to the alternatives box
         altBox.getChildren().addAll(altMap.keySet());
     }
 
-    private void handle_answer(ActionEvent e) {
-        System.out.printf("%d\n", altMap.get((Button) e.getSource()).getco2());
-        totalCo2 += altMap.get((Button) e.getSource()).getco2();
-        
+    /**
+     * Handles user selection of an alternative answer.
+     * Submits the selected answer to the model and either updates to the next card
+     * or transitions to the results screen if the game has ended.
+     * 
+     * @param e the ActionEvent triggered by clicking an alternative button
+     */
+    private void handleAnswer(ActionEvent e) {
+        model.submitAnswer(altMap.get((Button) e.getSource()));
+
         if (!model.gameEnded()) {
             update();
         } else {
-            model.setTotalResult(totalCo2);
             sceneManager.switchScene("/fxml/results.fxml");
         }
     }
 
-    public Button createButton(String text) throws IOException {
+    /**
+     * Creates a new button for an alternative choice by loading it from FXML.
+     * 
+     * @param text the text to display on the button
+     * @return a configured Button with the specified text and styling
+     * @throws IOException if the FXML file cannot be loaded
+     */
+    private Button createButton(String text) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(buttonFxml));
         Button button = loader.load();
         button.setText(text);
+        button.getStyleClass().addAll("setting", "alternatives"); // add style class to button
+
         return button;
     }
 
-    public void updateDescription() {
+    /**
+     * Updates the description label with the current card's scenario text.
+     */
+    private void updateDescription() {
         descriptionLabel.setText(String.format("Description: %s", currentCard.getScenario()));
     }
-    
 }

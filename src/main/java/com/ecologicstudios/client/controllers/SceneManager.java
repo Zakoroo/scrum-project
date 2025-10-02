@@ -5,11 +5,34 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
 
+/**
+ * Singleton class that manages scene transitions and controller lifecycle in the JavaFX application.
+ * <p>
+ * This class handles loading FXML files, creating scenes, injecting dependencies into controllers,
+ * and managing the primary stage. It implements the singleton pattern to ensure consistent
+ * scene management throughout the application.
+ * 
+ * @author Ecologic Studios
+ */
 public class SceneManager {
+    /**
+     * The singleton instance of SceneManager.
+     */
     private static SceneManager instance;
-    private BaseController currentController;
+    
+    /**
+     * The primary JavaFX stage for the application.
+     */
     private Stage primaryStage;
 
+    /**
+     * Initializes the SceneManager singleton with the primary stage.
+     * <p>
+     * This method should be called once at application startup. Subsequent
+     * calls will be ignored and a warning message will be printed.
+     * 
+     * @param primaryStage the primary JavaFX stage for the application
+     */
     public static void initialize(Stage primaryStage) {
         if (instance == null) {
             instance = new SceneManager(primaryStage);
@@ -18,6 +41,12 @@ public class SceneManager {
         }
     }
     
+    /**
+     * Retrieves the singleton instance of SceneManager.
+     * 
+     * @return the SceneManager instance
+     * @throws IllegalStateException if the SceneManager has not been initialized
+     */
     public static SceneManager getInstance() {
         if (instance == null) {
             throw new IllegalStateException("SceneManager may have not been initialized!");
@@ -25,10 +54,24 @@ public class SceneManager {
         return instance;
     }
 
+    /**
+     * Private constructor for the SceneManager singleton.
+     * 
+     * @param primaryStage the primary JavaFX stage to be managed
+     */
     private SceneManager(Stage primaryStage) {
         this.primaryStage = primaryStage;
     }
 
+    /**
+     * Switches to a new scene by loading the specified FXML file.
+     * <p>
+     * This method loads the FXML file, creates a new scene, injects the SceneManager
+     * into the controller (if it extends BaseController), calls the controller's
+     * initialize method, and displays the new scene on the primary stage.
+     * 
+     * @param fxmlFile the path to the FXML file to load (relative to the classpath)
+     */
     public void switchScene(String fxmlFile) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
@@ -40,7 +83,6 @@ public class SceneManager {
                 BaseController baseController = (BaseController) controller;
                 baseController.setSceneManager(this);
                 baseController.initialize();
-                currentController = baseController;
             }
 
             primaryStage.setScene(scene);
@@ -49,13 +91,5 @@ public class SceneManager {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public BaseController getCurrenController() {
-        return this.currentController;
-    }
-
-    public void setCurrenController(BaseController currenController) {
-        this.currentController = currenController;
     }
 }
