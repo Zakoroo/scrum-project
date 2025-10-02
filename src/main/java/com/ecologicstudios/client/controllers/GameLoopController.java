@@ -16,9 +16,12 @@ import com.ecologicstudios.utils.Alternative;
 
 /**
  * Controller class for managing the main game loop interface.
- * Handles the display of cards, alternatives, and user interactions during gameplay.
+ * <p>
+ * This controller handles the display of environmental scenario cards, their alternative
+ * choices, and user interactions during gameplay. It manages the game flow by presenting
+ * cards sequentially and processing user selections until the game ends.
  * 
- * @author EcoLogic Studios
+ * @author Ecologic Studios
  */
 public class GameLoopController extends BaseController {
     /**
@@ -57,17 +60,20 @@ public class GameLoopController extends BaseController {
 
     /**
      * Initializes the controller after FXML loading.
-     * Sets up a new game and updates the UI with the first card.
+     * <p>
+     * This method is called automatically by JavaFX and starts the game loop
+     * by updating the interface with the first card.
      */
     public void initialize() {
-        model.newGame(); // most come first to initialize cards/game
         update();
     }
 
     /**
      * Updates the game interface with the next card and its alternatives.
-     * Clears previous alternatives, fetches the next card, and creates new alternative buttons.
-     * If no more cards are available, transitions to the results screen.
+     * <p>
+     * This method fetches the next card from the game model, clears previous alternatives,
+     * creates new alternative buttons, and updates the display. If no more cards are
+     * available or the game has ended, appropriate error handling is performed.
      */
     private void update() {
         try {
@@ -91,17 +97,15 @@ public class GameLoopController extends BaseController {
             }
 
             // Set action for each button in the list
-            altMap.keySet().forEach(b -> b.setOnAction((e) -> handleAnswer(e)));
+            altMap.keySet().forEach(btn -> btn.setOnAction((e) -> handleAnswer(e)));
+            
+            // Add all buttons to the alternatives box
+            altBox.getChildren().addAll(altMap.keySet());
         } catch (IllegalStateException e) {
             System.err.println(e.getMessage());
-            return;
         } catch (IOException e) {
             System.err.println(e.getMessage());
-            return;
         }
-
-        // Add all buttons to the alternatives box
-        altBox.getChildren().addAll(altMap.keySet());
     }
 
     /**
@@ -122,11 +126,14 @@ public class GameLoopController extends BaseController {
     }
 
     /**
-     * Creates a new button for an alternative choice by loading it from FXML.
+     * Creates a new styled button for an alternative choice by loading it from FXML.
+     * <p>
+     * The button is loaded from a separate FXML file and configured with the provided
+     * text and appropriate CSS style classes for consistent appearance.
      * 
      * @param text the text to display on the button
      * @return a configured Button with the specified text and styling
-     * @throws IOException if the FXML file cannot be loaded
+     * @throws IOException if the FXML file cannot be loaded or parsed
      */
     private Button createButton(String text) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(buttonFxml));
@@ -139,6 +146,8 @@ public class GameLoopController extends BaseController {
 
     /**
      * Updates the description label with the current card's scenario text.
+     * <p>
+     * Formats and displays the environmental scenario description for the current card.
      */
     private void updateDescription() {
         descriptionLabel.setText(String.format("Description: %s", currentCard.getScenario()));

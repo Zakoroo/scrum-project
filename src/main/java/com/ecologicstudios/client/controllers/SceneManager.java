@@ -11,6 +11,9 @@ import java.io.IOException;
  * This class handles loading FXML files, creating scenes, injecting dependencies into controllers,
  * and managing the primary stage. It implements the singleton pattern to ensure consistent
  * scene management throughout the application.
+ * <p>
+ * The SceneManager automatically injects itself into any controller that extends BaseController
+ * and ensures proper initialization of the controller lifecycle.
  * 
  * @author Ecologic Studios
  */
@@ -66,9 +69,14 @@ public class SceneManager {
     /**
      * Switches to a new scene by loading the specified FXML file.
      * <p>
-     * This method loads the FXML file, creates a new scene, injects the SceneManager
-     * into the controller (if it extends BaseController), calls the controller's
-     * initialize method, and displays the new scene on the primary stage.
+     * This method performs the following operations:
+     * <ul>
+     * <li>Loads the FXML file using FXMLLoader</li>
+     * <li>Creates a new Scene from the loaded content</li>
+     * <li>Injects the SceneManager into the controller if it extends BaseController</li>
+     * <li>Sets the new scene on the primary stage and displays it</li>
+     * </ul>
+     * If an IOException occurs during loading, the error is printed to the console.
      * 
      * @param fxmlFile the path to the FXML file to load (relative to the classpath)
      */
@@ -82,7 +90,6 @@ public class SceneManager {
             if (controller instanceof BaseController && controller != null) {
                 BaseController baseController = (BaseController) controller;
                 baseController.setSceneManager(this);
-                baseController.initialize();
             }
 
             primaryStage.setScene(scene);
