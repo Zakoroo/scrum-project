@@ -34,8 +34,8 @@ public class App extends Application {
             primaryStage.setTitle("Climate game");
             primaryStage.setResizable(false);
           
-            //Initilize models
-            GameLoopModel gameloopmodel = GameLoopModel.getInstance();
+            //Initialize models
+            GameLoopModel.getInstance();
 
             // Initialize and create scene manager
             SceneManager.initialize(primaryStage);
