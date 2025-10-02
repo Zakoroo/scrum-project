@@ -65,6 +65,6 @@ public class ResultController extends BaseController {
      * @param co2 the CO2 emission value as a string to display
      */
     private void updateCO2(String co2) {
-        co2ID.setText(String.format("Co2: %s", co2));
+        co2ID.setText(String.format("Co2: %s kg", co2));
     }
 }
