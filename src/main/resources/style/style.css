@@ -12,12 +12,10 @@
 .root {
 
     /* Background */
-    /* -fx-background-image: url(../background.png);
+    -fx-background-image: url(../background.png);
     -fx-background-repeat: no-repeat;
     -fx-background-position: center center;
-    -fx-background-size: cover; */
-
-
+    -fx-background-size: cover; 
     -fx-background-insets: 0;
 
     /* Base palette */
@@ -40,8 +38,8 @@
     -hard-bg:       #ec9167;
     -hard-border:   #c37550;
 
-    -alt-bg:        #9ea7f5;   /* alternatives */
-    -alt-border:    #6c6e96;
+    -alt-bg:        -sand;   /* alternatives */
+    -alt-border:    -forest;
 
     -rounds-bg:     #a06be7;
     -rounds-border: #8b4ed6;
@@ -68,6 +66,14 @@
    ----------------------------- */
 .hbox { -fx-alignment: center; -fx-spacing: 28; }
 .button-container { -fx-padding: 12px; -fx-spacing: 16px; }
+.rounded {
+    -fx-background-color: -sand;
+    -fx-border-color:     -forest;
+    -fx-background-radius: 16;
+    -fx-border-radius:     16;
+    -fx-padding: 12;
+}
+
 
 /* -----------------------------
    Buttons: base & states
@@ -92,16 +98,6 @@
     -fx-background-radius: 18px;
     -fx-border-radius:     18px;
 }
-
-
-.rounded {
-    -fx-background-color: -sand;
-    -fx-border-color:     -accent-border;
-    -fx-background-radius: 16;
-    -fx-border-radius:     16;
-    -fx-padding: 12;
-}
-
 
 .button.btn:armed,
 .button.btn:pressed { -fx-translate-y: 2px; }
@@ -144,7 +140,7 @@
 .button.btn--alternatives {
     -fx-background-color: -alt-bg;
     -fx-border-color: -alt-border;
-    -fx-text-fill: white;
+    -fx-text-fill: black;
 }
 
 .button.btn--return {
