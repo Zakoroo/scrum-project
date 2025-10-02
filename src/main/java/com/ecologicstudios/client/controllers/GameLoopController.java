@@ -69,19 +69,19 @@ public class GameLoopController extends BaseController {
      * Clears previous alternatives, fetches the next card, and creates new alternative buttons.
      * If no more cards are available, transitions to the results screen.
      */
-    public void update() {
+    private void update() {
         try {
-            // update current card
+            // Update current card
             currentCard = model.nextCard();
 
-            // update description
+            // Update description
             updateDescription();
 
-            // clear alternatives and altMap
+            // Clear alternatives and altMap
             altBox.getChildren().clear();
             altMap.clear();
 
-            // fetch alternatives from model
+            // Fetch alternatives from model
             int i = 0;
             for (Alternative choice : currentCard.getAlternatives()) {
                 Button btn = createButton(choice.getChoice());
@@ -90,7 +90,7 @@ public class GameLoopController extends BaseController {
                 i++;
             }
 
-            // set action for each button in the list
+            // Set action for each button in the list
             altMap.keySet().forEach(b -> b.setOnAction((e) -> handleAnswer(e)));
         } catch (IllegalStateException e) {
             System.err.println(e.getMessage());
@@ -100,7 +100,7 @@ public class GameLoopController extends BaseController {
             return;
         }
 
-        // add all buttons to the alternatives area
+        // Add all buttons to the alternatives box
         altBox.getChildren().addAll(altMap.keySet());
     }
 
@@ -128,7 +128,7 @@ public class GameLoopController extends BaseController {
      * @return a configured Button with the specified text and styling
      * @throws IOException if the FXML file cannot be loaded
      */
-    public Button createButton(String text) throws IOException {
+    private Button createButton(String text) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(buttonFxml));
         Button button = loader.load();
         button.setText(text);
@@ -140,7 +140,7 @@ public class GameLoopController extends BaseController {
     /**
      * Updates the description label with the current card's scenario text.
      */
-    public void updateDescription() {
+    private void updateDescription() {
         descriptionLabel.setText(String.format("Description: %s", currentCard.getScenario()));
     }
 }

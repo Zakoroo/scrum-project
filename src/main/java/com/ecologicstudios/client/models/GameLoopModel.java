@@ -9,7 +9,7 @@ import com.ecologicstudios.utils.Card;
 import com.ecologicstudios.utils.Alternative;
 
 /**
- * Singleton model class that manages the game state and logic for the CO2 emission in the game.
+ * Singleton model class that manages the game state and logic for the CO2 emission game.
  * <p>
  * This class handles the game flow including card management, answer processing,
  * score calculation, and game session configuration. It implements the singleton
@@ -19,11 +19,11 @@ import com.ecologicstudios.utils.Alternative;
  * to the player, tracking their choices and calculating the total CO2 emissions
  * based on their decisions.
  * 
- * @author EcoLogic Studios
+ * @author Ecologic Studios
  */
 public class GameLoopModel {
     /**
-     * Path to the JSON file that store the cards.
+     * Path to the JSON file that stores the cards.
      */
     final private static String path = "src/main/resources/cards.json";
 
@@ -38,7 +38,7 @@ public class GameLoopModel {
     private List<Card> cards;
 
     /**
-     * Highest card in the card deck.
+     * Current card being displayed in the game.
      */
     private Card currentCard;
 
@@ -48,23 +48,23 @@ public class GameLoopModel {
     private String difficulty = "Easy";
 
     /**
-     * The maximum number of rounds for the current game session (default is 10).
+     * The maximum number of cards for the current game session (default is 10).
      */
     private int maxNumCards = 10;
 
     /**
-     * Counts of the number of rounds during the current game session.
+     * Count of the number of cards that have been presented during the current game session.
      */
     private int cardsCount = 0;
 
     /**
-     * Count of the number of cards that has been answered so far.
+     * Count of the number of cards that have been answered so far.
      */
     private int answersCount = 0;
 
     /**
-     * The total result for the current game session representing the total emission
-     * due to players answers.
+     * The total CO2 emission result for the current game session representing 
+     * the cumulative environmental impact of the player's choices.
      */
     private int totalResult = 0;
 
@@ -89,9 +89,10 @@ public class GameLoopModel {
     }
 
     /**
-     * Resets the game fields to their initial value and prepares a new game
-     * session. This method initializes a new card deck based on the current
-     * difficulty setting, shuffles the cards, and resets the round counter.
+     * Resets the game fields to their initial values and prepares a new game session.
+     * <p>
+     * This method initializes a new card deck based on the current difficulty setting,
+     * shuffles the cards, and resets all counters and results to zero.
      */
     public void newGame() {
         cardsCount = 0; // reset the counter
@@ -100,6 +101,17 @@ public class GameLoopModel {
         CardFetcher fetcher = new JsonCardFetcher(path); // fetch cards from given path (in resources)
         cards = fetcher.getCards(difficulty); // fetch out only cards of the given difficulty
         Collections.shuffle(cards); // shuffle cards
+    }
+
+    /**
+     * Checks if the current game session has started.
+     * <p>
+     * A game is considered started when at least one card has been presented to the player.
+     * 
+     * @return true if at least one card has been presented, false otherwise
+     */
+    public boolean gameStarted() {
+        return cardsCount > 0;
     }
 
     /**
@@ -125,7 +137,7 @@ public class GameLoopModel {
     public Card nextCard() throws IllegalStateException {
         if (!gameEnded() && !cards.isEmpty() && cardsCount == answersCount) {
             cardsCount++;
-            currentCard = cards.removeFirst();
+            currentCard = cards.remove(0);
             return currentCard;
         }
         throw new IllegalStateException(cards.isEmpty() ? "no enough cards" : "game already ended");
@@ -145,7 +157,7 @@ public class GameLoopModel {
      */
     public void submitAnswer(Alternative answer) throws IllegalArgumentException {
         for (Alternative alt : currentCard.getAlternatives()) {
-            if (alt == answer) {
+            if (alt.equals(answer)) {
                 answersCount++;
                 totalResult += answer.getco2();
                 return;
@@ -161,11 +173,11 @@ public class GameLoopModel {
      * access the result before game completion will result in an exception.
      * 
      * @return the total CO2 result accumulated during the current game
-     * @throws IllegalAccessError if the game hasn't ended yet
+     * @throws IllegalStateException if the game hasn't ended yet
      */
-    public int getTotalResult() throws IllegalAccessError {
+    public int getTotalResult() throws IllegalStateException {
         if (!gameEnded()) {
-            throw new IllegalAccessError("cannot get result before game ends");
+            throw new IllegalStateException("cannot access results before game ends");
         }
         return totalResult;
     }
@@ -174,20 +186,31 @@ public class GameLoopModel {
      * Sets the maximum number of cards for the game session.
      * <p>
      * This setting determines how many cards will be presented to the player
-     * during a single game session.
+     * during a single game session. Can only be changed before the game starts.
      * 
      * @param numRounds the maximum number of cards to be played in the current session
+     * @throws IllegalStateException if called after the game has started or ended
      */
-    public void setMaxNumCards(int numRounds) {
+    public void setMaxNumCards(int numRounds) throws IllegalStateException {
+        if (gameStarted() || gameEnded()) {
+            throw new IllegalStateException("cannot change game configurations after game started");
+        }
         this.maxNumCards = numRounds;
     }
 
     /**
      * Sets the difficulty level for the current game session.
+     * <p>
+     * The difficulty determines which subset of cards will be used in the game.
+     * Can only be changed before the game starts.
      * 
      * @param difficulty the difficulty level (e.g., "Easy", "Medium", "Hard")
+     * @throws IllegalStateException if called after the game has started or ended
      */
-    public void setDifficulty(String difficulty) {
+    public void setDifficulty(String difficulty) throws IllegalStateException {
+        if (gameStarted() || gameEnded()) {
+            throw new IllegalStateException("cannot change game configurations after game started");
+        }
         this.difficulty = difficulty;
     }
 
@@ -201,9 +224,9 @@ public class GameLoopModel {
     }
 
     /**
-     * Gets the maximum number of rounds configured for the current game session.
+     * Gets the maximum number of cards configured for the current game session.
      * 
-     * @return the maximum number of rounds
+     * @return the maximum number of cards that will be presented in the current session
      */
     public int getMaxNumCards() {
         return this.maxNumCards;
