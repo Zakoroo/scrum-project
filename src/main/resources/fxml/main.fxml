@@ -10,13 +10,6 @@
 <?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ecologicstudios.client.controllers.StartController">
-   <center>
-      <Button fx:id="startBtn" mnemonicParsing="false" onAction="#handleStart" prefHeight="60.0" prefWidth="100.0" text="Start" BorderPane.alignment="CENTER">
-         <styleClass>
-            <String fx:value="btn" />
-            <String fx:value="btn--primary" />
-         </styleClass></Button>
-   </center>
    <bottom>
       <VBox alignment="CENTER" minHeight="162.0" prefHeight="206.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
@@ -129,4 +122,28 @@
          </children>
       </VBox>
    </bottom>
+   <center>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" fillHeight="false" maxWidth="180.0" minHeight="30.0" minWidth="120.0" prefHeight="30.0" prefWidth="206.0" styleClass="rounded" stylesheets="@../style/style.css">
+               <children>
+                  <Label text="Climate game">
+                     <font>
+                        <Font name="SansSerif Regular" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Button fx:id="startBtn" mnemonicParsing="false" onAction="#handleStart" prefHeight="60.0" prefWidth="100.0" text="Start">
+               <styleClass>
+                  <String fx:value="btn" />
+                  <String fx:value="btn--primary" />
+               </styleClass>
+               <VBox.margin>
+                  <Insets top="40.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </center>
 </BorderPane>
