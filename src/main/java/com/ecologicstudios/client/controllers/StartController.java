@@ -110,7 +110,7 @@ public class StartController extends BaseController {
      */
     @FXML
     private void handleRounds(ActionEvent e) {
-        setRoundsDisable(model.getMaxNumCards(), false); // enable previous rounds button
+        setRoundsDisable(maxNumCards, false); // enable previous rounds button
         maxNumCards = Integer.parseInt(((Button) e.getSource()).getText()); 
         setRoundsDisable(maxNumCards, true); // disable current rounds button
     }
