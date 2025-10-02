@@ -133,6 +133,6 @@ public class FeedbackCalculator{
         double avg = getAverageResult(min, max);
         return feedbackEvaluator(min, max, avg, point);
     }
-
     
+
 }
