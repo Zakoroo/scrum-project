@@ -12,7 +12,6 @@ import java.util.List;
  * @author EcoLogic Studios
  */
 public class FeedbackCalculator {
-
     /**
      * The list of cards to be evaluated for feedback and CO2 calculations.
      */
@@ -39,8 +38,8 @@ public class FeedbackCalculator {
      * Calculates the minimum possible total CO2 result by selecting the lowest CO2
      * choice for each card.
      *
-     * @param cards the list of cards to evaluate
-     * @param count the number of cards to consider (e.g., round length)
+     * @param cards       the list of cards to evaluate
+     * @param roundLength the number of cards to consider (e.g., round length)
      * @return the sum of the minimum CO2 values for each card
      */
     public double getMinResult(List<Card> cards, int roundLength) {
@@ -63,8 +62,8 @@ public class FeedbackCalculator {
      * Calculates the maximum possible total CO2 result by selecting the highest CO2
      * choice for each card.
      *
-     * @param cards the list of cards to evaluate
-     * @param count the number of cards to consider (e.g., round length)
+     * @param cards       the list of cards to evaluate
+     * @param roundLength the number of cards to consider (e.g., round length)
      * @return the sum of the maximum CO2 values for each card
      */
     public double getMaxResult(List<Card> cards, int roundLength) {
