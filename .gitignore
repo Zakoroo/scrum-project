@@ -44,8 +44,6 @@ coverage/
 .DS_Store
 Thumbs.db
 
-# Logs
-*.log
 
 # Docker
 *.pid

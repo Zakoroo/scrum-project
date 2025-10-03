@@ -1,0 +1,767 @@
+
+
+Version:	3.50
+CmdLine:	C:\Users\moham\Desktop\original\scrum-project\working.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\moham\Desktop\original\scrum-project\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.022.000
+Java max ver:	
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\IronRuby 1.1\bin;C:\Program Files\MATLAB\R2024b\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\Users\moham\AppData\Local\Microsoft\WindowsApps;C:\msys64\ucrt64\bin;C:\Program Files\Java\jdk-23\bin;C:\Program Files\PostgreSQL\13\bin;C:\Users\moham\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\moham\AppData\Roaming\npm;C:\Program Files\Java\jdk-23\bin
+JRE paths:	;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\IronRuby 1.1\bin;C:\Program Files\MATLAB\R2024b\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\Users\moham\AppData\Local\Microsoft\WindowsApps;C:\msys64\ucrt64\bin;C:\Program Files\Java\jdk-23\bin;C:\Program Files\PostgreSQL\13\bin;C:\Users\moham\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\moham\AppData\Roaming\npm;C:\Program Files\Java\jdk-23\bin
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\system32\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\IronRuby 1.1\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\MATLAB\R2024b\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\system32\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Git\cmd\bin\javaw.exe (not found)
+Check launcher:	C:\ProgramData\chocolatey\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Docker\Docker\resources\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\nodejs\bin\javaw.exe (not found)
+Check launcher:	C:\Users\moham\AppData\Local\Microsoft\WindowsApps\bin\javaw.exe (not found)
+Check launcher:	C:\msys64\ucrt64\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jdk-23\bin\javaw.exe (OK)
+Version string: 1.023.000_001 / 64-Bit (OK)
+Substitute:	EXEDIR = C:\Users\moham\Desktop\original\scrum-project
+Launcher:	C:\Program Files\Java\jdk-23\bin\javaw.exe
+Launcher args:	--module-path C:\Users\moham\Desktop\original\scrum-project\lib --add-modules javafx.controls,javafx.fxml -Dprism.order=sw -Dprism.verbose=true -jar "C:\Users\moham\Desktop\original\scrum-project\working.exe"
+Args length:	208/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	C:\Users\moham\Desktop\original\scrum-project\working.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\moham\Desktop\original\scrum-project\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.022.000
+Java max ver:	
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\IronRuby 1.1\bin;C:\Program Files\MATLAB\R2024b\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\Users\moham\AppData\Local\Microsoft\WindowsApps;C:\msys64\ucrt64\bin;C:\Program Files\Java\jdk-23\bin;C:\Program Files\PostgreSQL\13\bin;C:\Users\moham\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\moham\AppData\Roaming\npm;C:\Program Files\Java\jdk-23\bin
+JRE paths:	;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\IronRuby 1.1\bin;C:\Program Files\MATLAB\R2024b\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\Users\moham\AppData\Local\Microsoft\WindowsApps;C:\msys64\ucrt64\bin;C:\Program Files\Java\jdk-23\bin;C:\Program Files\PostgreSQL\13\bin;C:\Users\moham\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\moham\AppData\Roaming\npm;C:\Program Files\Java\jdk-23\bin
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\system32\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\IronRuby 1.1\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\MATLAB\R2024b\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\system32\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Git\cmd\bin\javaw.exe (not found)
+Check launcher:	C:\ProgramData\chocolatey\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Docker\Docker\resources\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\nodejs\bin\javaw.exe (not found)
+Check launcher:	C:\Users\moham\AppData\Local\Microsoft\WindowsApps\bin\javaw.exe (not found)
+Check launcher:	C:\msys64\ucrt64\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jdk-23\bin\javaw.exe (OK)
+Version string: 1.023.000_001 / 64-Bit (OK)
+Substitute:	EXEDIR = C:\Users\moham\Desktop\original\scrum-project
+Launcher:	C:\Program Files\Java\jdk-23\bin\javaw.exe
+Launcher args:	--module-path C:\Users\moham\Desktop\original\scrum-project\lib --add-modules javafx.controls,javafx.fxml -Dprism.order=sw -Dprism.verbose=true -jar "C:\Users\moham\Desktop\original\scrum-project\working.exe"
+Args length:	208/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	C:\Users\moham\Desktop\original\scrum-project\excuteable.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\moham\Desktop\original\scrum-project\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.022.000
+Java max ver:	
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\IronRuby 1.1\bin;C:\Program Files\MATLAB\R2024b\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\Users\moham\AppData\Local\Microsoft\WindowsApps;C:\msys64\ucrt64\bin;C:\Program Files\Java\jdk-23\bin;C:\Program Files\PostgreSQL\13\bin;C:\Users\moham\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\moham\AppData\Roaming\npm;C:\Program Files\Java\jdk-23\bin
+JRE paths:	;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\IronRuby 1.1\bin;C:\Program Files\MATLAB\R2024b\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\Users\moham\AppData\Local\Microsoft\WindowsApps;C:\msys64\ucrt64\bin;C:\Program Files\Java\jdk-23\bin;C:\Program Files\PostgreSQL\13\bin;C:\Users\moham\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\moham\AppData\Roaming\npm;C:\Program Files\Java\jdk-23\bin
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\system32\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\IronRuby 1.1\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\MATLAB\R2024b\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\system32\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Git\cmd\bin\javaw.exe (not found)
+Check launcher:	C:\ProgramData\chocolatey\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Docker\Docker\resources\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\nodejs\bin\javaw.exe (not found)
+Check launcher:	C:\Users\moham\AppData\Local\Microsoft\WindowsApps\bin\javaw.exe (not found)
+Check launcher:	C:\msys64\ucrt64\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jdk-23\bin\javaw.exe (OK)
+Version string: 1.023.000_001 / 64-Bit (OK)
+Substitute:	EXEDIR = C:\Users\moham\Desktop\original\scrum-project
+Launcher:	C:\Program Files\Java\jdk-23\bin\javaw.exe
+Launcher args:	--module-path C:\Users\moham\Desktop\original\scrum-project\lib --add-modules javafx.controls,javafx.fxml -Dprism.order=sw -Dprism.verbose=true -jar "C:\Users\moham\Desktop\original\scrum-project\excuteable.exe"
+Args length:	211/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	C:\Users\moham\Desktop\original\scrum-project\excuteable.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\moham\Desktop\original\scrum-project\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.022.000
+Java max ver:	
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\IronRuby 1.1\bin;C:\Program Files\MATLAB\R2024b\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\Users\moham\AppData\Local\Microsoft\WindowsApps;C:\msys64\ucrt64\bin;C:\Program Files\Java\jdk-23\bin;C:\Program Files\PostgreSQL\13\bin;C:\Users\moham\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\moham\AppData\Roaming\npm;C:\Program Files\Java\jdk-23\bin
+JRE paths:	;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\IronRuby 1.1\bin;C:\Program Files\MATLAB\R2024b\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\Users\moham\AppData\Local\Microsoft\WindowsApps;C:\msys64\ucrt64\bin;C:\Program Files\Java\jdk-23\bin;C:\Program Files\PostgreSQL\13\bin;C:\Users\moham\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\moham\AppData\Roaming\npm;C:\Program Files\Java\jdk-23\bin
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\system32\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\IronRuby 1.1\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\MATLAB\R2024b\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\system32\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Git\cmd\bin\javaw.exe (not found)
+Check launcher:	C:\ProgramData\chocolatey\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Docker\Docker\resources\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\nodejs\bin\javaw.exe (not found)
+Check launcher:	C:\Users\moham\AppData\Local\Microsoft\WindowsApps\bin\javaw.exe (not found)
+Check launcher:	C:\msys64\ucrt64\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jdk-23\bin\javaw.exe (OK)
+Version string: 1.023.000_001 / 64-Bit (OK)
+Substitute:	EXEDIR = C:\Users\moham\Desktop\original\scrum-project
+Launcher:	C:\Program Files\Java\jdk-23\bin\javaw.exe
+Launcher args:	--module-path C:\Users\moham\Desktop\original\scrum-project\lib --add-modules javafx.controls,javafx.fxml -Dprism.order=sw -Dprism.verbose=true -jar "C:\Users\moham\Desktop\original\scrum-project\excuteable.exe"
+Args length:	211/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	C:\Users\moham\Desktop\original\scrum-project\excuteable.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\moham\Desktop\original\scrum-project\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.022.000
+Java max ver:	
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\IronRuby 1.1\bin;C:\Program Files\MATLAB\R2024b\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\Users\moham\AppData\Local\Microsoft\WindowsApps;C:\msys64\ucrt64\bin;C:\Program Files\Java\jdk-23\bin;C:\Program Files\PostgreSQL\13\bin;C:\Users\moham\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\moham\AppData\Roaming\npm;C:\Program Files\Java\jdk-23\bin
+JRE paths:	;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\IronRuby 1.1\bin;C:\Program Files\MATLAB\R2024b\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\Users\moham\AppData\Local\Microsoft\WindowsApps;C:\msys64\ucrt64\bin;C:\Program Files\Java\jdk-23\bin;C:\Program Files\PostgreSQL\13\bin;C:\Users\moham\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\moham\AppData\Roaming\npm;C:\Program Files\Java\jdk-23\bin
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\system32\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\IronRuby 1.1\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\MATLAB\R2024b\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\system32\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Git\cmd\bin\javaw.exe (not found)
+Check launcher:	C:\ProgramData\chocolatey\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Docker\Docker\resources\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\nodejs\bin\javaw.exe (not found)
+Check launcher:	C:\Users\moham\AppData\Local\Microsoft\WindowsApps\bin\javaw.exe (not found)
+Check launcher:	C:\msys64\ucrt64\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jdk-23\bin\javaw.exe (OK)
+Version string: 1.023.000_001 / 64-Bit (OK)
+Substitute:	EXEDIR = C:\Users\moham\Desktop\original\scrum-project
+Launcher:	C:\Program Files\Java\jdk-23\bin\javaw.exe
+Launcher args:	--module-path C:\Users\moham\Desktop\original\scrum-project\lib --add-modules javafx.controls,javafx.fxml -Dprism.order=sw -Dprism.verbose=true -jar "C:\Users\moham\Desktop\original\scrum-project\excuteable.exe"
+Args length:	211/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	C:\Users\moham\Desktop\original\scrum-project\excuteable.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\moham\Desktop\original\scrum-project\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.022.000
+Java max ver:	
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\IronRuby 1.1\bin;C:\Program Files\MATLAB\R2024b\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\Users\moham\AppData\Local\Microsoft\WindowsApps;C:\msys64\ucrt64\bin;C:\Program Files\Java\jdk-23\bin;C:\Program Files\PostgreSQL\13\bin;C:\Users\moham\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\moham\AppData\Roaming\npm;C:\Program Files\Java\jdk-23\bin
+JRE paths:	;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\IronRuby 1.1\bin;C:\Program Files\MATLAB\R2024b\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\Users\moham\AppData\Local\Microsoft\WindowsApps;C:\msys64\ucrt64\bin;C:\Program Files\Java\jdk-23\bin;C:\Program Files\PostgreSQL\13\bin;C:\Users\moham\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\moham\AppData\Roaming\npm;C:\Program Files\Java\jdk-23\bin
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\system32\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\IronRuby 1.1\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\MATLAB\R2024b\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\system32\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Git\cmd\bin\javaw.exe (not found)
+Check launcher:	C:\ProgramData\chocolatey\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Docker\Docker\resources\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\nodejs\bin\javaw.exe (not found)
+Check launcher:	C:\Users\moham\AppData\Local\Microsoft\WindowsApps\bin\javaw.exe (not found)
+Check launcher:	C:\msys64\ucrt64\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jdk-23\bin\javaw.exe (OK)
+Version string: 1.023.000_001 / 64-Bit (OK)
+Substitute:	EXEDIR = C:\Users\moham\Desktop\original\scrum-project
+Launcher:	C:\Program Files\Java\jdk-23\bin\javaw.exe
+Launcher args:	--module-path C:\Users\moham\Desktop\original\scrum-project\lib --add-modules javafx.controls,javafx.fxml -Dprism.order=sw -Dprism.verbose=true -jar "C:\Users\moham\Desktop\original\scrum-project\excuteable.exe"
+Args length:	211/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	C:\Users\moham\Desktop\original\scrum-project\excuteable.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\moham\Desktop\original\scrum-project\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.022.000
+Java max ver:	
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\IronRuby 1.1\bin;C:\Program Files\MATLAB\R2024b\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\Users\moham\AppData\Local\Microsoft\WindowsApps;C:\msys64\ucrt64\bin;C:\Program Files\Java\jdk-23\bin;C:\Program Files\PostgreSQL\13\bin;C:\Users\moham\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\moham\AppData\Roaming\npm;C:\Program Files\Java\jdk-23\bin
+JRE paths:	;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\IronRuby 1.1\bin;C:\Program Files\MATLAB\R2024b\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\Users\moham\AppData\Local\Microsoft\WindowsApps;C:\msys64\ucrt64\bin;C:\Program Files\Java\jdk-23\bin;C:\Program Files\PostgreSQL\13\bin;C:\Users\moham\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\moham\AppData\Roaming\npm;C:\Program Files\Java\jdk-23\bin
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\system32\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\IronRuby 1.1\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\MATLAB\R2024b\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\system32\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Git\cmd\bin\javaw.exe (not found)
+Check launcher:	C:\ProgramData\chocolatey\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Docker\Docker\resources\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\nodejs\bin\javaw.exe (not found)
+Check launcher:	C:\Users\moham\AppData\Local\Microsoft\WindowsApps\bin\javaw.exe (not found)
+Check launcher:	C:\msys64\ucrt64\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jdk-23\bin\javaw.exe (OK)
+Version string: 1.023.000_001 / 64-Bit (OK)
+Substitute:	EXEDIR = C:\Users\moham\Desktop\original\scrum-project
+Substitute:	EXEDIR = C:\Users\moham\Desktop\original\scrum-project
+Launcher:	C:\Program Files\Java\jdk-23\bin\javaw.exe
+Launcher args:	--module-path C:\Users\moham\Desktop\original\scrum-project\lib --add-modules javafx.controls,javafx.fxml -Dprism.order=sw -Dprism.verbose=true -Djava.library.path="C:\Users\moham\Desktop\original\scrum-project\lib" -jar "C:\Users\moham\Desktop\original\scrum-project\excuteable.exe"
+Args length:	283/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	C:\Users\moham\Desktop\original\scrum-project\excuteable.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\moham\Desktop\original\scrum-project\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.022.000
+Java max ver:	
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\IronRuby 1.1\bin;C:\Program Files\MATLAB\R2024b\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\Users\moham\AppData\Local\Microsoft\WindowsApps;C:\msys64\ucrt64\bin;C:\Program Files\Java\jdk-23\bin;C:\Program Files\PostgreSQL\13\bin;C:\Users\moham\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\moham\AppData\Roaming\npm;C:\Program Files\Java\jdk-23\bin
+JRE paths:	;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\IronRuby 1.1\bin;C:\Program Files\MATLAB\R2024b\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\Users\moham\AppData\Local\Microsoft\WindowsApps;C:\msys64\ucrt64\bin;C:\Program Files\Java\jdk-23\bin;C:\Program Files\PostgreSQL\13\bin;C:\Users\moham\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\moham\AppData\Roaming\npm;C:\Program Files\Java\jdk-23\bin
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\system32\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\IronRuby 1.1\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\MATLAB\R2024b\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\system32\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Git\cmd\bin\javaw.exe (not found)
+Check launcher:	C:\ProgramData\chocolatey\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Docker\Docker\resources\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\nodejs\bin\javaw.exe (not found)
+Check launcher:	C:\Users\moham\AppData\Local\Microsoft\WindowsApps\bin\javaw.exe (not found)
+Check launcher:	C:\msys64\ucrt64\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jdk-23\bin\javaw.exe (OK)
+Version string: 1.023.000_001 / 64-Bit (OK)
+Substitute:	EXEDIR = C:\Users\moham\Desktop\original\scrum-project
+Substitute:	EXEDIR = C:\Users\moham\Desktop\original\scrum-project
+Launcher:	C:\Program Files\Java\jdk-23\bin\javaw.exe
+Launcher args:	--module-path C:\Users\moham\Desktop\original\scrum-project\lib --add-modules javafx.controls,javafx.fxml -Dprism.order=sw -Dprism.verbose=true -Djava.library.path=C:\Users\moham\Desktop\original\scrum-project\lib -jar "C:\Users\moham\Desktop\original\scrum-project\excuteable.exe"
+Args length:	281/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	C:\Users\moham\Desktop\original\scrum-project\excuteable.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\moham\Desktop\original\scrum-project\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.022.000
+Java max ver:	
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\IronRuby 1.1\bin;C:\Program Files\MATLAB\R2024b\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\Users\moham\AppData\Local\Microsoft\WindowsApps;C:\msys64\ucrt64\bin;C:\Program Files\Java\jdk-23\bin;C:\Program Files\PostgreSQL\13\bin;C:\Users\moham\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\moham\AppData\Roaming\npm;C:\Program Files\Java\jdk-23\bin
+JRE paths:	;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\IronRuby 1.1\bin;C:\Program Files\MATLAB\R2024b\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\Users\moham\AppData\Local\Microsoft\WindowsApps;C:\msys64\ucrt64\bin;C:\Program Files\Java\jdk-23\bin;C:\Program Files\PostgreSQL\13\bin;C:\Users\moham\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\moham\AppData\Roaming\npm;C:\Program Files\Java\jdk-23\bin
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\system32\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\IronRuby 1.1\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\MATLAB\R2024b\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\system32\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Git\cmd\bin\javaw.exe (not found)
+Check launcher:	C:\ProgramData\chocolatey\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Docker\Docker\resources\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\nodejs\bin\javaw.exe (not found)
+Check launcher:	C:\Users\moham\AppData\Local\Microsoft\WindowsApps\bin\javaw.exe (not found)
+Check launcher:	C:\msys64\ucrt64\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jdk-23\bin\javaw.exe (OK)
+Version string: 1.023.000_001 / 64-Bit (OK)
+Substitute:	EXEDIR = C:\Users\moham\Desktop\original\scrum-project
+Substitute:	EXEDIR = C:\Users\moham\Desktop\original\scrum-project
+Launcher:	C:\Program Files\Java\jdk-23\bin\javaw.exe
+Launcher args:	--module-path C:\Users\moham\Desktop\original\scrum-project\lib --add-modules javafx.controls,javafx.fxml -Dprism.order=sw -Dprism.verbose=true -Djava.library.path="C:\Users\moham\Desktop\original\scrum-project\lib" -jar "C:\Users\moham\Desktop\original\scrum-project\excuteable.exe"
+Args length:	283/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	C:\Users\moham\Desktop\original\scrum-project\excuteable.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\moham\Desktop\original\scrum-project\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.022.000
+Java max ver:	
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\IronRuby 1.1\bin;C:\Program Files\MATLAB\R2024b\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\Users\moham\AppData\Local\Microsoft\WindowsApps;C:\msys64\ucrt64\bin;C:\Program Files\Java\jdk-23\bin;C:\Program Files\PostgreSQL\13\bin;C:\Users\moham\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\moham\AppData\Roaming\npm;C:\Program Files\Java\jdk-23\bin
+JRE paths:	;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\IronRuby 1.1\bin;C:\Program Files\MATLAB\R2024b\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\Users\moham\AppData\Local\Microsoft\WindowsApps;C:\msys64\ucrt64\bin;C:\Program Files\Java\jdk-23\bin;C:\Program Files\PostgreSQL\13\bin;C:\Users\moham\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\moham\AppData\Roaming\npm;C:\Program Files\Java\jdk-23\bin
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\system32\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\IronRuby 1.1\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\MATLAB\R2024b\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\system32\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Git\cmd\bin\javaw.exe (not found)
+Check launcher:	C:\ProgramData\chocolatey\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Docker\Docker\resources\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\nodejs\bin\javaw.exe (not found)
+Check launcher:	C:\Users\moham\AppData\Local\Microsoft\WindowsApps\bin\javaw.exe (not found)
+Check launcher:	C:\msys64\ucrt64\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jdk-23\bin\javaw.exe (OK)
+Version string: 1.023.000_001 / 64-Bit (OK)
+Substitute:	EXEDIR = C:\Users\moham\Desktop\original\scrum-project
+Launcher:	C:\Program Files\Java\jdk-23\bin\javaw.exe
+Launcher args:	--module-path C:\Users\moham\Desktop\original\scrum-project\lib --add-modules javafx.controls,javafx.fxml -Dprism.order=sw -Dprism.verbose=true -jar "C:\Users\moham\Desktop\original\scrum-project\excuteable.exe"
+Args length:	211/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	C:\Users\moham\Desktop\original\scrum-project\excuteable.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\moham\Desktop\original\scrum-project\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.022.000
+Java max ver:	
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\IronRuby 1.1\bin;C:\Program Files\MATLAB\R2024b\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\Users\moham\AppData\Local\Microsoft\WindowsApps;C:\msys64\ucrt64\bin;C:\Program Files\Java\jdk-23\bin;C:\Program Files\PostgreSQL\13\bin;C:\Users\moham\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\moham\AppData\Roaming\npm;C:\Program Files\Java\jdk-23\bin
+JRE paths:	;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\IronRuby 1.1\bin;C:\Program Files\MATLAB\R2024b\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\Users\moham\AppData\Local\Microsoft\WindowsApps;C:\msys64\ucrt64\bin;C:\Program Files\Java\jdk-23\bin;C:\Program Files\PostgreSQL\13\bin;C:\Users\moham\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\moham\AppData\Roaming\npm;C:\Program Files\Java\jdk-23\bin
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\system32\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\IronRuby 1.1\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\MATLAB\R2024b\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\system32\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Git\cmd\bin\javaw.exe (not found)
+Check launcher:	C:\ProgramData\chocolatey\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Docker\Docker\resources\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\nodejs\bin\javaw.exe (not found)
+Check launcher:	C:\Users\moham\AppData\Local\Microsoft\WindowsApps\bin\javaw.exe (not found)
+Check launcher:	C:\msys64\ucrt64\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jdk-23\bin\javaw.exe (OK)
+Version string: 1.023.000_001 / 64-Bit (OK)
+Substitute:	EXEDIR = C:\Users\moham\Desktop\original\scrum-project
+Substitute:	EXEDIR = C:\Users\moham\Desktop\original\scrum-project
+Launcher:	C:\Program Files\Java\jdk-23\bin\javaw.exe
+Launcher args:	--module-path C:\Users\moham\Desktop\original\scrum-project\lib --add-modules javafx.controls,javafx.fxml -Dprism.order=sw -Dprism.verbose=true -Djava.library.path=C:\Users\moham\Desktop\original\scrum-project\bin -jar "C:\Users\moham\Desktop\original\scrum-project\excuteable.exe"
+Args length:	281/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	C:\Users\moham\Desktop\original\scrum-project\excuteable.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\moham\Desktop\original\scrum-project\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.022.000
+Java max ver:	
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\IronRuby 1.1\bin;C:\Program Files\MATLAB\R2024b\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\Users\moham\AppData\Local\Microsoft\WindowsApps;C:\msys64\ucrt64\bin;C:\Program Files\Java\jdk-23\bin;C:\Program Files\PostgreSQL\13\bin;C:\Users\moham\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\moham\AppData\Roaming\npm;C:\Program Files\Java\jdk-23\bin
+JRE paths:	;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\IronRuby 1.1\bin;C:\Program Files\MATLAB\R2024b\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\Users\moham\AppData\Local\Microsoft\WindowsApps;C:\msys64\ucrt64\bin;C:\Program Files\Java\jdk-23\bin;C:\Program Files\PostgreSQL\13\bin;C:\Users\moham\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\moham\AppData\Roaming\npm;C:\Program Files\Java\jdk-23\bin
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\system32\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\IronRuby 1.1\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\MATLAB\R2024b\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\system32\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Git\cmd\bin\javaw.exe (not found)
+Check launcher:	C:\ProgramData\chocolatey\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Docker\Docker\resources\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\nodejs\bin\javaw.exe (not found)
+Check launcher:	C:\Users\moham\AppData\Local\Microsoft\WindowsApps\bin\javaw.exe (not found)
+Check launcher:	C:\msys64\ucrt64\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jdk-23\bin\javaw.exe (OK)
+Version string: 1.023.000_001 / 64-Bit (OK)
+Substitute:	EXEDIR = C:\Users\moham\Desktop\original\scrum-project
+Substitute:	EXEDIR = C:\Users\moham\Desktop\original\scrum-project
+Launcher:	C:\Program Files\Java\jdk-23\bin\javaw.exe
+Launcher args:	--module-path C:\Users\moham\Desktop\original\scrum-project\lib --add-modules javafx.controls,javafx.fxml -Dprism.order=sw -Dprism.verbose=true -Djava.library.path=C:\Users\moham\Desktop\original\scrum-project\bin -jar "C:\Users\moham\Desktop\original\scrum-project\excuteable.exe"
+Args length:	281/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	C:\Users\moham\Desktop\original\scrum-project\excuteable.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\moham\Desktop\original\scrum-project\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.022.000
+Java max ver:	
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\IronRuby 1.1\bin;C:\Program Files\MATLAB\R2024b\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\Users\moham\AppData\Local\Microsoft\WindowsApps;C:\msys64\ucrt64\bin;C:\Program Files\Java\jdk-23\bin;C:\Program Files\PostgreSQL\13\bin;C:\Users\moham\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\moham\AppData\Roaming\npm;C:\Program Files\Java\jdk-23\bin
+JRE paths:	;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\IronRuby 1.1\bin;C:\Program Files\MATLAB\R2024b\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\Users\moham\AppData\Local\Microsoft\WindowsApps;C:\msys64\ucrt64\bin;C:\Program Files\Java\jdk-23\bin;C:\Program Files\PostgreSQL\13\bin;C:\Users\moham\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\moham\AppData\Roaming\npm;C:\Program Files\Java\jdk-23\bin
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\system32\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\IronRuby 1.1\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\MATLAB\R2024b\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\system32\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Git\cmd\bin\javaw.exe (not found)
+Check launcher:	C:\ProgramData\chocolatey\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Docker\Docker\resources\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\nodejs\bin\javaw.exe (not found)
+Check launcher:	C:\Users\moham\AppData\Local\Microsoft\WindowsApps\bin\javaw.exe (not found)
+Check launcher:	C:\msys64\ucrt64\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jdk-23\bin\javaw.exe (OK)
+Version string: 1.023.000_001 / 64-Bit (OK)
+Substitute:	EXEDIR = C:\Users\moham\Desktop\original\scrum-project
+Substitute:	EXEDIR = C:\Users\moham\Desktop\original\scrum-project
+Launcher:	C:\Program Files\Java\jdk-23\bin\javaw.exe
+Launcher args:	--module-path C:\Users\moham\Desktop\original\scrum-project\lib --add-modules javafx.controls,javafx.fxml -Dprism.order=sw -Dprism.verbose=true -Djava.library.path=C:\Users\moham\Desktop\original\scrum-project\bin -jar "C:\Users\moham\Desktop\original\scrum-project\excuteable.exe"
+Args length:	281/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	C:\Users\moham\Desktop\original\scrum-project\excuteable.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\moham\Desktop\original\scrum-project\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.022.000
+Java max ver:	
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\IronRuby 1.1\bin;C:\Program Files\MATLAB\R2024b\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\Users\moham\AppData\Local\Microsoft\WindowsApps;C:\msys64\ucrt64\bin;C:\Program Files\Java\jdk-23\bin;C:\Program Files\PostgreSQL\13\bin;C:\Users\moham\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\moham\AppData\Roaming\npm;C:\Program Files\Java\jdk-23\bin
+JRE paths:	;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\IronRuby 1.1\bin;C:\Program Files\MATLAB\R2024b\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\Users\moham\AppData\Local\Microsoft\WindowsApps;C:\msys64\ucrt64\bin;C:\Program Files\Java\jdk-23\bin;C:\Program Files\PostgreSQL\13\bin;C:\Users\moham\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\moham\AppData\Roaming\npm;C:\Program Files\Java\jdk-23\bin
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\system32\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\IronRuby 1.1\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\MATLAB\R2024b\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\system32\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Git\cmd\bin\javaw.exe (not found)
+Check launcher:	C:\ProgramData\chocolatey\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Docker\Docker\resources\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\nodejs\bin\javaw.exe (not found)
+Check launcher:	C:\Users\moham\AppData\Local\Microsoft\WindowsApps\bin\javaw.exe (not found)
+Check launcher:	C:\msys64\ucrt64\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jdk-23\bin\javaw.exe (OK)
+Version string: 1.023.000_001 / 64-Bit (OK)
+Substitute:	EXEDIR = C:\Users\moham\Desktop\original\scrum-project
+Substitute:	EXEDIR = C:\Users\moham\Desktop\original\scrum-project
+Launcher:	C:\Program Files\Java\jdk-23\bin\javaw.exe
+Launcher args:	--module-path C:\Users\moham\Desktop\original\scrum-project\lib --add-modules javafx.controls,javafx.fxml -Dprism.order=sw -Dprism.verbose=true -Djava.library.path=C:\Users\moham\Desktop\original\scrum-project\bin -jar "C:\Users\moham\Desktop\original\scrum-project\excuteable.exe"
+Args length:	281/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	C:\Users\moham\Desktop\original\scrum-project\excuteable.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\moham\Desktop\original\scrum-project\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.022.000
+Java max ver:	
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\IronRuby 1.1\bin;C:\Program Files\MATLAB\R2024b\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\Users\moham\AppData\Local\Microsoft\WindowsApps;C:\msys64\ucrt64\bin;C:\Program Files\Java\jdk-23\bin;C:\Program Files\PostgreSQL\13\bin;C:\Users\moham\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\moham\AppData\Roaming\npm;C:\Program Files\Java\jdk-23\bin
+JRE paths:	;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\IronRuby 1.1\bin;C:\Program Files\MATLAB\R2024b\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\Users\moham\AppData\Local\Microsoft\WindowsApps;C:\msys64\ucrt64\bin;C:\Program Files\Java\jdk-23\bin;C:\Program Files\PostgreSQL\13\bin;C:\Users\moham\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\moham\AppData\Roaming\npm;C:\Program Files\Java\jdk-23\bin
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\system32\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\IronRuby 1.1\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\MATLAB\R2024b\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\system32\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Git\cmd\bin\javaw.exe (not found)
+Check launcher:	C:\ProgramData\chocolatey\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Docker\Docker\resources\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\nodejs\bin\javaw.exe (not found)
+Check launcher:	C:\Users\moham\AppData\Local\Microsoft\WindowsApps\bin\javaw.exe (not found)
+Check launcher:	C:\msys64\ucrt64\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jdk-23\bin\javaw.exe (OK)
+Version string: 1.023.000_001 / 64-Bit (OK)
+Substitute:	EXEDIR = C:\Users\moham\Desktop\original\scrum-project
+Substitute:	EXEDIR = C:\Users\moham\Desktop\original\scrum-project
+Launcher:	C:\Program Files\Java\jdk-23\bin\javaw.exe
+Launcher args:	--module-path C:\Users\moham\Desktop\original\scrum-project\lib --add-modules javafx.controls,javafx.fxml -Dprism.order=sw -Dprism.verbose=true -Djava.library.path=C:\Users\moham\Desktop\original\scrum-project\bin -jar "C:\Users\moham\Desktop\original\scrum-project\excuteable.exe"
+Args length:	281/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	C:\Users\moham\Desktop\original\scrum-project\excuteable.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\moham\Desktop\original\scrum-project\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.022.000
+Java max ver:	
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\IronRuby 1.1\bin;C:\Program Files\MATLAB\R2024b\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\Users\moham\AppData\Local\Microsoft\WindowsApps;C:\msys64\ucrt64\bin;C:\Program Files\Java\jdk-23\bin;C:\Program Files\PostgreSQL\13\bin;C:\Users\moham\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\moham\AppData\Roaming\npm;C:\Program Files\Java\jdk-23\bin
+JRE paths:	;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\IronRuby 1.1\bin;C:\Program Files\MATLAB\R2024b\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\Users\moham\AppData\Local\Microsoft\WindowsApps;C:\msys64\ucrt64\bin;C:\Program Files\Java\jdk-23\bin;C:\Program Files\PostgreSQL\13\bin;C:\Users\moham\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\moham\AppData\Roaming\npm;C:\Program Files\Java\jdk-23\bin
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\system32\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\IronRuby 1.1\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\MATLAB\R2024b\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\system32\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Git\cmd\bin\javaw.exe (not found)
+Check launcher:	C:\ProgramData\chocolatey\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Docker\Docker\resources\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\nodejs\bin\javaw.exe (not found)
+Check launcher:	C:\Users\moham\AppData\Local\Microsoft\WindowsApps\bin\javaw.exe (not found)
+Check launcher:	C:\msys64\ucrt64\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jdk-23\bin\javaw.exe (OK)
+Version string: 1.023.000_001 / 64-Bit (OK)
+Substitute:	EXEDIR = C:\Users\moham\Desktop\original\scrum-project
+Substitute:	EXEDIR = C:\Users\moham\Desktop\original\scrum-project
+Launcher:	C:\Program Files\Java\jdk-23\bin\javaw.exe
+Launcher args:	--module-path C:\Users\moham\Desktop\original\scrum-project\lib --add-modules javafx.controls,javafx.fxml -Dprism.order=sw -Dprism.verbose=true -Djava.library.path=C:\Users\moham\Desktop\original\scrum-project\bin -jar "C:\Users\moham\Desktop\original\scrum-project\excuteable.exe"
+Args length:	281/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	C:\Users\moham\Desktop\original\scrum-project\excuteable.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\moham\Desktop\original\scrum-project\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.022.000
+Java max ver:	
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\IronRuby 1.1\bin;C:\Program Files\MATLAB\R2024b\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\Users\moham\AppData\Local\Microsoft\WindowsApps;C:\msys64\ucrt64\bin;C:\Program Files\Java\jdk-23\bin;C:\Program Files\PostgreSQL\13\bin;C:\Users\moham\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\moham\AppData\Roaming\npm;C:\Program Files\Java\jdk-23\bin
+JRE paths:	;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\IronRuby 1.1\bin;C:\Program Files\MATLAB\R2024b\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\Users\moham\AppData\Local\Microsoft\WindowsApps;C:\msys64\ucrt64\bin;C:\Program Files\Java\jdk-23\bin;C:\Program Files\PostgreSQL\13\bin;C:\Users\moham\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\moham\AppData\Roaming\npm;C:\Program Files\Java\jdk-23\bin
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\system32\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\IronRuby 1.1\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\MATLAB\R2024b\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\system32\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Git\cmd\bin\javaw.exe (not found)
+Check launcher:	C:\ProgramData\chocolatey\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Docker\Docker\resources\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\nodejs\bin\javaw.exe (not found)
+Check launcher:	C:\Users\moham\AppData\Local\Microsoft\WindowsApps\bin\javaw.exe (not found)
+Check launcher:	C:\msys64\ucrt64\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jdk-23\bin\javaw.exe (OK)
+Version string: 1.023.000_001 / 64-Bit (OK)
+Substitute:	EXEDIR = C:\Users\moham\Desktop\original\scrum-project
+Substitute:	EXEDIR = C:\Users\moham\Desktop\original\scrum-project
+Launcher:	C:\Program Files\Java\jdk-23\bin\javaw.exe
+Launcher args:	--module-path C:\Users\moham\Desktop\original\scrum-project\lib --add-modules javafx.controls,javafx.fxml -Dprism.order=sw -Dprism.verbose=true -Djava.library.path=C:\Users\moham\Desktop\original\scrum-project\bin -jar "C:\Users\moham\Desktop\original\scrum-project\excuteable.exe"
+Args length:	281/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	C:\Users\moham\Desktop\original\scrum-project\excuteable.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\moham\Desktop\original\scrum-project\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	1.022.000
+Java max ver:	
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\IronRuby 1.1\bin;C:\Program Files\MATLAB\R2024b\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\Users\moham\AppData\Local\Microsoft\WindowsApps;C:\msys64\ucrt64\bin;C:\Program Files\Java\jdk-23\bin;C:\Program Files\PostgreSQL\13\bin;C:\Users\moham\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\moham\AppData\Roaming\npm;C:\Program Files\Java\jdk-23\bin
+JRE paths:	;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\IronRuby 1.1\bin;C:\Program Files\MATLAB\R2024b\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\Users\moham\AppData\Local\Microsoft\WindowsApps;C:\msys64\ucrt64\bin;C:\Program Files\Java\jdk-23\bin;C:\Program Files\PostgreSQL\13\bin;C:\Users\moham\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\moham\AppData\Roaming\npm;C:\Program Files\Java\jdk-23\bin
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\system32\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\Windows\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files (x86)\IronRuby 1.1\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\MATLAB\R2024b\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\system32\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\Wbem\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\WindowsPowerShell\v1.0\bin\javaw.exe (not found)
+Check launcher:	C:\WINDOWS\System32\OpenSSH\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Git\cmd\bin\javaw.exe (not found)
+Check launcher:	C:\ProgramData\chocolatey\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Docker\Docker\resources\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\nodejs\bin\javaw.exe (not found)
+Check launcher:	C:\Users\moham\AppData\Local\Microsoft\WindowsApps\bin\javaw.exe (not found)
+Check launcher:	C:\msys64\ucrt64\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Java\jdk-23\bin\javaw.exe (OK)
+Version string: 1.023.000_001 / 64-Bit (OK)
+Substitute:	EXEDIR = C:\Users\moham\Desktop\original\scrum-project
+Substitute:	EXEDIR = C:\Users\moham\Desktop\original\scrum-project
+Launcher:	C:\Program Files\Java\jdk-23\bin\javaw.exe
+Launcher args:	--module-path C:\Users\moham\Desktop\original\scrum-project\lib --add-modules javafx.controls,javafx.fxml -Dprism.order=sw -Dprism.verbose=true -Djava.library.path=C:\Users\moham\Desktop\original\scrum-project\bin -jar "C:\Users\moham\Desktop\original\scrum-project\excuteable.exe"
+Args length:	281/32768 chars
+Exit code:	0
