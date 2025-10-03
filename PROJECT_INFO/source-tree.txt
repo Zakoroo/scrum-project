@@ -20,24 +20,29 @@ src
 │   │           │   └── postgresql-42.7.4.jar
 │   │           └── utils
 │   │               ├── AddCardTool.java
+│   │               ├── Alternative.java
 │   │               ├── Card.java
 │   │               ├── CardFetcher.java
 │   │               ├── CardJsonIO.java
-│   │               ├── Cards.java
-│   │               ├── Choice.java
+│   │               ├── CardWrapper.java
+│   │               ├── FeedbackCalculator.java
 │   │               ├── JsonCardFetcher.java
 │   │               └── test.java
 │   └── resources
+│       ├── background.png
 │       ├── cards.json
-│       └── fxml
-│           ├── altButton.fxml
-│           ├── gameloop.fxml
-│           ├── main.fxml
-│           └── results.fxml
+│       ├── fxml
+│       │   ├── altButton.fxml
+│       │   ├── gameloop.fxml
+│       │   ├── main.fxml
+│       │   └── results.fxml
+│       ├── gameicon.png
+│       └── style
+│           └── style.css
 └── test
     └── java
         └── com
             └── ecologicstudios
                 └── AppTest.java
 
-16 directories, 25 files
+17 directories, 29 files
