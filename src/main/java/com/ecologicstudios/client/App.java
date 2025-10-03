@@ -1,6 +1,7 @@
 package com.ecologicstudios.client;
 
 import javafx.application.Application;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import com.ecologicstudios.client.controllers.SceneManager;
 import com.ecologicstudios.client.models.GameLoopModel;
@@ -33,6 +34,8 @@ public class App extends Application {
         try {
             primaryStage.setTitle("Climate game");
             primaryStage.setResizable(false);
+            Image icon = new Image("gameicon.png");
+            primaryStage.getIcons().add(icon);
           
             //Initialize models
             GameLoopModel.getInstance();
