@@ -13,7 +13,7 @@
   <stayAlive>false</stayAlive>
   <restartOnCrash>false</restartOnCrash>
   <manifest></manifest>
-  <icon></icon>
+  <icon>C:\Users\moham\Downloads\Environment_and_Industry_Split-removebg-preview.ico</icon>
   <jre>
     <path>%JAVA_HOME%;%PATH%</path>
     <requiresJdk>false</requiresJdk>
