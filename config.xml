@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch4jConfig>
   <dontWrapJar>false</dontWrapJar>
-  <headerType>console</headerType>
+  <headerType>gui</headerType>
   <jar>C:\Users\moham\Desktop\original\scrum-project\target\scrum-project-1.0.0-SNAPSHOT.jar</jar>
-  <outfile>C:\Users\moham\Desktop\original\scrum-project\working1.exe</outfile>
+  <outfile>C:\Users\moham\Desktop\original\scrum-project\excuteable.exe</outfile>
   <errTitle></errTitle>
   <cmdLine></cmdLine>
   <chdir>.</chdir>
