@@ -24,5 +24,6 @@
     <opt>--add-modules javafx.controls,javafx.fxml</opt>
     <opt>-Dprism.order=sw</opt>
     <opt>-Dprism.verbose=true</opt>
+    <opt>-Djava.library.path=%EXEDIR%\bin</opt>
   </jre>
 </launch4jConfig>
