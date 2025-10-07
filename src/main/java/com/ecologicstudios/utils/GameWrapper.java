@@ -1,3 +1,8 @@
+package com.ecologicstudios.utils;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * <p>
  * Wrapper container for persisting and transporting a collection of {@link GameSession} objects.
@@ -6,11 +11,6 @@
  * 
  * @author EcoLogic Studios
  */
-
-package com.ecologicstudios.utils;
-import java.util.ArrayList;
-import java.util.List;
-
 public class GameWrapper{
     private List<GameSession> gameSessions = new ArrayList<GameSession>();
 

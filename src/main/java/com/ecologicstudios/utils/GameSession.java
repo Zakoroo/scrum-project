@@ -1,3 +1,9 @@
+package com.ecologicstudios.utils;
+
+import java.time.Instant;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+
 /**
  * Simple data holder representing a single game session entry.
  * <p>
@@ -7,12 +13,6 @@
  *
  * @author EcoLogic Studios
  */
-
-package com.ecologicstudios.utils;
-import java.time.Instant;
-import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
-
 public class GameSession {
     private int sessionId;
     private String timestamp;
@@ -21,7 +21,7 @@ public class GameSession {
     private double totalScore;
     private double bestScore;
     private double worstScore;
-    
+
     /**
      * Create an empty {@code GameSession} instance.
      * <p>
@@ -29,20 +29,22 @@ public class GameSession {
      * for simple instantiation where fields will be populated via setters.
      * </p>
      */
-    public GameSession(){}
+    public GameSession() {
+    }
 
     /**
      * Constructs a {@code GameSession} with the provided values. The timestamp is
      * set to the current system time using the system default time zone.
      *
-     * @param difficulty human-readable difficulty label (e.g. "Easy", "Hard")
+     * @param difficulty  human-readable difficulty label (e.g. "Easy", "Hard")
      * @param totalRounds number of rounds played in this session
-     * @param totalScore cumulative score across all rounds
-     * @param bestScore highest single-round score in the session
-     * @param worstScore lowest single-round score in the session
+     * @param totalScore  cumulative score across all rounds
+     * @param bestScore   highest single-round score in the session
+     * @param worstScore  lowest single-round score in the session
      */
-    public GameSession(String difficulty, int totalRounds, double totalScore, double bestScore, double worstScore){
-        this.timestamp = Instant.now().atZone(ZoneId.systemDefault()).format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+    public GameSession(String difficulty, int totalRounds, double totalScore, double bestScore, double worstScore) {
+        this.timestamp = Instant.now().atZone(ZoneId.systemDefault())
+                .format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
         this.difficulty = difficulty;
         this.totalRounds = totalRounds;
         this.totalScore = totalScore;
@@ -65,12 +67,13 @@ public class GameSession {
      *
      * @param sessionId identifier to assign
      */
-    public void setSessionId(int sessionId){
+    public void setSessionId(int sessionId) {
         this.sessionId = sessionId;
     }
-    
+
     /**
-     * Returns the timestamp recorded for this session in yyyy-MM-dd HH:mm:ss format.
+     * Returns the timestamp recorded for this session in yyyy-MM-dd HH:mm:ss
+     * format.
      *
      * @return timestamp string (may be {@code null} if not set)
      */
@@ -86,7 +89,7 @@ public class GameSession {
     public String getDifficulty() {
         return difficulty;
     }
-    
+
     /**
      * Returns the number of rounds played in this session.
      *

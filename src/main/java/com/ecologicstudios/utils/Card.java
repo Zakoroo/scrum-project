@@ -1,13 +1,3 @@
-/**
- * Represents a single scenario card in the game.
- * <p>
- * Each Card contains an id, a scenario description, a difficulty label and a
- * list of possible alternatives (choices) associated with CO2 values.
- * Gson deserialization requires the public no-arg constructor and public fields.
- * </p>
- *
- * @author EcoLogic Studios
- */
 package com.ecologicstudios.utils;
 
 import java.util.List;
@@ -25,7 +15,6 @@ import java.util.List;
  *
  * @author Ecologic Studios
  */
-
 public class Card {
     /**
      * Unique identifier for the card (from JSON).
