@@ -1,9 +1,11 @@
 package com.ecologicstudios.client.models;
 
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 
 import com.ecologicstudios.utils.CardFetcher;
+import com.ecologicstudios.utils.FeedbackCalculator;
 import com.ecologicstudios.utils.JsonCardFetcher;
 import com.ecologicstudios.utils.Card;
 import com.ecologicstudios.utils.Alternative;
@@ -69,6 +71,11 @@ public class GameLoopModel {
     private double totalResult = 0;
 
     /**
+     * The feedback calculator that provides dynamic feedback based on the game's result.
+     */
+    private FeedbackCalculator feedbackCalculator;
+
+    /**
      * This method replaces the functionality of the constructor effectively
      * disabling creating more than one instance.
      * 
@@ -91,24 +98,34 @@ public class GameLoopModel {
     /**
      * Resets the game fields to their initial values and prepares a new game session.
      * <p>
-     * This method initializes a new card deck based on the current difficulty setting,
-     * shuffles the cards, and resets all counters and results to zero.
+     * This method initializes a new card deck based on the specified difficulty setting,
+     * shuffles the cards, resets all counters and results to zero, and creates a new
+     * feedback calculator for result evaluation.
+     * 
+     * @param difficulty the difficulty level for the new game session
+     * @param maxNumCards the maximum number of cards to be played in the session
      */
-    public void newGame() {
-        cardsCount = 0; // reset the counter
-        answersCount = 0;
-        totalResult = 0;
+    public void newGame(String difficulty, int maxNumCards) {
+        this.cardsCount = 0;
+        this.answersCount = 0;
+        this.totalResult = 0;
+        this.maxNumCards = maxNumCards;
+        this.difficulty = difficulty;
+
         CardFetcher fetcher = new JsonCardFetcher(path); // fetch cards from given path (in resources)
         cards = fetcher.getCardsByDifficulty(difficulty); // fetch out only cards of the given difficulty
         Collections.shuffle(cards); // shuffle cards
+
+        feedbackCalculator = new FeedbackCalculator(new LinkedList<>(cards), maxNumCards);
     }
 
     /**
      * Checks if the current game session has started.
      * <p>
-     * A game is considered started when at least one card has been presented to the player.
+     * A game is considered started when at least one card has been presented to the player
+     * and the game hasn't reached the maximum number of answers yet.
      * 
-     * @return true if at least one card has been presented, false otherwise
+     * @return true if at least one card has been presented and the game is still active, false otherwise
      */
     public boolean gameStarted() {
         return cardsCount > 0 && answersCount != maxNumCards;
@@ -140,15 +157,15 @@ public class GameLoopModel {
             currentCard = cards.remove(0);
             return currentCard;
         }
-        throw new IllegalStateException(cards.isEmpty() ? "no enough cards" : "game already ended");
+        throw new IllegalStateException(cards.isEmpty() ? "no enough cards" : "some unknown error occurred");
     }
 
     /**
      * Submits an answer for the current card and updates the total result.
      * <p>
      * This method checks if the provided {@code answer} exists among the
-     * alternatives of the current card. If the answer is valid, its CO2 value is
-     * added to the total result. If the answer is not found, an
+     * alternatives of the current card using the equals method. If the answer is valid, 
+     * its CO2 value is added to the total result. If the answer is not found, an
      * {@link IllegalArgumentException} is thrown.
      *
      * @param answer the selected {@link Alternative} to submit
@@ -172,7 +189,7 @@ public class GameLoopModel {
      * This method can only be called after the game has ended. Attempting to
      * access the result before game completion will result in an exception.
      * 
-     * @return the total CO2 result accumulated during the current game
+     * @return the total CO2 result accumulated during the current game as a double value
      * @throws IllegalStateException if the game hasn't ended yet
      */
     public double getTotalResult() throws IllegalStateException {
@@ -230,5 +247,22 @@ public class GameLoopModel {
      */
     public int getMaxNumCards() {
         return this.maxNumCards;
+    }
+
+    /**
+     * Gets personalized feedback based on the player's performance in the completed game.
+     * <p>
+     * This method uses the feedback calculator to generate appropriate feedback
+     * based on the total CO2 emissions from the player's choices. The feedback
+     * provides environmental impact assessment and guidance.
+     * 
+     * @return a feedback message string based on the game results
+     * @throws IllegalStateException if the game hasn't ended yet
+     */
+    public String getFeedback() {
+        if (!gameEnded()) {
+            throw new IllegalStateException("cannot access results before game ends");
+        }
+        return feedbackCalculator.getFeedback(totalResult);
     }
 }

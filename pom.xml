@@ -24,38 +24,39 @@
       <scope>test</scope>
     </dependency>
 
-    <!-- JavaFX FXML (needed for FXMLLoader) -->
+    <!-- JavaFX FXML -->
     <dependency>
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-fxml</artifactId>
       <version>${javafx.version}</version>
     </dependency>
 
-    <!-- JavaFX for compile/run -->
+    <!-- JavaFX Controls -->
     <dependency>
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-controls</artifactId>
       <version>${javafx.version}</version>
     </dependency>
 
+    <!-- PostgreSQL driver -->
     <dependency>
       <groupId>org.postgresql</groupId>
       <artifactId>postgresql</artifactId>
       <version>42.7.7</version>
     </dependency>
 
+    <!-- Gson -->
     <dependency>
       <groupId>com.google.code.gson</groupId>
       <artifactId>gson</artifactId>
       <version>2.9.0</version>
-
     </dependency>
   </dependencies>
 
   <build>
     <pluginManagement>
       <plugins>
-        <!-- Maven Surefire plugin to run tests -->
+        <!-- Maven Surefire plugin for tests -->
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
@@ -65,12 +66,11 @@
     </pluginManagement>
 
     <plugins>
+      <!-- Checkstyle -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-checkstyle-plugin</artifactId>
         <version>3.3.1</version>
-
-        <!-- Pin a modern Checkstyle engine that supports Java 21 -->
         <dependencies>
           <dependency>
             <groupId>com.puppycrawl.tools</groupId>
@@ -78,24 +78,16 @@
             <version>10.17.0</version>
           </dependency>
         </dependencies>
-
         <configuration>
-          <!-- Use built-in Google style for a quick start.
-         Replace with your own config path if you have one. -->
           <configLocation>google_checks.xml</configLocation>
-
           <encoding>${project.build.sourceEncoding}</encoding>
           <consoleOutput>true</consoleOutput>
           <failsOnError>true</failsOnError>
           <failOnViolation>true</failOnViolation>
           <includeTestSourceDirectory>true</includeTestSourceDirectory>
-
-          <!-- Optional: don’t analyze generated sources -->
           <excludes>**/target/**,**/generated-sources/**</excludes>
         </configuration>
-
         <executions>
-          <!-- Runs automatically in `verify`, and you can still call it directly -->
           <execution>
             <id>checkstyle-verify</id>
             <phase>verify</phase>
@@ -106,14 +98,36 @@
         </executions>
       </plugin>
 
+      <!-- JavaFX Maven Plugin (for running locally) -->
       <plugin>
         <groupId>org.openjfx</groupId>
         <artifactId>javafx-maven-plugin</artifactId>
         <version>0.0.8</version>
         <configuration>
           <mainClass>com.ecologicstudios.client.App</mainClass>
-          <addModules>javafx.controls</addModules>
         </configuration>
+      </plugin>
+
+      <!-- Shade plugin: build a fat JAR -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>3.5.1</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+              <transformers>
+                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                  <mainClass>com.ecologicstudios.client.App</mainClass>
+                </transformer>
+              </transformers>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
 

@@ -12,7 +12,7 @@ import javafx.scene.control.Button;
  * This controller handles the configuration of game settings including
  * difficulty level and number of rounds before starting the actual game. It
  * provides an interactive interface for users to customize their gaming
- * experience.
+ * experience and validates their selections before starting the game.
  * 
  * @author Ecologic Studios
  */
@@ -21,6 +21,16 @@ public class StartController extends BaseController {
      * Reference to the game model for setting configuration options.
      */
     private GameLoopModel model;
+
+    /**
+     * The currently selected maximum number of cards for the game session.
+     */
+    private int maxNumCards;
+    
+    /**
+     * The currently selected difficulty level for the game session.
+     */
+    private String difficulty;
 
     @FXML
     private Button handleDifficulty;
@@ -51,63 +61,58 @@ public class StartController extends BaseController {
 
     /**
      * Constructs a new StartController and initializes the game model reference.
+     * <p>
+     * Retrieves the current game configuration from the model to set initial values
+     * for difficulty and maximum number of cards.
      */
     public StartController() {
-        this.model = GameLoopModel.getInstance();
+        model = GameLoopModel.getInstance();
+        maxNumCards = model.getMaxNumCards();
+        difficulty = model.getDifficulty();
     }
 
     /**
-     * Initializes the controller after FXML loading. Sets default selections for
-     * difficulty (Easy) and rounds (10).
+     * Initializes the controller after FXML loading.
+     * <p>
+     * Sets the initial visual state of buttons based on current game configuration,
+     * disabling the buttons that correspond to the currently selected difficulty
+     * and number of rounds.
      */
     public void initialize() {
-        setDifficultyDisable(model.getDifficulty(), true);
-        setRoundsDisable(model.getMaxNumCards(), true);
+        setRoundsDisable(maxNumCards, true);
+        setDifficultyDisable(difficulty, true);
     }
 
     /**
      * Handles difficulty selection button events.
      * <p>
-     * Updates the visual state of difficulty buttons and sets the selected
-     * difficulty in the game model. The previously selected button is enabled and
-     * the newly selected button is disabled to show current selection.
+     * Updates the visual state of difficulty buttons and stores the selected
+     * difficulty locally. The previously selected button is enabled and the
+     * newly selected button is disabled to show current selection.
      * 
      * @param e the ActionEvent from clicking a difficulty button
      */
     @FXML
     private void handleDifficulty(ActionEvent e) {
-        // enable previous difficulty button
-        setDifficultyDisable(model.getDifficulty(), false);
-
-        // disable current difficulty button
-        String buttonText = ((Button) e.getSource()).getText();
-
-        setDifficultyDisable(buttonText, true);
-
-        model.setDifficulty(buttonText);
+        setDifficultyDisable(difficulty, false); // enable previous (disabled) difficulty button
+        difficulty = ((Button) e.getSource()).getText();
+        setDifficultyDisable(difficulty, true); // disable current difficulty button
     }
 
     /**
      * Handles round selection button events.
      * <p>
-     * Updates the visual state of round buttons and sets the selected number of
-     * rounds in the game model. The previously selected button is enabled and the
+     * Updates the visual state of round buttons and stores the selected number
+     * of rounds locally. The previously selected button is enabled and the
      * newly selected button is disabled to show current selection.
      * 
      * @param e the ActionEvent from clicking a rounds button
      */
     @FXML
     private void handleRounds(ActionEvent e) {
-        // enable previous rounds button
-        setRoundsDisable(model.getMaxNumCards(), false);
-
-        // disable current round button
-        int round = Integer.parseInt(((Button) e.getSource()).getText());
-
-        setRoundsDisable(round, true);
-
-        model.setMaxNumCards(round);
-
+        setRoundsDisable(maxNumCards, false); // enable previous rounds button
+        maxNumCards = Integer.parseInt(((Button) e.getSource()).getText()); 
+        setRoundsDisable(maxNumCards, true); // disable current rounds button
     }
 
     /**
@@ -155,12 +160,14 @@ public class StartController extends BaseController {
     /**
      * Handles the start game button event.
      * <p>
-     * Transitions from the setup screen to the main game loop interface.
+     * Applies the selected game configuration to the model, starts a new game,
+     * and transitions from the setup screen to the main game loop interface.
      * 
      * @param e the ActionEvent from clicking the start button
      */
     @FXML
     private void handleStart(ActionEvent e) {
+        model.newGame(difficulty, maxNumCards);
         sceneManager.switchScene("/fxml/gameloop.fxml");
     }
 }
