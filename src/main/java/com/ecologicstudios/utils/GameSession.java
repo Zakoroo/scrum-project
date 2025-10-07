@@ -12,8 +12,6 @@ package com.ecologicstudios.utils;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
 
 public class GameSession {
     private int sessionId;
@@ -44,7 +42,6 @@ public class GameSession {
      * @param worstScore lowest single-round score in the session
      */
     public GameSession(String difficulty, int totalRounds, double totalScore, double bestScore, double worstScore){
-        this.sessionId = sessionId;
         this.timestamp = Instant.now().atZone(ZoneId.systemDefault()).format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
         this.difficulty = difficulty;
         this.totalRounds = totalRounds;
