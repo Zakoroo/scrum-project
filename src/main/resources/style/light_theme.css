@@ -38,7 +38,7 @@
 
 /* Global */
 * {
-    -fx-font-family: "Inter", "Nunito", "Rubik", "Segoe UI", "Verdana", sans-serif;
+    -fx-font-family: "Trebuchet MS", "Candara", "Corbel", "Segoe UI", "Arial";
     -fx-text-fill:   -ink;
     -fx-focus-color: transparent;
     -fx-faint-focus-color: transparent;
