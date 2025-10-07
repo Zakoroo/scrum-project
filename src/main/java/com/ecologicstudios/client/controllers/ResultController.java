@@ -2,8 +2,11 @@ package com.ecologicstudios.client.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.BorderPane;
+
 import com.ecologicstudios.client.models.GameLoopModel;
 
 /**
@@ -20,6 +23,9 @@ public class ResultController extends BaseController {
      * Reference to the game model for retrieving final results.
      */
     private GameLoopModel model;
+
+    @FXML
+    private BorderPane root;
 
     @FXML
     private Button returnID;
@@ -46,6 +52,7 @@ public class ResultController extends BaseController {
     public void initialize() {
         updateCO2(String.format("%.2f", model.getTotalResult())); // Add results to result screen.
         updateFeedback(model.getFeedback());
+        setRoot((Node) this.root);
     }
 
     /**

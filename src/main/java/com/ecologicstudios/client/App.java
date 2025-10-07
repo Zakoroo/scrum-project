@@ -5,6 +5,7 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import com.ecologicstudios.client.controllers.SceneManager;
 import com.ecologicstudios.client.models.GameLoopModel;
+import com.ecologicstudios.client.models.SettingsModel;
 
 /**
  * Main JavaFX application class for the Climate Game.
@@ -39,6 +40,7 @@ public class App extends Application {
           
             //Initialize models
             GameLoopModel.getInstance();
+            SettingsModel.getInstance();
 
             // Initialize and create scene manager
             SceneManager.initialize(primaryStage);

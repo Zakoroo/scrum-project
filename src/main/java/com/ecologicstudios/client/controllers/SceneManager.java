@@ -90,6 +90,7 @@ public class SceneManager {
             if (controller instanceof BaseController && controller != null) {
                 BaseController baseController = (BaseController) controller;
                 baseController.setSceneManager(this);
+                baseController.applyTheme();
             }
 
             primaryStage.setScene(scene);

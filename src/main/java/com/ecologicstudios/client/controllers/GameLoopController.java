@@ -9,6 +9,8 @@ import javafx.scene.layout.VBox;
 import java.util.Map;
 import java.util.HashMap;
 import java.io.IOException;
+import javafx.scene.Node;
+import javafx.scene.layout.BorderPane;
 
 import com.ecologicstudios.client.models.GameLoopModel;
 import com.ecologicstudios.utils.Card;
@@ -45,6 +47,9 @@ public class GameLoopController extends BaseController {
     private Card currentCard;
 
     @FXML
+    private BorderPane root;
+
+    @FXML
     private Label descriptionLabel;
 
     @FXML
@@ -66,6 +71,7 @@ public class GameLoopController extends BaseController {
      */
     public void initialize() {
         update();
+        setRoot(this.root);
     }
 
     /**
@@ -139,7 +145,6 @@ public class GameLoopController extends BaseController {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(buttonFxml));
         Button button = loader.load();
         button.setText(text);
-        button.getStyleClass().addAll("setting", "alternatives"); // add style class to button
 
         return button;
     }
