@@ -54,7 +54,6 @@ public class FeedbackCalculator {
             }
             minTotal += minCo2;
         }
-
         return minTotal;
     }
 
@@ -78,7 +77,6 @@ public class FeedbackCalculator {
             }
             maxTotal += maxCo2;
         }
-
         return maxTotal;
     }
 
@@ -89,7 +87,7 @@ public class FeedbackCalculator {
      * @param b the second value
      * @return the average of a and b
      */
-    private double getAverageResult(double a, double b) {
+    public double getAverageResult(double a, double b) {
         return (a + b) / 2;
     }
 
@@ -100,21 +98,63 @@ public class FeedbackCalculator {
      * @param min   the minimum possible result
      * @param max   the maximum possible result
      * @param avg   the average result
-     * @param points the player's score
+     * @param point the player's score
      * @return a feedback message as a String
      */
-    private String feedbackEvaluator(double min, double max, double avg, double points) {
-        if (points >= min && points < avg / 2) {
+    public String feedbackEvaluator(double min, double max, double avg, double point) {
+
+        if (point >= min && point < avg / 2) {
             return "You're a climate hero! Your choices show deep environmental care.";
-        } else if (points >= avg / 2 && points < avg) {
+        } else if (point >= avg / 2 && point < avg) {
             return "You're making mindful decisions! Your eco-awareness is inspiring.";
-        } else if (points >= avg && points < (3 * avg) / 2) {
+        } else if (point >= avg && point < (3 * avg) / 2) {
             return "Your lifestyle is unsustainable. You're actively making the climate crisis worse!";
-        } else if (points >= (3 * avg) / 2 && points <= max) {
+        } else if (point >= (3 * avg) / 2 && point <= max) {
             return "This is climate negligence. Your choices show complete disregard for the planet's future!";
         } else {
             return "error";
         }
+    }
+
+    /**
+     * Evaluates and returns a title based on the player's score compared to the
+     * minimum, maximum, and average results.
+     *
+     * @param min   the minimum possible score
+     * @param max   the maximum possible score
+     * @param avg   the average score between min and max
+     * @param point the player's score
+     * @return a title as a String representing the player's performance
+     */
+    public String scoreTitleEvaluator(double min, double max, double avg, double point) {
+
+        if (point == min) {
+            return "Greta Thunberg";
+        } else if (point > min && point < avg / 2) {
+            return "Perfect Score";
+        } else if (point >= avg / 2 && point < avg) {
+            return "Environmentally Aware";
+        } else if (point >= avg && point < (3 * avg) / 2) {
+            return "Needs Work";
+        } else if (point >= (3 * avg) / 2 && point <= max) {
+            return "Terrible!";
+        } else {
+            return "error";
+        }
+    }
+
+    /**
+     * Returns a score title for the given score by evaluating it against the
+     * calculated min, max, and average values.
+     *
+     * @param point the player's score
+     * @return a title as a String representing the player's performance
+     */
+    public String getScoreTitle(double point) {
+        double min = getMinResult(cards, roundLength);
+        double max = getMaxResult(cards, roundLength);
+        double avg = getAverageResult(min, max);
+        return scoreTitleEvaluator(min, max, avg, point);
     }
 
     /**

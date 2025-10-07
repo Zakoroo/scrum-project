@@ -1,3 +1,17 @@
+/**
+ * The {@code JsonCardFetcher} class is responsible for loading card data from a JSON file.
+ * It implements the {@link CardFetcher} interface and provides methods to retrieve cards
+ * based on difficulty level.
+ *
+ * <p>
+ * This class reads a JSON file containing card information, parses the data using Gson,
+ * and constructs {@link Card} objects with their associated choices. It can filter cards
+ * by difficulty and provide access to all loaded cards.
+ * </p>
+ *
+ * @author EcoLogic Studios
+ */
+
 package com.ecologicstudios.utils;
 
 import java.io.BufferedReader;

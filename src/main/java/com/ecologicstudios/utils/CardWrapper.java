@@ -68,5 +68,4 @@ public class CardWrapper{
         Card testcard = cards.get(index);
         System.out.printf(testcard.getDifficulty());
     }
-
 }
