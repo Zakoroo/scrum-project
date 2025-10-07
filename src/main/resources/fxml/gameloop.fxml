@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="root" prefHeight="400.0" prefWidth="600.0" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ecologicstudios.client.controllers.GameLoopController">
+<BorderPane fx:id="root" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ecologicstudios.client.controllers.GameLoopController">
    <top>
-      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" styleClass="rounded" stylesheets="@../style/style.css" BorderPane.alignment="CENTER">
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" styleClass="rounded" BorderPane.alignment="CENTER">
          <children>
             <Label fx:id="descriptionLabel" text="Description: Lorem ipsum dolor sit amet consectetur adipiscing elit quisque faucibus ex sapien vitae pellentesque sem placerat in id cursus mi." wrapText="true">
                <HBox.margin>
@@ -29,6 +29,9 @@
       </HBox>
    </top>
    <center>
-      <VBox fx:id="altBox" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="button-container" stylesheets="@../style/style.css" BorderPane.alignment="CENTER" />
+      <VBox fx:id="altBox" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" styleClass="button-container" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin></VBox>
    </center>
 </BorderPane>

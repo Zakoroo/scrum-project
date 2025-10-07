@@ -1,8 +1,111 @@
+/* Modern Light — Professional Palette */
+
+/* Tokens */
 .root {
     /* Background */
-    -fx-background-image: url(../ligth_bg.png);
+    -fx-background-image: url(../light_bg.png);
     -fx-background-repeat: no-repeat;
     -fx-background-position: center center;
-    -fx-background-size: cover; 
+    -fx-background-size: cover;
     -fx-background-insets: 0;
+
+    -bg:        #f3f4f6;
+    -card:      #ffffff;
+    -ink:       #111827;
+    -muted:     #6b7280;
+    -line:      #e5e7eb;
+
+    -accent:        #3b82f6;
+    -accent-border: #2563eb;
+
+    -easy-bg:       #10b981;
+    -easy-border:   #059669;
+    -med-bg:        #f59e0b;
+    -med-border:    #d97706;
+    -hard-bg:       #ef4444;
+    -hard-border:   #dc2626;
+
+    -rounds-bg:     #6366f1;
+    -rounds-border: #4f46e5;
+    -return-bg:     #84cc16;
+    -return-border: #65a30d;
+
+    -on-strong:     #ffffff;
+    -on-muted:      #111827;
+
+    -fx-background-insets: 0;
+}
+
+/* Global */
+* {
+    -fx-font-family: "Inter", "Nunito", "Rubik", "Segoe UI", "Verdana", sans-serif;
+    -fx-text-fill:   -ink;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+#root, .scene-root, .bordered-bg {
+    -fx-background-color: linear-gradient(to bottom, derive(-bg, 0%), derive(-bg, -2%));
+}
+
+/* Cards */
+.card, .rounded {
+    -fx-background-color: -card;
+    -fx-border-color:     -line;
+    -fx-background-radius: 18;
+    -fx-border-radius:     18;
+    -fx-padding: 18;
+    -fx-effect: dropshadow(gaussian, rgba(17, 24, 39, 0.06), 16, 0.2, 0, 6);
+}
+
+/* Buttons — Base */
+.button.btn {
+    -fx-padding:           10 16 10 16;
+    -fx-background-radius: 14;
+    -fx-border-radius:     14;
+    -fx-border-width:      2px;
+    -fx-font-size:         15px;
+    -fx-font-weight:       600;
+    -fx-cursor:            hand;
+    -fx-background-insets: 0;
+    -fx-text-fill:         -ink;
+    -fx-background-color:  #ffffff;
+    -fx-border-color:      -line;
+    -fx-effect: null;
+    -fx-translate-y: 0;
+    -fx-opacity: 1.0;
+}
+
+/* EXACT original interaction behavior */
+.button.btn:hover   { -fx-opacity: 0.92; }
+.button.btn:pressed,
+.button.btn:armed   { -fx-translate-y: 2px; }
+.button.btn:disabled{ -fx-opacity: 0.70; -fx-cursor: default; }
+
+/* Size & shape */
+.btn--lg   { -fx-font-size: 18px; -fx-padding: 12 20 12 20; }
+.btn--pill { -fx-background-radius: 999; -fx-border-radius: 999; }
+
+/* Variants */
+.button.btn--primary { -fx-background-color: -accent;  -fx-border-color: -accent-border;  -fx-text-fill: -on-strong; }
+.button.btn--easy    { -fx-background-color: -easy-bg; -fx-border-color: -easy-border;    -fx-text-fill: -on-strong; }
+.button.btn--medium  { -fx-background-color: -med-bg;  -fx-border-color: -med-border;     -fx-text-fill: -on-strong; }
+.button.btn--hard    { -fx-background-color: -hard-bg; -fx-border-color: -hard-border;    -fx-text-fill: -on-strong; }
+.button.btn--rounds  { -fx-background-color: -rounds-bg; -fx-border-color: -rounds-border; -fx-text-fill: -on-strong; }
+.button.btn--return  { -fx-background-color: -return-bg; -fx-border-color: -return-border; -fx-text-fill: -on-strong; }
+
+/* Chips */
+.chip {
+    -fx-background-color: #e5e7eb;
+    -fx-text-fill: -ink;
+    -fx-padding: 8 14 8 14;
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-border-color: -line;
+    -fx-border-width: 1;
+}
+.chip--active {
+    -fx-background-color: -rounds-bg;
+    -fx-text-fill: -on-strong;
+    -fx-border-color: -rounds-border;
 }

@@ -145,6 +145,7 @@ public class GameLoopController extends BaseController {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(buttonFxml));
         Button button = loader.load();
         button.setText(text);
+        
 
         return button;
     }

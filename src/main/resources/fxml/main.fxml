@@ -9,13 +9,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ecologicstudios.client.controllers.StartController">
+<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ecologicstudios.client.controllers.StartController">
    <children>
-      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="510.0" stylesheets="@../style/style.css">
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="510.0">
          <bottom>
             <VBox alignment="CENTER" minHeight="162.0" prefHeight="206.0" prefWidth="600.0" BorderPane.alignment="CENTER">
                <children>
-                  <HBox alignment="CENTER" fillHeight="false" maxWidth="320.0" minHeight="30.0" minWidth="120.0" prefHeight="30.0" prefWidth="350.0" styleClass="rounded" stylesheets="@../style/style.css">
+                  <HBox alignment="CENTER" fillHeight="false" maxWidth="320.0" minHeight="30.0" minWidth="120.0" prefHeight="30.0" prefWidth="350.0" styleClass="rounded">
                      <children>
                         <Label text="Difficulty">
                            <font>
@@ -24,13 +24,13 @@
                         </Label>
                      </children>
                   </HBox>
-                  <HBox fillHeight="false" prefHeight="22.0" prefWidth="600.0" stylesheets="@../style/style.css">
+                  <HBox fillHeight="false" prefHeight="22.0" prefWidth="600.0">
                      <children>
                         <HBox alignment="CENTER" fillHeight="false" minHeight="70.0" prefHeight="70.0" prefWidth="484.0" styleClass="button-container" HBox.hgrow="ALWAYS">
                            <children>
-                              <Button fx:id="easyBtn" mnemonicParsing="false" onAction="#handleDifficulty" prefHeight="40.0" prefWidth="90.0" stylesheets="@../style/style.css" text="Easy">
+                              <Button fx:id="easyBtn" mnemonicParsing="false" onAction="#handleDifficulty" prefHeight="40.0" prefWidth="100.0" styleClass="btn,btn--easy,btn--elevated" text="Easy">
                                  <HBox.margin>
-                                    <Insets />
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                  </HBox.margin>
                                  <font>
                                     <Font name="SansSerif Regular" size="12.0" />
@@ -41,9 +41,9 @@
                                     <String fx:value="btn--elevated" />
                                  </styleClass>
                               </Button>
-                              <Button fx:id="mediumBtn" mnemonicParsing="false" onAction="#handleDifficulty" prefHeight="40.0" prefWidth="90.0" stylesheets="@../style/style.css" text="Medium">
+                              <Button fx:id="mediumBtn" mnemonicParsing="false" onAction="#handleDifficulty" prefHeight="40.0" prefWidth="100.0" styleClass="btn,btn--medium,btn--elevated" text="Medium">
                                  <HBox.margin>
-                                    <Insets />
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                  </HBox.margin>
                                  <font>
                                     <Font name="SansSerif Regular" size="12.0" />
@@ -54,9 +54,9 @@
                                     <String fx:value="btn--elevated" />
                                  </styleClass>
                               </Button>
-                              <Button fx:id="hardBtn" mnemonicParsing="false" onAction="#handleDifficulty" prefHeight="40.0" prefWidth="90.0" stylesheets="@../style/style.css" text="Hard">
+                              <Button fx:id="hardBtn" mnemonicParsing="false" onAction="#handleDifficulty" prefHeight="40.0" prefWidth="100.0" styleClass="btn,btn--hard,btn--elevated" text="Hard">
                                  <HBox.margin>
-                                    <Insets />
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                  </HBox.margin>
                                  <font>
                                     <Font name="SansSerif Regular" size="12.0" />
@@ -87,9 +87,9 @@
                      <children>
                         <HBox alignment="CENTER" minHeight="70.0" prefHeight="78.0" prefWidth="495.0" styleClass="button-container" HBox.hgrow="ALWAYS">
                            <children>
-                              <Button fx:id="roundsBtn1" mnemonicParsing="false" onAction="#handleRounds" prefHeight="40.0" prefWidth="90.0" text="10">
+                              <Button fx:id="roundsBtn1" mnemonicParsing="false" onAction="#handleRounds" prefHeight="40.0" prefWidth="100.0" styleClass="btn,chip" text="10">
                                  <HBox.margin>
-                                    <Insets />
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                  </HBox.margin>
                                  <styleClass>
                                     <String fx:value="btn" />
@@ -97,9 +97,9 @@
                                     <String fx:value="btn--elevated" />
                                  </styleClass>
                               </Button>
-                              <Button fx:id="roundsBtn2" mnemonicParsing="false" onAction="#handleRounds" prefHeight="40.0" prefWidth="90.0" text="15">
+                              <Button fx:id="roundsBtn2" mnemonicParsing="false" onAction="#handleRounds" prefHeight="40.0" prefWidth="100.0" styleClass="btn,chip" text="15">
                                  <HBox.margin>
-                                    <Insets />
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                  </HBox.margin>
                                  <styleClass>
                                     <String fx:value="btn" />
@@ -107,9 +107,9 @@
                                     <String fx:value="btn--elevated" />
                                  </styleClass>
                               </Button>
-                              <Button fx:id="roundsBtn3" mnemonicParsing="false" onAction="#handleRounds" prefHeight="40.0" prefWidth="90.0" text="20">
+                              <Button fx:id="roundsBtn3" mnemonicParsing="false" onAction="#handleRounds" prefHeight="40.0" prefWidth="100.0" styleClass="btn,chip" text="20">
                                  <HBox.margin>
-                                    <Insets />
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                  </HBox.margin>
                                  <font>
                                     <Font name="SansSerif Regular" size="12.0" />
@@ -133,7 +133,7 @@
          <center>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
                <children>
-                  <HBox alignment="CENTER" fillHeight="false" maxWidth="180.0" minHeight="30.0" minWidth="120.0" prefHeight="30.0" prefWidth="206.0" styleClass="rounded" stylesheets="@../style/style.css">
+                  <HBox alignment="CENTER" fillHeight="false" maxWidth="180.0" minHeight="30.0" minWidth="120.0" prefHeight="30.0" prefWidth="206.0" styleClass="rounded">
                      <children>
                         <Label text="Climate game">
                            <font>
@@ -142,7 +142,7 @@
                         </Label>
                      </children>
                   </HBox>
-                  <Button fx:id="startBtn" mnemonicParsing="false" onAction="#handleStart" prefHeight="60.0" prefWidth="100.0" text="Start">
+                  <Button fx:id="startBtn" mnemonicParsing="false" onAction="#handleStart" prefHeight="60.0" prefWidth="100.0" styleClass="btn,btn--primary,btn--lg,btn--elevated" text="Start">
                      <styleClass>
                         <String fx:value="btn" />
                         <String fx:value="btn--primary" />
@@ -156,7 +156,7 @@
             </VBox>
          </center>
       </BorderPane>
-      <HBox maxHeight="-Infinity" prefHeight="400.0" prefWidth="90.0" style="-fx-background-color: lightgrey;">
+      <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="95.0">
          <children>
             <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="400.0" prefWidth="114.0" styleClass="menu-settings">
                <HBox.margin>
@@ -166,7 +166,7 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
                <children>
-                  <Button fx:id="themeBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="33.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleTheme" prefHeight="34.0" prefWidth="122.0" VBox.vgrow="NEVER">
+                  <Button fx:id="themeBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="33.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleTheme" prefHeight="34.0" prefWidth="122.0" styleClass="btn,btn--pill" VBox.vgrow="NEVER">
                      <styleClass>
                         <String fx:value="btn" />
                         <String fx:value="btn--theme" />

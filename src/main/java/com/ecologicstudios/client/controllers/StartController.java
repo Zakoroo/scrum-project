@@ -98,7 +98,7 @@ public class StartController extends BaseController {
         setRoundsDisable(maxNumCards, true);
         setDifficultyDisable(difficulty, true);
         setRoot((Node) this.root);
-        themeButton();
+        updateThemeButton();
     }
 
     /**
@@ -121,6 +121,7 @@ public class StartController extends BaseController {
     public void handleTheme(ActionEvent e) {
         toggleTheme();
         applyTheme();
+        updateThemeButton();
     }
 
     public void toggleTheme() {
@@ -185,19 +186,16 @@ public class StartController extends BaseController {
         }
     }
 
-    private void themeButton() {
-        Image img = new Image("image.png");
+    private void updateThemeButton() {
+        Image img = new Image(SettingsModel.getInstance().getTheme() == Theme.LIGHT ? "darkButton.png" : "lightButton.png");
         ImageView iv = new ImageView(img);
         //iv.setFitWidth(themeBtn.getWidth());
         iv.setPreserveRatio(true);
         iv.setFitHeight(45);
-        System.out.println("Button height: " + themeBtn.getHeight());
-
 
         themeBtn.setGraphic(iv);
         themeBtn.setContentDisplay(ContentDisplay.LEFT); // LEFT, RIGHT, TOP, BOTTOM, or GRAPHIC_ONLY
         themeBtn.setGraphicTextGap(8);
-
     }
 
     /**
