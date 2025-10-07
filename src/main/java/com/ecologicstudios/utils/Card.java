@@ -15,7 +15,6 @@ import java.util.List;
  *
  * @author Ecologic Studios
  */
-
 public class Card {
     /**
      * Unique identifier for the card (from JSON).
@@ -52,7 +51,6 @@ public class Card {
      * @param alternatives the list of alternative choices available for this scenario
      */
     public Card(int id, String scenario, String difficulty, List<Alternative> alternatives) {
-
         this.id = id;
         this.scenario = scenario;
         this.difficulty = difficulty;
