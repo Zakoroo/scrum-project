@@ -4,8 +4,39 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Command-line utility tool for adding or updating cards in the game's JSON card database.
+ * <p>
+ * This tool allows developers and content creators to easily add new environmental scenario
+ * cards to the game or update existing ones. Cards are stored in JSON format and contain
+ * scenarios with multiple choice alternatives, each with associated CO2 emission values.
+ * <p>
+ * Usage example:
+ * <pre>
+ * java AddCardTool data/cards.json 5 "Campus policy" Easy "Plant meals:-6" "Beef day:18"
+ * </pre>
+ * 
+ * @author Ecologic Studios
+ */
 public class AddCardTool {
 
+    /**
+     * Main entry point for the AddCardTool command-line utility.
+     * <p>
+     * Parses command-line arguments to create a new card with the specified ID, scenario,
+     * difficulty, and alternative choices. Each choice must be formatted as "text:co2_value".
+     * The card is then added to or updated in the specified JSON file.
+     * 
+     * @param args command-line arguments in the following order:
+     *             <ul>
+     *             <li>args[0] - file path to the JSON cards file</li>
+     *             <li>args[1] - unique card ID (integer)</li>
+     *             <li>args[2] - scenario description (use quotes if contains spaces)</li>
+     *             <li>args[3] - difficulty level (e.g., "Easy", "Medium", "Hard")</li>
+     *             <li>args[4+] - alternative choices in format "choice text:co2_value"</li>
+     *             </ul>
+     * @throws Exception if file I/O operations fail or argument parsing encounters errors
+     */
     public static void main(String[] args) throws Exception {
         if (args.length < 5) {
             System.out.println("Usage:");
