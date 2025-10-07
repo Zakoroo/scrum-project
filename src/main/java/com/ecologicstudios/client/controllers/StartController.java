@@ -1,7 +1,5 @@
 package com.ecologicstudios.client.controllers;
 
-import java.net.URL;
-
 import com.ecologicstudios.client.models.GameLoopModel;
 import com.ecologicstudios.client.models.SettingsModel;
 import com.ecologicstudios.client.models.SettingsModel.Theme;
@@ -9,7 +7,6 @@ import com.ecologicstudios.client.models.SettingsModel.Theme;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ContentDisplay;
 import javafx.scene.image.Image;

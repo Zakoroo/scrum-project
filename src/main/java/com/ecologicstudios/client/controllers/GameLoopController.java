@@ -9,7 +9,6 @@ import javafx.scene.layout.VBox;
 import java.util.Map;
 import java.util.HashMap;
 import java.io.IOException;
-import javafx.scene.Node;
 import javafx.scene.layout.BorderPane;
 
 import com.ecologicstudios.client.models.GameLoopModel;
