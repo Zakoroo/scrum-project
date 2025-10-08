@@ -43,6 +43,9 @@ public class StartController extends BaseController {
     private HBox root;
 
     @FXML
+    private Button historyBtn;
+
+    @FXML
     private Button themeBtn;
 
     @FXML
@@ -96,6 +99,7 @@ public class StartController extends BaseController {
         setDifficultyDisable(difficulty, true);
         setRoot((Node) this.root);
         updateThemeButton();
+        updateHistoryButton();
     }
 
     /**
@@ -186,13 +190,24 @@ public class StartController extends BaseController {
     private void updateThemeButton() {
         Image img = new Image(SettingsModel.getInstance().getTheme() == Theme.LIGHT ? "darkButton.png" : "lightButton.png");
         ImageView iv = new ImageView(img);
-        //iv.setFitWidth(themeBtn.getWidth());
         iv.setPreserveRatio(true);
         iv.setFitHeight(45);
 
         themeBtn.setGraphic(iv);
         themeBtn.setContentDisplay(ContentDisplay.LEFT); // LEFT, RIGHT, TOP, BOTTOM, or GRAPHIC_ONLY
         themeBtn.setGraphicTextGap(8);
+    }
+
+
+    private void updateHistoryButton() {
+        Image img = new Image("history.png");
+        ImageView iv = new ImageView(img);
+        iv.setPreserveRatio(true);
+        iv.setFitHeight(45);
+
+        historyBtn.setGraphic(iv);
+        historyBtn.setContentDisplay(ContentDisplay.LEFT);
+        historyBtn.setGraphicTextGap(8);
     }
 
     /**
@@ -206,6 +221,12 @@ public class StartController extends BaseController {
     @FXML
     private void handleStart(ActionEvent e) {
         model.newGame(difficulty, maxNumCards);
+        sceneManager.switchScene("/fxml/gameloop.fxml");
+    }
+
+
+    @FXML
+    private void handleViewHistory(ActionEvent e) {
         sceneManager.switchScene("/fxml/stat.fxml");
     }
 }

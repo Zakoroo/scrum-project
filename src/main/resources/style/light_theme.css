@@ -126,15 +126,14 @@
 
 /* Make the draggable thumb transparent or lightly visible */
 .scroll-bar .thumb {
-    -fx-background-color: linear-gradient(to left, white, derive(lightgrey, 60%)); 
+    -fx-background-color: linear-gradient(to left, -card, derive(lightgrey, 60%)); 
     -fx-background-radius: 5;
 }
 
 /* Optional: make the thumb more visible on hover */
 .scroll-bar .thumb:hover {
-    -fx-background-color: linear-gradient(to left, white, derive(lightgrey, 40%));
+    -fx-background-color: linear-gradient(to left, -card, derive(lightgrey, 40%));
 }
-
 
 
 .chart {
@@ -158,7 +157,7 @@
 
 .chart-line-symbol {
   -fx-background-color: derive(orange, 60%);
-  -fx-border-color: white;
+  -fx-border-color: -card;
   -fx-border-width: 2px;
   /* radius styling depends on shape used */
 }
@@ -167,21 +166,15 @@
   -fx-background-color: red;
 }
 
-.axis .axis-line,
-.axis .tick-mark {
-  -fx-stroke: -accent;
-  -fx-stroke-width: 1px;
+.axis {
+    -fx-tick-label-fill: -ink;
 }
 
-.axis .axis-label,
-.axis .tick-label {
-  -fx-text-fill: -ink;
-}
 
 .tooltip {
-  -fx-background-color: white;
-  -fx-border-color: #e5e7eb;
+  -fx-background-color: -card;
+  -fx-border-color: derive(-card, 60%);
   -fx-border-radius: 8px;
   -fx-padding: 6px 10px;
-  -fx-text-fill: #111827;
+  -fx-text-fill: -ink;
 }

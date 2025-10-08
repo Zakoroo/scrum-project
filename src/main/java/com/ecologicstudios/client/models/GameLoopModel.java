@@ -6,6 +6,8 @@ import java.util.List;
 
 import com.ecologicstudios.utils.CardFetcher;
 import com.ecologicstudios.utils.FeedbackCalculator;
+import com.ecologicstudios.utils.GameHistory;
+import com.ecologicstudios.utils.GameSession;
 import com.ecologicstudios.utils.JsonCardFetcher;
 import com.ecologicstudios.utils.Card;
 import com.ecologicstudios.utils.Alternative;
@@ -24,6 +26,8 @@ import com.ecologicstudios.utils.Alternative;
  * @author Ecologic Studios
  */
 public class GameLoopModel {
+    private final String historyPath = "src/main/resources/json/history.json";
+
     /**
      * Path to the JSON file that stores the cards.
      */
@@ -33,6 +37,8 @@ public class GameLoopModel {
      * The singleton instance of this class.
      */
     private static GameLoopModel instance;
+
+    private GameHistory gameHistory;
 
     /**
      * List of cards for the current game session.
@@ -93,6 +99,7 @@ public class GameLoopModel {
      * this class.
      */
     private GameLoopModel() {
+        this.gameHistory = new GameHistory(historyPath);
     }
 
     /**
@@ -115,7 +122,7 @@ public class GameLoopModel {
         CardFetcher fetcher = new JsonCardFetcher(path); // fetch cards from given path (in resources)
         cards = fetcher.getCardsByDifficulty(difficulty); // fetch out only cards of the given difficulty
         Collections.shuffle(cards); // shuffle cards
-
+        
         feedbackCalculator = new FeedbackCalculator(new LinkedList<>(cards), maxNumCards);
     }
 
@@ -173,10 +180,14 @@ public class GameLoopModel {
      *                                  alternative for the current card
      */
     public void submitAnswer(Alternative answer) throws IllegalArgumentException {
+        if (gameEnded()) return; // answers cannot be submitted after end of session
         for (Alternative alt : currentCard.getAlternatives()) {
             if (alt.equals(answer)) {
                 answersCount++;
                 totalResult += answer.getco2();
+
+                // update history only if the last answer is submitted
+                if (gameEnded()) updateHistory();
                 return;
             }
         }
@@ -264,5 +275,20 @@ public class GameLoopModel {
             throw new IllegalStateException("cannot access results before game ends");
         }
         return feedbackCalculator.getFeedback(totalResult);
+    }
+
+    private GameSession getSession() {
+        if (!gameEnded()) {
+            throw new IllegalStateException("cannot access gameession before game ends");
+        }
+        return new GameSession(difficulty, maxNumCards, totalResult, feedbackCalculator.getMinResult(), feedbackCalculator.getMaxResult());
+    }
+
+    private void updateHistory() {
+        this.gameHistory.addSession(getSession());
+    }
+
+    public GameHistory getHistory() {
+        return this.gameHistory;
     }
 }

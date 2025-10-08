@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox prefWidth="272.0" style="-fx-opacity: 0.8;" styleClass="rounded" stylesheets="@../style/light_theme.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="text" text="placeholder" />
+   </children>
+</HBox>

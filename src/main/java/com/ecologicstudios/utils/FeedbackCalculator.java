@@ -42,7 +42,7 @@ public class FeedbackCalculator {
      * @param roundLength the number of cards to consider (e.g., round length)
      * @return the sum of the minimum CO2 values for each card
      */
-    private double getMinResult(List<Card> cards, int roundLength) {
+    public double getMinResult() {
         double minTotal = 0;
         for (int i = 0; i < roundLength && i < cards.size(); i++) {
             List<Alternative> alternatives = cards.get(i).getAlternatives();
@@ -65,7 +65,7 @@ public class FeedbackCalculator {
      * @param roundLength the number of cards to consider (e.g., round length)
      * @return the sum of the maximum CO2 values for each card
      */
-    private double getMaxResult(List<Card> cards, int roundLength) {
+    public double getMaxResult() {
         double maxTotal = 0;
         for (int i = 0; i < roundLength && i < cards.size(); i++) {
             List<Alternative> choices = cards.get(i).getAlternatives();
@@ -151,8 +151,8 @@ public class FeedbackCalculator {
      * @return a title as a String representing the player's performance
      */
     public String getScoreTitle(double point) {
-        double min = getMinResult(cards, roundLength);
-        double max = getMaxResult(cards, roundLength);
+        double min = getMinResult();
+        double max = getMaxResult();
         double avg = getAverageResult(min, max);
         return scoreTitleEvaluator(min, max, avg, point);
     }
@@ -165,8 +165,8 @@ public class FeedbackCalculator {
      * @return a feedback message as a String
      */
     public String getFeedback(double point) {
-        double min = getMinResult(cards, roundLength);
-        double max = getMaxResult(cards, roundLength);
+        double min = getMinResult();
+        double max = getMaxResult();
         double avg = getAverageResult(min, max);
         return feedbackEvaluator(min, max, avg, point);
     }
