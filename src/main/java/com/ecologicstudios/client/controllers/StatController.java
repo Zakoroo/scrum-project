@@ -76,7 +76,7 @@ public class StatController extends BaseController {
      * Handles the return to main menu button event.
      * <p>
      * Navigates the user back to the main menu interface after viewing their
-     * game results and environmental impact summary.
+     * statistics and performance insight.
      * 
      * @param event the ActionEvent from clicking the return button
      */
