@@ -1,5 +1,9 @@
 package com.ecologicstudios.client.controllers;
 
+import java.net.URL;
+import javafx.scene.Node;
+import com.ecologicstudios.client.models.SettingsModel;
+
 /**
  * Abstract base class for all JavaFX controllers in the application.
  * <p>
@@ -10,8 +14,10 @@ package com.ecologicstudios.client.controllers;
  * @author Ecologic Studios
  */
 public abstract class BaseController {
+    private Node root;
+
     /**
-     * The scene manager instance used for navigating between different scenes.
+     * The scene manager instance used for navigating betwen different scenes.
      */
     protected SceneManager sceneManager;
 
@@ -37,4 +43,20 @@ public abstract class BaseController {
      * anything to the scene instead of using the constructor method.
      */
     public abstract void initialize();
+
+    public void setRoot(Node root) {
+        this.root = root;
+    }
+
+    final public void applyTheme() {
+        // Remove previous theme
+        root.getScene().getStylesheets().removeIf(s -> s.contains("light_theme.css") || s.contains("dark_theme.css"));
+
+        String path = SettingsModel.getInstance().getStylesheet();
+        URL url = getClass().getResource(path);
+        if (url == null) {
+            throw new IllegalStateException("Theme CSS not found on classpath: " + path);
+        }
+        root.getScene().getStylesheets().add(url.toExternalForm());
+    }
 }

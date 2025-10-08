@@ -4,12 +4,14 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 
-<Button fx:id="altButton" mnemonicParsing="false" prefWidth="400.0" stylesheets="@../style/style.css" text="Button" wrapText="true" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+
+<Button fx:id="altButton" mnemonicParsing="false" prefWidth="400.0" text="Button" wrapText="true" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <padding>
       <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
    </padding>
    <styleClass>
       <String fx:value="btn" />
       <String fx:value="btn--alternatives" />
+      <String fx:value="btn--elevated" />
    </styleClass>
 </Button>

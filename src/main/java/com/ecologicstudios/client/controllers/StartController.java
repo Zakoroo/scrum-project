@@ -1,10 +1,17 @@
 package com.ecologicstudios.client.controllers;
 
 import com.ecologicstudios.client.models.GameLoopModel;
+import com.ecologicstudios.client.models.SettingsModel;
+import com.ecologicstudios.client.models.SettingsModel.Theme;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.ContentDisplay;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 
 /**
  * Controller class for managing the game setup interface.
@@ -26,11 +33,17 @@ public class StartController extends BaseController {
      * The currently selected maximum number of cards for the game session.
      */
     private int maxNumCards;
-    
+
     /**
      * The currently selected difficulty level for the game session.
      */
     private String difficulty;
+
+    @FXML
+    private HBox root;
+
+    @FXML
+    private Button themeBtn;
 
     @FXML
     private Button handleDifficulty;
@@ -81,6 +94,8 @@ public class StartController extends BaseController {
     public void initialize() {
         setRoundsDisable(maxNumCards, true);
         setDifficultyDisable(difficulty, true);
+        setRoot((Node) this.root);
+        updateThemeButton();
     }
 
     /**
@@ -99,6 +114,17 @@ public class StartController extends BaseController {
         setDifficultyDisable(difficulty, true); // disable current difficulty button
     }
 
+    @FXML
+    public void handleTheme(ActionEvent e) {
+        toggleTheme();
+        applyTheme();
+        updateThemeButton();
+    }
+
+    public void toggleTheme() {
+        SettingsModel.getInstance().toggleTheme();
+    }
+
     /**
      * Handles round selection button events.
      * <p>
@@ -111,7 +137,7 @@ public class StartController extends BaseController {
     @FXML
     private void handleRounds(ActionEvent e) {
         setRoundsDisable(maxNumCards, false); // enable previous rounds button
-        maxNumCards = Integer.parseInt(((Button) e.getSource()).getText()); 
+        maxNumCards = Integer.parseInt(((Button) e.getSource()).getText());
         setRoundsDisable(maxNumCards, true); // disable current rounds button
     }
 
@@ -125,14 +151,14 @@ public class StartController extends BaseController {
      */
     private void setDifficultyDisable(String text, Boolean disabled) {
         switch (text.toLowerCase()) {
-        case "easy":
-            easyBtn.setDisable(disabled);
-            break;
-        case "medium":
-            mediumBtn.setDisable(disabled);
-            break;
-        case "hard":
-            hardBtn.setDisable(disabled);
+            case "easy":
+                easyBtn.setDisable(disabled);
+                break;
+            case "medium":
+                mediumBtn.setDisable(disabled);
+                break;
+            case "hard":
+                hardBtn.setDisable(disabled);
         }
     }
 
@@ -146,15 +172,27 @@ public class StartController extends BaseController {
      */
     private void setRoundsDisable(int round, Boolean disabled) {
         switch (round) {
-        case 10:
-            roundsBtn1.setDisable(disabled);
-            break;
-        case 15:
-            roundsBtn2.setDisable(disabled);
-            break;
-        case 20:
-            roundsBtn3.setDisable(disabled);
+            case 10:
+                roundsBtn1.setDisable(disabled);
+                break;
+            case 15:
+                roundsBtn2.setDisable(disabled);
+                break;
+            case 20:
+                roundsBtn3.setDisable(disabled);
         }
+    }
+
+    private void updateThemeButton() {
+        Image img = new Image(SettingsModel.getInstance().getTheme() == Theme.LIGHT ? "darkButton.png" : "lightButton.png");
+        ImageView iv = new ImageView(img);
+        //iv.setFitWidth(themeBtn.getWidth());
+        iv.setPreserveRatio(true);
+        iv.setFitHeight(45);
+
+        themeBtn.setGraphic(iv);
+        themeBtn.setContentDisplay(ContentDisplay.LEFT); // LEFT, RIGHT, TOP, BOTTOM, or GRAPHIC_ONLY
+        themeBtn.setGraphicTextGap(8);
     }
 
     /**
