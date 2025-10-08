@@ -109,3 +109,79 @@
     -fx-text-fill: -on-strong;
     -fx-border-color: -rounds-border;
 }
+
+/* Make the ScrollPane background transparent */
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+/* Make the vertical scrollbar itself transparent */
+.scroll-pane .scroll-bar:vertical {
+    -fx-background-color: transparent;
+}
+
+/* Make the draggable thumb transparent or lightly visible */
+.scroll-bar .thumb {
+    -fx-background-color: linear-gradient(to left, white, derive(lightgrey, 60%)); 
+    -fx-background-radius: 5;
+}
+
+/* Optional: make the thumb more visible on hover */
+.scroll-bar .thumb:hover {
+    -fx-background-color: linear-gradient(to left, white, derive(lightgrey, 40%));
+}
+
+
+
+.chart {
+  -fx-background-radius: 12px;
+}
+
+.chart .chart-title {
+  -fx-font-weight: 600;
+  -fx-text-fill: -ink;
+}
+
+.chart-series-line {
+  -fx-stroke-width: 2.5px;
+  -fx-stroke: orange;
+}
+
+.chart-series-line:hover {
+  -fx-stroke-width: 3px;
+  -fx-stroke: red;
+}
+
+.chart-line-symbol {
+  -fx-background-color: derive(orange, 60%);
+  -fx-border-color: white;
+  -fx-border-width: 2px;
+  /* radius styling depends on shape used */
+}
+
+.chart-line-symbol:hover {
+  -fx-background-color: red;
+}
+
+.axis .axis-line,
+.axis .tick-mark {
+  -fx-stroke: -accent;
+  -fx-stroke-width: 1px;
+}
+
+.axis .axis-label,
+.axis .tick-label {
+  -fx-text-fill: -ink;
+}
+
+.tooltip {
+  -fx-background-color: white;
+  -fx-border-color: #e5e7eb;
+  -fx-border-radius: 8px;
+  -fx-padding: 6px 10px;
+  -fx-text-fill: #111827;
+}

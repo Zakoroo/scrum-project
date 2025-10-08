@@ -206,6 +206,6 @@ public class StartController extends BaseController {
     @FXML
     private void handleStart(ActionEvent e) {
         model.newGame(difficulty, maxNumCards);
-        sceneManager.switchScene("/fxml/gameloop.fxml");
+        sceneManager.switchScene("/fxml/stat.fxml");
     }
 }
