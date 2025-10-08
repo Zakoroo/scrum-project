@@ -12,12 +12,8 @@ src
 │   │           │   │   ├── SceneManager.java
 │   │           │   │   └── StartController.java
 │   │           │   └── models
-│   │           │       └── GameLoopModel.java
-│   │           ├── server
-│   │           │   ├── ApiCaller.java
-│   │           │   ├── EcoConnection.java
-│   │           │   ├── EcoServer.java
-│   │           │   └── postgresql-42.7.4.jar
+│   │           │       ├── GameLoopModel.java
+│   │           │       └── SettingsModel.java
 │   │           └── utils
 │   │               ├── AddCardTool.java
 │   │               ├── Alternative.java
@@ -26,23 +22,30 @@ src
 │   │               ├── CardJsonIO.java
 │   │               ├── CardWrapper.java
 │   │               ├── FeedbackCalculator.java
+│   │               ├── GameHistory.java
+│   │               ├── GameSession.java
+│   │               ├── GameWrapper.java
 │   │               ├── JsonCardFetcher.java
 │   │               └── test.java
 │   └── resources
-│       ├── background.png
 │       ├── cards.json
+│       ├── darkButton.png
+│       ├── dark_bg.png
 │       ├── fxml
 │       │   ├── altButton.fxml
 │       │   ├── gameloop.fxml
 │       │   ├── main.fxml
 │       │   └── results.fxml
 │       ├── gameicon.png
+│       ├── lightButton.png
+│       ├── light_bg.png
 │       └── style
-│           └── style.css
+│           ├── dark_theme.css
+│           └── light_theme.css
 └── test
     └── java
         └── com
             └── ecologicstudios
                 └── AppTest.java
 
-17 directories, 29 files
+16 directories, 33 files
