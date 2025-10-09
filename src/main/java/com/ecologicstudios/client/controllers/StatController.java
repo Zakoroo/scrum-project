@@ -113,9 +113,9 @@ public class StatController extends BaseController {
         if (gameSessions.size() > 3) {
             StandardDeviationCalculator sdv = new StandardDeviationCalculator(points);
             performanceLabel.setText(
-                    String.format("You performed %.2f%% better last game than previous games.", sdv.getPercentile()));
+                    String.format("Your last game was better than %.1f%% of previous games.", sdv.getPercentile()));
         } else {
-            performanceLabel.setText(String.format("You haven't played enough games yet for this data to show :)"));
+            performanceLabel.setText(String.format("You have not played enough games yet for this data to be visable"));
         }
     }
 
