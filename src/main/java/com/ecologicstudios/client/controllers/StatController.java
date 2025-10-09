@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.chart.LineChart;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
@@ -14,8 +15,11 @@ import java.io.IOException;
 import java.util.List;
 
 import com.ecologicstudios.client.models.GameLoopModel;
+import com.ecologicstudios.utils.ChartBuilder;
 import com.ecologicstudios.utils.GameHistory;
 import com.ecologicstudios.utils.GameSession;
+import com.ecologicstudios.utils.PerformanceCalculator;
+import com.ecologicstudios.utils.StandardDeviationCalculator;
 
 public class StatController extends BaseController {
     private final String historyItemPath = "/fxml/historyItem.fxml";
@@ -31,11 +35,16 @@ public class StatController extends BaseController {
     private VBox historyList;
 
     @FXML
-    private LineChart<?, ?> lineChart;
+    private LineChart<Number, Number> lineChart;
+
+    @FXML
+    private Label performanceLabel;
 
     public void initialize() {
         this.model = GameLoopModel.getInstance();
         updateHistory();
+        updateChart();
+        updatePerformanceLabel();
         setRoot((Node) root);
     }
 
@@ -51,7 +60,25 @@ public class StatController extends BaseController {
     }
 
     public void updateChart() {
+        List<GameSession> gameSessions = model.getHistory().getAllSessions();
+        PerformanceCalculator pc = new PerformanceCalculator();
+        ChartBuilder cb = new ChartBuilder(gameSessions, pc);
+        List<XYChart.Data<Number, Number>> points = cb.getChartData();
+        XYChart.Series<Number, Number> series = new XYChart.Series<>();
+        series.getData().addAll(points);
+        
+        lineChart.getData().setAll(series);
+    }
 
+
+    public void updatePerformanceLabel() {
+        List<GameSession> gameSessions = model.getHistory().getAllSessions();
+        PerformanceCalculator pc = new PerformanceCalculator();
+        ChartBuilder cb = new ChartBuilder(gameSessions, pc);
+        List<XYChart.Data<Number, Number>> points = cb.getChartData();
+
+        StandardDeviationCalculator sdv = new StandardDeviationCalculator(points);
+        performanceLabel.setText(String.format("You performed %.2f%% better last game than previous games.", sdv.getPercentile()));
     }
 
     private void addHistoryItem(GameSession session) throws IOException {

@@ -2,7 +2,6 @@
 
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Button?>
@@ -52,7 +51,7 @@
          <children>
             <LineChart fx:id="lineChart" prefHeight="174.0" prefWidth="275.0" title="Performance">
               <xAxis>
-                <CategoryAxis side="BOTTOM" />
+                <NumberAxis side="BOTTOM" fx:id="xAxis" />
               </xAxis>
               <yAxis>
                 <NumberAxis prefHeight="150.0" prefWidth="28.0" side="LEFT" upperBound="75.0" />
@@ -60,7 +59,7 @@
             </LineChart>
             <HBox prefHeight="137.0" prefWidth="275.0" styleClass="rounded">
                <children>
-                  <Label maxHeight="1.7976931348623157E308" prefHeight="38.0" prefWidth="237.0" text="You performed x% better this game than previous games." wrapText="true" />
+                  <Label fx:id="performanceLabel" maxHeight="1.7976931348623157E308" prefHeight="38.0" prefWidth="237.0" text="You performed x% better the last game than previous games." wrapText="true" />
                </children>
             </HBox>
             <VBox alignment="BOTTOM_RIGHT" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
