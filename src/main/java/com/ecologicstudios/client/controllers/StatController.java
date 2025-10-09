@@ -52,7 +52,7 @@ public class StatController extends BaseController {
             updateChart();
             updateHistory();
         }
-        
+
         updatePerformanceLabel();
         setRoot((Node) root);
     }
@@ -74,6 +74,18 @@ public class StatController extends BaseController {
         // Set axis labels
         xAxis.setLabel("Game Number");
         yAxis.setLabel("Score (%)");
+
+        // Style the y-axis label directly - move it left
+        Node yAxisLabel = yAxis.lookup(".axis-label");
+        if (yAxisLabel != null) {
+            yAxisLabel.setStyle("-fx-padding: -20px 0px 0px 0px;");
+        }
+
+        // Keep x-axis label normal
+        Node xAxisLabel = xAxis.lookup(".axis-label");
+        if (xAxisLabel != null) {
+            xAxisLabel.setStyle("-fx-padding: 0px;");
+        }
 
         // x-axis configs
         xAxis.setAutoRanging(false);
@@ -97,10 +109,11 @@ public class StatController extends BaseController {
     }
 
     public void updatePerformanceLabel() {
-        
-        if(gameSessions.size() > 3) {
+
+        if (gameSessions.size() > 3) {
             StandardDeviationCalculator sdv = new StandardDeviationCalculator(points);
-            performanceLabel.setText(String.format("You performed %.2f%% better last game than previous games.", sdv.getPercentile()));
+            performanceLabel.setText(
+                    String.format("You performed %.2f%% better last game than previous games.", sdv.getPercentile()));
         } else {
             performanceLabel.setText(String.format("You haven't played enough games yet for this data to show :)"));
         }

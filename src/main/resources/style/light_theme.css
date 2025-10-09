@@ -170,7 +170,6 @@
     -fx-tick-label-fill: -ink;
 }
 
-
 .tooltip {
   -fx-background-color: -card;
   -fx-border-color: derive(-card, 60%);

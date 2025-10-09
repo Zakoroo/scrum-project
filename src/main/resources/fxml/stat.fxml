@@ -49,7 +49,7 @@
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </padding>
          <children>
-            <LineChart fx:id="lineChart" prefHeight="250.0" prefWidth="275.0" title="Performance">
+            <LineChart fx:id="lineChart" prefHeight="250.0" title="Performance">
               <xAxis>
                 <NumberAxis side="BOTTOM" tickLength="0.0" tickUnit="1.0" fx:id="xAxis" />
               </xAxis>
