@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.chart.LineChart;
+import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -24,6 +25,8 @@ import com.ecologicstudios.utils.StandardDeviationCalculator;
 public class StatController extends BaseController {
     private final String historyItemPath = "/fxml/historyItem.fxml";
     private GameLoopModel model;
+    private List<GameSession> gameSessions;
+    private List<XYChart.Data<Number, Number>> points;
 
     @FXML
     private HBox root;
@@ -42,14 +45,19 @@ public class StatController extends BaseController {
 
     public void initialize() {
         this.model = GameLoopModel.getInstance();
-        updateHistory();
-        updateChart();
+        this.gameSessions = model.getHistory().getAllSessions();
+
+        if (!this.gameSessions.isEmpty()) {
+            this.points = new ChartBuilder(gameSessions, new PerformanceCalculator()).getChartData();
+            updateChart();
+            updateHistory();
+        }
+        
         updatePerformanceLabel();
         setRoot((Node) root);
     }
 
     public void updateHistory() {
-        List<GameSession> gameSessions = model.getHistory().getAllSessions();
         try {
             for (GameSession session : gameSessions) {
                 addHistoryItem(session);
@@ -60,25 +68,42 @@ public class StatController extends BaseController {
     }
 
     public void updateChart() {
-        List<GameSession> gameSessions = model.getHistory().getAllSessions();
-        PerformanceCalculator pc = new PerformanceCalculator();
-        ChartBuilder cb = new ChartBuilder(gameSessions, pc);
-        List<XYChart.Data<Number, Number>> points = cb.getChartData();
+        NumberAxis yAxis = (NumberAxis) lineChart.getYAxis();
+        NumberAxis xAxis = (NumberAxis) lineChart.getXAxis();
+
+        // Set axis labels
+        xAxis.setLabel("Game Number");
+        yAxis.setLabel("Score (%)");
+
+        // x-axis configs
+        xAxis.setAutoRanging(false);
+        xAxis.setTickUnit(1);
+        xAxis.setMinorTickVisible(false);
+        xAxis.setLowerBound(0);
+        xAxis.setUpperBound(points.size() + 1);
+
+        // y-axis configs
+        yAxis.setAutoRanging(false);
+        yAxis.setMinorTickVisible(false);
+        yAxis.setLowerBound(0);
+        yAxis.setUpperBound(100);
+        yAxis.setTickUnit(10); // Controls tick spacing
+
+        // update chart data
         XYChart.Series<Number, Number> series = new XYChart.Series<>();
         series.getData().addAll(points);
-        
+        lineChart.setLegendVisible(false);
         lineChart.getData().setAll(series);
     }
 
-
     public void updatePerformanceLabel() {
-        List<GameSession> gameSessions = model.getHistory().getAllSessions();
-        PerformanceCalculator pc = new PerformanceCalculator();
-        ChartBuilder cb = new ChartBuilder(gameSessions, pc);
-        List<XYChart.Data<Number, Number>> points = cb.getChartData();
-
-        StandardDeviationCalculator sdv = new StandardDeviationCalculator(points);
-        performanceLabel.setText(String.format("You performed %.2f%% better last game than previous games.", sdv.getPercentile()));
+        
+        if(gameSessions.size() > 3) {
+            StandardDeviationCalculator sdv = new StandardDeviationCalculator(points);
+            performanceLabel.setText(String.format("You performed %.2f%% better last game than previous games.", sdv.getPercentile()));
+        } else {
+            performanceLabel.setText(String.format("You haven't played enough games yet for this data to show :)"));
+        }
     }
 
     private void addHistoryItem(GameSession session) throws IOException {
@@ -111,5 +136,4 @@ public class StatController extends BaseController {
     private void handleReturn(ActionEvent event) {
         sceneManager.switchScene("/fxml/main.fxml");
     }
-
 }

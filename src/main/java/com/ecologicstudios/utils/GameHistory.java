@@ -50,6 +50,23 @@ public class GameHistory {
     public GameHistory(String filePath) {
         this.filePath = filePath;
         this.mapper = new ObjectMapper();
+
+        // create history file if it does not exist
+        try {
+            File file = new File(filePath);
+            
+            if (!file.exists()) {
+                if (file.getParentFile() != null) {
+                    file.getParentFile().mkdirs();
+                }
+                if (file.createNewFile()) {
+                    throw new IOException(String.format("was not able to create %s", file.getParent()));
+                }
+            }
+            
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
     }
 
     /**
@@ -131,7 +148,8 @@ public class GameHistory {
     private GameWrapper loadGameData() {
         try {
             File file = new File(filePath);
-            if (!file.exists()) {
+            // if file is empty
+            if (file.length() == 0) {
                 return new GameWrapper();
             }
             return mapper.readValue(file, GameWrapper.class);
