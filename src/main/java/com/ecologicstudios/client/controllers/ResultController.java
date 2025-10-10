@@ -36,6 +36,9 @@ public class ResultController extends BaseController {
     @FXML
     private Label feedbackLabel;
 
+    @FXML
+    private Label resultLabel;
+
     /**
      * Constructs a new ResultController and initializes the game model reference.
      */
@@ -51,7 +54,7 @@ public class ResultController extends BaseController {
      */
     public void initialize() {
         updateCO2(String.format("%.2f", model.getTotalResult())); // Add results to result screen.
-        updateFeedback(model.getFeedback());
+        updateFeedback(model.getFeedback(), model.getscoreTitle());
         setRoot((Node) this.root);
     }
 
@@ -87,7 +90,8 @@ public class ResultController extends BaseController {
      * 
      * @param feedback the feedback message to display to the player
      */
-    private void updateFeedback(String feedback) {
+    private void updateFeedback(String feedback, String scoretitle) {
         feedbackLabel.setText(String.format("Feedback: %s", feedback));
+        resultLabel.setText(String.format("Result: %s", scoretitle));
     }
 }

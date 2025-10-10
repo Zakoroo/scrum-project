@@ -277,6 +277,13 @@ public class GameLoopModel {
         return feedbackCalculator.getFeedback(totalResult);
     }
 
+    public String getscoreTitle() {
+        if(!gameEnded()) {
+            throw new IllegalStateException("cannot access results before game ends");
+        }
+        return feedbackCalculator.getScoreTitle(totalResult);
+    }
+
     private GameSession getSession() {
         if (!gameEnded()) {
             throw new IllegalStateException("cannot access gameession before game ends");
