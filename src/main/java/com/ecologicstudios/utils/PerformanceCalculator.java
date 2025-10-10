@@ -3,56 +3,57 @@ package com.ecologicstudios.utils;
 import java.util.List;
 
 /**
- * Computes a normalized performance score for a game session based on the
- * player's raw score relative to the session's best and worst scores, then
- * applies a difficulty-dependent weight.
+ * Utility class for computing a normalized performance score for a game session.
  * <p>
- * The normalization maps scores linearly between {@code bestScore} and
- * {@code worstScore}, then multiplies by a weight derived from {@code difficulty}.
- * For typical inputs where {@code bestScore <= score <= worstScore}, the
- * unweighted value is in {@code [0, 1]}. With weighting, the result is in
- * {@code [0, 2]} for the predefined difficulties.
+ * The normalization linearly maps a player's score between a given {@code bestScore}
+ * and {@code worstScore}. The resulting performance value is expressed as a percentage,
+ * where:
+ * <ul>
+ *   <li>100 represents the best possible performance (equal to {@code bestScore})</li>
+ *   <li>0 represents the worst possible performance (equal to {@code worstScore})</li>
+ * </ul>
  * </p>
+ *
+ * <p><b>Example:</b></p>
+ * <pre>
+ * PerformanceCalculator calculator = new PerformanceCalculator();
+ * double performance = calculator.calculatePerformance(75, 50, 100);
+ * // performance = 50.0
+ * </pre>
  */
 public class PerformanceCalculator {
 
     /**
-     * Creates a new, stateless PerformanceCalculator.
+     * Creates a new, stateless {@code PerformanceCalculator}.
      */
-    public PerformanceCalculator(){}
+    public PerformanceCalculator() {}
 
     /**
-     * Calculates the performance value.
+     * Calculates the normalized performance score for a player session.
      * <p>
      * Formula:
      * <pre>
-     * basePerformance = (worstScore - score) / (worstScore - bestScore)
-     * weight = 1.0 (easy), 1.5 (medium), 2.0 (hard), otherwise 1.0
-     * result = basePerformance * weight
+     * basePerformance = ((worstScore - score) / (worstScore - bestScore)) * 100
      * </pre>
-     * The {@code difficulty} string is trimmed and compared case-insensitively.
-     * If it does not match a known level, a default weight of {@code 1.0} is used
-     * and a message is printed to standard out.
-     * </p>
      * <p>
-     * Preconditions (not enforced):
-     * <ul>
-     *   <li>{@code worstScore > bestScore}</li>
-     *   <li>{@code difficulty != null}</li>
-     *   <li>{@code score} is expected to be within [{@code bestScore}, {@code worstScore}]</li>
-     * </ul>
-     * Violating these may yield undefined or out-of-range results.
+     * This produces a percentage value where higher numbers indicate better performance.
      * </p>
      *
-     * @param score       the player's total score for the session
-     * @param bestScore   the best (lowest) achievable score for the session
-     * @param worstScore  the worst (highest) achievable score for the session
-     * @return the performance score
+     * <p><b>Preconditions (not enforced):</b></p>
+     * <ul>
+     *   <li>{@code worstScore > bestScore}</li>
+     *   <li>{@code score} is within the range [{@code bestScore}, {@code worstScore}]</li>
+     * </ul>
+     *
+     * <p>Violating these conditions may yield undefined or out-of-range results.</p>
+     *
+     * @param score       the player's achieved score for the session
+     * @param bestScore   the best (lowest) achievable score
+     * @param worstScore  the worst (highest) achievable score
+     * @return a normalized performance value between 0 and 100
      */
     public double calculatePerformance(double score, double bestScore, double worstScore) {
-
         double basePerformance = ((worstScore - score) / (worstScore - bestScore)) * 100;
-
         return basePerformance;
     }
 }
