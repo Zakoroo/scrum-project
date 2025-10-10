@@ -3,7 +3,7 @@
 /* Tokens */
 .root {
     /* Background */
-    -fx-background-image: url(../dark_bg.png);
+    -fx-background-image: url(../images/dark_bg.png);
     -fx-background-repeat: no-repeat;
     -fx-background-position: center center;
     -fx-background-size: cover;

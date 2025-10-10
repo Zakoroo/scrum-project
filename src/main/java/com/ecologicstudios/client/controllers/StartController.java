@@ -209,7 +209,7 @@ public class StartController extends BaseController {
      */
     private void updateThemeButton() {
         Image img = new Image(
-                settingsModel.getTheme() == Theme.LIGHT ? "darkButton.png" : "lightButton.png");
+                settingsModel.getTheme() == Theme.LIGHT ? "images/darkButton.png" : "images/lightButton.png");
         ImageView iv = new ImageView(img);
         iv.setPreserveRatio(true);
         iv.setFitHeight(45);
@@ -224,7 +224,7 @@ public class StartController extends BaseController {
      */
     private void updateSoundButton() {
         Image img = new Image(
-                SettingsModel.getInstance().getSound() == Sound.ON ? "sound_on.png" : "sound_off.png");
+                SettingsModel.getInstance().getSound() == Sound.ON ? "images/sound_on.png" : "images/sound_off.png");
         ImageView iv = new ImageView(img);
         iv.setPreserveRatio(true);
         iv.setFitHeight(45);
@@ -238,7 +238,7 @@ public class StartController extends BaseController {
      * Updates the history button to reflect the current state.
      */
     private void updateHistoryButton() {
-        Image img = new Image("history.png");
+        Image img = new Image("images/history.png");
         ImageView iv = new ImageView(img);
         iv.setPreserveRatio(true);
         iv.setFitHeight(45);
