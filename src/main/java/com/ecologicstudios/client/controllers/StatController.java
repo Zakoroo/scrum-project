@@ -22,6 +22,14 @@ import com.ecologicstudios.utils.GameSession;
 import com.ecologicstudios.utils.PerformanceCalculator;
 import com.ecologicstudios.utils.StandardDeviationCalculator;
 
+/**
+ * Controller for the statistics view in the application.
+ * <p>
+ * This class manages the display of game statistics, including a history of
+ * game sessions, a performance chart, and a performance label. It interacts
+ * with the GameLoopModel to retrieve data and updates the UI components
+ * accordingly.
+ */
 public class StatController extends BaseController {
     private final String historyItemPath = "/fxml/historyItem.fxml";
     private GameLoopModel model;
@@ -46,6 +54,10 @@ public class StatController extends BaseController {
     @FXML
     private Label performanceLabel;
 
+    /**
+     * Initializes the statistics view by setting up the game history, chart, and
+     * performance label.
+     */
     public void initialize() {
         this.model = GameLoopModel.getInstance();
         this.gameSessions = model.getHistory().getAllSessions();
@@ -60,6 +72,9 @@ public class StatController extends BaseController {
         setRoot((Node) root);
     }
 
+    /**
+     * Updates the history list UI component with game session data.
+     */
     public void updateHistory() {
         try {
             for (GameSession session : gameSessions) {
@@ -70,6 +85,9 @@ public class StatController extends BaseController {
         }
     }
 
+    /**
+     * Updates the line chart with performance data.
+     */
     public void updateChart() {
         NumberAxis yAxis = (NumberAxis) lineChart.getYAxis();
         NumberAxis xAxis = (NumberAxis) lineChart.getXAxis();
@@ -111,6 +129,10 @@ public class StatController extends BaseController {
         lineChart.getData().setAll(series);
     }
 
+    /**
+     * Updates the performance label with a message based on the user's game
+     * performance.
+     */
     public void updatePerformanceLabel() {
 
         if (gameSessions.size() > 3) {
@@ -122,6 +144,12 @@ public class StatController extends BaseController {
         }
     }
 
+    /**
+     * Adds a history item to the history list UI component.
+     * 
+     * @param session the game session to add to the history list
+     * @throws IOException if an error occurs while loading the history item
+     */
     private void addHistoryItem(GameSession session) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(historyItemPath));
         HBox histItem = loader.load();
@@ -153,6 +181,14 @@ public class StatController extends BaseController {
         sceneManager.switchScene("/fxml/main.fxml");
     }
 
+    /**
+     * Handles the reset button event.
+     * <p>
+     * Clears the game history and updates the statistics view to reflect the
+     * cleared data.
+     * 
+     * @param event the ActionEvent from clicking the reset button
+     */
     @FXML
     private void handleReset(ActionEvent e) {
 
@@ -160,7 +196,7 @@ public class StatController extends BaseController {
         GameHistory history = model.getHistory();
         history.clearHistory();
 
-        // Update gamesession
+        // Update gameSession
         this.gameSessions = model.getHistory().getAllSessions();
 
         // Clear all UI components

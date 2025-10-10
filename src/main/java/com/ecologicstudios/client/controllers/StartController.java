@@ -126,6 +126,14 @@ public class StartController extends BaseController {
         setDifficultyDisable(difficulty, true); // disable current difficulty button
     }
 
+    /**
+     * Handles theme toggle button events.
+     * <p>
+     * Toggles the application theme between light and dark modes and updates the
+     * theme button to reflect the current theme.
+     * 
+     * @param e the ActionEvent from clicking the theme button
+     */
     @FXML
     public void handleTheme(ActionEvent e) {
         toggleTheme();
@@ -196,6 +204,9 @@ public class StartController extends BaseController {
         }
     }
 
+    /**
+     * Updates the theme button to reflect the current theme.
+     */
     private void updateThemeButton() {
         Image img = new Image(
                 settingsModel.getTheme() == Theme.LIGHT ? "darkButton.png" : "lightButton.png");
@@ -208,6 +219,9 @@ public class StartController extends BaseController {
         themeBtn.setGraphicTextGap(8);
     }
 
+    /**
+     * Updates the sound button to reflect the current sound setting.
+     */
     private void updateSoundButton() {
         Image img = new Image(
                 SettingsModel.getInstance().getSound() == Sound.ON ? "sound_on.png" : "sound_off.png");
@@ -220,6 +234,9 @@ public class StartController extends BaseController {
         soundBtn.setGraphicTextGap(8);
     }
 
+    /**
+     * Updates the history button to reflect the current state.
+     */
     private void updateHistoryButton() {
         Image img = new Image("history.png");
         ImageView iv = new ImageView(img);
@@ -245,11 +262,27 @@ public class StartController extends BaseController {
         sceneManager.switchScene("/fxml/gameloop.fxml");
     }
 
+    /**
+     * Handles the view history button event.
+     * <p>
+     * Navigates the user to the statistics view to review their game history and
+     * performance data.
+     * 
+     * @param e the ActionEvent from clicking the history button
+     */
     @FXML
     private void handleViewHistory(ActionEvent e) {
         sceneManager.switchScene("/fxml/stat.fxml");
     }
 
+    /**
+     * Handles the sound toggle button event.
+     * <p>
+     * Toggles the sound setting between on and off, updates the sound button to
+     * reflect the current setting, and logs the new sound state.
+     * 
+     * @param e the ActionEvent from clicking the sound button
+     */
     @FXML
     private void handleSound(ActionEvent e) {
         settingsModel.toggleSound();

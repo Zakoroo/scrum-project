@@ -44,10 +44,28 @@ public abstract class BaseController {
      */
     public abstract void initialize();
 
+    /**
+     * Sets the root node for this controller.
+     * <p>
+     * The root node is the top-level container for the scene managed by this
+     * controller. This method is typically called during initialization to
+     * establish the root node for the scene.
+     * 
+     * @param root the root node of the scene
+     */
     public void setRoot(Node root) {
         this.root = root;
     }
 
+    /**
+     * Applies the current theme to the scene managed by this controller.
+     * <p>
+     * This method removes any previously applied theme stylesheets and adds the
+     * stylesheet corresponding to the current theme as defined in the
+     * {@link SettingsModel}.
+     * 
+     * @throws IllegalStateException if the theme CSS file cannot be found on the classpath
+     */
     final public void applyTheme() {
         // Remove previous theme
         root.getScene().getStylesheets().removeIf(s -> s.contains("light_theme.css") || s.contains("dark_theme.css"));
