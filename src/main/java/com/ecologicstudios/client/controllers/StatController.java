@@ -35,6 +35,9 @@ public class StatController extends BaseController {
     private Button returnBtn;
 
     @FXML
+    private Button resetBtn;
+
+    @FXML
     private VBox historyList;
 
     @FXML
@@ -146,7 +149,31 @@ public class StatController extends BaseController {
      * @param event the ActionEvent from clicking the return button
      */
     @FXML
-    private void handleReturn(ActionEvent event) {
+    private void handleReturn(ActionEvent e) {
         sceneManager.switchScene("/fxml/main.fxml");
+    }
+
+    @FXML
+    private void handleReset(ActionEvent e) {
+
+        // Clear history
+        GameHistory history = model.getHistory();
+        history.clearHistory();
+
+        // Update gamesession
+        this.gameSessions = model.getHistory().getAllSessions();
+
+        // Clear all UI components
+        historyList.getChildren().clear();
+        lineChart.getData().clear();
+
+        // Update stat view
+        if (!this.gameSessions.isEmpty()) {
+            this.points = new ChartBuilder(gameSessions, new PerformanceCalculator()).getChartData();
+            updateChart();
+            updateHistory();
+        }
+        updatePerformanceLabel();
+
     }
 }

@@ -2,6 +2,7 @@ package com.ecologicstudios.client.controllers;
 
 import com.ecologicstudios.client.models.GameLoopModel;
 import com.ecologicstudios.client.models.SettingsModel;
+import com.ecologicstudios.client.models.SettingsModel.Sound;
 import com.ecologicstudios.client.models.SettingsModel.Theme;
 
 import javafx.event.ActionEvent;
@@ -29,6 +30,8 @@ public class StartController extends BaseController {
      */
     private GameLoopModel model;
 
+    private SettingsModel settingsModel;
+
     /**
      * The currently selected maximum number of cards for the game session.
      */
@@ -47,6 +50,9 @@ public class StartController extends BaseController {
 
     @FXML
     private Button themeBtn;
+
+    @FXML
+    private Button soundBtn;
 
     @FXML
     private Button handleDifficulty;
@@ -82,9 +88,10 @@ public class StartController extends BaseController {
      * for difficulty and maximum number of cards.
      */
     public StartController() {
-        model = GameLoopModel.getInstance();
-        maxNumCards = model.getMaxNumCards();
-        difficulty = model.getDifficulty();
+        this.model = GameLoopModel.getInstance();
+        this.maxNumCards = model.getMaxNumCards();
+        this.difficulty = model.getDifficulty();
+        this.settingsModel = SettingsModel.getInstance();
     }
 
     /**
@@ -99,6 +106,7 @@ public class StartController extends BaseController {
         setDifficultyDisable(difficulty, true);
         setRoot((Node) this.root);
         updateThemeButton();
+        updateSoundButton();
         updateHistoryButton();
     }
 
@@ -126,8 +134,9 @@ public class StartController extends BaseController {
     }
 
     public void toggleTheme() {
-        SettingsModel.getInstance().toggleTheme();
+        settingsModel.toggleTheme();
     }
+
 
     /**
      * Handles round selection button events.
@@ -188,16 +197,28 @@ public class StartController extends BaseController {
     }
 
     private void updateThemeButton() {
-        Image img = new Image(SettingsModel.getInstance().getTheme() == Theme.LIGHT ? "darkButton.png" : "lightButton.png");
+        Image img = new Image(
+                settingsModel.getTheme() == Theme.LIGHT ? "darkButton.png" : "lightButton.png");
         ImageView iv = new ImageView(img);
         iv.setPreserveRatio(true);
         iv.setFitHeight(45);
 
         themeBtn.setGraphic(iv);
-        themeBtn.setContentDisplay(ContentDisplay.LEFT); // LEFT, RIGHT, TOP, BOTTOM, or GRAPHIC_ONLY
+        themeBtn.setContentDisplay(ContentDisplay.LEFT);
         themeBtn.setGraphicTextGap(8);
     }
 
+    private void updateSoundButton() {
+        Image img = new Image(
+                SettingsModel.getInstance().getSound() == Sound.ON ? "sound_on.png" : "sound_off.png");
+        ImageView iv = new ImageView(img);
+        iv.setPreserveRatio(true);
+        iv.setFitHeight(45);
+
+        soundBtn.setGraphic(iv);
+        soundBtn.setContentDisplay(ContentDisplay.LEFT);
+        soundBtn.setGraphicTextGap(8);
+    }
 
     private void updateHistoryButton() {
         Image img = new Image("history.png");
@@ -224,9 +245,16 @@ public class StartController extends BaseController {
         sceneManager.switchScene("/fxml/gameloop.fxml");
     }
 
-
     @FXML
     private void handleViewHistory(ActionEvent e) {
         sceneManager.switchScene("/fxml/stat.fxml");
     }
+
+    @FXML
+    private void handleSound(ActionEvent e) {
+        settingsModel.toggleSound();
+        updateSoundButton();
+        System.out.println(String.format("Sound is: %s", settingsModel.getSound()));
+    }
+
 }

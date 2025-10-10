@@ -3,7 +3,9 @@ package com.ecologicstudios.client.models;
 public class SettingsModel {
     private static SettingsModel instance;
     public static enum Theme {LIGHT, DARK};
+    public static enum Sound {ON, OFF};
     private Theme theme;
+    private Sound sound;
 
     public static SettingsModel getInstance() {
         if (instance == null) {
@@ -14,10 +16,11 @@ public class SettingsModel {
 
     private SettingsModel() {
         this.theme = Theme.LIGHT;
+        this.sound = Sound.ON;
     }
 
-    public void setTheme(Theme theme) {
-        this.theme = theme;
+    public void toggleSound() {
+       this.sound = this.sound == Sound.ON  ? Sound.OFF : Sound.ON;
     }
 
     public Theme toggleTheme() {
@@ -30,5 +33,10 @@ public class SettingsModel {
 
     public Theme getTheme() {
         return this.theme;
-    }
+    } 
+
+   public Sound getSound() {
+        return this.sound;
+   }
+
 }

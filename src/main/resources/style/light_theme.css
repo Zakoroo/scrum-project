@@ -93,6 +93,7 @@
 .button.btn--hard    { -fx-background-color: -hard-bg; -fx-border-color: -hard-border;    -fx-text-fill: -on-strong; }
 .button.btn--rounds  { -fx-background-color: -rounds-bg; -fx-border-color: -rounds-border; -fx-text-fill: -on-strong; }
 .button.btn--return  { -fx-background-color: -return-bg; -fx-border-color: -return-border; -fx-text-fill: -on-strong; }
+.button.btn--reset    { -fx-background-color: -hard-bg; -fx-border-color: -hard-border;    -fx-text-fill: -on-strong; }
 
 /* Chips */
 .chip {

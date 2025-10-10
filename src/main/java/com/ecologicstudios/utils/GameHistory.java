@@ -54,7 +54,7 @@ public class GameHistory {
         // create history file if it does not exist
         try {
             File file = new File(filePath);
-            
+
             if (!file.exists()) {
                 if (file.getParentFile() != null) {
                     file.getParentFile().mkdirs();
@@ -63,7 +63,7 @@ public class GameHistory {
                     throw new IOException(String.format("was not able to create %s", file.getParent()));
                 }
             }
-            
+
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }
@@ -122,6 +122,17 @@ public class GameHistory {
             saveGameData(gameData);
         }
         return removed;
+    }
+
+    /**
+     * Clears all game session history.
+     * 
+     * Removes all sessions from memory and persists an empty history to disk.
+     * This operation cannot be undone.
+     */
+    public void clearHistory() {
+        GameWrapper emptyGameData = new GameWrapper();
+        saveGameData(emptyGameData);
     }
 
     /**
