@@ -29,7 +29,7 @@ public abstract class BaseController {
      * 
      * @param sceneManager the SceneManager instance to be used for scene transitions
      */
-    public void setSceneManager(SceneManager sceneManager) {
+    protected void setSceneManager(SceneManager sceneManager) {
         this.sceneManager = sceneManager;
     }
 
@@ -42,9 +42,9 @@ public abstract class BaseController {
      * initialization logic. Make sure to use this method if you wish to inject
      * anything to the scene instead of using the constructor method.
      */
-    public abstract void initialize();
+    protected abstract void initialize();
 
-    public void setRoot(Node root) {
+    protected void setRoot(Node root) {
         this.root = root;
     }
 

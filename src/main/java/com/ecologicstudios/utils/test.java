@@ -26,7 +26,7 @@ public class test {
      * @param args command-line arguments (not used in this test)
      */
     public static void main(String[] args) {
-        CardFetcher cardFetcher = new JsonCardFetcher("src/main/resources/cards.json");
+        CardFetcher cardFetcher = new JsonCardFetcher("src/main/resources/json/cards.json");
         List<Card> cards = cardFetcher.getCardsByDifficulty("Hard");
         int co2 = 60;
 

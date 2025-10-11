@@ -50,6 +50,23 @@ public class GameHistory {
     public GameHistory(String filePath) {
         this.filePath = filePath;
         this.mapper = new ObjectMapper();
+
+        // create history file if it does not exist
+        try {
+            File file = new File(filePath);
+
+            if (!file.exists()) {
+                if (file.getParentFile() != null) {
+                    file.getParentFile().mkdirs();
+                }
+                if (file.createNewFile()) {
+                    throw new IOException(String.format("was not able to create file: %s", file.getParent()));
+                }
+            }
+
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
     }
 
     /**
@@ -108,6 +125,17 @@ public class GameHistory {
     }
 
     /**
+     * Clears all game session history.
+     * 
+     * Removes all sessions from memory and persists an empty history to disk.
+     * This operation cannot be undone.
+     */
+    public void clearHistory() {
+        GameWrapper emptyGameData = new GameWrapper();
+        saveGameData(emptyGameData);
+    }
+
+    /**
      * Gets the total number of sessions.
      *
      * @return number of sessions in history; 0 if none or on read error
@@ -131,7 +159,8 @@ public class GameHistory {
     private GameWrapper loadGameData() {
         try {
             File file = new File(filePath);
-            if (!file.exists()) {
+            // if file is empty
+            if (file.length() == 0) {
                 return new GameWrapper();
             }
             return mapper.readValue(file, GameWrapper.class);

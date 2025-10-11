@@ -3,7 +3,7 @@
 /* Tokens */
 .root {
     /* Background */
-    -fx-background-image: url(../light_bg.png);
+    -fx-background-image: url(../images/light_bg.png);
     -fx-background-repeat: no-repeat;
     -fx-background-position: center center;
     -fx-background-size: cover;
@@ -93,6 +93,7 @@
 .button.btn--hard    { -fx-background-color: -hard-bg; -fx-border-color: -hard-border;    -fx-text-fill: -on-strong; }
 .button.btn--rounds  { -fx-background-color: -rounds-bg; -fx-border-color: -rounds-border; -fx-text-fill: -on-strong; }
 .button.btn--return  { -fx-background-color: -return-bg; -fx-border-color: -return-border; -fx-text-fill: -on-strong; }
+.button.btn--reset    { -fx-background-color: -hard-bg; -fx-border-color: -hard-border;    -fx-text-fill: -on-strong; }
 
 /* Chips */
 .chip {
@@ -108,4 +109,72 @@
     -fx-background-color: -rounds-bg;
     -fx-text-fill: -on-strong;
     -fx-border-color: -rounds-border;
+}
+
+/* Make the ScrollPane background transparent */
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+/* Make the vertical scrollbar itself transparent */
+.scroll-pane .scroll-bar:vertical {
+    -fx-background-color: transparent;
+}
+
+/* Make the draggable thumb transparent or lightly visible */
+.scroll-bar .thumb {
+    -fx-background-color: linear-gradient(to left, -card, derive(lightgrey, 60%)); 
+    -fx-background-radius: 5;
+}
+
+/* Optional: make the thumb more visible on hover */
+.scroll-bar .thumb:hover {
+    -fx-background-color: linear-gradient(to left, -card, derive(lightgrey, 40%));
+}
+
+
+.chart {
+  -fx-background-radius: 12px;
+}
+
+.chart .chart-title {
+  -fx-font-weight: 600;
+  -fx-text-fill: -ink;
+}
+
+.chart-series-line {
+  -fx-stroke-width: 2.5px;
+  -fx-stroke: orange;
+}
+
+.chart-series-line:hover {
+  -fx-stroke-width: 3px;
+  -fx-stroke: red;
+}
+
+.chart-line-symbol {
+  -fx-background-color: derive(orange, 60%);
+  -fx-border-color: -card;
+  -fx-border-width: 2px;
+  /* radius styling depends on shape used */
+}
+
+.chart-line-symbol:hover {
+  -fx-background-color: red;
+}
+
+.axis {
+    -fx-tick-label-fill: -ink;
+}
+
+.tooltip {
+  -fx-background-color: -card;
+  -fx-border-color: derive(-card, 60%);
+  -fx-border-radius: 8px;
+  -fx-padding: 6px 10px;
+  -fx-text-fill: -ink;
 }

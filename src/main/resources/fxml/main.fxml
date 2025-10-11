@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ecologicstudios.client.controllers.StartController">
+<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ecologicstudios.client.controllers.StartController">
    <children>
       <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="510.0">
          <bottom>
@@ -171,6 +171,20 @@
                         <String fx:value="btn" />
                         <String fx:value="btn--theme" />
                      </styleClass></Button>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Button fx:id="soundBtn" minHeight="33.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleSound" prefHeight="34.0" prefWidth="122.0" styleClass="btn">
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children></VBox>
+                  <Button fx:id="historyBtn" layoutX="20.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="33.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleViewHistory" prefHeight="34.0" prefWidth="122.0">
+                     <styleClass>
+                        <String fx:value="btn" />
+                        <String fx:value="btn--theme" />
+                     </styleClass>
+                  </Button>
                </children>
             </VBox>
          </children>
