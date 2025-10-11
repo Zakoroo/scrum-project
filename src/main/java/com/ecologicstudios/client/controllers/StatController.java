@@ -30,12 +30,33 @@ import com.ecologicstudios.utils.StandardDeviationCalculator;
  * with the GameLoopModel to retrieve data and updates the UI components
  * accordingly.
  */
-public class StatController extends BaseController {
+public final class StatController extends BaseController {
+    // ------------------------------------------------------------------------//
+    // external resources
+    // ------------------------------------------------------------------------//
     private final String historyItemPath = "/fxml/historyItem.fxml";
-    private GameLoopModel model;
+
+    // ------------------------------------------------------------------------//
+    // main fields
+    // ------------------------------------------------------------------------//
+    /**
+     * Reference to the game model for tracking game phases and logic.
+     */
+    private GameLoopModel gameLoopModel;
+
+    /**
+     * List of all game sessions stored in the history JSON object.
+     */
     private List<GameSession> gameSessions;
+
+    /**
+     * List of all points displayed on the history chart.
+     */
     private List<XYChart.Data<Number, Number>> points;
 
+    // ------------------------------------------------------------------------//
+    // fxml elements
+    // ------------------------------------------------------------------------//
     @FXML
     private HBox root;
 
@@ -54,13 +75,16 @@ public class StatController extends BaseController {
     @FXML
     private Label performanceLabel;
 
+    // ------------------------------------------------------------------------//
+    // constructors and initialization
+    // ------------------------------------------------------------------------//
     /**
      * Initializes the statistics view by setting up the game history, chart, and
      * performance label.
      */
     public void initialize() {
-        this.model = GameLoopModel.getInstance();
-        this.gameSessions = model.getHistory().getAllSessions();
+        this.gameLoopModel = GameLoopModel.getInstance();
+        this.gameSessions = gameLoopModel.getHistory().getAllSessions();
 
         if (!this.gameSessions.isEmpty()) {
             this.points = new ChartBuilder(gameSessions, new PerformanceCalculator()).getChartData();
@@ -72,6 +96,56 @@ public class StatController extends BaseController {
         setRoot((Node) root);
     }
 
+    // ------------------------------------------------------------------------//
+    // event handlers
+    // ------------------------------------------------------------------------//
+    /**
+     * Handles the return to main menu button event.
+     * <p>
+     * Navigates the user back to the main menu interface after viewing their
+     * statistics and performance insight.
+     * 
+     * @param event the ActionEvent from clicking the return button
+     */
+    @FXML
+    private void handleReturn(ActionEvent e) {
+        sceneManager.switchScene("/fxml/main.fxml");
+    }
+
+    /**
+     * Handles the reset button event.
+     * <p>
+     * Clears the game history and updates the statistics view to reflect the
+     * cleared data.
+     * 
+     * @param event the ActionEvent from clicking the reset button
+     */
+    @FXML
+    private void handleReset(ActionEvent e) {
+
+        // Clear history
+        GameHistory history = gameLoopModel.getHistory();
+        history.clearHistory();
+
+        // Update gameSession
+        this.gameSessions = gameLoopModel.getHistory().getAllSessions();
+
+        // Clear all UI components
+        historyList.getChildren().clear();
+        lineChart.getData().clear();
+
+        // Update stat view
+        if (!this.gameSessions.isEmpty()) {
+            this.points = new ChartBuilder(gameSessions, new PerformanceCalculator()).getChartData();
+            updateChart();
+            updateHistory();
+        }
+        updatePerformanceLabel();
+    }
+
+    // ------------------------------------------------------------------------//
+    // update history list
+    // ------------------------------------------------------------------------//
     /**
      * Updates the history list UI component with game session data.
      */
@@ -85,6 +159,33 @@ public class StatController extends BaseController {
         }
     }
 
+    /**
+     * Adds a history item to the history list UI component.
+     * 
+     * @param session the game session to add to the history list
+     * @throws IOException if an error occurs while loading the history item
+     */
+    private void addHistoryItem(GameSession session) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(historyItemPath));
+        HBox histItem = loader.load();
+        Label label = (Label) histItem.getChildren().get(0);
+
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(String.format("Date: %s\n", session.getTimestamp()));
+        stringBuilder.append(String.format("Difficulty: %s\n", session.getDifficulty()));
+        stringBuilder.append(String.format("Number rounds: %d\n", session.getTotalRounds()));
+        stringBuilder.append(String.format("Best score: %.2f kg\n", session.getBestScore()));
+        stringBuilder.append(String.format("Worst score: %.2f kg\n", session.getWorstScore()));
+        stringBuilder.append(String.format("Your score: %.2f kg\n", session.getTotalScore()));
+
+        label.setText(stringBuilder.toString());
+
+        historyList.getChildren().add(histItem);
+    }
+
+    // ------------------------------------------------------------------------//
+    // update statistics
+    // ------------------------------------------------------------------------//
     /**
      * Updates the line chart with performance data.
      */
@@ -142,74 +243,5 @@ public class StatController extends BaseController {
         } else {
             performanceLabel.setText(String.format("You have not played enough games yet for this data to be visable"));
         }
-    }
-
-    /**
-     * Adds a history item to the history list UI component.
-     * 
-     * @param session the game session to add to the history list
-     * @throws IOException if an error occurs while loading the history item
-     */
-    private void addHistoryItem(GameSession session) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource(historyItemPath));
-        HBox histItem = loader.load();
-        Label label = (Label) histItem.getChildren().get(0);
-
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(String.format("Date: %s\n", session.getTimestamp()));
-        stringBuilder.append(String.format("Difficulty: %s\n", session.getDifficulty()));
-        stringBuilder.append(String.format("Number rounds: %d\n", session.getTotalRounds()));
-        stringBuilder.append(String.format("Best score: %.2f kg\n", session.getBestScore()));
-        stringBuilder.append(String.format("Worst score: %.2f kg\n", session.getWorstScore()));
-        stringBuilder.append(String.format("Your score: %.2f kg\n", session.getTotalScore()));
-
-        label.setText(stringBuilder.toString());
-
-        historyList.getChildren().add(histItem);
-    }
-
-    /**
-     * Handles the return to main menu button event.
-     * <p>
-     * Navigates the user back to the main menu interface after viewing their
-     * statistics and performance insight.
-     * 
-     * @param event the ActionEvent from clicking the return button
-     */
-    @FXML
-    private void handleReturn(ActionEvent e) {
-        sceneManager.switchScene("/fxml/main.fxml");
-    }
-
-    /**
-     * Handles the reset button event.
-     * <p>
-     * Clears the game history and updates the statistics view to reflect the
-     * cleared data.
-     * 
-     * @param event the ActionEvent from clicking the reset button
-     */
-    @FXML
-    private void handleReset(ActionEvent e) {
-
-        // Clear history
-        GameHistory history = model.getHistory();
-        history.clearHistory();
-
-        // Update gameSession
-        this.gameSessions = model.getHistory().getAllSessions();
-
-        // Clear all UI components
-        historyList.getChildren().clear();
-        lineChart.getData().clear();
-
-        // Update stat view
-        if (!this.gameSessions.isEmpty()) {
-            this.points = new ChartBuilder(gameSessions, new PerformanceCalculator()).getChartData();
-            updateChart();
-            updateHistory();
-        }
-        updatePerformanceLabel();
-
     }
 }

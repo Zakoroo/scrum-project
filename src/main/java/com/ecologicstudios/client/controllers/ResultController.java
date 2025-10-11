@@ -18,12 +18,23 @@ import com.ecologicstudios.client.models.GameLoopModel;
  * 
  * @author Ecologic Studios
  */
-public class ResultController extends BaseController {
+public final class ResultController extends BaseController {
+    // ------------------------------------------------------------------------//
+    // external resources
+    // ------------------------------------------------------------------------//
+    private final String mainScene = "/fxml/main.fxml";
+
+    // ------------------------------------------------------------------------//
+    // main fields
+    // ------------------------------------------------------------------------//
     /**
      * Reference to the game model for retrieving final results.
      */
     private GameLoopModel model;
 
+    // ------------------------------------------------------------------------//
+    // fxml elements
+    // ------------------------------------------------------------------------//
     @FXML
     private BorderPane root;
 
@@ -39,6 +50,9 @@ public class ResultController extends BaseController {
     @FXML
     private Label resultLabel;
 
+    // ------------------------------------------------------------------------//
+    // constructors and initialization
+    // ------------------------------------------------------------------------//
     /**
      * Constructs a new ResultController and initializes the game model reference.
      */
@@ -58,6 +72,9 @@ public class ResultController extends BaseController {
         setRoot((Node) this.root);
     }
 
+    // ------------------------------------------------------------------------//
+    // event handlers
+    // ------------------------------------------------------------------------//
     /**
      * Handles the return to main menu button event.
      * <p>
@@ -68,9 +85,12 @@ public class ResultController extends BaseController {
      */
     @FXML
     private void handleReturn(ActionEvent event) {
-        sceneManager.switchScene("/fxml/main.fxml");
+        sceneManager.switchScene(mainScene);
     }
 
+    // ------------------------------------------------------------------------//
+    // update labels
+    // ------------------------------------------------------------------------//
     /**
      * Updates the CO2 display label with the provided emission value.
      * <p>

@@ -25,7 +25,7 @@ import javafx.scene.layout.HBox;
  * @author Ecologic Studios
  * @version 1.0
  */
-public class StartController extends BaseController {
+public final class StartController extends BaseController {
     // ------------------------------------------------------------------------//
     // external resources
     // ------------------------------------------------------------------------//
@@ -38,10 +38,10 @@ public class StartController extends BaseController {
     private final String statScene = "/fxml/stat.fxml";
 
     // ------------------------------------------------------------------------//
-    // other fields
+    // main fields
     // ------------------------------------------------------------------------//
     /**
-     * Reference to the game model for setting configuration options.
+     * Reference to the game model for tracking game phases and logic.
      */
     private GameLoopModel model;
 
@@ -103,7 +103,7 @@ public class StartController extends BaseController {
     private Button startBtn;
 
     // ------------------------------------------------------------------------//
-    // constructor and initialization
+    // constructors and initialization
     // ------------------------------------------------------------------------//
     /**
      * Constructs a new StartController and initializes the game model reference.

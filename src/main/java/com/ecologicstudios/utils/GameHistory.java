@@ -60,7 +60,7 @@ public class GameHistory {
                     file.getParentFile().mkdirs();
                 }
                 if (file.createNewFile()) {
-                    throw new IOException(String.format("was not able to create %s", file.getParent()));
+                    throw new IOException(String.format("was not able to create file: %s", file.getParent()));
                 }
             }
 
