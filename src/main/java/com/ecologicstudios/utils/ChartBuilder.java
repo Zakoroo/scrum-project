@@ -2,6 +2,7 @@ package com.ecologicstudios.utils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.awt.geom.Point2D;
 
 import javafx.scene.chart.XYChart;
 
@@ -21,44 +22,51 @@ public class ChartBuilder {
     /**
      * The list of game sessions to visualize, processed in the current order.
      */
-    List<GameSession> history;
+    private List<GameSession> history;
+
     /**
      * Strategy used to compute a normalized performance value per session.
-     */    
-    PerformanceCalculator performanceCalculator;
+     */
+    private PerformanceCalculator performanceCalculator;
+
     /**
      * Creates a ChartBuilder.
      *
-     * @param history the list of game sessions to convert into chart points; must not be null
-     * @param performanceCalculator the calculator used to compute Y-values; must not be null
-     */    
-    public ChartBuilder(List<GameSession> history, PerformanceCalculator performanceCalculator){
+     * @param history               the list of game sessions to convert into chart
+     *                              points; must not be null
+     * @param performanceCalculator the calculator used to compute Y-values; must
+     *                              not be null
+     */
+    public ChartBuilder(List<GameSession> history, PerformanceCalculator performanceCalculator) {
         this.history = history;
         this.performanceCalculator = performanceCalculator;
     }
+
     /**
      * Produces chart data points for a JavaFX {@link XYChart} where:
      * <ul>
-     *   <li>X = {@code sessionId}</li>
-     *   <li>Y = {@code performanceCalculator.calculatePerformance(totalScore, bestScore, worstScore, difficulty)}</li>
+     * <li>X = {@code sessionId}</li>
+     * <li>Y =
+     * {@code performanceCalculator.calculatePerformance(totalScore, bestScore, worstScore, difficulty)}</li>
      * </ul>
      *
-     * @return a new list of {@link XYChart.Data} entries, in the same order as {@link #history}
+     * @return a new list of {@link XYChart.Data} entries, in the same order as
+     *         {@link #history}
      */
-    public List<XYChart.Data<Number, Number>> getChartData(){
-        List<XYChart.Data<Number, Number>> data = new ArrayList<>();
-        
-        for(GameSession session : history){
-            
+    public List<Point2D> getChartData() {
+        List<Point2D> data = new ArrayList<>();
+
+        for (GameSession session : history) {
+
             int id = session.getSessionId();
             double score = session.getTotalScore();
             double worst = session.getWorstScore();
             double best = session.getBestScore();
 
-            int x = id;
+            double x = id;
             double y = performanceCalculator.calculatePerformance(score, best, worst);
-            
-            data.add(new XYChart.Data<>(x, y));
+
+            data.add(new Point2D.Double(x, y));
         }
         return data;
     }

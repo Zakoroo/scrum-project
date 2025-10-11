@@ -12,6 +12,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.Node;
 
+import java.awt.geom.Point2D;
 import java.io.IOException;
 import java.util.List;
 
@@ -87,7 +88,8 @@ public final class StatController extends BaseController {
         this.gameSessions = gameLoopModel.getHistory().getAllSessions();
 
         if (!this.gameSessions.isEmpty()) {
-            this.points = new ChartBuilder(gameSessions, new PerformanceCalculator()).getChartData();
+            List<Point2D> pointList = new ChartBuilder(gameSessions, new PerformanceCalculator()).getChartData();
+            this.points = pointList.stream().map(elem -> new XYChart.Data<Number,Number>(elem.getX(), elem.getY())).toList();
             updateChart();
             updateHistory();
         }
@@ -136,7 +138,8 @@ public final class StatController extends BaseController {
 
         // Update stat view
         if (!this.gameSessions.isEmpty()) {
-            this.points = new ChartBuilder(gameSessions, new PerformanceCalculator()).getChartData();
+            List<Point2D> pointList = new ChartBuilder(gameSessions, new PerformanceCalculator()).getChartData();
+            this.points = pointList.stream().map(elem -> new XYChart.Data<Number,Number>(elem.getX(), elem.getY())).toList();
             updateChart();
             updateHistory();
         }
