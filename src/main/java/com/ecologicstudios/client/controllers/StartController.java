@@ -236,14 +236,6 @@ public final class StartController extends BaseController {
     // ------------------------------------------------------------------------//
     // button modifiers
     // ------------------------------------------------------------------------//
-    /**
-     * Sets the disabled state of difficulty buttons based on the difficulty level.
-     * <p>
-     * This helper method manages the visual state of difficulty selection buttons.
-     * 
-     * @param text     the difficulty level text ("easy", "medium", or "hard")
-     * @param disabled true to disable the button, false to enable it
-     */
     private void setDifficultyDisabled(String text, Boolean disabled) {
         switch (text.toLowerCase()) {
             case "easy":
@@ -257,14 +249,6 @@ public final class StartController extends BaseController {
         }
     }
 
-    /**
-     * Sets the disabled state of round buttons based on the round number.
-     * <p>
-     * This helper method manages the visual state of round selection buttons.
-     * 
-     * @param round    the number of rounds (10, 15, or 20)
-     * @param disabled true to disable the button, false to enable it
-     */
     private void setRoundsDisabled(int round, Boolean disabled) {
         switch (round) {
             case 10:
@@ -278,35 +262,29 @@ public final class StartController extends BaseController {
         }
     }
 
-    /**
-     * Updates the theme button to reflect the current theme.
-     */
     private void updateThemeButton() {
         setButtonImage(themeBtn, settingsModel.getTheme() == Theme.LIGHT ? darkButtonImage : lightButtonImage);
     }
 
-    /**
-     * Updates the sound button to reflect the current sound setting.
-     */
     private void updateSoundButton() {
         setButtonImage(soundBtn, settingsModel.getSound() == Sound.ON ? soundOnImage : soundOffImage);
     }
 
-    /**
-     * Updates the history button to reflect the current state.
-     */
     private void updateHistoryButton() {
         setButtonImage(historyBtn, historyImage);
     }
 
     /**
-     * Helper method that sets the image for a button.
-     * 
-     * @param btn the button to update
-     * @param url the URL of the image to set
+     * ✅ Fixed: Properly loads images from inside JAR using classpath.
      */
-    private void setButtonImage(Button btn, String url) {
-        Image img = new Image(url);
+    private void setButtonImage(Button btn, String path) {
+        var resource = getClass().getResource("/" + path);
+        if (resource == null) {
+            System.err.println("⚠️ Could not find resource: " + path);
+            return;
+        }
+
+        Image img = new Image(resource.toExternalForm());
         ImageView iv = new ImageView(img);
         iv.setPreserveRatio(true);
         iv.setFitHeight(45);
