@@ -292,11 +292,6 @@ public final class StartController extends BaseController {
         setButtonImage(soundBtn, settingsModel.getSound() == Sound.ON ? soundOnImage : soundOffImage);
     }
 
-
-    private void updateHistoryButton() {
-        setButtonImage(historyBtn, historyImage);
-    }
-
     /**
      * Updates the history button to reflect the current state.
      */
@@ -325,11 +320,5 @@ public final class StartController extends BaseController {
         btn.setGraphic(iv);
         btn.setContentDisplay(ContentDisplay.LEFT);
         btn.setGraphicTextGap(8);
-    }
-
-
-    @FXML
-    private void handleViewHistory(ActionEvent e) {
-        sceneManager.switchScene("/fxml/stat.fxml");
     }
 }
