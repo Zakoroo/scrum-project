@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ecologicstudios.client.controllers.StatController">
+<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ecologicstudios.client.controllers.StatController">
    <children>
       <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" HBox.hgrow="ALWAYS">
          <children>
@@ -60,9 +60,9 @@
                 <NumberAxis prefHeight="150.0" prefWidth="28.0" side="LEFT" upperBound="75.0" />
               </yAxis>
             </LineChart>
-            <HBox styleClass="rounded" VBox.vgrow="ALWAYS">
+            <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="rounded" VBox.vgrow="ALWAYS">
                <children>
-                  <Label fx:id="performanceLabel" prefWidth="275.0" wrapText="true" />
+                  <Label fx:id="performanceLabel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="50.0" prefWidth="240.0" wrapText="true" />
                </children>
                <opaqueInsets>
                   <Insets />
@@ -71,7 +71,7 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
             </HBox>
-            <HBox alignment="CENTER" VBox.vgrow="ALWAYS">
+            <HBox alignment="CENTER" VBox.vgrow="NEVER">
                <children>
                   <VBox alignment="BOTTOM_LEFT" HBox.hgrow="ALWAYS">
                      <children>

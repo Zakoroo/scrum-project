@@ -244,7 +244,7 @@ public final class StatController extends BaseController {
             performanceLabel.setText(
                     String.format("Your last game was better than %.1f%% of previous games.", sdv.getPercentile()));
         } else {
-            performanceLabel.setText(String.format("You have not played enough games yet for this data to be visable"));
+            performanceLabel.setText(String.format("You have not played enough games yet for this data to be visible"));
         }
     }
 }
