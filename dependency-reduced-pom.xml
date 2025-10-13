@@ -119,6 +119,18 @@
       </exclusions>
     </dependency>
   </dependencies>
+  <reporting>
+    <plugins>
+      <plugin>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.12.0</version>
+        <configuration>
+          <show>private</show>
+          <quiet>true</quiet>
+        </configuration>
+      </plugin>
+    </plugins>
+  </reporting>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <javafx.version>24.0.1</javafx.version>
