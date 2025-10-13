@@ -31,7 +31,7 @@ public class GameLoopModel {
     /**
      * Path to the JSON file that stores the cards.
      */
-    final private static String path = "src/main/resources/cards.json";
+    final private static String path = "src/main/resources/json/cards.json";
 
     /**
      * The singleton instance of this class.
@@ -275,6 +275,13 @@ public class GameLoopModel {
             throw new IllegalStateException("cannot access results before game ends");
         }
         return feedbackCalculator.getFeedback(totalResult);
+    }
+
+    public String getscoreTitle() {
+        if(!gameEnded()) {
+            throw new IllegalStateException("cannot access results before game ends");
+        }
+        return feedbackCalculator.getScoreTitle(totalResult);
     }
 
     private GameSession getSession() {

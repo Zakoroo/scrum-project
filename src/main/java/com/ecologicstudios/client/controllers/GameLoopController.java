@@ -24,12 +24,15 @@ import com.ecologicstudios.utils.Alternative;
  * 
  * @author Ecologic Studios
  */
-public class GameLoopController extends BaseController {
-    /**
-     * Path to the FXML file for alternative buttons.
-     */
+public final class GameLoopController extends BaseController {
+    // ------------------------------------------------------------------------//
+    // external resources
+    // ------------------------------------------------------------------------//
     final private String buttonFxml = "/fxml/altButton.fxml";
     
+    // ------------------------------------------------------------------------//
+    // main fields
+    // ------------------------------------------------------------------------//
     /**
      * The game model instance that manages game state and logic.
      */
@@ -45,6 +48,9 @@ public class GameLoopController extends BaseController {
      */
     private Card currentCard;
 
+    // ------------------------------------------------------------------------//
+    // fxml elements
+    // ------------------------------------------------------------------------//
     @FXML
     private BorderPane root;
 
@@ -54,6 +60,9 @@ public class GameLoopController extends BaseController {
     @FXML
     private VBox altBox;
 
+    // ------------------------------------------------------------------------//
+    // constructors and initialization
+    // ------------------------------------------------------------------------//
     /**
      * Constructs a new GameLoopController and initializes the model and alternative map.
      */
@@ -73,6 +82,29 @@ public class GameLoopController extends BaseController {
         setRoot(this.root);
     }
 
+    // ------------------------------------------------------------------------//
+    // event handlers
+    // ------------------------------------------------------------------------//
+    /**
+     * Handles user selection of an alternative answer.
+     * Submits the selected answer to the model and either updates to the next card
+     * or transitions to the results screen if the game has ended.
+     * 
+     * @param e the ActionEvent triggered by clicking an alternative button
+     */
+    private void handleAnswer(ActionEvent e) {
+        model.submitAnswer(altMap.get((Button) e.getSource()));
+
+        if (!model.gameEnded()) {
+            update();
+        } else {
+            sceneManager.switchScene("/fxml/results.fxml");
+        }
+    }
+
+    // ------------------------------------------------------------------------//
+    // update UI with next question & alternatives
+    // ------------------------------------------------------------------------//
     /**
      * Updates the game interface with the next card and its alternatives.
      * <p>
@@ -110,23 +142,6 @@ public class GameLoopController extends BaseController {
             System.err.println(e.getMessage());
         } catch (IOException e) {
             System.err.println(e.getMessage());
-        }
-    }
-
-    /**
-     * Handles user selection of an alternative answer.
-     * Submits the selected answer to the model and either updates to the next card
-     * or transitions to the results screen if the game has ended.
-     * 
-     * @param e the ActionEvent triggered by clicking an alternative button
-     */
-    private void handleAnswer(ActionEvent e) {
-        model.submitAnswer(altMap.get((Button) e.getSource()));
-
-        if (!model.gameEnded()) {
-            update();
-        } else {
-            sceneManager.switchScene("/fxml/results.fxml");
         }
     }
 

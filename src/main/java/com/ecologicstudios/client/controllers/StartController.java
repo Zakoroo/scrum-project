@@ -2,6 +2,7 @@ package com.ecologicstudios.client.controllers;
 
 import com.ecologicstudios.client.models.GameLoopModel;
 import com.ecologicstudios.client.models.SettingsModel;
+import com.ecologicstudios.client.models.SettingsModel.Sound;
 import com.ecologicstudios.client.models.SettingsModel.Theme;
 
 import javafx.event.ActionEvent;
@@ -22,12 +23,32 @@ import javafx.scene.layout.HBox;
  * experience and validates their selections before starting the game.
  * 
  * @author Ecologic Studios
+ * @version 1.0
  */
-public class StartController extends BaseController {
+public final class StartController extends BaseController {
+    // ------------------------------------------------------------------------//
+    // external resources
+    // ------------------------------------------------------------------------//
+    private final String darkButtonImage = "images/darkButton.png";
+    private final String lightButtonImage = "images/lightButton.png";
+    private final String soundOnImage = "images/sound_on.png";
+    private final String soundOffImage = "images/sound_off.png";
+    private final String historyImage = "images/history.png";
+    private final String gameLoopScene = "/fxml/gameloop.fxml";
+    private final String statScene = "/fxml/stat.fxml";
+
+    // ------------------------------------------------------------------------//
+    // main fields
+    // ------------------------------------------------------------------------//
     /**
-     * Reference to the game model for setting configuration options.
+     * Reference to the game model for tracking game phases and logic.
      */
     private GameLoopModel model;
+
+    /**
+     * Reference to the settings model for setting theme and other GUI settings.
+     */    
+    private SettingsModel settingsModel;
 
     /**
      * The currently selected maximum number of cards for the game session.
@@ -39,6 +60,9 @@ public class StartController extends BaseController {
      */
     private String difficulty;
 
+    // ------------------------------------------------------------------------//
+    // fxml elements
+    // ------------------------------------------------------------------------//
     @FXML
     private HBox root;
 
@@ -47,6 +71,9 @@ public class StartController extends BaseController {
 
     @FXML
     private Button themeBtn;
+
+    @FXML
+    private Button soundBtn;
 
     @FXML
     private Button handleDifficulty;
@@ -75,6 +102,9 @@ public class StartController extends BaseController {
     @FXML
     private Button startBtn;
 
+    // ------------------------------------------------------------------------//
+    // constructors and initialization
+    // ------------------------------------------------------------------------//
     /**
      * Constructs a new StartController and initializes the game model reference.
      * <p>
@@ -82,9 +112,10 @@ public class StartController extends BaseController {
      * for difficulty and maximum number of cards.
      */
     public StartController() {
-        model = GameLoopModel.getInstance();
-        maxNumCards = model.getMaxNumCards();
-        difficulty = model.getDifficulty();
+        this.model = GameLoopModel.getInstance();
+        this.maxNumCards = model.getMaxNumCards();
+        this.difficulty = model.getDifficulty();
+        this.settingsModel = SettingsModel.getInstance();
     }
 
     /**
@@ -94,12 +125,34 @@ public class StartController extends BaseController {
      * disabling the buttons that correspond to the currently selected difficulty
      * and number of rounds.
      */
+    @Override
     public void initialize() {
-        setRoundsDisable(maxNumCards, true);
-        setDifficultyDisable(difficulty, true);
+        // set root for BaseController
         setRoot((Node) this.root);
+
+        // configure/update buttons
+        setRoundsDisabled(maxNumCards, true);
+        setDifficultyDisabled(difficulty, true);
         updateThemeButton();
+        updateSoundButton();
         updateHistoryButton();
+    }
+
+    // ------------------------------------------------------------------------//
+    // event handlers
+    // ------------------------------------------------------------------------//
+    /**
+     * Handles the start game button event.
+     * <p>
+     * Applies the selected game configuration to the model, starts a new game,
+     * and transitions from the setup screen to the main game loop interface.
+     * 
+     * @param e the ActionEvent from clicking the start button
+     */
+    @FXML
+    private void handleStart(ActionEvent e) {
+        this.model.newGame(this.difficulty, this.maxNumCards);
+        this.sceneManager.switchScene(gameLoopScene);
     }
 
     /**
@@ -113,20 +166,9 @@ public class StartController extends BaseController {
      */
     @FXML
     private void handleDifficulty(ActionEvent e) {
-        setDifficultyDisable(difficulty, false); // enable previous (disabled) difficulty button
-        difficulty = ((Button) e.getSource()).getText();
-        setDifficultyDisable(difficulty, true); // disable current difficulty button
-    }
-
-    @FXML
-    public void handleTheme(ActionEvent e) {
-        toggleTheme();
-        applyTheme();
-        updateThemeButton();
-    }
-
-    public void toggleTheme() {
-        SettingsModel.getInstance().toggleTheme();
+        setDifficultyDisabled(this.difficulty, false); // enable previous (disabled) difficulty button
+        this.difficulty = ((Button) e.getSource()).getText();
+        setDifficultyDisabled(this.difficulty, true); // disable current difficulty button
     }
 
     /**
@@ -140,11 +182,60 @@ public class StartController extends BaseController {
      */
     @FXML
     private void handleRounds(ActionEvent e) {
-        setRoundsDisable(maxNumCards, false); // enable previous rounds button
+        setRoundsDisabled(maxNumCards, false); // enable previous rounds button
         maxNumCards = Integer.parseInt(((Button) e.getSource()).getText());
-        setRoundsDisable(maxNumCards, true); // disable current rounds button
+        setRoundsDisabled(maxNumCards, true); // disable current rounds button
     }
 
+    /**
+     * Handles the view history button event.
+     * <p>
+     * Navigates the user to the statistics view to review their game history and
+     * performance data.
+     * 
+     * @param e the ActionEvent from clicking the history button
+     */
+    @FXML
+    private void handleViewHistory(ActionEvent e) {
+        sceneManager.switchScene(statScene);
+    }
+
+    /**
+     * Handles theme toggle button events.
+     * <p>
+     * Toggles the application theme between light and dark modes and updates the
+     * theme button to reflect the current theme.
+     * 
+     * @param e the ActionEvent from clicking the theme button
+     */
+    @FXML
+    private void handleTheme(ActionEvent e) {
+        toggleTheme();
+        applyTheme();
+        updateThemeButton();
+    }
+
+    private void toggleTheme() {
+        settingsModel.toggleTheme();
+    }
+
+    /**
+     * Handles the sound toggle button event.
+     * <p>
+     * Toggles the sound setting between on and off, updates the sound button to
+     * reflect the current setting, and logs the new sound state.
+     * 
+     * @param e the ActionEvent from clicking the sound button
+     */
+    @FXML
+    private void handleSound(ActionEvent e) {
+        settingsModel.toggleSound();
+        updateSoundButton();
+    }
+
+    // ------------------------------------------------------------------------//
+    // button modifiers
+    // ------------------------------------------------------------------------//
     /**
      * Sets the disabled state of difficulty buttons based on the difficulty level.
      * <p>
@@ -153,7 +244,7 @@ public class StartController extends BaseController {
      * @param text     the difficulty level text ("easy", "medium", or "hard")
      * @param disabled true to disable the button, false to enable it
      */
-    private void setDifficultyDisable(String text, Boolean disabled) {
+    private void setDifficultyDisabled(String text, Boolean disabled) {
         switch (text.toLowerCase()) {
             case "easy":
                 easyBtn.setDisable(disabled);
@@ -174,7 +265,7 @@ public class StartController extends BaseController {
      * @param round    the number of rounds (10, 15, or 20)
      * @param disabled true to disable the button, false to enable it
      */
-    private void setRoundsDisable(int round, Boolean disabled) {
+    private void setRoundsDisabled(int round, Boolean disabled) {
         switch (round) {
             case 10:
                 roundsBtn1.setDisable(disabled);
@@ -187,15 +278,18 @@ public class StartController extends BaseController {
         }
     }
 
+    /**
+     * Updates the theme button to reflect the current theme.
+     */
     private void updateThemeButton() {
-        Image img = new Image(SettingsModel.getInstance().getTheme() == Theme.LIGHT ? "darkButton.png" : "lightButton.png");
-        ImageView iv = new ImageView(img);
-        iv.setPreserveRatio(true);
-        iv.setFitHeight(45);
+        setButtonImage(themeBtn, settingsModel.getTheme() == Theme.LIGHT ? darkButtonImage : lightButtonImage);
+    }
 
-        themeBtn.setGraphic(iv);
-        themeBtn.setContentDisplay(ContentDisplay.LEFT); // LEFT, RIGHT, TOP, BOTTOM, or GRAPHIC_ONLY
-        themeBtn.setGraphicTextGap(8);
+    /**
+     * Updates the sound button to reflect the current sound setting.
+     */
+    private void updateSoundButton() {
+        setButtonImage(soundBtn, settingsModel.getSound() == Sound.ON ? soundOnImage : soundOffImage);
     }
 
 
@@ -211,17 +305,33 @@ public class StartController extends BaseController {
     }
 
     /**
-     * Handles the start game button event.
-     * <p>
-     * Applies the selected game configuration to the model, starts a new game,
-     * and transitions from the setup screen to the main game loop interface.
-     * 
-     * @param e the ActionEvent from clicking the start button
+     * Updates the history button to reflect the current state.
      */
-    @FXML
-    private void handleStart(ActionEvent e) {
-        model.newGame(difficulty, maxNumCards);
-        sceneManager.switchScene("/fxml/gameloop.fxml");
+    private void updateHistoryButton() {
+        setButtonImage(historyBtn, historyImage);
+    }
+
+    /**
+     * Helper method that sets the image for a button.
+     * 
+     * @param btn the button to update
+     * @param url the URL of the image to set
+     */
+    private void setButtonImage(Button btn, String url) {
+        var resource = getClass().getResource("/" + url);
+        if (resource == null) {
+            System.err.println("Could not find resource: " + url);
+            return;
+        }
+
+        Image img = new Image(resource.toExternalForm());
+        ImageView iv = new ImageView(img);
+        iv.setPreserveRatio(true);
+        iv.setFitHeight(45);
+
+        btn.setGraphic(iv);
+        btn.setContentDisplay(ContentDisplay.LEFT);
+        btn.setGraphicTextGap(8);
     }
 
 

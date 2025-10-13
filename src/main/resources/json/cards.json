@@ -1,0 +1,579 @@
+{
+  "cards": [
+    {
+      "id": 1,
+      "scenario": "You're at home feeling thirsty. You head to the kitchen. Where do you get water from?",
+      "alternatives": [
+        {"choice": "Bottled Water", "co2": 0.083},
+        {"choice": "Tap Water", "co2": 0.0002}
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 2,
+      "scenario": "You need a coffee before work. Which cup do you use?",
+      "alternatives": [
+        {"choice": "Disposable cup", "co2": 0.02},
+        {"choice": "Thermos", "co2": 0.001}
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 3,
+      "scenario": "Feeling a little hungry, you grab a snack pack. Which size do you pick?",
+      "alternatives": [
+        {"choice": "Small pack", "co2": 0.04},
+        {"choice": "Family-size", "co2": 0.015}
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 4,
+      "scenario": "Packing your lunch for school or work. How do you wrap your sandwich?",
+      "alternatives": [
+        {"choice": "Foil", "co2": 0.02},
+        {"choice": "Beeswax", "co2": 0.02}
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 5,
+      "scenario": "It's time to brush your teeth. Which toothbrush do you pick?",
+      "alternatives": [
+        {"choice": "Plastic", "co2": 0.43},
+        {"choice": "Bamboo", "co2": 0.1}
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 6,
+      "scenario": "You need to get to work or school. How do you make a short trip?",
+      "alternatives": [
+        {"choice": "Drive short trip", "co2": 0.34},
+        {"choice": "Walk", "co2": 0}
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 7,
+      "scenario": "Listening to music on your way. Do you stream it or play offline?",
+      "alternatives": [
+        {"choice": "Streaming", "co2": 0.055},
+        {"choice": "Offline MP3", "co2": 0.01}
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 8,
+      "scenario": "Studying for exams. Do you print your notes or use them digitally?",
+      "alternatives": [
+        {"choice": "Print", "co2": 0.05},
+        {"choice": "Digital", "co2": 0.003}
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 9,
+      "scenario": "Charging your phone. Do you leave it overnight or unplug at 100%?",
+      "alternatives": [
+        {"choice": "Overnight", "co2": 0.001},
+        {"choice": "Stop at 100%", "co2": 0.0008}
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 10,
+      "scenario": "Packing your lunch. Which lunch box do you bring?",
+      "alternatives": [
+        {"choice": "Disposable", "co2": 0.07},
+        {"choice": "Reusable", "co2": 0.015}
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 11,
+      "scenario": "You're looking for a snack. Red Bull, Snickers, or tap water?",
+      "alternatives": [
+        {"choice": "Red Bull", "co2": 0.35},
+        {"choice": "Snickers", "co2": 0.25},
+        {"choice": "Tap water", "co2": 0.0002}
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 12,
+      "scenario": "Coffee break! Which coffee style do you choose?",
+      "alternatives": [
+        {"choice": "Paper cup w/ lid", "co2": 0.02},
+        {"choice": "No lid", "co2": 0.015},
+        {"choice": "Thermos", "co2": 0.001}
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 13,
+      "scenario": "Fruits for snacks! Do you pick out-of-season strawberries, a banana, or a local apple?",
+      "alternatives": [
+        {"choice": "Strawberries", "co2": 0.14},
+        {"choice": "Banana", "co2": 0.08},
+        {"choice": "Local apple", "co2": 0.03}
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 14,
+      "scenario": "Washing hands. How do you dry them?",
+      "alternatives": [
+        {"choice": "Paper towels", "co2": 0.02},
+        {"choice": "Hand dryer", "co2": 0.01},
+        {"choice": "Cotton towel", "co2": 0.005}
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 15,
+      "scenario": "Buying beer. Which packaging do you choose?",
+      "alternatives": [
+        {"choice": "Glass bottle (no recycle)", "co2": 0.15},
+        {"choice": "Can", "co2": 0.1},
+        {"choice": "Keg draft", "co2": 0.05}
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 16,
+      "scenario": "Leaving the room. How do you handle the lights?",
+      "alternatives": [
+        {"choice": "Leave on all night", "co2": 0.25},
+        {"choice": "Motion sensor bulb", "co2": 0.07},
+        {"choice": "Switch off", "co2": 0.02}
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 17,
+      "scenario": "Chewing gum. Which type, if any, do you pick?",
+      "alternatives": [
+        {"choice": "Synthetic", "co2": 0.01},
+        {"choice": "Natural gum", "co2": 0.005},
+        {"choice": "No gum", "co2": 0}
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 18,
+      "scenario": "Snack time. Which packaging option do you pick?",
+      "alternatives": [
+        {"choice": "Mini packs", "co2": 0.04},
+        {"choice": "Family pack", "co2": 0.015},
+        {"choice": "Bulk loose nuts", "co2": 0.005}
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 19,
+      "scenario": "Pouring milk for breakfast. Which type do you use?",
+      "alternatives": [
+        {"choice": "Dairy", "co2": 0.6},
+        {"choice": "Soy", "co2": 0.2},
+        {"choice": "Oat", "co2": 0.15}
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 20,
+      "scenario": "Watching videos online. How do you stream TikTok?",
+      "alternatives": [
+        {"choice": "TikTok on mobile data", "co2": 0.08},
+        {"choice": "TikTok on WiFi", "co2": 0.04},
+        {"choice": "No TikTok", "co2": 0}
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 21,
+      "scenario": "It's grocery day! Will you fill your cart with beef-heavy products or explore the vibrant local plant-based market?",
+      "alternatives": [
+        {"choice": "Beef-heavy", "co2": 60},
+        {"choice": "Plant-based local", "co2": 3}
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 22,
+      "scenario": "Lunch break at the city plaza: Do you grab tuna sushi from the trendy spot or savor a homemade veggie burrito?",
+      "alternatives": [
+        {"choice": "Tuna sushi", "co2": 3.5},
+        {"choice": "Veggie burrito", "co2": 1.2}
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 23,
+      "scenario": "A new season calls for new clothes! Do you splurge on fast fashion or hunt for treasures at the second-hand shop?",
+      "alternatives": [
+        {"choice": "Fast fashion", "co2": 30},
+        {"choice": "Second-hand", "co2": 5}
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 24,
+      "scenario": "A chilly evening arrives. Will you crank up the electric heater or cozy up in your favorite sweater?",
+      "alternatives": [
+        {"choice": "Electric heater", "co2": 1},
+        {"choice": "Sweater", "co2": 0.01}
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 25,
+      "scenario": "Adventure awaits! For your weekend getaway, do you soar through the skies or glide across the countryside by train?",
+      "alternatives": [
+        {"choice": "Flight", "co2": 100},
+        {"choice": "Train", "co2": 10}
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 26,
+      "scenario": "Morning ritual: Will you sip a creamy dairy latte or try the trendy oat latte at your favorite café?",
+      "alternatives": [
+        {"choice": "Dairy latte", "co2": 0.6},
+        {"choice": "Oat latte", "co2": 0.2}
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 27,
+      "scenario": "Movie night! Do you stream the latest blockbuster in 4K at home or enjoy the big screen at the local cinema?",
+      "alternatives": [
+        {"choice": "Netflix 4K", "co2": 0.2},
+        {"choice": "Cinema", "co2": 1}
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 28,
+      "scenario": "Tech temptation: Will you upgrade your phone every two years or stretch it to five before swapping?",
+      "alternatives": [
+        {"choice": "Every 2 years", "co2": 80},
+        {"choice": "Every 5 years", "co2": 20}
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 29,
+      "scenario": "Lunch on the go: Do you accept plastic takeout packaging or bring your own reusable container?",
+      "alternatives": [
+        {"choice": "Takeout plastic", "co2": 0.2},
+        {"choice": "Reusable", "co2": 0.02}
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 30,
+      "scenario": "Laundry day dilemma: Will you wash your clothes at 60°C for extra freshness or at 30°C to save energy?",
+      "alternatives": [
+        {"choice": "60°C wash", "co2": 0.6},
+        {"choice": "30°C wash", "co2": 0.3}
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 31,
+      "scenario": "Dinner party! Which protein takes center stage: beef, chicken, fish, or hearty lentils?",
+      "alternatives": [
+        {"choice": "Beef", "co2": 60},
+        {"choice": "Chicken", "co2": 6},
+        {"choice": "Fish", "co2": 8},
+        {"choice": "Lentils", "co2": 1}
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 32,
+      "scenario": "Wardrobe refresh: Will you choose fast fashion, organic cotton, or score a second-hand gem?",
+      "alternatives": [
+        {"choice": "Fast fashion", "co2": 30},
+        {"choice": "Organic cotton", "co2": 18},
+        {"choice": "Second-hand", "co2": 5}
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 33,
+      "scenario": "Morning commute: Do you drive solo, carpool with friends, hop on the bus, or pedal your bike?",
+      "alternatives": [
+        {"choice": "Drive alone", "co2": 1.7},
+        {"choice": "Carpool", "co2": 0.6},
+        {"choice": "Bus", "co2": 0.8},
+        {"choice": "Bike", "co2": 0}
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 34,
+      "scenario": "Holiday plans: Will you jet off by plane, hit the road with a buddy, or take the scenic train route?",
+      "alternatives": [
+        {"choice": "Flight", "co2": 200},
+        {"choice": "Road trip (2 ppl)", "co2": 40},
+        {"choice": "Train", "co2": 20}
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 35,
+      "scenario": "Breakfast choices: Will you indulge in winter strawberries, grab a banana, or enjoy oats with apple?",
+      "alternatives": [
+        {"choice": "Winter strawberries", "co2": 0.2},
+        {"choice": "Banana", "co2": 0.08},
+        {"choice": "Oats & apple", "co2": 0.05}
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 36,
+      "scenario": "After dinner: Do you hand wash the dishes, use the dishwasher on normal, or switch to eco mode?",
+      "alternatives": [
+        {"choice": "Hand wash dishes", "co2": 0.9},
+        {"choice": "Dishwasher normal", "co2": 0.6},
+        {"choice": "Dishwasher eco", "co2": 0.4}
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 37,
+      "scenario": "Second commute: Will you zip around on an e-scooter, ride the bus, or stroll to your destination?",
+      "alternatives": [
+        {"choice": "E-scooter", "co2": 0.03},
+        {"choice": "Bus", "co2": 0.4},
+        {"choice": "Walk", "co2": 0}
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 38,
+      "scenario": "Time to freshen up: Do you take a 15-minute shower, a quick 5-minute rinse, or opt for a bucket bath?",
+      "alternatives": [
+        {"choice": "15 min shower", "co2": 2},
+        {"choice": "5 min shower", "co2": 0.7},
+        {"choice": "Bucket bath", "co2": 0.3}
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 39,
+      "scenario": "Lunch source: Will you microwave a frozen meal, grab a fresh canteen dish, or enjoy home-prepped leftovers?",
+      "alternatives": [
+        {"choice": "Frozen meal", "co2": 2},
+        {"choice": "Fresh canteen meal", "co2": 1.2},
+        {"choice": "Home-prepped leftovers", "co2": 0.6}
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 40,
+      "scenario": "Grocery run: Do you use a plastic single-use bag, a cotton tote just once, or a well-loved cotton bag for the 100th time?",
+      "alternatives": [
+        {"choice": "Plastic single-use", "co2": 0.02},
+        {"choice": "Cotton once", "co2": 15},
+        {"choice": "Cotton 100 uses", "co2": 0.15}
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 41,
+      "scenario": "City council debate: Do we incinerate household waste at scale for quick disposal or invest in a community-wide recycling infrastructure?",
+      "alternatives": [
+        {"choice": "Incineration (fast disposal)", "co2": 1200},
+        {"choice": "Expand recycling programs", "co2": 500}
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 42,
+      "scenario": "Transportation masterplan: Do we expand the international airport to boost tourism, or commit to a high-speed rail corridor between cities?",
+      "alternatives": [
+        {"choice": "Airport expansion", "co2": 400000},
+        {"choice": "High-speed rail", "co2": 200000}
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 43,
+      "scenario": "Facing drought: Do we build an energy-hungry desalination plant to secure water, or push strict regulations to ban thirsty lawns?",
+      "alternatives": [
+        {"choice": "Desalination plant", "co2": 150000},
+        {"choice": "Ban non-essential lawns", "co2": 20000}
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 44,
+      "scenario": "Tackling food spoilage: Should the government subsidize affordable refrigeration for markets or run large-scale awareness campaigns to cut waste?",
+      "alternatives": [
+        {"choice": "Subsidize fridges", "co2": 80000},
+        {"choice": "Behavioral awareness campaign", "co2": 20000}
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 45,
+      "scenario": "International mobility policy: Do we incentivize cheaper flights to spur connectivity or make long-distance rail travel more affordable?",
+      "alternatives": [
+        {"choice": "Lower flight costs", "co2": 300000},
+        {"choice": "Train discount schemes", "co2": 80000}
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 46,
+      "scenario": "Household retrofit drive: Do we run an insulation-first program or focus on swapping every bulb to efficient LEDs across neighborhoods?",
+      "alternatives": [
+        {"choice": "Mass insulation program", "co2": 100000},
+        {"choice": "LED lighting push", "co2": 40000}
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 47,
+      "scenario": "Workplace culture overhaul: Should companies require daily commutes again or formalize a hybrid model with two remote days per week?",
+      "alternatives": [
+        {"choice": "Return to daily office commute", "co2": 150000},
+        {"choice": "WFH 2 days/week", "co2": 50000}
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 48,
+      "scenario": "Ocean management vote: Do we allow expanded industrial fishing to secure jobs, or create marine reserves and limit extraction?",
+      "alternatives": [
+        {"choice": "Expand commercial fishing", "co2": 250000},
+        {"choice": "Establish marine reserves", "co2": 50000}
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 49,
+      "scenario": "Global summit crossroads: Do nations sign weak, non-binding pledges or hammer out a strong binding treaty with enforcement?",
+      "alternatives": [
+        {"choice": "Weak pledges", "co2": 500000},
+        {"choice": "Strong binding treaty", "co2": 200000}
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 50,
+      "scenario": "Battery strategy for transport: Do we prioritize large-scale EV battery production or invest in distributed solar storage for homes?",
+      "alternatives": [
+        {"choice": "EV battery ramp-up", "co2": 200000},
+        {"choice": "Solar home storage", "co2": 150000}
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 51,
+      "scenario": "Urban mobility crossroads: Which package should the mayor fund — fuel subsidies, electric bus fleets, protected bike lanes, or incentives for hybrid cars?",
+      "alternatives": [
+        {"choice": "Subsidize fuel", "co2": 200000},
+        {"choice": "Buy electric buses", "co2": 80000},
+        {"choice": "Build bike lanes", "co2": 30000},
+        {"choice": "Promote hybrid cars", "co2": 120000}
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 52,
+      "scenario": "National energy debate: Do we lean heavily on gas plants, accelerate wind with storage, develop large solar parks, or invest in new nuclear?",
+      "alternatives": [
+        {"choice": "Gas-centric mix", "co2": 600000},
+        {"choice": "Wind + storage", "co2": 200000},
+        {"choice": "Large solar parks", "co2": 150000},
+        {"choice": "New nuclear build", "co2": 400000}
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 53,
+      "scenario": "Food policy crossroads: Should subsidies favor beef, shift to poultry, or pivot to affordable plant protein options?",
+      "alternatives": [
+        {"choice": "Subsidize beef", "co2": 500000},
+        {"choice": "Support poultry", "co2": 200000},
+        {"choice": "Promote plant protein", "co2": 100000}
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 54,
+      "scenario": "City growth plan: Do we encourage sprawling suburbs, concentrate on dense apartment living, or pilot mixed eco-housing developments?",
+      "alternatives": [
+        {"choice": "Suburban sprawl", "co2": 300000},
+        {"choice": "Dense apartments", "co2": 120000},
+        {"choice": "Mixed eco-housing", "co2": 150000}
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 55,
+      "scenario": "Freight strategy: Do we increase long-haul shipping capacity, incentivize local supply chains, or shift more freight to rail?",
+      "alternatives": [
+        {"choice": "More cargo ships", "co2": 300000},
+        {"choice": "Encourage local sourcing", "co2": 100000},
+        {"choice": "Shift to rail freight", "co2": 150000}
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 56,
+      "scenario": "Municipal waste rethink: Do we double down on incineration, expand recycling infrastructure, or scale community composting programs?",
+      "alternatives": [
+        {"choice": "Incineration", "co2": 120000},
+        {"choice": "Expand recycling", "co2": 50000},
+        {"choice": "City-wide composting", "co2": 40000}
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 57,
+      "scenario": "Holiday corridor decision: Should the region build a bigger airport, open a cruise terminal, or prioritize a high-speed rail link for tourists?",
+      "alternatives": [
+        {"choice": "New airport hub", "co2": 400000},
+        {"choice": "Cruise port expansion", "co2": 350000},
+        {"choice": "High-speed rail link", "co2": 200000}
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 58,
+      "scenario": "Education investment: Do we buy mass TV ad spots, integrate climate lessons into schools, or create immersive VR simulations to teach impact?",
+      "alternatives": [
+        {"choice": "TV ad campaign", "co2": 20000},
+        {"choice": "School programs", "co2": 30000},
+        {"choice": "VR simulation investment", "co2": 40000}
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 59,
+      "scenario": "Fashion sector overhaul: Do we keep fast fashion cheap, move to organic cotton, or build a circular resale infrastructure?",
+      "alternatives": [
+        {"choice": "Fast fashion", "co2": 300000},
+        {"choice": "Organic cotton", "co2": 150000},
+        {"choice": "Circular resale", "co2": 120000}
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 60,
+      "scenario": "Tech policy for devices: Should we encourage laptops every two years, nudge users to upgrade every five years, or build a refurbished-device program?",
+      "alternatives": [
+        {"choice": "Replace every 2 years", "co2": 200000},
+        {"choice": "Replace every 5 years", "co2": 80000},
+        {"choice": "Refurbished devices program", "co2": 40000}
+      ],
+      "difficulty": "Hard"
+    }
+  ]
+}
+

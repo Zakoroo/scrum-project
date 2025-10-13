@@ -35,7 +35,7 @@ public class App extends Application {
         try {
             primaryStage.setTitle("Climate game");
             primaryStage.setResizable(false);
-            Image icon = new Image("gameicon.png");
+            Image icon = new Image("images/gameicon.png");
             primaryStage.getIcons().add(icon);
           
             //Initialize models
