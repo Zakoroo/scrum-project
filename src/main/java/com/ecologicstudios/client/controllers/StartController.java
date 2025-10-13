@@ -306,7 +306,13 @@ public final class StartController extends BaseController {
      * @param url the URL of the image to set
      */
     private void setButtonImage(Button btn, String url) {
-        Image img = new Image(url);
+        var resource = getClass().getResource("/" + url);
+        if (resource == null) {
+            System.err.println("Could not find resource: " + url);
+            return;
+        }
+
+        Image img = new Image(resource.toExternalForm());
         ImageView iv = new ImageView(img);
         iv.setPreserveRatio(true);
         iv.setFitHeight(45);
