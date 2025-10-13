@@ -294,14 +294,7 @@ public final class StartController extends BaseController {
 
 
     private void updateHistoryButton() {
-        Image img = new Image("history.png");
-        ImageView iv = new ImageView(img);
-        iv.setPreserveRatio(true);
-        iv.setFitHeight(45);
-
-        historyBtn.setGraphic(iv);
-        historyBtn.setContentDisplay(ContentDisplay.LEFT);
-        historyBtn.setGraphicTextGap(8);
+        setButtonImage(historyBtn, historyImage);
     }
 
     /**
