@@ -10,14 +10,11 @@ src
 │   │           │   │   ├── GameLoopController.java
 │   │           │   │   ├── ResultController.java
 │   │           │   │   ├── SceneManager.java
-│   │           │   │   └── StartController.java
+│   │           │   │   ├── StartController.java
+│   │           │   │   └── StatController.java
 │   │           │   └── models
-│   │           │       └── GameLoopModel.java
-│   │           ├── server
-│   │           │   ├── ApiCaller.java
-│   │           │   ├── EcoConnection.java
-│   │           │   ├── EcoServer.java
-│   │           │   └── postgresql-42.7.4.jar
+│   │           │       ├── GameLoopModel.java
+│   │           │       └── SettingsModel.java
 │   │           └── utils
 │   │               ├── AddCardTool.java
 │   │               ├── Alternative.java
@@ -25,24 +22,41 @@ src
 │   │               ├── CardFetcher.java
 │   │               ├── CardJsonIO.java
 │   │               ├── CardWrapper.java
+│   │               ├── ChartBuilder.java
 │   │               ├── FeedbackCalculator.java
+│   │               ├── GameHistory.java
+│   │               ├── GameSession.java
+│   │               ├── GameWrapper.java
 │   │               ├── JsonCardFetcher.java
+│   │               ├── PerformanceCalculator.java
+│   │               ├── StandardDeviationCalculator.java
 │   │               └── test.java
 │   └── resources
-│       ├── background.png
-│       ├── cards.json
 │       ├── fxml
 │       │   ├── altButton.fxml
 │       │   ├── gameloop.fxml
+│       │   ├── historyitem.fxml
 │       │   ├── main.fxml
-│       │   └── results.fxml
-│       ├── gameicon.png
+│       │   ├── results.fxml
+│       │   └── stat.fxml
+│       ├── images
+│       │   ├── History.png
+│       │   ├── darkButton.png
+│       │   ├── dark_bg.png
+│       │   ├── gameicon.png
+│       │   ├── lightButton.png
+│       │   ├── light_bg.png
+│       │   ├── sound_off.png
+│       │   └── sound_on.png
+│       ├── json
+│       │   └── cards.json
 │       └── style
-│           └── style.css
+│           ├── dark_theme.css
+│           └── light_theme.css
 └── test
     └── java
         └── com
             └── ecologicstudios
                 └── AppTest.java
 
-17 directories, 29 files
+18 directories, 42 files
