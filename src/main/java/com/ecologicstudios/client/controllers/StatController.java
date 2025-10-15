@@ -98,7 +98,6 @@ public final class StatController extends BaseController {
         }
 
         updatePerformanceLabel();
-        setRoot((Node) root);
     }
 
     // ------------------------------------------------------------------------//

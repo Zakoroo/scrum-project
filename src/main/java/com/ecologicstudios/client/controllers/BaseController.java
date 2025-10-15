@@ -50,6 +50,8 @@ public abstract class BaseController {
     }
 
     final public void applyTheme() {
+        if (root == null || root.getScene() == null) return;
+
         // Remove previous theme
         root.getScene().getStylesheets().removeIf(s -> s.contains("light_theme.css") || s.contains("dark_theme.css"));
 

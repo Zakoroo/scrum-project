@@ -70,7 +70,6 @@ public final class ResultController extends BaseController {
     public void initialize() {
         updateCO2(String.format("%.2f", model.getTotalResult())); // Add results to result screen.
         updateFeedback(model.getFeedback(), model.getscoreTitle());
-        setRoot((Node) this.root);
     }
 
     // ------------------------------------------------------------------------//

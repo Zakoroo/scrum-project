@@ -136,9 +136,6 @@ public final class StartController extends BaseController {
      */
     @Override
     public void initialize() {
-        // set root for BaseController
-        setRoot((Node) this.root);
-
         // configure/update buttons
         setRoundsDisabled(maxNumCards, true);
         setDifficultyDisabled(difficulty, true);

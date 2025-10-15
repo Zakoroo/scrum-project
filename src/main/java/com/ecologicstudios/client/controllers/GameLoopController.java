@@ -80,7 +80,6 @@ public final class GameLoopController extends BaseController {
      */
     public void initialize() {
         update();
-        setRoot(this.root);
     }
 
     // ------------------------------------------------------------------------//

@@ -1,6 +1,7 @@
 package com.ecologicstudios.client.controllers;
 
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
@@ -84,19 +85,24 @@ public class SceneManager {
     public void switchScene(String fxmlFile) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
-            Scene scene = new Scene(loader.load());
-
+            Parent root = loader.load();
+            
             // Get the controller and inject SceneManager
             Object controller = loader.getController();
-            if (controller instanceof BaseController && controller != null) {
-                BaseController baseController = (BaseController) controller;
-                baseController.setSceneManager(this);
-                baseController.applyTheme();
-            }
+            BaseController baseController = (BaseController) controller;
 
+            if (controller instanceof BaseController && controller != null) {
+                baseController.setSceneManager(this);
+                baseController.setRoot(root);
+            }
+            
+            Scene scene = new Scene(root);
             primaryStage.setScene(scene);
             primaryStage.show();
 
+            if (controller instanceof BaseController && controller != null) {
+                baseController.applyTheme();
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
