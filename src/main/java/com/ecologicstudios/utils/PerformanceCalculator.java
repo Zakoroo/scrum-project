@@ -26,6 +26,9 @@ package com.ecologicstudios.utils;
  * double performance = calculator.calculatePerformance(75, 50, 100);
  * // performance = 50.0
  * </pre>
+ * 
+ * @author Ecologic Studios
+ * @version 1.0
  */
 public class PerformanceCalculator {
     /**

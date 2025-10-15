@@ -11,7 +11,8 @@ import java.time.format.DateTimeFormatter;
  * cumulative score and best round score for persistence and display.
  * </p>
  *
- * @author EcoLogic Studios
+ * @author Ecologic Studios
+ * @version 1.0
  */
 public class GameSession {
     private int sessionId;

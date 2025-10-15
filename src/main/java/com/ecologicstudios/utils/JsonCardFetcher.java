@@ -19,7 +19,8 @@ import com.google.gson.Gson;
  * cards.
  * </p>
  *
- * @author EcoLogic Studios
+ * @author Ecologic Studios
+ * @version 1.0
  */
 public class JsonCardFetcher implements CardFetcher {
     /**

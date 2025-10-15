@@ -17,6 +17,9 @@ import javafx.scene.chart.XYChart;
  * @see GameSession
  * @see PerformanceCalculator
  * @see javafx.scene.chart.XYChart.Data
+ * 
+ * @author Ecologic Studios
+ * @version 1.0
  */
 public class ChartBuilder {
     /**

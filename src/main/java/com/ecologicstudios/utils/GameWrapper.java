@@ -9,7 +9,8 @@ import java.util.List;
  * Primarily used for JSON serialization/deserialization of the game history.
  * </p>
  * 
- * @author EcoLogic Studios
+ * @author Ecologic Studios
+ * @version 1.0
  */
 public class GameWrapper{
     private List<GameSession> gameSessions = new ArrayList<GameSession>();

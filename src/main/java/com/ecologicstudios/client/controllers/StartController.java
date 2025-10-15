@@ -4,6 +4,7 @@ import com.ecologicstudios.client.models.GameLoopModel;
 import com.ecologicstudios.client.models.SettingsModel;
 import com.ecologicstudios.client.models.SettingsModel.Sound;
 import com.ecologicstudios.client.models.SettingsModel.Theme;
+import com.ecologicstudios.utils.Music;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,13 +16,17 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 
 /**
- * Controller class for managing the game setup interface.
+ * Controller for the game setup (start) screen.
  * <p>
- * This controller handles the configuration of game settings including
- * difficulty level and number of rounds before starting the actual game. It
- * provides an interactive interface for users to customize their gaming
- * experience and validates their selections before starting the game.
- * 
+ * Responsible for presenting and applying initial game configuration
+ * (difficulty and number of rounds), toggling UI settings (theme and sound),
+ * and navigating to the game or statistics scenes. This class mediates
+ * between the FXML view and the {@link com.ecologicstudios.client.models.GameLoopModel}
+ * / {@link com.ecologicstudios.client.models.SettingsModel} application state.
+ *
+ * <p>All public handler methods accept an {@link javafx.event.ActionEvent}
+ * produced by the FXML runtime; helper methods encapsulate UI updates.
+ *
  * @author Ecologic Studios
  * @version 1.0
  */
@@ -124,6 +129,10 @@ public final class StartController extends BaseController {
      * Sets the initial visual state of buttons based on current game configuration,
      * disabling the buttons that correspond to the currently selected difficulty
      * and number of rounds.
+    * <p>
+    * This method is invoked by the JavaFX runtime after the FXML elements have
+    * been injected. It also ensures background music is started according to
+    * the current settings.
      */
     @Override
     public void initialize() {
@@ -136,6 +145,7 @@ public final class StartController extends BaseController {
         updateThemeButton();
         updateSoundButton();
         updateHistoryButton();
+        Music.playBackground();
     }
 
     // ------------------------------------------------------------------------//
@@ -229,8 +239,13 @@ public final class StartController extends BaseController {
      */
     @FXML
     private void handleSound(ActionEvent e) {
-        settingsModel.toggleSound();
         updateSoundButton();
+        
+        if (!Music.isPlaying()) {
+            Music.playBackground();
+        } else {
+            Music.pause();
+        }
     }
 
     // ------------------------------------------------------------------------//
@@ -241,7 +256,9 @@ public final class StartController extends BaseController {
      * <p>
      * This helper method manages the visual state of difficulty selection buttons.
      * 
-     * @param text     the difficulty level text ("easy", "medium", or "hard")
+     * @param text     the difficulty level text ("easy", "medium", or "hard").
+     *                 Case-insensitive. If the text does not match any known
+     *                 difficulty, the method performs no action.
      * @param disabled true to disable the button, false to enable it
      */
     private void setDifficultyDisabled(String text, Boolean disabled) {
@@ -262,7 +279,8 @@ public final class StartController extends BaseController {
      * <p>
      * This helper method manages the visual state of round selection buttons.
      * 
-     * @param round    the number of rounds (10, 15, or 20)
+     * @param round    the number of rounds (10, 15, or 20). Values outside this
+     *                 set will be ignored.
      * @param disabled true to disable the button, false to enable it
      */
     private void setRoundsDisabled(int round, Boolean disabled) {
@@ -279,31 +297,36 @@ public final class StartController extends BaseController {
     }
 
     /**
-     * Updates the theme button to reflect the current theme.
+     * Updates the theme button graphic to reflect the current theme.
      */
     private void updateThemeButton() {
         setButtonImage(themeBtn, settingsModel.getTheme() == Theme.LIGHT ? darkButtonImage : lightButtonImage);
     }
 
     /**
-     * Updates the sound button to reflect the current sound setting.
+     * Updates the sound button graphic to reflect whether background music is
+     * currently playing.
      */
     private void updateSoundButton() {
-        setButtonImage(soundBtn, settingsModel.getSound() == Sound.ON ? soundOnImage : soundOffImage);
+        setButtonImage(soundBtn, !Music.isPlaying() ? soundOnImage : soundOffImage);
     }
 
     /**
-     * Updates the history button to reflect the current state.
+     * Updates the history button graphic.
      */
     private void updateHistoryButton() {
         setButtonImage(historyBtn, historyImage);
     }
 
     /**
-     * Helper method that sets the image for a button.
-     * 
-     * @param btn the button to update
-     * @param url the URL of the image to set
+     * Helper that sets an ImageView on the provided {@link Button} from a
+     * classpath resource path.
+     *
+     * @param btn the button to update; must not be null
+     * @param url the relative resource path (e.g. "images/sound_on.png"); the
+     *            method looks up a resource using {@code getClass().getResource("/" + url)}.
+     *            If the resource cannot be found the method logs to stderr and
+     *            returns without modifying the button.
      */
     private void setButtonImage(Button btn, String url) {
         var resource = getClass().getResource("/" + url);
