@@ -6,7 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 
-import com.ecologicstudios.client.models.GameLoopModel;
+import com.ecologicstudios.client.models.GameModel;
 
 /**
  * Controller class for managing the game results interface.
@@ -30,7 +30,7 @@ public final class ResultController extends BaseController {
     /**
      * Reference to the game model for retrieving final results.
      */
-    private GameLoopModel model;
+    private GameModel gameModel;
 
     // ------------------------------------------------------------------------//
     // fxml elements
@@ -57,19 +57,18 @@ public final class ResultController extends BaseController {
      * Constructs a new ResultController and initializes the game model reference.
      */
     public ResultController() {
-        model = GameLoopModel.getInstance();
     }
 
-    /**
-     * Initializes the controller after FXML loading.
-     * <p>
-     * Retrieves the total CO2 result and feedback from the game model and displays
-     * them on the results screen with appropriate formatting.
-     */
-    public void initialize() {
-        updateCO2(String.format("%.2f", model.getTotalResult())); // Add results to result screen.
-        updateFeedback(model.getFeedback(), model.getscoreTitle());
+    @Override
+    protected final void onReady() {
+        // fetch models
+        this.gameModel = this.getContext().game();
+
+        // update labels with data from model
+        this.updateCO2(String.format("%.2f", gameModel.getTotalResult()));
+        this.updateFeedback(gameModel.getFeedback(), gameModel.getscoreTitle());
     }
+
 
     // ------------------------------------------------------------------------//
     // event handlers
