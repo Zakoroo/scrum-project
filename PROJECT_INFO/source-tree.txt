@@ -28,28 +28,32 @@ src
 │   │               ├── GameSession.java
 │   │               ├── GameWrapper.java
 │   │               ├── JsonCardFetcher.java
+│   │               ├── Music.java
 │   │               ├── PerformanceCalculator.java
-│   │               ├── StandardDeviationCalculator.java
-│   │               └── test.java
+│   │               ├── Sound.java
+│   │               └── StandardDeviationCalculator.java
 │   └── resources
 │       ├── fxml
 │       │   ├── altButton.fxml
 │       │   ├── gameloop.fxml
-│       │   ├── historyitem.fxml
+│       │   ├── historyItem.fxml
 │       │   ├── main.fxml
 │       │   ├── results.fxml
 │       │   └── stat.fxml
 │       ├── images
-│       │   ├── History.png
 │       │   ├── darkButton.png
 │       │   ├── dark_bg.png
 │       │   ├── gameicon.png
+│       │   ├── history.png
 │       │   ├── lightButton.png
 │       │   ├── light_bg.png
 │       │   ├── sound_off.png
 │       │   └── sound_on.png
 │       ├── json
 │       │   └── cards.json
+│       ├── sounds
+│       │   ├── background.mp3
+│       │   └── mixkit-sad-game-over-trombone-471.wav
 │       └── style
 │           ├── dark_theme.css
 │           └── light_theme.css
@@ -59,4 +63,4 @@ src
             └── ecologicstudios
                 └── AppTest.java
 
-18 directories, 42 files
+19 directories, 45 files
