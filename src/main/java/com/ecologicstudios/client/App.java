@@ -21,6 +21,7 @@ import com.ecologicstudios.utils.Music;
  * choices and see their impact on CO2 emissions.
  * 
  * @author Ecologic Studios
+ * @version 1.0
  */
 public class App extends Application {
     /**
@@ -56,6 +57,14 @@ public class App extends Application {
         }
     }
 
+    /**
+     * Closes Music player and ensures graceful app-termination.
+     * <p>
+     * This method is called by the JavaFx runtime when the application is closed.
+     * It stops the music player if it is running and disposes of it. I also calls
+     * the methods {@code Platform.exit()} and {@code System.exit()} making sure
+     * that the application is actually terminated when the window is closed.
+     */
     @Override
     public void stop() {
         try {

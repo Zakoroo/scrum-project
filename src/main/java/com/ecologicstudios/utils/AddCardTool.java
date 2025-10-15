@@ -17,6 +17,7 @@ import java.util.List;
  * </pre>
  * 
  * @author Ecologic Studios
+ * @version 1.0
  */
 public class AddCardTool {
 

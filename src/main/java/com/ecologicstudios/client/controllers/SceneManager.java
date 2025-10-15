@@ -16,6 +16,7 @@ import java.io.IOException;
  * and ensures proper initialization of the controller lifecycle.
  * 
  * @author Ecologic Studios
+ * @version 1.0
  */
 public class SceneManager {
     /**

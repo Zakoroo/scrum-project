@@ -18,6 +18,9 @@ import javafx.scene.chart.XYChart.Data;
  * {@code graph.subList(0, graph.size() - 1)}.
  * - Variance uses the sample formula (divide by N-1).
  * </p>
+ * 
+ * @author Ecologic Studios
+ * @version 1.0
  */
 public class StandardDeviationCalculator {
     /**

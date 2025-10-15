@@ -6,6 +6,9 @@ package com.ecologicstudios.client.models;
  * This class provides methods to manage and toggle application settings such as
  * theme and sound. It ensures that only one instance of the settings model exists
  * throughout the application lifecycle.
+ * 
+ * @author Ecologic Studios
+ * @Version 1.0
  */
 public class SettingsModel {
 
@@ -29,10 +32,6 @@ public class SettingsModel {
      */
     private Theme theme;
 
-    /**
-     * The current sound setting of the application.
-     */
-    private Sound sound;
 
     /**
      * Retrieves the singleton instance of the SettingsModel.
@@ -55,14 +54,6 @@ public class SettingsModel {
      */
     private SettingsModel() {
         this.theme = Theme.LIGHT;
-        this.sound = Sound.ON;
-    }
-
-    /**
-     * Toggles the sound setting between ON and OFF.
-     */
-    public void toggleSound() {
-       this.sound = this.sound == Sound.ON  ? Sound.OFF : Sound.ON;
     }
 
     /**
@@ -91,13 +82,4 @@ public class SettingsModel {
     public Theme getTheme() {
         return this.theme;
     } 
-
-    /**
-     * Retrieves the current sound setting of the application.
-     * 
-     * @return the current sound setting
-     */
-   public Sound getSound() {
-        return this.sound;
-   }
 }

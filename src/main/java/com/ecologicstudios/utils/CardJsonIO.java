@@ -22,6 +22,7 @@ import java.util.*;
  * All methods are static and the class cannot be instantiated.
  *
  * @author Ecologic Studios
+ * @version 1.0
  */
 public final class CardJsonIO {
     /**

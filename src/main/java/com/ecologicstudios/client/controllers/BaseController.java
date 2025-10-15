@@ -12,6 +12,7 @@ import com.ecologicstudios.client.models.SettingsModel;
  * implementation of an initialization method in all concrete controllers.
  * 
  * @author Ecologic Studios
+ * @version 1.0
  */
 public abstract class BaseController {
     private Node root;

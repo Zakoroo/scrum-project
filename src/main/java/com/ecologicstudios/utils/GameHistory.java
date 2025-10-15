@@ -31,6 +31,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  *
  * @see GameWrapper
  * @see GameSession
+ * 
+ * @author Ecologic Studios
+ * @version 1.0
  */
 public class GameHistory {
     /** Path to the JSON file used to persist game history. */

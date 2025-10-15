@@ -17,6 +17,7 @@ import com.ecologicstudios.client.models.GameLoopModel;
  * environmental impact summary of the player's choices.
  * 
  * @author Ecologic Studios
+ * @version 1.0
  */
 public final class ResultController extends BaseController {
     // ------------------------------------------------------------------------//
