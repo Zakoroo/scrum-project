@@ -1,13 +1,7 @@
-// src/main/java/com/ecologicstudios/utils/Music.java
 package com.ecologicstudios.utils;
 
-import javafx.animation.KeyFrame;
-import javafx.animation.KeyValue;
-import javafx.animation.Timeline;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import javafx.util.Duration;
-
 import java.net.URL;
 import java.util.Objects;
 

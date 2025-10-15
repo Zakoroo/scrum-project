@@ -4,6 +4,7 @@ import com.ecologicstudios.client.models.GameLoopModel;
 import com.ecologicstudios.client.models.SettingsModel;
 import com.ecologicstudios.client.models.SettingsModel.Sound;
 import com.ecologicstudios.client.models.SettingsModel.Theme;
+import com.ecologicstudios.utils.Music;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -136,6 +137,7 @@ public final class StartController extends BaseController {
         updateThemeButton();
         updateSoundButton();
         updateHistoryButton();
+        Music.playBackground();
     }
 
     // ------------------------------------------------------------------------//
@@ -231,6 +233,12 @@ public final class StartController extends BaseController {
     private void handleSound(ActionEvent e) {
         settingsModel.toggleSound();
         updateSoundButton();
+        
+        if (!Music.isPlaying()) {
+            Music.playBackground();
+        } else {
+            Music.pause();
+        }
     }
 
     // ------------------------------------------------------------------------//
