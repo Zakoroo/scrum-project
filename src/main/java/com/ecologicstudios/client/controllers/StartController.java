@@ -308,7 +308,7 @@ public final class StartController extends BaseController {
      * currently playing.
      */
     private void updateSoundButton() {
-        setButtonImage(soundBtn, Music.isPlaying() ? soundOnImage : soundOffImage);
+        setButtonImage(soundBtn, !Music.isPlaying() ? soundOnImage : soundOffImage);
     }
 
     /**
