@@ -142,6 +142,13 @@ public final class StartController extends BaseController {
         // configure/update buttons
         setRoundsDisabled(maxNumCards, true);
         setDifficultyDisabled(difficulty, true);
+
+        // update music settings
+        if (settingsModel.getMusicOn()) {
+            Music.playBackground(); 
+        }
+
+        // set buttons' icons
         updateThemeButton();
         updateSoundButton();
         updateHistoryButton();
@@ -239,13 +246,15 @@ public final class StartController extends BaseController {
      */
     @FXML
     private void handleSound(ActionEvent e) {
-        updateSoundButton();
-        
-        if (!Music.isPlaying()) {
-            Music.playBackground();
-        } else {
+        if (settingsModel.getMusicOn()) {
+            settingsModel.setMusicOn(false);
             Music.pause();
+        } else {
+            settingsModel.setMusicOn(true);
+            Music.playBackground();
         }
+
+        updateSoundButton();
     }
 
     // ------------------------------------------------------------------------//
@@ -308,7 +317,7 @@ public final class StartController extends BaseController {
      * currently playing.
      */
     private void updateSoundButton() {
-        setButtonImage(soundBtn, !Music.isPlaying() ? soundOnImage : soundOffImage);
+        setButtonImage(soundBtn, settingsModel.getMusicOn() ? soundOnImage : soundOffImage);
     }
 
     /**

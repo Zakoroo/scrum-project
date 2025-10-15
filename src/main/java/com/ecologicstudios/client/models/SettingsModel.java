@@ -32,6 +32,10 @@ public class SettingsModel {
      */
     private Theme theme;
 
+    /**
+     * Current state of the music player (on/off).
+     */
+    private boolean musicOn;
 
     /**
      * Retrieves the singleton instance of the SettingsModel.
@@ -54,6 +58,7 @@ public class SettingsModel {
      */
     private SettingsModel() {
         this.theme = Theme.LIGHT;
+        this.musicOn = true;
     }
 
     /**
@@ -82,4 +87,22 @@ public class SettingsModel {
     public Theme getTheme() {
         return this.theme;
     } 
+
+    /**
+     * Retrieves the current state of the music player.
+     * 
+     * @return {@code true} if on, otherwise {@code false}
+     */
+    public boolean getMusicOn() {
+        return this.musicOn;
+    }
+
+    /**
+     * Set the current state of the music player (on/off).
+     * 
+     * @param musicOn {@code true} for 'on' and {@code false} for 'off'
+     */
+    public void setMusicOn(boolean musicOn) {
+        this.musicOn = musicOn;
+    }
 }
