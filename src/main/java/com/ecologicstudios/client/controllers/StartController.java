@@ -152,6 +152,7 @@ public final class StartController extends BaseController {
         updateThemeButton();
         updateSoundButton();
         updateHistoryButton();
+        Music.playBackground();
     }
 
     // ------------------------------------------------------------------------//

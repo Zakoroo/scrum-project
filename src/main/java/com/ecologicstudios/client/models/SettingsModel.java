@@ -88,7 +88,6 @@ public class SettingsModel {
         return this.theme;
     } 
 
-
     /**
      * Retrieves the current state of the music player.
      * 
