@@ -1,16 +1,19 @@
 package com.ecologicstudios.client;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import com.ecologicstudios.client.controllers.SceneManager;
 import com.ecologicstudios.client.models.GameLoopModel;
 import com.ecologicstudios.client.models.SettingsModel;
+import com.ecologicstudios.utils.Music;
 
 /**
  * Main JavaFX application class for the Climate Game.
  * <p>
- * This class serves as the entry point for the JavaFX application. It initializes
+ * This class serves as the entry point for the JavaFX application. It
+ * initializes
  * the primary stage, sets up the scene manager, initializes game models, and
  * launches the main menu interface.
  * <p>
@@ -18,17 +21,19 @@ import com.ecologicstudios.client.models.SettingsModel;
  * choices and see their impact on CO2 emissions.
  * 
  * @author Ecologic Studios
+ * @version 1.0
  */
 public class App extends Application {
     /**
      * Initializes and starts the JavaFX application.
      * <p>
      * This method is called by the JavaFX runtime when the application is launched.
-     * It sets up the primary stage properties, initializes the game model singleton,
+     * It sets up the primary stage properties, initializes the game model
+     * singleton,
      * creates the scene manager, and displays the main menu.
      * 
      * @param primaryStage the primary stage for this application, onto which
-     *                    the application scene can be set
+     *                     the application scene can be set
      */
     @Override
     public void start(Stage primaryStage) {
@@ -37,8 +42,8 @@ public class App extends Application {
             primaryStage.setResizable(false);
             Image icon = new Image("images/gameicon.png");
             primaryStage.getIcons().add(icon);
-          
-            //Initialize models
+
+            // Initialize models
             GameLoopModel.getInstance();
             SettingsModel.getInstance();
 
@@ -49,6 +54,27 @@ public class App extends Application {
         } catch (Exception e) {
             System.err.println("Failed to start client: " + e.getMessage());
             e.printStackTrace();
+        }
+    }
+
+    /**
+     * Closes Music player and ensures graceful app-termination.
+     * <p>
+     * This method is called by the JavaFx runtime when the application is closed.
+     * It stops the music player if it is running and disposes of it. I also calls
+     * the methods {@code Platform.exit()} and {@code System.exit()} making sure
+     * that the application is actually terminated when the window is closed.
+     */
+    @Override
+    public void stop() {
+        try {
+            Music.stop();
+            Music.dispose();
+            Platform.exit();
+            System.exit(0);
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.exit(1);
         }
     }
 

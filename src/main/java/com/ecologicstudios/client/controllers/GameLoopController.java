@@ -23,6 +23,7 @@ import com.ecologicstudios.utils.Alternative;
  * cards sequentially and processing user selections until the game ends.
  * 
  * @author Ecologic Studios
+ * @version 1.0
  */
 public final class GameLoopController extends BaseController {
     // ------------------------------------------------------------------------//

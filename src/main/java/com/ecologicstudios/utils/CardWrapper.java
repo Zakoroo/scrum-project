@@ -9,7 +9,8 @@ import java.util.List;
  * convenience printing methods used in quick tests or debugging.
  * </p>
  *
- * @author EcoLogic Studios
+ * @author Ecologic Studios
+ * @version 1.0
  */
 public class CardWrapper{
     private List<Card> cards;

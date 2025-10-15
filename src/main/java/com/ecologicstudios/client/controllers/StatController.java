@@ -30,6 +30,9 @@ import com.ecologicstudios.utils.StandardDeviationCalculator;
  * game sessions, a performance chart, and a performance label. It interacts
  * with the GameLoopModel to retrieve data and updates the UI components
  * accordingly.
+ * 
+ * @author Ecologic Studios
+ * @version 1.0
  */
 public final class StatController extends BaseController {
     // ------------------------------------------------------------------------//

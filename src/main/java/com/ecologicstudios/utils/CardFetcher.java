@@ -9,7 +9,8 @@ import java.util.List;
  * difficulty, and access all loaded cards.
  *
  *
- * @author EcoLogic Studios
+ * @author Ecologic Studios
+ * @version 1.0
  */
 public interface CardFetcher {
     /**

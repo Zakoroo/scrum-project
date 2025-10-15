@@ -10,6 +10,7 @@ package com.ecologicstudios.utils;
  * consequences of their decisions.
  * 
  * @author Ecologic Studios
+ * @version 1.0
  */
 public class Alternative {
     /**

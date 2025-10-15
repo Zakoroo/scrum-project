@@ -9,7 +9,8 @@ import java.util.List;
  * and round length, and generate feedback messages according to the player's
  * performance.
  *
- * @author EcoLogic Studios
+ * @author Ecologic Studios
+ * @version 1.0
  */
 public class FeedbackCalculator {
     /**

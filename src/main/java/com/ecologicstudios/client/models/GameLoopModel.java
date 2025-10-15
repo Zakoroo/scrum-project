@@ -24,6 +24,7 @@ import com.ecologicstudios.utils.Alternative;
  * based on their decisions.
  * 
  * @author Ecologic Studios
+ * @version 1.0
  */
 public class GameLoopModel {
     private final String historyPath = "src/main/resources/json/history.json";
