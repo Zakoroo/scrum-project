@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import com.ecologicstudios.utils.CardFetcher;
-import com.ecologicstudios.utils.FeedbackCalculator;
+import com.ecologicstudios.utils.FeedbackGenerator;
 import com.ecologicstudios.utils.GameHistory;
 import com.ecologicstudios.utils.GameSession;
 import com.ecologicstudios.utils.JsonCardFetcher;
@@ -89,7 +89,7 @@ public class GameModel {
      * The feedback calculator that provides dynamic feedback based on the game's
      * result.
      */
-    private FeedbackCalculator feedbackCalculator;
+    private FeedbackGenerator feedbackCalculator;
 
     /**
      * This method replaces the functionality of the constructor effectively
@@ -136,7 +136,7 @@ public class GameModel {
         cards = fetcher.getCardsByDifficulty(difficulty); // fetch out only cards of the given difficulty
         Collections.shuffle(cards); // shuffle cards
 
-        feedbackCalculator = new FeedbackCalculator(new LinkedList<>(cards), maxNumCards);
+        feedbackCalculator = new FeedbackGenerator(new LinkedList<>(cards), maxNumCards);
     }
 
     /**
@@ -202,7 +202,7 @@ public class GameModel {
         for (Alternative alt : currentCard.getAlternatives()) {
             if (alt.equals(answer)) {
                 answersCount++;
-                totalResult += answer.getco2();
+                totalResult += answer.getCo2();
 
                 // update history only if the last answer is submitted
                 if (gameEnded())

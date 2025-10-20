@@ -1,174 +1,105 @@
 package com.ecologicstudios.utils;
 
+import java.util.Optional;
+import java.util.Collection;
 import java.util.List;
-import javafx.scene.chart.XYChart;
-import javafx.scene.chart.XYChart.Data;
+import java.util.LinkedList;
 
 /**
- * Utility for computing basic sample statistics (mean, sample variance,
- * standard
- * deviation), a Z‑score and a percentile for the most recent Y value in a
- * JavaFX {@link XYChart.Data} series.
- *
- * <p>
- * Behavior:
- * - The last point in {@code graph} is treated as the "latest" value to be
- * compared against a baseline of previous rounds.
- * - All statistics (mean, variance, SD) are computed on the baseline set:
- * {@code graph.subList(0, graph.size() - 1)}.
- * - Variance uses the sample formula (divide by N-1).
- * </p>
+ * The StandardDeviationCalculator class provides methods to calculate the mean,
+ * variance, and standard deviation of a collection of numerical values.
+ * It implements the Calculator interface for numerical data.
  * 
  * @author Ecologic Studios
  * @version 1.0
  */
-public class StandardDeviationCalculator {
-    /**
-     * Full chart data including the latest point.
-     */
-    private List<XYChart.Data<Number, Number>> graph;
-    /**
-     * Baseline points used for statistics (all points except the last).
-     */
-    private List<XYChart.Data<Number, Number>> withoutLast;
+public class StandardDeviationCalculator implements Calculator<Number> {
+    private final List<Number> values;
 
     /**
-     * Create a calculator for the provided chart data.
-     *
-     * @param graph list of {@link XYChart.Data} where the last element is the
-     *              latest round;
-     *              must contain at least three points (at least two baseline points
-     *              + latest)
-     * @throws IllegalArgumentException if {@code graph.size() < 3}
+     * Constructs a new StandardDeviationCalculator with an empty list of values.
      */
-    public StandardDeviationCalculator(List<XYChart.Data<Number, Number>> graph) {
-        if (graph.size() < 3) {
-            throw new IllegalArgumentException(
-                    "graph must contain at least two points (one for baseline and one latest)");
-        }
-        this.graph = graph;
-        this.withoutLast = graph.subList(0, graph.size() - 1);
+    public StandardDeviationCalculator() {
+        this.values = new LinkedList<>();
     }
 
     /**
-     * Compute the arithmetic mean of Y values for the baseline points
-     * ({@code withoutLast}).
+     * Inserts a single numerical value into the calculator.
      *
-     * @return mean of baseline Y values
+     * @param value The numerical value to be added.
+     */
+    @Override
+    public void insertValue(Number value) {
+        this.values.add(value);
+    }
+
+    /**
+     * Inserts a collection of numerical values into the calculator.
+     *
+     * @param list The collection of numerical values to be added.
+     */
+    @Override
+    public void insertValues(Collection<? extends Number> list) {
+        this.values.addAll(list);
+    }
+
+    /**
+     * Calculates the standard deviation of the stored values.
+     *
+     * @return An Optional containing the standard deviation, or Optional.empty()
+     *         if fewer than 2 values are present.
+     */
+    @Override
+    public Optional<Number> calculate() {
+        if (values.size() < 2) return Optional.empty();
+        return Optional.of(getStandardDeviation());
+    }
+
+    /**
+     * Clears all stored values in the calculator.
+     */
+    @Override
+    public void clear() {
+        this.values.clear();
+    }
+
+    /**
+     * Computes the mean (average) of the stored values.
+     *
+     * @return The mean of the stored values, or 0 if no values are present.
      */
     public double getMean() {
-        double sum = 0.0;
-        int count = 0;
-        for (Data<Number, Number> point : withoutLast) {
-            Number y = point.getYValue();
-            sum += y.doubleValue();
-            count++;
-        }
-        return sum / count;
+        if (this.values.isEmpty()) return 0;
+        return this.values.stream()
+                .mapToDouble(Number::doubleValue)
+                .average()
+                .orElse(0);
     }
 
     /**
-     * Compute the sample variance (s²) of the baseline Y values.
-     * Uses the unbiased estimator dividing by (N - 1).
+     * Computes the variance of the stored values.
      *
-     * @return sample variance of baseline Y values
+     * @return The variance of the stored values, or 0 if fewer than 2 values are present.
      */
     public double getVariance() {
+        int n = this.values.size();
+        if (n < 2) return 0.0;
+
         double mean = getMean();
         double sumSq = 0.0;
-        int count = 0;
-        for (Data<Number, Number> point : withoutLast) {
-            Number y = point.getYValue();
-            double diff = y.doubleValue() - mean;
-            sumSq += diff * diff;
-            count++;
+        for (Number v : values) {
+            double d = v.doubleValue() - mean;
+            sumSq += d * d;
         }
-        return sumSq / (count - 1);
+        return sumSq / (n - 1);
     }
 
     /**
-     * Compute the sample standard deviation (s) for the baseline Y values.
+     * Computes the standard deviation of the stored values.
      *
-     * @return standard deviation = sqrt(variance)
+     * @return The standard deviation of the stored values.
      */
     public double getStandardDeviation() {
         return Math.sqrt(getVariance());
     }
-
-    /**
-     * Compute the Z‑score of the latest Y value relative to the baseline:
-     * Z = (R - μ) / s.
-     *
-     * <p>
-     * If the standard deviation is zero (all baseline values identical),
-     * the method returns 0.0.
-     * </p>
-     *
-     * @return z‑score of the latest point (or 0.0 when SD == 0)
-     */
-    public double getZ() {
-        Data<Number, Number> last = graph.get(graph.size() - 1);
-        double latest = last.getYValue().doubleValue();
-        double mean = getMean();
-        double sd = getStandardDeviation();
-        if (sd == 0.0) {
-            return 0.0;
-        }
-        return (latest - mean) / sd;
-    }
-
-    /**
-     * Convert the latest value's Z‑score into a percentile (0.0–100.0)
-     * using the standard normal cumulative distribution function Φ(z).
-     *
-     * <p>
-     * When the standard deviation is zero:
-     * - if latest == mean → returns 50.0 (median)
-     * - if latest > mean → returns 100.0
-     * - otherwise → returns 0.0
-     * </p>
-     *
-     * @return percentile in percent (0..100)
-     */
-    public double getPercentile() {
-        Data<Number, Number> last = graph.get(graph.size() - 1);
-        double latest = last.getYValue().doubleValue();
-
-        double sd = getStandardDeviation();
-        if (sd == 0.0) {
-            double mean = getMean();
-            if (Double.compare(latest, mean) == 0)
-                return 50.0;
-            return latest > mean ? 100.0 : 0.0;
-        }
-
-        double z = (latest - getMean()) / sd;
-        return 100.0 * (0.5 * (1.0 + erf(z / Math.sqrt(2.0))));
-    }
-
-    /**
-     * Approximate error function used to compute the normal CDF.
-     * Implementation based on a common numerical approximation (Abramowitz &
-     * Stegun).
-     *
-     * @param x input value
-     * @return approximate erf(x)
-     */
-    private static double erf(double x) {
-        int sign = x < 0 ? -1 : 1;
-        x = Math.abs(x);
-
-        double a1 = 0.254829592;
-        double a2 = -0.284496736;
-        double a3 = 1.421413741;
-        double a4 = -1.453152027;
-        double a5 = 1.061405429;
-        double p = 0.3275911;
-
-        double t = 1.0 / (1.0 + p * x);
-        double y = 1.0 - (((((a5 * t + a4) * t + a3) * t + a2) * t + a1) * t) * Math.exp(-x * x);
-
-        return sign * y;
-    }
-
 }

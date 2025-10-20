@@ -12,16 +12,16 @@ import java.util.List;
  * @author Ecologic Studios
  * @version 1.0
  */
-public class FeedbackCalculator {
+public class FeedbackGenerator {
     /**
      * The list of cards to be evaluated for feedback and CO2 calculations.
      */
-    List<Card> cards;
+    private List<Card> cards;
 
     /**
      * The number of rounds (cards) to consider in the calculations.
      */
-    int roundLength;
+    private int roundLength;
 
     /**
      * Constructs a FeedbackCalculator with the specified list of cards and round
@@ -30,7 +30,7 @@ public class FeedbackCalculator {
      * @param cards       the list of cards to evaluate
      * @param roundLength the number of rounds to consider
      */
-    public FeedbackCalculator(List<Card> cards, int roundLength) {
+    public FeedbackGenerator(List<Card> cards, int roundLength) {
         this.cards = cards;
         this.roundLength = roundLength;
     }
@@ -49,8 +49,8 @@ public class FeedbackCalculator {
             List<Alternative> alternatives = cards.get(i).getAlternatives();
             double minCo2 = Double.MAX_VALUE;
             for (Alternative alt : alternatives) {
-                if (alt.getco2() < minCo2) {
-                    minCo2 = alt.getco2();
+                if (alt.getCo2() < minCo2) {
+                    minCo2 = alt.getCo2();
                 }
             }
             minTotal += minCo2;
@@ -72,8 +72,8 @@ public class FeedbackCalculator {
             List<Alternative> choices = cards.get(i).getAlternatives();
             double maxCo2 = Double.MIN_VALUE;
             for (Alternative choice : choices) {
-                if (choice.getco2() > maxCo2) {
-                    maxCo2 = choice.getco2();
+                if (choice.getCo2() > maxCo2) {
+                    maxCo2 = choice.getCo2();
                 }
             }
             maxTotal += maxCo2;
