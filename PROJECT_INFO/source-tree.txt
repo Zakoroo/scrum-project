@@ -13,43 +13,51 @@ src
 │   │           │   │   ├── StartController.java
 │   │           │   │   └── StatController.java
 │   │           │   └── models
-│   │           │       ├── GameLoopModel.java
+│   │           │       ├── AppContext.java
+│   │           │       ├── GameModel.java
 │   │           │       └── SettingsModel.java
 │   │           └── utils
 │   │               ├── AddCardTool.java
 │   │               ├── Alternative.java
+│   │               ├── Calculator.java
 │   │               ├── Card.java
 │   │               ├── CardFetcher.java
 │   │               ├── CardJsonIO.java
 │   │               ├── CardWrapper.java
 │   │               ├── ChartBuilder.java
-│   │               ├── FeedbackCalculator.java
+│   │               ├── Evaluator.java
+│   │               ├── FeedbackGenerator.java
 │   │               ├── GameHistory.java
 │   │               ├── GameSession.java
 │   │               ├── GameWrapper.java
 │   │               ├── JsonCardFetcher.java
-│   │               ├── PerformanceCalculator.java
-│   │               ├── StandardDeviationCalculator.java
-│   │               └── test.java
+│   │               ├── Music.java
+│   │               ├── PerformanceEvaluator.java
+│   │               ├── ScoreRescaler.java
+│   │               ├── Sound.java
+│   │               └── StandardDeviationCalculator.java
 │   └── resources
 │       ├── fxml
 │       │   ├── altButton.fxml
 │       │   ├── gameloop.fxml
-│       │   ├── historyitem.fxml
+│       │   ├── historyItem.fxml
 │       │   ├── main.fxml
 │       │   ├── results.fxml
 │       │   └── stat.fxml
 │       ├── images
-│       │   ├── History.png
 │       │   ├── darkButton.png
 │       │   ├── dark_bg.png
 │       │   ├── gameicon.png
+│       │   ├── history.png
 │       │   ├── lightButton.png
 │       │   ├── light_bg.png
 │       │   ├── sound_off.png
 │       │   └── sound_on.png
 │       ├── json
 │       │   └── cards.json
+│       ├── sounds
+│       │   ├── background.mp3
+│       │   └── mixkit-sad-game-over-trombone-471.wav
 │       └── style
 │           ├── dark_theme.css
 │           └── light_theme.css
@@ -59,4 +67,4 @@ src
             └── ecologicstudios
                 └── AppTest.java
 
-18 directories, 42 files
+19 directories, 49 files
