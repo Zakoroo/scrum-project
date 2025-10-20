@@ -16,7 +16,7 @@ public class Alternative {
     /**
      * The textual description of this alternative choice.
      */
-    String choice;
+    private String choice;
 
     /**
      * The CO2 value associated with this choice.
@@ -49,7 +49,7 @@ public class Alternative {
      *
      * @return the CO2 value representing the environmental impact of this choice
      */
-    public double getco2() {
+    public double getCo2() {
         return co2;
     }
 }

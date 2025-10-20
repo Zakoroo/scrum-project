@@ -16,12 +16,11 @@ import java.awt.geom.Point2D;
 import java.io.IOException;
 import java.util.List;
 
-import com.ecologicstudios.client.models.GameLoopModel;
+import com.ecologicstudios.client.models.GameModel;
 import com.ecologicstudios.utils.ChartBuilder;
 import com.ecologicstudios.utils.GameHistory;
 import com.ecologicstudios.utils.GameSession;
-import com.ecologicstudios.utils.PerformanceCalculator;
-import com.ecologicstudios.utils.StandardDeviationCalculator;
+import com.ecologicstudios.utils.PerformanceEvaluator;
 
 /**
  * Controller for the statistics view in the application.
@@ -46,7 +45,7 @@ public final class StatController extends BaseController {
     /**
      * Reference to the game model for tracking game phases and logic.
      */
-    private GameLoopModel gameLoopModel;
+    private GameModel gameModel;
 
     /**
      * List of all game sessions stored in the history JSON object.
@@ -82,23 +81,19 @@ public final class StatController extends BaseController {
     // ------------------------------------------------------------------------//
     // constructors and initialization
     // ------------------------------------------------------------------------//
-    /**
-     * Initializes the statistics view by setting up the game history, chart, and
-     * performance label.
-     */
-    public void initialize() {
-        this.gameLoopModel = GameLoopModel.getInstance();
-        this.gameSessions = gameLoopModel.getHistory().getAllSessions();
+    @Override
+    protected final void onReady() {
+        this.gameModel = this.getContext().game();
+        this.gameSessions = this.gameModel.getHistory().getAllSessions();
 
         if (!this.gameSessions.isEmpty()) {
-            List<Point2D> pointList = new ChartBuilder(gameSessions, new PerformanceCalculator()).getChartData();
+            List<Point2D> pointList = new ChartBuilder(gameSessions).getChartData();
             this.points = pointList.stream().map(elem -> new XYChart.Data<Number,Number>(elem.getX(), elem.getY())).toList();
-            updateChart();
-            updateHistory();
+            this.updateChart();
+            this.updateHistory();
         }
 
-        updatePerformanceLabel();
-        setRoot((Node) root);
+        this.updatePerformanceLabel();
     }
 
     // ------------------------------------------------------------------------//
@@ -129,11 +124,11 @@ public final class StatController extends BaseController {
     private void handleReset(ActionEvent e) {
 
         // Clear history
-        GameHistory history = gameLoopModel.getHistory();
+        GameHistory history = gameModel.getHistory();
         history.clearHistory();
 
         // Update gameSession
-        this.gameSessions = gameLoopModel.getHistory().getAllSessions();
+        this.gameSessions = gameModel.getHistory().getAllSessions();
 
         // Clear all UI components
         historyList.getChildren().clear();
@@ -141,7 +136,7 @@ public final class StatController extends BaseController {
 
         // Update stat view
         if (!this.gameSessions.isEmpty()) {
-            List<Point2D> pointList = new ChartBuilder(gameSessions, new PerformanceCalculator()).getChartData();
+            List<Point2D> pointList = new ChartBuilder(gameSessions).getChartData();
             this.points = pointList.stream().map(elem -> new XYChart.Data<Number,Number>(elem.getX(), elem.getY())).toList();
             updateChart();
             updateHistory();
@@ -243,9 +238,10 @@ public final class StatController extends BaseController {
     public void updatePerformanceLabel() {
 
         if (gameSessions.size() > 3) {
-            StandardDeviationCalculator sdv = new StandardDeviationCalculator(points);
+            PerformanceEvaluator performanceEvaluator = new PerformanceEvaluator();
+            performanceEvaluator.insertValues(points.stream().map(elem -> elem.getYValue().intValue()).toList());
             performanceLabel.setText(
-                    String.format("Your last game was better than %.1f%% of previous games.", sdv.getPercentile()));
+                    String.format("Your last game was better than %.1f%% of previous games.", performanceEvaluator.evaluate().get()));
         } else {
             performanceLabel.setText(String.format("You have not played enough games yet for this data to be visible"));
         }

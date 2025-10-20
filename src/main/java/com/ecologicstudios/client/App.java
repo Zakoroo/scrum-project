@@ -5,7 +5,8 @@ import javafx.application.Platform;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import com.ecologicstudios.client.controllers.SceneManager;
-import com.ecologicstudios.client.models.GameLoopModel;
+import com.ecologicstudios.client.models.AppContext;
+import com.ecologicstudios.client.models.GameModel;
 import com.ecologicstudios.client.models.SettingsModel;
 import com.ecologicstudios.utils.Music;
 
@@ -38,22 +39,20 @@ public class App extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
+            Image icon = new Image("images/gameicon.png");
             primaryStage.setTitle("Climate game");
             primaryStage.setResizable(false);
-            Image icon = new Image("images/gameicon.png");
             primaryStage.getIcons().add(icon);
 
             // Initialize models
-            GameLoopModel.getInstance();
-            SettingsModel.getInstance();
+            AppContext context = new AppContext(GameModel.getInstance(), SettingsModel.getInstance(), new Music());
 
             // Initialize and create scene manager
-            SceneManager.initialize(primaryStage);
+            SceneManager.init(primaryStage, context);
             SceneManager.getInstance().switchScene("/fxml/main.fxml");
 
         } catch (Exception e) {
             System.err.println("Failed to start client: " + e.getMessage());
-            e.printStackTrace();
         }
     }
 

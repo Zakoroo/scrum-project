@@ -1,14 +1,12 @@
 package com.ecologicstudios.client.controllers;
 
-import com.ecologicstudios.client.models.GameLoopModel;
+import com.ecologicstudios.client.models.GameModel;
 import com.ecologicstudios.client.models.SettingsModel;
-import com.ecologicstudios.client.models.SettingsModel.Sound;
 import com.ecologicstudios.client.models.SettingsModel.Theme;
 import com.ecologicstudios.utils.Music;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ContentDisplay;
 import javafx.scene.image.Image;
@@ -21,10 +19,12 @@ import javafx.scene.layout.HBox;
  * Responsible for presenting and applying initial game configuration
  * (difficulty and number of rounds), toggling UI settings (theme and sound),
  * and navigating to the game or statistics scenes. This class mediates
- * between the FXML view and the {@link com.ecologicstudios.client.models.GameLoopModel}
+ * between the FXML view and the
+ * {@link com.ecologicstudios.client.models.GameModel}
  * / {@link com.ecologicstudios.client.models.SettingsModel} application state.
  *
- * <p>All public handler methods accept an {@link javafx.event.ActionEvent}
+ * <p>
+ * All public handler methods accept an {@link javafx.event.ActionEvent}
  * produced by the FXML runtime; helper methods encapsulate UI updates.
  *
  * @author Ecologic Studios
@@ -48,11 +48,11 @@ public final class StartController extends BaseController {
     /**
      * Reference to the game model for tracking game phases and logic.
      */
-    private GameLoopModel model;
+    private GameModel gameModel;
 
     /**
      * Reference to the settings model for setting theme and other GUI settings.
-     */    
+     */
     private SettingsModel settingsModel;
 
     /**
@@ -117,41 +117,31 @@ public final class StartController extends BaseController {
      * for difficulty and maximum number of cards.
      */
     public StartController() {
-        this.model = GameLoopModel.getInstance();
-        this.maxNumCards = model.getMaxNumCards();
-        this.difficulty = model.getDifficulty();
-        this.settingsModel = SettingsModel.getInstance();
     }
 
-    /**
-     * Initializes the controller after FXML loading.
-     * <p>
-     * Sets the initial visual state of buttons based on current game configuration,
-     * disabling the buttons that correspond to the currently selected difficulty
-     * and number of rounds.
-    * <p>
-    * This method is invoked by the JavaFX runtime after the FXML elements have
-    * been injected. It also ensures background music is started according to
-    * the current settings.
-     */
     @Override
-    public void initialize() {
-        // set root for BaseController
-        setRoot((Node) this.root);
+    protected final void onReady() {
+        // fetch models and settings
+        this.gameModel = this.getContext().game();
+        this.settingsModel = this.getContext().settings();
 
-        // configure/update buttons
-        setRoundsDisabled(maxNumCards, true);
-        setDifficultyDisabled(difficulty, true);
+        // apply settings to this controller instance
+        this.maxNumCards = this.gameModel.getMaxNumCards();
+        this.difficulty = this.gameModel.getDifficulty();
 
-        // update music settings
-        if (settingsModel.getMusicOn()) {
-            Music.playBackground(); 
+        // apply configurations to buttons
+        this.setRoundsDisabled(maxNumCards, true);
+        this.setDifficultyDisabled(difficulty, true);
+
+        // update buttons' appearance
+        this.updateThemeButton();
+        this.updateSoundButton();
+        this.updateHistoryButton();
+
+        // turn on music if said to do so in settings
+        if (this.settingsModel.getMusicOn()) {
+            Music.playBackground();
         }
-
-        // set buttons' icons
-        updateThemeButton();
-        updateSoundButton();
-        updateHistoryButton();
     }
 
     // ------------------------------------------------------------------------//
@@ -167,7 +157,7 @@ public final class StartController extends BaseController {
      */
     @FXML
     private void handleStart(ActionEvent e) {
-        this.model.newGame(this.difficulty, this.maxNumCards);
+        this.gameModel.newGame(this.difficulty, this.maxNumCards);
         this.sceneManager.switchScene(gameLoopScene);
     }
 
@@ -332,7 +322,8 @@ public final class StartController extends BaseController {
      *
      * @param btn the button to update; must not be null
      * @param url the relative resource path (e.g. "images/sound_on.png"); the
-     *            method looks up a resource using {@code getClass().getResource("/" + url)}.
+     *            method looks up a resource using
+     *            {@code getClass().getResource("/" + url)}.
      *            If the resource cannot be found the method logs to stderr and
      *            returns without modifying the button.
      */

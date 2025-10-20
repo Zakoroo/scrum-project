@@ -1,7 +1,11 @@
 package com.ecologicstudios.client.controllers;
 
 import java.net.URL;
+import java.util.Objects;
+
 import javafx.scene.Node;
+
+import com.ecologicstudios.client.models.AppContext;
 import com.ecologicstudios.client.models.SettingsModel;
 
 /**
@@ -17,6 +21,8 @@ import com.ecologicstudios.client.models.SettingsModel;
 public abstract class BaseController {
     private Node root;
 
+    private AppContext context;
+
     /**
      * The scene manager instance used for navigating betwen different scenes.
      */
@@ -30,26 +36,26 @@ public abstract class BaseController {
      * 
      * @param sceneManager the SceneManager instance to be used for scene transitions
      */
-    protected void setSceneManager(SceneManager sceneManager) {
+    protected final void setSceneManager(SceneManager sceneManager) {
         this.sceneManager = sceneManager;
     }
 
-    /**
-     * Initializes the controller after FXML loading.
-     * <p>
-     * This method is called automatically by JavaFX after the FXML file has been
-     * loaded and all @FXML annotated fields have been injected. Concrete
-     * implementations should override this method to perform any necessary
-     * initialization logic. Make sure to use this method if you wish to inject
-     * anything to the scene instead of using the constructor method.
-     */
-    protected abstract void initialize();
-
-    protected void setRoot(Node root) {
+    protected final void setRoot(Node root) {
         this.root = root;
     }
 
-    final public void applyTheme() {
+    public final void setContext(AppContext context) {
+        this.context = Objects.requireNonNull(context, "context is null");
+    } 
+
+    protected final AppContext getContext() {
+        return this.context;
+    }
+
+
+    public final void applyTheme() {
+        if (root == null || root.getScene() == null) return;
+
         // Remove previous theme
         root.getScene().getStylesheets().removeIf(s -> s.contains("light_theme.css") || s.contains("dark_theme.css"));
 
@@ -60,4 +66,6 @@ public abstract class BaseController {
         }
         root.getScene().getStylesheets().add(url.toExternalForm());
     }
+
+    protected void onReady() {}
 }

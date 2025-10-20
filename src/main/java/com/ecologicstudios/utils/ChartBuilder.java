@@ -8,14 +8,14 @@ import javafx.scene.chart.XYChart;
 
 /**
  * Builds JavaFX chart data points from a list of game sessions using a
- * {@link PerformanceCalculator}.
+ * {@link ScoreRescaler}.
  * <p>
  * For each {@link GameSession}, the X value is the session id and the Y value
  * is the computed performance score.
  * </p>
  *
  * @see GameSession
- * @see PerformanceCalculator
+ * @see ScoreRescaler
  * @see javafx.scene.chart.XYChart.Data
  * 
  * @author Ecologic Studios
@@ -28,11 +28,6 @@ public class ChartBuilder {
     private List<GameSession> history;
 
     /**
-     * Strategy used to compute a normalized performance value per session.
-     */
-    private PerformanceCalculator performanceCalculator;
-
-    /**
      * Creates a ChartBuilder.
      *
      * @param history               the list of game sessions to convert into chart
@@ -40,9 +35,8 @@ public class ChartBuilder {
      * @param performanceCalculator the calculator used to compute Y-values; must
      *                              not be null
      */
-    public ChartBuilder(List<GameSession> history, PerformanceCalculator performanceCalculator) {
+    public ChartBuilder(List<GameSession> history) {
         this.history = history;
-        this.performanceCalculator = performanceCalculator;
     }
 
     /**
@@ -67,7 +61,7 @@ public class ChartBuilder {
             double best = session.getBestScore();
 
             double x = id;
-            double y = performanceCalculator.calculatePerformance(score, best, worst);
+            double y = ScoreRescaler.evaluate(score, best, worst);
 
             data.add(new Point2D.Double(x, y));
         }

@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import com.ecologicstudios.utils.CardFetcher;
-import com.ecologicstudios.utils.FeedbackCalculator;
+import com.ecologicstudios.utils.FeedbackGenerator;
 import com.ecologicstudios.utils.GameHistory;
 import com.ecologicstudios.utils.GameSession;
 import com.ecologicstudios.utils.JsonCardFetcher;
@@ -13,20 +13,24 @@ import com.ecologicstudios.utils.Card;
 import com.ecologicstudios.utils.Alternative;
 
 /**
- * Singleton model class that manages the game state and logic for the CO2 emission game.
+ * Singleton model class that manages the game state and logic for the CO2
+ * emission game.
  * <p>
- * This class handles the game flow including card management, answer processing,
- * score calculation, and game session configuration. It implements the singleton
+ * This class handles the game flow including card management, answer
+ * processing,
+ * score calculation, and game session configuration. It implements the
+ * singleton
  * pattern to ensure only one game instance exists at a time.
  * <p>
- * The game consists of presenting cards with environmental scenarios and alternatives
+ * The game consists of presenting cards with environmental scenarios and
+ * alternatives
  * to the player, tracking their choices and calculating the total CO2 emissions
  * based on their decisions.
  * 
  * @author Ecologic Studios
  * @version 1.0
  */
-public class GameLoopModel {
+public class GameModel {
     private final String historyPath = "src/main/resources/json/history.json";
 
     /**
@@ -37,8 +41,11 @@ public class GameLoopModel {
     /**
      * The singleton instance of this class.
      */
-    private static GameLoopModel instance;
+    private static GameModel instance;
 
+    /**
+     * Reference to the history object in which game data is stored.
+     */
     private GameHistory gameHistory;
 
     /**
@@ -62,7 +69,8 @@ public class GameLoopModel {
     private int maxNumCards = 10;
 
     /**
-     * Count of the number of cards that have been presented during the current game session.
+     * Count of the number of cards that have been presented during the current game
+     * session.
      */
     private int cardsCount = 0;
 
@@ -72,15 +80,16 @@ public class GameLoopModel {
     private int answersCount = 0;
 
     /**
-     * The total CO2 emission result for the current game session representing 
+     * The total CO2 emission result for the current game session representing
      * the cumulative environmental impact of the player's choices.
      */
     private double totalResult = 0;
 
     /**
-     * The feedback calculator that provides dynamic feedback based on the game's result.
+     * The feedback calculator that provides dynamic feedback based on the game's
+     * result.
      */
-    private FeedbackCalculator feedbackCalculator;
+    private FeedbackGenerator feedbackCalculator;
 
     /**
      * This method replaces the functionality of the constructor effectively
@@ -88,9 +97,9 @@ public class GameLoopModel {
      * 
      * @return returns the singleton instance of this class.
      */
-    public static GameLoopModel getInstance() {
+    public static GameModel getInstance() {
         if (instance == null) {
-            instance = new GameLoopModel();
+            instance = new GameModel();
         }
         return instance;
     }
@@ -99,18 +108,21 @@ public class GameLoopModel {
      * The default constructor is disabled to prevent creating more instances of
      * this class.
      */
-    private GameLoopModel() {
+    private GameModel() {
         this.gameHistory = new GameHistory(historyPath);
     }
 
     /**
-     * Resets the game fields to their initial values and prepares a new game session.
+     * Resets the game fields to their initial values and prepares a new game
+     * session.
      * <p>
-     * This method initializes a new card deck based on the specified difficulty setting,
-     * shuffles the cards, resets all counters and results to zero, and creates a new
+     * This method initializes a new card deck based on the specified difficulty
+     * setting,
+     * shuffles the cards, resets all counters and results to zero, and creates a
+     * new
      * feedback calculator for result evaluation.
      * 
-     * @param difficulty the difficulty level for the new game session
+     * @param difficulty  the difficulty level for the new game session
      * @param maxNumCards the maximum number of cards to be played in the session
      */
     public void newGame(String difficulty, int maxNumCards) {
@@ -123,17 +135,19 @@ public class GameLoopModel {
         CardFetcher fetcher = new JsonCardFetcher(path); // fetch cards from given path (in resources)
         cards = fetcher.getCardsByDifficulty(difficulty); // fetch out only cards of the given difficulty
         Collections.shuffle(cards); // shuffle cards
-        
-        feedbackCalculator = new FeedbackCalculator(new LinkedList<>(cards), maxNumCards);
+
+        feedbackCalculator = new FeedbackGenerator(new LinkedList<>(cards), maxNumCards);
     }
 
     /**
      * Checks if the current game session has started.
      * <p>
-     * A game is considered started when at least one card has been presented to the player
+     * A game is considered started when at least one card has been presented to the
+     * player
      * and the game hasn't reached the maximum number of answers yet.
      * 
-     * @return true if at least one card has been presented and the game is still active, false otherwise
+     * @return true if at least one card has been presented and the game is still
+     *         active, false otherwise
      */
     public boolean gameStarted() {
         return cardsCount > 0 && answersCount != maxNumCards;
@@ -153,11 +167,12 @@ public class GameLoopModel {
      * Retrieves the next card from the deck and advances the game by one round.
      * <p>
      * This method will only return a card if the game hasn't ended, there are
-     * cards available, and the current card has been answered (cardsCount equals answersCount).
+     * cards available, and the current card has been answered (cardsCount equals
+     * answersCount).
      * 
      * @return the next Card from the deck
      * @throws IllegalStateException if the game has ended, no cards are available,
-     *                              or the current card hasn't been answered yet
+     *                               or the current card hasn't been answered yet
      */
     public Card nextCard() throws IllegalStateException {
         if (!gameEnded() && !cards.isEmpty() && cardsCount == answersCount) {
@@ -172,7 +187,8 @@ public class GameLoopModel {
      * Submits an answer for the current card and updates the total result.
      * <p>
      * This method checks if the provided {@code answer} exists among the
-     * alternatives of the current card using the equals method. If the answer is valid, 
+     * alternatives of the current card using the equals method. If the answer is
+     * valid,
      * its CO2 value is added to the total result. If the answer is not found, an
      * {@link IllegalArgumentException} is thrown.
      *
@@ -181,14 +197,16 @@ public class GameLoopModel {
      *                                  alternative for the current card
      */
     public void submitAnswer(Alternative answer) throws IllegalArgumentException {
-        if (gameEnded()) return; // answers cannot be submitted after end of session
+        if (gameEnded())
+            return; // answers cannot be submitted after end of session
         for (Alternative alt : currentCard.getAlternatives()) {
             if (alt.equals(answer)) {
                 answersCount++;
-                totalResult += answer.getco2();
+                totalResult += answer.getCo2();
 
                 // update history only if the last answer is submitted
-                if (gameEnded()) updateHistory();
+                if (gameEnded())
+                    updateHistory();
                 return;
             }
         }
@@ -201,7 +219,8 @@ public class GameLoopModel {
      * This method can only be called after the game has ended. Attempting to
      * access the result before game completion will result in an exception.
      * 
-     * @return the total CO2 result accumulated during the current game as a double value
+     * @return the total CO2 result accumulated during the current game as a double
+     *         value
      * @throws IllegalStateException if the game hasn't ended yet
      */
     public double getTotalResult() throws IllegalStateException {
@@ -217,7 +236,8 @@ public class GameLoopModel {
      * This setting determines how many cards will be presented to the player
      * during a single game session. Can only be changed before the game starts.
      * 
-     * @param numRounds the maximum number of cards to be played in the current session
+     * @param numRounds the maximum number of cards to be played in the current
+     *                  session
      * @throws IllegalStateException if called after the game has started or ended
      */
     public void setMaxNumCards(int numRounds) throws IllegalStateException {
@@ -255,14 +275,16 @@ public class GameLoopModel {
     /**
      * Gets the maximum number of cards configured for the current game session.
      * 
-     * @return the maximum number of cards that will be presented in the current session
+     * @return the maximum number of cards that will be presented in the current
+     *         session
      */
     public int getMaxNumCards() {
         return this.maxNumCards;
     }
 
     /**
-     * Gets personalized feedback based on the player's performance in the completed game.
+     * Gets personalized feedback based on the player's performance in the completed
+     * game.
      * <p>
      * This method uses the feedback calculator to generate appropriate feedback
      * based on the total CO2 emissions from the player's choices. The feedback
@@ -279,7 +301,7 @@ public class GameLoopModel {
     }
 
     public String getscoreTitle() {
-        if(!gameEnded()) {
+        if (!gameEnded()) {
             throw new IllegalStateException("cannot access results before game ends");
         }
         return feedbackCalculator.getScoreTitle(totalResult);
@@ -289,7 +311,8 @@ public class GameLoopModel {
         if (!gameEnded()) {
             throw new IllegalStateException("cannot access gameession before game ends");
         }
-        return new GameSession(difficulty, maxNumCards, totalResult, feedbackCalculator.getMinResult(), feedbackCalculator.getMaxResult());
+        return new GameSession(difficulty, maxNumCards, totalResult, feedbackCalculator.getMinResult(),
+                feedbackCalculator.getMaxResult());
     }
 
     private void updateHistory() {

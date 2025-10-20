@@ -19,7 +19,7 @@ public final class Music {
     private static MediaPlayer player;
     private static double volume = 0.35; // default music volume (0.0–1.0)
 
-    private Music() {
+    public Music() {
     }
 
     /**

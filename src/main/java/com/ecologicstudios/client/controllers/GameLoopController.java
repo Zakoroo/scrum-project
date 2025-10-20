@@ -6,12 +6,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
+import javafx.scene.layout.BorderPane;
 import java.util.Map;
 import java.util.HashMap;
 import java.io.IOException;
-import javafx.scene.layout.BorderPane;
 
-import com.ecologicstudios.client.models.GameLoopModel;
+import com.ecologicstudios.client.models.GameModel;
 import com.ecologicstudios.utils.Card;
 import com.ecologicstudios.utils.Alternative;
 
@@ -37,7 +37,7 @@ public final class GameLoopController extends BaseController {
     /**
      * The game model instance that manages game state and logic.
      */
-    final private GameLoopModel model;
+    private GameModel gameModel;
     
     /**
      * Map that associates each alternative button with its corresponding Alternative object.
@@ -68,19 +68,16 @@ public final class GameLoopController extends BaseController {
      * Constructs a new GameLoopController and initializes the model and alternative map.
      */
     public GameLoopController() {
-        model = GameLoopModel.getInstance();
-        altMap = new HashMap<>();
+        this.altMap = new HashMap<>();
     }
 
-    /**
-     * Initializes the controller after FXML loading.
-     * <p>
-     * This method is called automatically by JavaFX and starts the game loop
-     * by updating the interface with the first card.
-     */
-    public void initialize() {
-        update();
-        setRoot(this.root);
+    @Override
+    protected final void onReady() {
+        // fetch models
+        this.gameModel = this.getContext().game();
+
+        // update the view with information from the model
+        this.update();
     }
 
     // ------------------------------------------------------------------------//
@@ -94,9 +91,9 @@ public final class GameLoopController extends BaseController {
      * @param e the ActionEvent triggered by clicking an alternative button
      */
     private void handleAnswer(ActionEvent e) {
-        model.submitAnswer(altMap.get((Button) e.getSource()));
+        gameModel.submitAnswer(altMap.get((Button) e.getSource()));
 
-        if (!model.gameEnded()) {
+        if (!gameModel.gameEnded()) {
             update();
         } else {
             sceneManager.switchScene("/fxml/results.fxml");
@@ -116,7 +113,7 @@ public final class GameLoopController extends BaseController {
     private void update() {
         try {
             // Update current card
-            currentCard = model.nextCard();
+            currentCard = gameModel.nextCard();
 
             // Update description
             updateDescription();
