@@ -10,6 +10,9 @@ import java.util.LinkedList;
  * variance, and standard deviation of a collection of numerical values.
  * It implements the Calculator interface for numerical data.
  * 
+ * <p>This class is designed to handle numerical data efficiently and provides
+ * methods to insert values, compute statistical measures, and clear stored data.</p>
+ * 
  * @author Ecologic Studios
  * @version 1.0
  */

@@ -28,11 +28,6 @@ public class ChartBuilder {
     private List<GameSession> history;
 
     /**
-     * Strategy used to compute a normalized performance value per session.
-     */
-    private ScoreRescaler performanceCalculator;
-
-    /**
      * Creates a ChartBuilder.
      *
      * @param history               the list of game sessions to convert into chart

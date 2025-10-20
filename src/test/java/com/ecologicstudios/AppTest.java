@@ -10,19 +10,6 @@ import com.ecologicstudios.utils.Calculator;
 import com.ecologicstudios.utils.StandardDeviationCalculator;
 import com.ecologicstudios.utils.ScoreRescaler;
 
-/*
- * TODO: implement test for the following classes
- * - [?] StandardDeviationCalculator 
- * - [] ScoreScaler
- * - [] PerformanceEvaluator
- * - [] JsonCardFetcher
- * - [] FeedbackGenerator
- */
-
-import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.Test;
-import java.util.List;
-
 public class AppTest {
     @Test
     public void ScoreScaler_test_NaN() { // not-a-number
