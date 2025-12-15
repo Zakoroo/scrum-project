@@ -32,7 +32,7 @@ jobs:
           tree -a -I ".git|target|node_modules|PROJECT_INFO|.github" "$SOURCE_DIR" > PROJECT_INFO/source-tree.txt
 
       - name: Create or update PR
-        uses: peter-evans/create-pull-request@v7
+        uses: peter-evans/create-pull-request@v8
         with:
           branch: chore/update-project-info               # fixed branch the bot reuses
           title: "chore: update PROJECT_INFO tree snapshot"
