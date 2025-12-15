@@ -31,7 +31,7 @@ jobs:
       # Optional but handy: always upload surefire/failsafe reports
       - name: Upload test reports
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: maven-test-reports
           path: |
